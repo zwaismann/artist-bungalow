@@ -32,7 +32,7 @@
 
         /* ═══════════════ RESET ═══════════════ */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         img { display: block; max-width: 100%; height: auto; }
         a { color: inherit; text-decoration: none; }
         button { font: inherit; cursor: pointer; border: none; background: none; }
@@ -98,6 +98,8 @@
             justify-content: space-between;
             transition: background 0.5s var(--ease-default), backdrop-filter 0.5s var(--ease-default), opacity 0.5s var(--ease-default);
             border-bottom: 1px solid transparent;
+            opacity: 0;
+            pointer-events: none;
         }
 
         @media (min-width: 768px) { .nav { padding: 0 3rem; } }
@@ -154,6 +156,69 @@
             display: none;
             color: var(--ivory);
             font-size: 1.25rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Mobile menu overlay */
+        .nav-mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            background: rgba(26, 26, 26, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-default);
+        }
+
+        .nav-mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-mobile-menu a {
+            font-family: var(--font-impact);
+            font-size: 2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ivory);
+            transition: color 0.2s ease;
+        }
+
+        .nav-mobile-menu a:hover { color: var(--brass); }
+
+        .nav-mobile-menu .nav-reserve {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: var(--onyx);
+            background: var(--brass);
+            padding: 12px 32px;
+            border-radius: 0;
+            margin-top: 1rem;
+        }
+
+        .nav-mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--ivory);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* ═══════════════ HERO ═══════════════ */
@@ -550,10 +615,7 @@
             transition: transform 0.4s var(--ease-brand), filter 0.4s ease;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.06);
-            filter: brightness(1.1);
-        }
+        /* hover moved to @media (hover: hover) in responsive section */
 
         .gallery-item img {
             width: 100%;
@@ -1132,15 +1194,14 @@
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.4s ease;
+            background: rgba(250, 246, 240, 0.05);
         }
 
         .hood-detail-photo.loaded {
             opacity: 1;
         }
 
-        .hood-detail-photo.loaded:hover {
-            opacity: 0.85;
-        }
+        /* hover moved to @media (hover: hover) in responsive section */
 
         /* First photo spans full width */
         .hood-detail-photo:first-child {
@@ -1663,8 +1724,35 @@
             .hero-stats { display: none; }
         }
 
+        @media (max-width: 767px) {
+            .hero-scroll-wrapper { height: calc(900px + 100vh); }
+            .gallery { min-height: auto; padding: 3rem 0; }
+            .gallery-item { width: 280px; height: 280px; }
+            .hood-survey-bg { display: none; }
+            .hood-detail { width: 90%; max-width: 90%; }
+            .hood-detail-map { height: 180px; margin: 12px 16px 16px; width: calc(100% - 32px); }
+            .dining-card { padding: 1.25rem 1rem; }
+            .about-guest-fav { max-width: 45%; }
+        }
+
         @media (max-width: 540px) {
             .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .testimonial-card { width: 100%; max-width: 320px; }
+        }
+
+        @media (max-height: 500px) {
+            .hero { min-height: auto; }
+        }
+
+        /* Hover effects only for pointer devices */
+        @media (hover: hover) {
+            .gallery-item:hover { transform: scale(1.06); filter: brightness(1.1); }
+            .hood-detail-photo.loaded:hover { opacity: 0.85; }
+        }
+
+        @media (hover: none) {
+            .gallery-item:hover { transform: none; filter: none; }
+            .hood-detail-photo.loaded:hover { opacity: 1; }
         }
     </style>
 </head>
@@ -1683,6 +1771,17 @@
         </ul>
         <button class="nav-mobile" id="navMobile" aria-label="Menu">&#9776;</button>
     </nav>
+
+    <!-- Mobile menu overlay -->
+    <div class="nav-mobile-menu" id="navMobileMenu">
+        <button class="nav-mobile-close" id="navMobileClose" aria-label="Close">&times;</button>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#neighborhood">Neighborhood</a>
+        <a href="#dining">Dining</a>
+        <a href="#reviews">Reviews</a>
+        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener" class="nav-reserve">Reserve</a>
+    </div>
 
     <!-- ═══════════════ HERO ═══════════════ -->
     <div class="hero-scroll-wrapper" id="heroScrollWrapper">
@@ -2415,7 +2514,7 @@
             const heroBg = document.getElementById('heroBg');
             const nav = document.querySelector('.nav');
             const heroWelcome = document.getElementById('heroWelcome');
-            const scrollHeight = 1500;
+            const scrollHeight = window.innerWidth < 768 ? 900 : 1500;
             // 16:9 centered rectangle: wider horizontal, taller vertical inset
             const initX = 10;  // 10% inset left/right = 80% wide
             const initY = 22;  // 22% inset top/bottom = 56% tall (roughly 16:9)
@@ -2423,10 +2522,6 @@
             function lerp(start, end, t) {
                 return start + (end - start) * Math.max(0, Math.min(1, t));
             }
-
-            // Hide nav initially
-            nav.style.opacity = '0';
-            nav.style.pointerEvents = 'none';
 
             function updateHero() {
                 const rect = wrapper.getBoundingClientRect();
@@ -2471,16 +2566,29 @@
             nav.classList.toggle('scrolled', window.scrollY > 80);
         }, { passive: true });
 
-        // Hero parallax
-        const heroBg = document.getElementById('heroBg');
-        if (heroBg) {
-            window.addEventListener('scroll', () => {
-                const y = window.scrollY;
-                if (y < window.innerHeight) {
-                    heroBg.style.transform = `scale(${1 + y * 0.00018}) translateY(${y * 0.18}px)`;
-                }
-            }, { passive: true });
-        }
+        // Mobile menu
+        (() => {
+            var btn = document.getElementById('navMobile');
+            var menu = document.getElementById('navMobileMenu');
+            var close = document.getElementById('navMobileClose');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function() {
+                menu.classList.add('active');
+            });
+
+            close.addEventListener('click', function() {
+                menu.classList.remove('active');
+            });
+
+            menu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    menu.classList.remove('active');
+                });
+            });
+        })();
+
+        /* Hero parallax removed - handled by clip-path scroll handler */
 
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
@@ -2787,9 +2895,12 @@
                             var img = document.createElement('img');
                             img.className = 'hood-detail-photo';
                             img.alt = '';
-                            img.loading = 'lazy';
                             img.addEventListener('load', function() {
                                 img.classList.add('loaded');
+                            });
+                            img.addEventListener('error', function() {
+                                img.classList.add('loaded');
+                                img.style.display = 'none';
                             });
                             img.addEventListener('click', function() {
                                 openLightbox(photoSrc, loc.name);
@@ -2864,6 +2975,8 @@
                 let paused = false;
                 col.addEventListener('mouseenter', () => { paused = true; });
                 col.addEventListener('mouseleave', () => { paused = false; });
+                col.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+                col.addEventListener('touchend', () => { paused = false; }, { passive: true });
 
                 function animate() {
                     requestAnimationFrame(animate);
