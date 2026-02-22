@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artist Bungalow | Midnight Redesign</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Outfit:wght@200;300;400;500;600&family=Syne:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- MapLibre for dark mode map later -->
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+    <style>
+        :root {
+            /* V2 Midnight Palette */
+            --color-void: #050505;
+            --color-void-trans: rgba(5, 5, 5, 0.7);
+            --color-glass: rgba(255, 255, 255, 0.03);
+            --color-glass-border: rgba(255, 255, 255, 0.08);
+            --color-amber: #FFB347;
+            --color-sage: #8A9A86;
+            --color-text: #E8E8E8;
+            --color-muted: rgba(232, 232, 232, 0.5);
+
+            /* V2 Typography */
+            --font-display: 'Syne', sans-serif;
+            --font-ui: 'Outfit', sans-serif;
+            --font-hand: 'La Belle Aurore', cursive;
+        }
+
+        /* --- GLOBAL RESET & CUSTOM CURSOR --- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+            /* Hide default cursor */
+        }
+
+        body {
+            background-color: var(--color-void);
+            color: var(--color-text);
+            font-family: var(--font-ui);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior: none;
+        }
+
+        /* Film Noise Filter - Harder mix for V2 */
+        .noise-layer {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.06;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E');
+            mix-blend-mode: overlay;
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: var(--color-amber);
+            color: var(--color-void);
+        }
+
+        /* Custom Magnetic Cursor */
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-amber);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.3s,
+                opacity 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.hovering {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-text);
+            opacity: 0.8;
+        }
+
+        .custom-cursor.drag {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid var(--color-amber);
+        }
+
+        /* Typography Utilities */
+        .font-syne {
+            font-family: var(--font-display);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .font-outfit {
+            font-family: var(--font-ui);
+        }
+
+        .font-hand {
+            font-family: var(--font-hand);
+        }
+
+        .text-amber {
+            color: var(--color-amber);
+        }
+
+        .text-muted {
+            color: var(--color-muted);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 0;
+        }
+
+        /* Keep images sharp */
+
+        /* Smooth scrollbar but hidden mostly */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-void);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-glass-border);
+            border-radius: 10px;
+        }
+
+        /* --- V3 NAVIGATION (STICKY FROSTED GLASS) --- */
+        .v3-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo span {
+            color: var(--color-amber);
+            font-family: var(--font-syne);
+            font-size: 1.5rem;
+        }
+
+        .nav-book {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--color-glass-border);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .nav-book:hover {
+            background: var(--color-text);
+            color: var(--color-void);
+        }
+
+        /* --- V2 HERO: THE ARRIVAL --- */
+        .hero {
+            position: relative;
+            height: 150vh;
+            /* Extra height for scroll scrub */
+        }
+
+        .hero-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-void);
+        }
+
+        .hero-img-container {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: 0.6;
+            filter: saturate(0.8) contrast(1.2);
+            will-change: transform, opacity;
+            transform: scale(1.1);
+            /* animated via JS */
+        }
+
+        .hero-title-mask {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hero-title-mask span {
+            font-size: clamp(4rem, 12vw, 10rem);
+            line-height: 0.85;
+            color: var(--color-text);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-hand);
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            color: var(--color-amber);
+            transform: rotate(-2deg);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- V2 ABOUT: HIGH CONTRAST --- */
+        .about-section {
+            position: relative;
+            background-color: var(--color-text);
+            /* Hard flip to white */
+            color: var(--color-void);
+            padding: 20vh 5vw;
+            z-index: 10;
+        }
+
+        ::selection {
+            background-color: var(--color-void);
+            color: var(--color-text);
+        }
+
+        /* Invert selection here */
+        .about-section ::selection {
+            background-color: var(--color-amber);
+            color: var(--color-void);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 10vw;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .about-title {
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1;
+            margin-bottom: 3rem;
+        }
+
+        .about-text {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            line-height: 1.4;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .v2-amenities {
+            font-family: var(--font-ui);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-sage);
+            opacity: 0.9;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+
+        .v2-amenity {
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .v2-amenity::before {
+            content: '✦';
+            color: var(--color-amber);
+            font-size: 0.8rem;
+        }
+
+        .v2-badges {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            /* Remove invert since background is now dark slate */
+        }
+
+        .v2-badges img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .about-highlight {
+            font-weight: 500;
+            font-family: var(--font-display);
+        }
+
+        .about-img-wrap {
+            position: relative;
+            height: 120vh;
+            width: 100%;
+            overflow: hidden;
+            margin-top: -10vh;
+            /* Breaks the grid upward */
+        }
+
+        .about-img-inner {
+            position: absolute;
+            top: -10%;
+            left: 0;
+            right: 0;
+            bottom: -10%;
+            background-image: url('https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d2236a4b-bcf1-4993-91d2-85a710f8192e.jpeg?im_w=1200');
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            /* Parallax target */
+        }
+
+        .host-note {
+            position: absolute;
+            bottom: 10vh;
+            left: -5vw;
+            background: var(--color-void);
+            color: var(--color-text);
+            padding: 2.5rem;
+            width: 350px;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            transform: rotate(-3deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+
+        .signature {
+            font-size: 2rem;
+            color: var(--color-amber);
+            margin-top: 1rem;
+            display: block;
+        }
+
+        /* --- V2 FRAGMENTS GALLERY --- */
+        .fragments-section {
+            padding: 20vh 5vw;
+            position: relative;
+            background: var(--color-void);
+            min-height: 200vh;
+            /* Allow for scroll pinning */
+        }
+
+        .fragments-header {
+            position: sticky;
+            top: 20vh;
+            text-align: right;
+            z-index: 5;
+            mix-blend-mode: difference;
+            pointer-events: none;
+        }
+
+        .fragments-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+            color: var(--color-text);
+        }
+
+        .fragments-subtitle {
+            font-family: var(--font-hand);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-amber);
+            margin-top: 1rem;
+        }
+
+        .fragments-container {
+            position: relative;
+            height: 150vh;
+            margin-top: -10vh;
+        }
+
+        .fragment {
+            position: absolute;
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            padding: 1rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            will-change: transform;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fragment:hover {
+            z-index: 10 !important;
+        }
+
+        .fragment img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Initial Positions / Rotations */
+        .frag-1 {
+            width: 40vw;
+            max-width: 500px;
+            top: 10%;
+            left: 5vw;
+            transform: rotate(-5deg);
+            z-index: 2;
+        }
+
+        .frag-2 {
+            width: 30vw;
+            max-width: 400px;
+            top: 30%;
+            right: 10vw;
+            transform: rotate(8deg);
+            z-index: 3;
+        }
+
+        .frag-3 {
+            width: 35vw;
+            max-width: 450px;
+            top: 50%;
+            left: 15vw;
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+
+        .frag-4 {
+            width: 45vw;
+            max-width: 600px;
+            top: 70%;
+            right: 5vw;
+            transform: rotate(4deg);
+            z-index: 4;
+        }
+
+        /* --- V3 LIGHTBOX --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 3001;
+            padding: 10px;
+            line-height: 1;
+        }
+
+        /* --- V2 NEON NOIR MAP --- */
+        .map-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: var(--color-void);
+        }
+
+        #v2map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            filter: saturate(1.2) contrast(1.1);
+        }
+
+        .map-ui {
+            position: absolute;
+            left: 5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            max-width: 90vw;
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--color-glass-border);
+            padding: 3rem 2rem;
+            z-index: 10;
+        }
+
+        .map-title {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+        }
+
+        .loc-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .loc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-glass-border);
+            color: var(--color-muted);
+            transition: color 0.3s;
+        }
+
+        .loc-item:hover,
+        .loc-item.active {
+            color: var(--color-text);
+            border-bottom-color: var(--color-amber);
+        }
+
+        .loc-name {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .loc-time {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-amber);
+        }
+
+        /* Custom Markers */
+        .marker-home {
+            width: 20px;
+            height: 20px;
+            background: var(--color-text);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--color-text);
+        }
+
+        .marker-dest {
+            width: 16px;
+            height: 16px;
+            background: var(--color-amber);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--color-amber);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 179, 71, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 179, 71, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 179, 71, 0);
+            }
+        }
+
+        .host-notes-section {
+            padding: 20vh 5vw;
+            background: var(--color-text);
+            /* White section to break up the dark */
+            color: var(--color-void);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .note-card {
+            font-family: var(--font-hand);
+            font-size: 1.8rem;
+            line-height: 1.4;
+            padding: 3rem;
+            background: var(--color-void);
+            color: var(--color-text);
+            box-shadow: 20px 20px 0 var(--color-amber);
+            transform: rotate(-1deg);
+            transition: transform 0.3s;
+        }
+
+        .note-card:nth-child(even) {
+            transform: rotate(2deg) translateY(40px);
+            box-shadow: -20px 20px 0 var(--color-sage);
+        }
+
+        .note-card:hover {
+            transform: scale(1.02) rotate(0);
+        }
+
+        .note-author {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2rem;
+            color: var(--color-amber);
+            display: block;
+        }
+
+        .note-card:nth-child(even) .note-author {
+            color: var(--color-sage);
+        }
+
+        /* --- V2 DINING (GLASS LIST) --- */
+        .dining-section {
+            padding: 20vh 5vw;
+            background: var(--color-void);
+            color: var(--color-text);
+            position: relative;
+        }
+
+        .dining-header {
+            margin-bottom: 4rem;
+            text-align: right;
+        }
+
+        .dining-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.9;
+        }
+
+        .dining-subtitle {
+            font-family: var(--font-hand);
+            font-size: 2rem;
+            color: var(--color-amber);
+            margin-top: 1rem;
+        }
+
+        .dining-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5vw;
+        }
+
+        .dining-cat-title {
+            font-family: var(--font-syne);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--color-sage);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--color-glass-border);
+            padding-bottom: 1rem;
+        }
+
+        .dining-item {
+            display: block;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .dining-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--color-amber);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .dining-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .dining-item-name {
+            font-size: 1.2rem;
+            font-family: var(--font-syne);
+        }
+
+        .dining-item:hover .dining-item-name {
+            color: var(--color-amber);
+        }
+
+        .dining-item-meta {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--color-muted);
+            text-transform: uppercase;
+        }
+
+        .dining-item-desc {
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            opacity: 0.8;
+        }
+
+        /* --- V3 FOOTER CTA --- */
+        .v3-cta {
+            padding: 15vh 5vw;
+            background: var(--color-void);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .v3-cta-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--color-text);
+        }
+
+        .v3-cta-btn {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: var(--color-amber);
+            color: var(--color-void);
+            font-family: var(--font-syne);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .v3-cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+        }
+
+        /* --- V2 FOOTER --- */
+        .v2-footer {
+            padding: 10vh 5vw;
+            text-align: center;
+            border-top: 1px solid var(--color-glass-border);
+        }
+
+        .footer-brand {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 5vh;
+            }
+
+            .about-img-wrap {
+                height: 80vh;
+                margin-top: 0;
+            }
+
+            .host-note {
+                left: 5vw;
+                bottom: -5vh;
+                transform: rotate(2deg);
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noise-layer"></div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- V3 Navigation -->
+    <nav class="v3-nav">
+        <a href="#home" class="nav-logo interactive"><span>A</span> The Artist Bungalow</a>
+        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank"
+            class="nav-book interactive">Reserve</a>
+    </nav>
+
+    <!-- V3 Hero -->
+    <section class="hero" id="home">
+        <div class="hero-sticky">
+            <div class="hero-img-container">
+                <!-- Using the dramatic canyon piano shot -->
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=2560"
+                    alt="Hollywood Hills View" class="hero-img" id="heroImg">
+            </div>
+            <div class="hero-title-mask font-syne" id="heroTitle">
+                <span>MIDNIGHT</span>
+                <div class="hero-subtitle">in the hills</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- V3 About / Intro -->
+    <section class="section-padding bg-slate" id="about">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2 class="about-title font-syne">
+                    <span class="text-amber">1930s</span> PRE-WAR<br>
+                    HOLLYWOOD
+                </h2>
+                <div class="about-text">
+                    A hideaway for creators. <span class="about-highlight">Stripped back stucco, walls of glass, and a
+                        piano echoing out into the canyon.</span>
+                </div>
+                <div class="about-text text-muted">
+                    This isn't just a place to stay. It's an environment designed to provoke thought, rest, and
+                    inspiration. Tucked tightly into the Hollywood Hills, you are fifteen minutes from the heart of the
+                    industry, but it feels like you're on another planet.
+                </div>
+
+                <div class="v2-amenities">
+                    <div class="v2-amenity">Panoramic Views</div>
+                    <div class="v2-amenity">Steam Shower</div>
+                    <div class="v2-amenity">Piano & Guitar</div>
+                    <div class="v2-amenity">Full Kitchen</div>
+                    <div class="v2-amenity">Private Deck</div>
+                    <div class="v2-amenity">Original Art</div>
+                </div>
+
+                <div class="v2-badges interactive">
+                    <img src="superhost-badge.png" alt="Superhost" title="Airbnb Superhost">
+                    <img src="guest-favorite.png" alt="Guest Favorite" title="Airbnb Guest Favorite">
+                </div>
+            </div>
+
+            <div class="about-img-wrap">
+                <div class="about-img-inner interactive" id="aboutParallax"></div>
+                <div class="host-note font-hand interactive">
+                    "I left the acoustic guitar tuned to open D. The acoustics on the deck at sunset are unbelievable."
+                    <span class="signature">- The Host</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- V2 Fragments Gallery -->
+    <section class="fragments-section" id="fragmentsWrap">
+        <div class="gallery-header container">
+            <h2 class="font-syne text-sage" style="font-size: 3rem; margin-bottom: 1rem;">THE CANVAS</h2>
+            <p class="font-hand" style="font-size: 1.5rem; color: var(--color-amber);">Drag & Tap to Explore</p>
+        </div>
+
+        <div class="fragments-container">
+            <!-- Dispersed Polaroid style -->
+            <div class="fragment frag-1 interactive drag-zone" data-speed="0.8">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e990aae8-3151-4bfc-9f8f-347eadf859df.jpeg?im_w=2560"
+                    alt="Living Room" class="lightbox-trigger">
+            </div>
+            <div class="fragment frag-2 interactive drag-zone" data-speed="1.2">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8080019c-281c-43af-b893-43ee20193232.jpeg?im_w=2560"
+                    alt="Kitchen Details" class="lightbox-trigger">
+            </div>
+            <div class="fragment frag-3 interactive drag-zone" data-speed="0.6">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/69dc25b4-f315-41d1-a150-2a8504974878.jpeg?im_w=2560"
+                    alt="Bedroom View" class="lightbox-trigger">
+            </div>
+            <div class="fragment frag-4 interactive drag-zone" data-speed="1.4">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/0bc956c9-352c-4831-9e27-b16f2afe9e3d.jpeg?im_w=2560"
+                    alt="Outdoor Deck" class="lightbox-trigger">
+            </div>
+        </div>
+    </section>
+
+    <!-- V3 Lightbox -->
+    <div id="v3-lightbox" class="lightbox-overlay">
+        <button class="lightbox-close interactive" id="lightboxClose">&times;</button>
+        <img src="" alt="Expanded View" id="lightboxImg" class="lightbox-image">
+    </div>
+
+    <!-- V2 Neon Noir Map -->
+    <section class="map-section">
+        <div id="v2map"></div>
+        <div class="map-ui">
+            <h3 class="map-title font-syne">THE<br>GRID</h3>
+            <div class="loc-grid">
+                <div class="loc-item interactive active" data-loc="bowl">
+                    <span class="loc-name">Hollywood Bowl</span>
+                    <span class="loc-time">5min Walk</span>
+                </div>
+                <div class="loc-item interactive" data-loc="runyon">
+                    <span class="loc-name">Runyon Canyon</span>
+                    <span class="loc-time">8min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="griffith">
+                    <span class="loc-name">Griffith Observatory</span>
+                    <span class="loc-time">12min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="kismet">
+                    <span class="loc-name">Kismet (Dining)</span>
+                    <span class="loc-time">10min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="walkoffame">
+                    <span class="loc-name">Walk of Fame</span>
+                    <span class="loc-time">10min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="universal">
+                    <span class="loc-name">Universal Studios</span>
+                    <span class="loc-time">12min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="warnerbros">
+                    <span class="loc-name">Warner Bros.</span>
+                    <span class="loc-time">15min Drive</span>
+                </div>
+                <div class="loc-item interactive" data-loc="reservoir">
+                    <span class="loc-name">Hollywood Reservoir</span>
+                    <span class="loc-time">10min Drive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- V2 Dining Guide -->
+    <section class="dining-section">
+        <div class="dining-header">
+            <h2 class="dining-title font-syne">THE<br>LOCAL<br>TABLE</h2>
+            <div class="dining-subtitle">Curated neighborhood favorites.</div>
+        </div>
+
+        <div class="dining-grid">
+            <div class="dining-col">
+                <h3 class="dining-cat-title">Coffee & Cafes</h3>
+
+                <a href="https://www.groundworkcoffee.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Groundwork Coffee</span>
+                        <span class="dining-item-meta">$ &bull; 3min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Specialty organic roaster in an industrial-chic setting. Essential
+                        pre-hike fuel.</div>
+                </a>
+
+                <a href="https://www.alcovecafe.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Alcove Cafe & Bakery</span>
+                        <span class="dining-item-meta">$$ &bull; 5min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">A beloved Los Feliz institution. Huge garden patio, beautiful
+                        pastries, and excellent brunch.</div>
+                </a>
+
+                <a href="https://brucoffeebar.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Bru Coffeebar</span>
+                        <span class="dining-item-meta">$ &bull; 5min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Serious, single-origin pour-overs in a sleek space. For the true
+                        coffee purist.</div>
+                </a>
+
+                <a href="https://marucoffee.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Maru Coffee</span>
+                        <span class="dining-item-meta">$ &bull; 7min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Minimalist Korean-inspired coffee shop. The iced cream top espresso is
+                        legendary.</div>
+                </a>
+
+                <a href="https://beachwoodcafe.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Beachwood Cafe</span>
+                        <span class="dining-item-meta">$$ &bull; 8min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Iconic neighborhood spot nestled right under the Hollywood Sign.</div>
+                </a>
+
+                <a href="https://coffeecommissary.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Coffee Commissary</span>
+                        <span class="dining-item-meta">$ &bull; 9min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Sleek industrial vibe serving excellent roasts and fantastic breakfast
+                        burritos.</div>
+                </a>
+            </div>
+
+            <div class="dining-col">
+                <h3 class="dining-cat-title">Dinner & Drinks</h3>
+
+                <a href="https://www.kismetlosangeles.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Kismet</span>
+                        <span class="dining-item-meta">$$ &bull; 4min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Bright, vegetable-forward Cal-Med. Vibrant plates that taste exactly
+                        like a sunny LA afternoon.</div>
+                </a>
+
+                <a href="https://mussoandfrank.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Musso & Frank Grill</span>
+                        <span class="dining-item-meta">$$$ &bull; 5min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Hollywood's oldest restaurant. Flawless martinis, red booths, and a
+                        century of ghosts.</div>
+                </a>
+
+                <a href="https://figarobistrot.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Figaro Bistrot</span>
+                        <span class="dining-item-meta">$$ &bull; 5min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Pavement-side tables and French classics. Transportive and wonderfully
+                        atmospheric.</div>
+                </a>
+
+                <a href="https://osteriamozza.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Osteria Mozza</span>
+                        <span class="dining-item-meta">$$$ &bull; 7min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Nancy Silverton's upscale Italian masterpiece. The mozzarella bar
+                        alone is worth the trip.</div>
+                </a>
+
+                <a href="https://cafestella.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Cafe Stella</span>
+                        <span class="dining-item-meta">$$$ &bull; 8min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Dimly lit, intensely romantic French bistro in Silver Lake. The
+                        definitive date spot.</div>
+                </a>
+
+                <a href="https://theedendale.com" target="_blank" class="dining-item interactive">
+                    <div class="dining-item-header">
+                        <span class="dining-item-name">Edendale</span>
+                        <span class="dining-item-meta">$$ &bull; 8min Drive</span>
+                    </div>
+                    <div class="dining-item-desc">Housed in a 1920s firehouse. Great cocktails, solid modern American
+                        fare, stunning patio.</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- V2 Host Notes (Testimonials) -->
+    <section class="host-notes-section">
+        <div class="notes-grid">
+            <div class="note-card interactive">
+                "The view from the deck at sunset is unreal. We felt like we were floating above Los Angeles."
+                <span class="note-author">Sara &bull; Oct '23</span>
+            </div>
+            <div class="note-card interactive">
+                "Playing the vintage piano with the canyon spread out below was a highlight of my year."
+                <span class="note-author">Carley &bull; Sep '23</span>
+            </div>
+            <div class="note-card interactive">
+                "We practically lived on the deck. The kind of place you don't actually want to leave."
+                <span class="note-author">Nate &bull; Feb '23</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- V3 Call to Action -->
+    <section class="v3-cta">
+        <h2 class="v3-cta-title font-syne">STEP INTO<br><span class="text-amber">THE HILLS</span></h2>
+        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="v3-cta-btn interactive">Reserve
+            Your Dates</a>
+    </section>
+
+    <!-- V2 Footer -->
+    <footer class="v2-footer">
+        <div class="footer-brand font-syne">Artist<br>Bungalow</div>
+        <div class="text-muted font-outfit" style="font-size:0.8rem; letter-spacing:1px; text-transform:uppercase;">
+            Hollywood Hills, CA</div>
+    </footer>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            if (cursor.style.opacity === '0') cursor.style.opacity = '1';
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+        });
+
+        document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+        document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+
+        function bindCursorHover() {
+            document.querySelectorAll('a, button, .interactive').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+            document.querySelectorAll('.drag-zone').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('drag'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('drag'));
+            });
+        }
+
+        bindCursorHover();
+
+        // Fragment Dragging Logic
+        let zIndexCounter = 100; // Start z-index for draggable elements
+
+        fragments.forEach(frag => {
+            let isDragging = false;
+            let currentX = 0;
+            let currentY = 0;
+            let initialMouseX = 0;
+            let initialMouseY = 0;
+
+            // Get initial rotation from CSS
+            const style = window.getComputedStyle(frag);
+            const transformMatrix = new DOMMatrixReadOnly(style.transform);
+            const rotation = Math.atan2(transformMatrix.b, transformMatrix.a) * (180 / Math.PI);
+
+            frag.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                frag.style.transition = 'none'; // remove smooth transition while dragging
+                frag.style.zIndex = zIndexCounter++; // bring to front
+
+                // Get current position from transform if it exists, otherwise 0
+                const currentTransform = new DOMMatrixReadOnly(window.getComputedStyle(frag).transform);
+                currentX = currentTransform.e;
+                currentY = currentTransform.f;
+
+                initialMouseX = e.clientX - currentX;
+                initialMouseY = e.clientY - currentY;
+
+                frag.classList.add('dragging');
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                currentX = e.clientX - initialMouseX;
+                currentY = e.clientY - initialMouseY;
+                frag.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation}deg)`;
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    frag.style.transition = 'transform 0.4s ease'; // restore
+                    frag.classList.remove('dragging');
+                }
+            });
+        });
+
+        // 6. V3 Lightbox Logic
+        const v3Lightbox = document.getElementById('v3-lightbox');
+        const v3LightboxImg = document.getElementById('lightboxImg');
+        const v3LightboxClose = document.getElementById('lightboxClose');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                // If they were just dragging, prevent click
+                if (trigger.parentElement.classList.contains('dragging')) return;
+
+                const imgSrc = trigger.getAttribute('src');
+                v3LightboxImg.src = imgSrc;
+                v3Lightbox.classList.add('active');
+            });
+        });
+
+        v3LightboxClose.addEventListener('click', () => {
+            v3Lightbox.classList.remove('active');
+        });
+
+        v3Lightbox.addEventListener('click', (e) => {
+            if (e.target === v3Lightbox) {
+                v3Lightbox.classList.remove('active');
+            }
+        });
+
+        // 7. Testimonials "Marquee" Loop (Simplified)
+
+        // Scroll Parallax Engine
+        const heroWrap = document.querySelector('.hero-sticky'); // New: reference to the sticky container
+        const hero = document.getElementById('hero');
+        const heroImg = document.getElementById('heroImg');
+        const heroTitle = document.getElementById('heroTitle');
+        const aboutParallax = document.getElementById('aboutParallax');
+        const fragmentsWrap = document.getElementById('fragmentsWrap');
+        const fragments = document.querySelectorAll('.fragment'); // Re-declared for clarity, already exists above
+        const v3Nav = document.querySelector('.v3-nav'); // V3 Nav
+
+        let lastScrollY = window.scrollY;
+
+        function updateScroll() {
+            const scrollY = window.scrollY;
+            const wh = window.innerHeight;
+
+            // Hero Scrubbing
+            // Calculate hero progress based on its actual height.
+            // In a real scenario, this matches the pinning duration.
+            const heroHeight = heroWrap.offsetHeight - window.innerHeight;
+            const p = Math.max(0, Math.min(1, scrollY / (heroHeight || 1)));
+
+            // Image scale from 1.1 down to 1.0
+            heroImg.style.transform = `scale(${1.1 - (p * 0.1)})`;
+
+            // Hero title fades and moves up
+            heroTitle.style.opacity = Math.max(0, 1 - (p * 2));
+            heroTitle.style.transform = `translate(-50%, calc(-50% - ${p * 150}px))`;
+
+            // V3 Nav blur logic
+            if (scrollY > 50) {
+                v3Nav.style.padding = "1rem 5vw";
+                v3Nav.style.background = "rgba(5, 5, 5, 0.8)";
+            } else {
+                v3Nav.style.padding = "1.5rem 5vw";
+                v3Nav.style.background = "rgba(5, 5, 5, 0.6)";
+            }
+
+            // About Parallax (background position y shift)
+            if (aboutParallax) {
+                const rect = aboutParallax.parentElement.getBoundingClientRect();
+                // When element is in viewport
+                if (rect.top < wh && rect.bottom > 0) {
+                    const progress = 1 - (rect.bottom / (wh + rect.height));
+                    // Move from -10% to +10%
+                    aboutParallax.style.transform = `translateY(${progress * 20}%)`;
+                }
+            }
+
+            // Fragments Parallax
+            if (window.innerWidth > 900) { // Only do parallax on desktop
+                const fragRect = fragmentsWrap.getBoundingClientRect();
+                if (fragRect.top < wh && fragRect.bottom > 0) {
+                    const scrollDist = wh - fragRect.top;
+                    fragments.forEach(frag => {
+                        const speed = parseFloat(frag.getAttribute('data-speed'));
+                        // keep original rotations in css by getting base from style sheet? 
+                        // It's easier to just apply translate and let matrix CSS handle rotation via additive transform if we used vars, 
+                        // but here we just translate Y via raw string hacking - ideally we read computed but this is cheaper
+                        const baseRot = frag.className.includes('1') ? -5 : frag.className.includes('2') ? 8 : frag.className.includes('3') ? -2 : 4;
+                        frag.style.transform = `translateY(${scrollDist * 0.2 * speed * -1}px) rotate(${baseRot}deg)`;
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(updateScroll);
+        }, { passive: true });
+
+        updateScroll(); // init
+
+        // MapLibre Dark Mode integration
+        const coords = {
+            home: [-118.3387, 34.1158],
+            bowl: [-118.336, 34.112],
+            runyon: [-118.35, 34.11],
+            griffith: [-118.300, 34.118],
+            kismet: [-118.291, 34.101],
+            walkoffame: [-118.328, 34.101],
+            universal: [-118.353, 34.138],
+            warnerbros: [-118.335, 34.148],
+            reservoir: [-118.332, 34.120]
+        };
+
+        const map = new maplibregl.Map({
+            container: 'v2map',
+            // Using CARTO Dark Matter for a sleek noir look
+            style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+            center: coords.home,
+            zoom: 13,
+            interactive: false
+        });
+
+        map.on('load', () => {
+            // Home Marker
+            const hEl = document.createElement('div');
+            hEl.className = 'marker-home';
+            new maplibregl.Marker({ element: hEl }).setLngLat(coords.home).addTo(map);
+
+            // Dest Marker
+            const dEl = document.createElement('div');
+            dEl.className = 'marker-dest';
+            const destMarker = new maplibregl.Marker({ element: dEl }).setLngLat(coords.bowl).addTo(map);
+
+            // Add Route source/layer immediately
+            map.addSource('route', {
+                type: 'geojson',
+                data: { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coords.home, coords.bowl] } }
+            });
+
+            map.addLayer({
+                id: 'route',
+                type: 'line',
+                source: 'route',
+                layout: { 'line-join': 'round', 'line-cap': 'round' },
+                paint: { 'line-color': '#FFB347', 'line-width': 2, 'line-dasharray': [2, 4], 'line-opacity': 0.8 }
+            });
+
+            // UI clicks
+            const items = document.querySelectorAll('.loc-item');
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    items.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const loc = item.getAttribute('data-loc');
+                    const target = coords[loc];
+
+                    destMarker.setLngLat(target);
+
+                    map.getSource('route').setData({
+                        type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coords.home, target] }
+                    });
+
+                    const bounds = new maplibregl.LngLatBounds();
+                    bounds.extend(coords.home);
+                    bounds.extend(target);
+                    map.fitBounds(bounds, { padding: { top: 100, bottom: 100, left: 400, right: 100 }, duration: 1500 });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

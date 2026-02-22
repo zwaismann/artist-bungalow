@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artist Bungalow</title>
+
+    <!-- SVG Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+
+    <!-- MapLibre GL JS v4.7.1 -->
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+    <style>
+        /* =========================================
+           PHASE 2: DESIGN SYSTEM & GLOBAL STYLES 
+           ========================================= */
+        :root {
+            /* Color Palette */
+            --onyx: #1A1A1A;
+            --brass: #C49A3C;
+            --ivory: #FAF6F0;
+            --terracotta: #C2614B;
+            --olive: #5A6B4A;
+            --ocean: #3B6B8A;
+            --sand: #D4C5A9;
+            --blush: #E8CFC0;
+            --cream: #F0E8D8;
+            --dining-bg: #2A2520;
+
+            /* Typography */
+            --font-impact: 'Bebas Neue', sans-serif;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Space Grotesk', sans-serif;
+            --font-typewriter: 'Courier Prime', monospace;
+
+            /* Animation Tokens */
+            --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Essential Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: rgba(26, 26, 26, 0.6);
+            /* Default text on light */
+            background-color: var(--ivory);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: var(--brass);
+            color: var(--ivory);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ivory);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--sand);
+        }
+
+        /* General Typography Rules */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .font-impact {
+            font-family: var(--font-impact);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 0.85;
+            font-weight: normal;
+        }
+
+        .font-display {
+            font-family: var(--font-display);
+            letter-spacing: -0.025em;
+        }
+
+        /* Sharp edges rule */
+        img,
+        div,
+        section,
+        button,
+        a {
+            border-radius: 0 !important;
+        }
+
+        /* Film Grain Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.02;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transition: opacity 0.8s var(--ease-brand);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+        }
+
+        /* =========================================
+           PHASE 3: COMPONENT ARCHITECTURE 
+           ========================================= */
+
+        /* --- 3A. FIXED NAV BAR --- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: background-color 0.4s var(--ease-default), padding 0.4s var(--ease-default), backdrop-filter 0.4s var(--ease-default);
+        }
+
+        .site-nav.scrolled {
+            padding: 1rem 5vw;
+            background: rgba(26, 26, 26, 0.88);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border-bottom: 1px solid rgba(196, 154, 60, 0.2);
+            /* subtle brass */
+        }
+
+        .nav-brand {
+            font-family: var(--font-impact);
+            color: var(--ivory);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--ivory);
+        }
+
+        .nav-link.active {
+            color: var(--brass);
+        }
+
+        .nav-reserve {
+            background-color: var(--brass);
+            color: var(--onyx);
+            padding: 10px 24px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-reserve:hover {
+            background-color: #a07e2f;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--ivory);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        /* --- 3B. HERO SCROLL WRAPPER --- */
+        .hero-scroll-wrapper {
+            position: relative;
+            background-color: var(--onyx);
+            /* Height set by JS or calc, prompt: calc(1500px + 200vh) destkop */
+            height: calc(1500px + 200vh);
+        }
+
+        @media (max-width: 900px) {
+            .hero-scroll-wrapper {
+                height: calc(900px + 200vh);
+            }
+        }
+
+        /* Screenplay Splash */
+        .hero-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .typewriter-text {
+            font-family: var(--font-typewriter);
+            color: rgba(250, 246, 240, 0.55);
+            max-width: 520px;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
+        }
+
+        @media (max-width: 767px) {
+            .typewriter-text {
+                font-size: 0.95rem;
+                max-width: 85vw;
+            }
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: rgba(250, 246, 240, 0.55);
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            animation: scrollIndicatorIn 1s ease 3s forwards;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .scroll-indicator-line {
+            width: 1px;
+            height: 28px;
+            background: rgba(250, 246, 240, 0.3);
+        }
+
+        .scroll-indicator-chevron {
+            width: 14px;
+            height: 14px;
+            border-right: 1px solid rgba(250, 246, 240, 0.4);
+            border-bottom: 1px solid rgba(250, 246, 240, 0.4);
+            transform: rotate(45deg);
+            animation: chevronDrift 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollIndicatorIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes chevronDrift {
+
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(45deg) translateY(4px);
+            }
+        }
+
+        /* Wait, removing the old svg rule since we don't have an svg in the new scroll indicator anymore */
+
+        @keyframes float-icon {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
+        }
+
+        /* Hero Sticky Section */
+        .hero-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 5vw;
+            /* clip-path inset 10% horizontal, 22% vertical to start */
+            clip-path: polygon(10% 22%, 90% 22%, 90% 78%, 10% 78%);
+            opacity: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transform: scale(1.15);
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.5) 0%, transparent 30%, transparent 60%, rgba(26, 26, 26, 0.8) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .hero-text-group {
+            max-width: 600px;
+        }
+
+        .hero-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            color: var(--ivory);
+            font-size: clamp(3rem, 8vw, 9.375rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title span {
+            color: var(--brass);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            color: rgba(250, 246, 240, 0.6);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .btn-brass {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--brass);
+            color: var(--onyx);
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-brass:hover {
+            background-color: #a07e2f;
+        }
+
+        .btn-brass svg {
+            width: 14px;
+        }
+
+        .link-explore {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.5);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .link-explore:hover {
+            color: var(--brass);
+        }
+
+        .hero-stats {
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            display: flex;
+            gap: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-val {
+            font-family: var(--font-impact);
+            font-size: 2rem;
+            color: var(--ivory);
+        }
+
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        @media (max-width: 900px) {
+            .hero-stats {
+                display: none;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+
+        /* --- 3C. INTRO SECTION --- */
+        .intro-section {
+            background-color: var(--ivory);
+            padding: 8rem 5vw;
+            text-align: center;
+        }
+
+        .intro-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        .intro-rule {
+            width: 40px;
+            height: 1px;
+            background-color: var(--sand);
+        }
+
+        .intro-body {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 1.875rem);
+            color: var(--onyx);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-body em {
+            font-style: italic;
+            opacity: 0.6;
+        }
+
+        /* --- 3D. ABOUT SECTION --- */
+        .about-section {
+            background-color: var(--cream);
+            padding: 10rem 5vw;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .about-left {
+            position: relative;
+        }
+
+        .about-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 20px;
+            left: -20px;
+            background: rgba(250, 246, 240, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border: 1px solid rgba(196, 154, 60, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-badge-val {
+            font-family: var(--font-impact);
+            font-size: 3rem;
+            color: var(--onyx);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .about-badge-label {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        @media (max-width: 767px) {
+            .about-badge {
+                left: 10px;
+                bottom: 10px;
+                padding: 1rem 1.5rem;
+            }
+
+            .about-badge-val {
+                font-size: 2.5rem;
+            }
+        }
+
+        .about-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .about-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--onyx);
+            margin-bottom: 2rem;
+        }
+
+        .about-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .amenity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 1rem;
+            margin-bottom: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        @media (max-width: 540px) {
+            .amenity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .amenity-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .amenity-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--onyx);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+        }
+
+        .amenity-desc {
+            font-style: italic;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+        }
+
+        .about-badges {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.7;
+        }
+
+        .about-badges img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* --- 3E. VIEW MOMENT (PHOTO BREAK) --- */
+        .view-moment {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            line-height: 0;
+            margin-bottom: -4px;
+            /* Fix any lingering inline descender float gap */
+        }
+
+        .view-moment img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .view-moment::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.2) 0%, transparent 20%, transparent 80%, rgba(26, 26, 26, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        /* --- 3F. GALLERY SECTION --- */
+        .gallery-section {
+            background-color: var(--onyx);
+            padding: 10rem 0;
+            /* no horizontal padding to allow full bleed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-header {
+            padding: 0 5vw;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .gallery-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--ivory);
+        }
+
+        .gallery-track-container {
+            width: 100%;
+            overflow: hidden;
+            cursor: grab;
+            /* Edge fade mask */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+
+        .gallery-track-container:active {
+            cursor: grabbing;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            will-change: transform;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 600px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.4s var(--ease-default), filter 0.4s var(--ease-default);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-item {
+                width: 510px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gallery-item {
+                width: 280px;
+            }
+        }
+
+        /* Hover only applies on pointer devices */
+        @media (hover: hover) and (pointer: fine) {
+            .gallery-item:hover {
+                transform: scale(1.05);
+                filter: brightness(1.08);
+            }
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--ivory);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            transform: scale(0.95);
+            transition: transform 0.4s var(--ease-brand);
+        }
+
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        /* --- 3H. NEIGHBORHOOD SECTION --- */
+        .neighborhood-section {
+            background-color: var(--ivory);
+            padding: 10rem 5vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background survey drawings container */
+        .survey-bg-container {
+            position: absolute;
+            top: 50%;
+            left: auto;
+            right: 0vw;
+            width: 66%;
+            height: 120%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            opacity: 0.35;
+            z-index: 0;
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        @media (max-width: 900px) {
+            .survey-bg-container {
+                width: 100vw;
+                left: 0;
+                opacity: 0.15;
+            }
+        }
+
+        .survey-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .survey-bg.active {
+            opacity: 1;
+        }
+
+        .neighborhood-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .neighborhood-header {
+            max-width: 600px;
+            margin-bottom: 5rem;
+        }
+
+        .neighborhood-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .neighborhood-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3rem, 5vw, 4rem);
+            color: var(--onyx);
+            margin-bottom: 1.5rem;
+        }
+
+        .neighborhood-body {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .neighborhood-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .neighborhood-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .location-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .location-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s var(--ease-default);
+        }
+
+        .location-item-info {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+        }
+
+        .location-name {
+            font-family: var(--font-impact);
+            font-size: 2rem;
+            color: var(--onyx);
+            transition: color 0.3s;
+        }
+
+        .location-dist {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        .location-arrow {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s var(--ease-brand);
+            color: var(--brass);
+        }
+
+        .location-item:hover {
+            transform: translateX(1.5rem);
+        }
+
+        .location-item:hover .location-name {
+            color: var(--brass);
+        }
+
+        .location-item:hover .location-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .isometric-stage {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .isometric-stage {
+                display: none;
+            }
+        }
+
+        .iso-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.6s var(--ease-brand);
+            transform: translateY(20px);
+        }
+
+        .iso-img.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Detail Panel */
+        .detail-panel {
+            position: fixed;
+            top: 80px;
+            /* Below 80px nav */
+            right: -100%;
+            width: 480px;
+            max-width: 90vw;
+            height: calc(100vh - 80px);
+            background-color: var(--ivory);
+            z-index: 900;
+            /* Below 1000 nav */
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.1);
+            transition: right 0.6s var(--ease-brand);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .detail-panel.open {
+            right: 0;
+        }
+
+        .dp-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3010;
+            color: var(--onyx);
+            font-size: 1.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .dp-close:hover {
+            border-color: var(--onyx);
+        }
+
+        .dp-content {
+            padding: 4rem 3rem 3rem;
+            flex: 1;
+        }
+
+        .dp-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dp-icon {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .dp-title {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--onyx);
+        }
+
+        .dp-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brass);
+            padding: 8px 16px;
+            border: 1px solid rgba(196, 154, 60, 0.2);
+        }
+
+        .dp-desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .dp-map {
+            width: 100%;
+            height: 240px;
+            background: #E8E5DF;
+            margin-bottom: 3rem;
+        }
+
+        .dp-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .dp-photo-full {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .dp-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .dp-photo-half {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Panel Overlay */
+        .panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.5);
+            z-index: 800;
+            /* Below detail-panel's 900 */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+
+        .panel-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* --- 3I. DINING SECTION --- */
+        .dining-section {
+            background-color: var(--dining-bg);
+            padding: 10rem 5vw;
+        }
+
+        .dining-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .dining-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .dining-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--ivory);
+        }
+
+        .dining-subhead {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: rgba(250, 246, 240, 0.6);
+            margin-top: 1rem;
+        }
+
+        .dining-category {
+            margin-bottom: 6rem;
+        }
+
+        .dining-cat-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--brass);
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(196, 154, 60, 0.3);
+            margin-bottom: 3rem;
+        }
+
+        .dining-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid rgba(250, 246, 240, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .dining-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dining-card {
+            padding: 2.5rem;
+            border: 1px solid rgba(250, 246, 240, 0.08);
+            transition: background-color 0.4s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dining-card:hover {
+            background-color: #332E28;
+        }
+
+        .dining-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .dining-card-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--ivory);
+        }
+
+        .dining-card-price {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: rgba(250, 246, 240, 0.6);
+        }
+
+        .dining-card-type {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+        }
+
+        .dining-card-desc {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: rgba(250, 246, 240, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .dining-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dining-card-dist {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.5);
+        }
+
+        .dining-card-link svg {
+            width: 16px;
+            color: var(--brass);
+        }
+
+        /* --- 3J. TESTIMONIALS SECTION --- */
+        .intro-section {
+            background-color: var(--ivory);
+            padding: 10rem 5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .reviews-section {
+            background-color: var(--onyx);
+            padding: 10rem 5vw;
+            overflow: hidden;
+        }
+
+        .reviews-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .reviews-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(196, 154, 60, 0.8);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .reviews-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--ivory);
+        }
+
+        .reviews-subhead {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: rgba(250, 246, 240, 0.6);
+            margin-top: 1rem;
+        }
+
+        .marquee-container {
+            height: 480px;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            /* Vertical fade mask */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+        }
+
+        .marquee-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            will-change: transform;
+        }
+
+        @media (max-width: 900px) {
+            .marquee-col:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .marquee-col:nth-child(2) {
+                display: none;
+            }
+        }
+
+        .review-card {
+            background-color: var(--ivory);
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            padding: 2rem;
+            width: 320px;
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: 540px) {
+            .review-card {
+                width: 280px;
+            }
+        }
+
+        .review-stars {
+            color: var(--brass);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .review-text {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--onyx);
+            margin-bottom: 2rem;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-impact);
+            font-size: 1.2rem;
+            color: var(--ivory);
+            line-height: 1;
+            padding-top: 2px;
+        }
+
+        .avatar-brass {
+            background-color: var(--brass);
+        }
+
+        .avatar-terracotta {
+            background-color: var(--terracotta);
+        }
+
+        .avatar-olive {
+            background-color: var(--olive);
+        }
+
+        .avatar-ocean {
+            background-color: var(--ocean);
+        }
+
+        .review-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-name {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--onyx);
+        }
+
+        .review-date {
+            font-family: var(--font-body);
+            font-size: 10px;
+            color: rgba(26, 26, 26, 0.5);
+        }
+
+        /* --- 3K. CTA SECTION --- */
+        .cta-section {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.55);
+            z-index: 2;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 3;
+            padding: 0 5vw;
+            max-width: 800px;
+        }
+
+        .cta-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.8);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .cta-heading {
+            font-family: var(--font-impact);
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            color: var(--ivory);
+            line-height: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .cta-heading span {
+            color: var(--brass);
+        }
+
+        .cta-sub {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            color: rgba(250, 246, 240, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        /* --- 3L. FOOTER --- */
+        .site-footer {
+            background-color: var(--onyx);
+            padding: 6rem 5vw 4rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: var(--font-impact);
+            font-size: 3rem;
+            color: rgba(250, 246, 240, 0.6);
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .footer-tag {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: rgba(250, 246, 240, 0.25);
+            margin-bottom: 3rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-nav a {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.4);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--ivory);
+        }
+
+        .footer-meta {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.15);
+        }
+
+        /* --- Test Elements to verify Phase 1 & 2 --- */
+        .test-section {
+            padding: 15vh 5vw;
+            background-color: var(--onyx);
+            color: var(--ivory);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .test-section h1 {
+            font-size: 5rem;
+            color: var(--brass);
+        }
+
+        .test-section h2 {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 3rem;
+            font-weight: normal;
+            margin-top: 1rem;
+        }
+
+        .test-section p {
+            font-family: var(--font-typewriter);
+            margin-top: 2rem;
+            opacity: 0.55;
+        }
+
+        .test-section-light {
+            padding: 15vh 5vw;
+            background-color: var(--cream);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 3A: FIXED NAV -->
+    <nav class="site-nav" id="siteNav">
+        <a href="#" class="nav-brand">The Artist Bungalow</a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#neighborhood" class="nav-link">Neighborhood</a>
+            <a href="#dining" class="nav-link">Dining</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank"
+                class="nav-link nav-reserve">Reserve</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+    </nav>
+
+    <!-- 3B: HERO SCROLL WRAPPER -->
+    <div class="hero-scroll-wrapper" id="heroWrapper">
+
+        <!-- Screenplay Splash -->
+        <div class="hero-splash" id="heroSplash">
+            <div class="typewriter-text" id="typewriterText"></div>
+            <div class="scroll-indicator" id="splashIndicator" onclick="skipTypewriter()">
+                <div class="scroll-indicator-line"></div>
+                <div class="scroll-indicator-chevron"></div>
+            </div>
+        </div>
+
+        <!-- Sticky Hero Section -->
+        <section class="hero-sticky" id="heroSticky">
+            <img src="hollywood_sign_hero.jpg" alt="Hollywood Hills" class="hero-bg" id="heroBg">
+            <div class="hero-gradient"></div>
+
+            <div class="hero-content">
+                <div class="hero-text-group">
+                    <span class="hero-label">Hollywood Hills, Los Angeles</span>
+                    <h1 class="hero-title font-impact">The Artist<br><span>Bungalow</span></h1>
+                    <p class="hero-subtitle">Where the hills meet the music.</p>
+                    <div class="hero-ctas">
+                        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass">
+                            Book Your Stay
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="square">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#intro" class="link-explore">Explore &darr;</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bedrooms</span></div>
+                    <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bathrooms</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">4.97</span><span class="stat-label">Rating</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">★</span><span class="stat-label">Superhost</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">♥</span><span class="stat-label">Guest Favorite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 3C: INTRO SECTION -->
+    <section class="intro-section reveal" id="intro">
+        <div class="intro-meta">
+            <span>Guest Favorite 2024</span>
+            <div class="intro-rule"></div>
+            <span>Superhost</span>
+        </div>
+        <p class="intro-body">
+            An intimate, art-filled retreat perched in the Hollywood Hills, steps from the legendary Hollywood Bowl.
+            <em>Sun-drenched rooms, sweeping views, a piano waiting to be played</em>, and the kind of quiet that makes
+            you forget the city is right below.
+        </p>
+    </section>
+
+    <!-- 3D: ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-left reveal">
+                <!-- Airbnb Exterior Photo #8 -->
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=1200"
+                    alt="Artist Bungalow Exterior" class="about-img">
+                <div class="about-badge">
+                    <div class="about-badge-val">4.97</div>
+                    <div class="about-badge-label">Superhost / Guest Favorite</div>
+                </div>
+            </div>
+            <div class="about-right reveal">
+                <span class="about-label">About the Space</span>
+                <h2 class="about-heading">Spanish Charm,<br>Mid-Century Soul</h2>
+                <p class="about-body">Perched on a quiet cul-de-sac in the Hollywood Hills, the Artist Bungalow is a
+                    light-filled retreat where original art, an upright piano, and city-to-ocean views come together.
+                    Spanish-style architecture meets curated mid-century interiors, a tropical garden, and a private
+                    deck with sweeping LA panoramas.</p>
+
+                <div class="amenity-grid">
+                    <div class="amenity-item">
+                        <span class="amenity-title">Panoramic Views</span>
+                        <span class="amenity-desc">Sweeping city vistas</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-title">Steam Shower</span>
+                        <span class="amenity-desc">Relaxing oasis</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-title">Full Kitchen</span>
+                        <span class="amenity-desc">Chef's setup</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-title">Coffee Bar</span>
+                        <span class="amenity-desc">5 ways to brew</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-title">Private Deck</span>
+                        <span class="amenity-desc">Al fresco dining</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-title">Smart Home</span>
+                        <span class="amenity-desc">Climate & sound</span>
+                    </div>
+                </div>
+
+                <div class="about-badges">
+                    <img src="superhost-badge.png" alt="Superhost">
+                    <img src="guest-favorite.png" alt="Guest Favorite">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3E: VIEW MOMENT (PHOTO BREAK) -->
+    <div class="view-moment reveal">
+        <!-- Photo #7 Fallback -->
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/80446755-772d-40b7-b6bd-8f5acd7a14f0.jpeg?im_w=1200"
+            class="view-moment-img section-bg lightbox-trigger" alt="Living Room Detail Break">
+    </div>
+
+    <!-- 3F: GALLERY SECTION -->
+    <section class="gallery-section reveal" id="gallery">
+        <div class="gallery-header">
+            <span class="gallery-label">Gallery</span>
+            <h2 class="gallery-heading">The Space</h2>
+        </div>
+        <div class="gallery-track-container" id="galleryContainer">
+            <div class="gallery-track" id="galleryTrack">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=1200"
+                    alt="The Living Room (Cover)" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/69dc25b4-f315-41d1-a150-2a8504974878.jpeg?im_w=1200"
+                    alt="Primary Bedroom" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8080019c-281c-43af-b893-43ee20193232.jpeg?im_w=1200"
+                    alt="Kitchen & Dining" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/5644d5a0-6485-4007-9688-8a6d68c1387e.jpeg?im_w=1200"
+                    alt="Living Room Seating" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/3a68d75b-927f-4c7a-992e-ace6c127b34d.jpeg?im_w=1200"
+                    alt="Original Artwork" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/f9685988-7e27-4054-b173-114e690aab26.jpeg?im_w=1200"
+                    alt="Dining Area" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e990aae8-3151-4bfc-9f8f-347eadf859df.jpeg?im_w=1200"
+                    alt="Living Room Detail" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=1200"
+                    alt="The Front (Exterior)" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/f2a0fe1c-b2f3-445a-91e5-dfd8784f50f0.jpeg?im_w=1200"
+                    alt="The Garden" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b9948b43-d3f1-4c21-ba60-425e766a0c29.jpeg?im_w=1200"
+                    alt="Outdoor Dining" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/34a6bfd8-d85a-47a3-aa78-8e410fd334d6.jpeg?im_w=1200"
+                    alt="Living Room Wide" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e534271b-59ca-46a5-a7c6-5d0a0ee6e71f.jpeg?im_w=1200"
+                    alt="Bedroom Detail" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/944586ea-ea29-4b3c-a801-9e7762a50339.jpeg?im_w=1200"
+                    alt="Laundry" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/10abb5a6-4d20-4c9d-881e-a42e28803185.jpeg?im_w=1200"
+                    alt="Steam Shower" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b10f46b6-6c3d-4938-8975-17be9456495e.jpeg?im_w=1200"
+                    alt="Guest Room" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d525b436-1a3c-4722-bca1-619373a234c4.jpeg?im_w=1200"
+                    alt="Guest Bedroom" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/c9a44b20-2b73-4448-962c-40718fcf3aa9.jpeg?im_w=1200"
+                    alt="Bathroom Vanity" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/04325ef8-c51b-476a-9686-a64f9d1fff76.jpeg?im_w=1200"
+                    alt="Tropical Backyard" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/005b510f-7c71-4476-9ef6-7574c5c421a2.jpeg?im_w=1200"
+                    alt="Shower Detail" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/75d19ae8-912c-4f1f-bafd-28b42c4a856f.jpeg?im_w=1200"
+                    alt="Desk Nook" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d2236a4b-bcf1-4993-91d2-85a710f8192e.jpeg?im_w=1200"
+                    alt="Panoramic View" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/0bc956c9-352c-4831-9e27-b16f2afe9e3d.jpeg?im_w=1200"
+                    alt="The Deck" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/517bf334-7c36-444c-9696-382495180c3b.jpeg?im_w=1200"
+                    alt="House Exterior" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/5c3c8a51-f813-4edf-968a-05c1fd3163ae.jpeg?im_w=1200"
+                    alt="Patio Lounge" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/80446755-772d-40b7-b6bd-8f5acd7a14f0.jpeg?im_w=1200"
+                    alt="Garden View" class="gallery-item">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e3f592c9-d172-4f2a-a252-b9b153eedd0e.jpeg?im_w=1200"
+                    alt="Palm Trees" class="gallery-item">
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX UI -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Expanded View" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- 3G: PHOTO BREAK 2 -->
+    <div class="view-moment reveal">
+        <!-- Photo #7 -->
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e990aae8-3151-4bfc-9f8f-347eadf859df.jpeg?im_w=1200"
+            alt="Living Room Photo Break">
+    </div>
+
+    <!-- 3H: NEIGHBORHOOD SECTION -->
+    <section class="neighborhood-section" id="neighborhood">
+        <div class="survey-bg-container">
+            <!-- Background Images -->
+            <img src="survey_hollywood_bowl.png" class="survey-bg" id="bg-bowl" alt="">
+            <img src="survey_runyon_canyon.png" class="survey-bg" id="bg-runyon" alt="">
+            <img src="survey_griffith_observatory.png" class="survey-bg" id="bg-griffith" alt="">
+            <img src="survey_walk_of_fame.png" class="survey-bg" id="bg-walk" alt="">
+            <img src="survey_universal_studios.png" class="survey-bg" id="bg-universal" alt="">
+            <img src="survey_warner_bros.png" class="survey-bg" id="bg-warner" alt="">
+            <img src="survey_hollywood_reservoir.png" class="survey-bg" id="bg-reservoir" alt="">
+        </div>
+
+        <div class="neighborhood-content reveal">
+            <div class="neighborhood-header">
+                <span class="neighborhood-label">The Neighborhood</span>
+                <h2 class="neighborhood-heading">Above It All, Close to Everything</h2>
+                <p class="neighborhood-body">Tucked into the Hills but minutes from LA's best. Walk to the Hollywood
+                    Bowl, hike Runyon Canyon, or drive to the Observatory for sunset. The city is at your doorstep.</p>
+            </div>
+
+            <div class="neighborhood-grid">
+                <div class="location-list">
+                    <div class="location-item" onmouseenter="activateLocation('bowl')"
+                        onclick="openDetailPanel('bowl')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Hollywood Bowl</span>
+                            <span class="location-dist">5 Min Walk</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('runyon')"
+                        onclick="openDetailPanel('runyon')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Runyon Canyon</span>
+                            <span class="location-dist">8 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('griffith')"
+                        onclick="openDetailPanel('griffith')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Griffith Observatory</span>
+                            <span class="location-dist">12 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('walk')"
+                        onclick="openDetailPanel('walk')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Walk of Fame</span>
+                            <span class="location-dist">10 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('universal')"
+                        onclick="openDetailPanel('universal')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Universal Studios</span>
+                            <span class="location-dist">12 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('warner')"
+                        onclick="openDetailPanel('warner')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Warner Bros. Studio</span>
+                            <span class="location-dist">15 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="location-item" onmouseenter="activateLocation('reservoir')"
+                        onclick="openDetailPanel('reservoir')">
+                        <div class="location-item-info">
+                            <span class="location-name font-impact">Hollywood Reservoir</span>
+                            <span class="location-dist">10 Min Drive</span>
+                        </div>
+                        <svg class="location-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Neighborhood Detail Panel & Overlay -->
+    <div class="panel-overlay" id="panelOverlay" onclick="closeDetailPanel()"></div>
+    <div class="detail-panel" id="detailPanel">
+        <button class="dp-close" onclick="closeDetailPanel()">&times;</button>
+        <div class="dp-content">
+            <div class="dp-header">
+                <img src="" alt="" class="dp-icon" id="dpIcon">
+                <h3 class="dp-title" id="dpTitle">Location</h3>
+            </div>
+            <div class="dp-time" id="dpTime">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                </svg>
+                <span>5 MIN</span>
+            </div>
+            <p class="dp-desc" id="dpDesc">Description goes here.</p>
+
+            <div class="dp-map" id="dpMap"></div>
+
+            <div class="dp-photos" id="dpPhotos">
+                <img src="" class="dp-photo-full lightbox-trigger" id="dpPhoto1" alt="">
+                <div class="dp-photo-grid">
+                    <img src="" class="dp-photo-half lightbox-trigger" id="dpPhoto2" alt="">
+                    <img src="" class="dp-photo-half lightbox-trigger" id="dpPhoto3" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3I: DINING SECTION -->
+    <section class="dining-section reveal" id="dining">
+        <div class="dining-header">
+            <span class="dining-label">Eat & Drink</span>
+            <h2 class="dining-heading">The Local Table</h2>
+            <p class="dining-subhead">The best spots nearby, from morning coffee to late-night dinners</p>
+        </div>
+
+        <div class="dining-content" style="max-width: 1200px; margin: 0 auto;">
+            <!-- Category 1 -->
+            <div class="dining-category">
+                <h3 class="dining-cat-label">Coffee & Cafes</h3>
+                <div class="dining-grid">
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Groundwork+Coffee,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Groundwork Coffee</span><span
+                                class="dining-card-price">$</span></div>
+                        <div class="dining-card-type">Specialty Roaster</div>
+                        <p class="dining-card-desc">Organic, fair-trade roasts right in Hollywood. Perfect for grabbing
+                            an iced latte before a hike.</p>
+                        <div class="dining-card-footer">
+                            <span class="dining-card-dist">3 Min Drive</span>
+                            <span class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Alcove+Cafe+%26+Bakery,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Alcove Cafe & Bakery</span><span
+                                class="dining-card-price">$$</span></div>
+                        <div class="dining-card-type">All-Day Cafe & Bakery</div>
+                        <p class="dining-card-desc">Charming outdoor patio seating. Famous for their massive slices of
+                            cake and hearty breakfasts.</p>
+                        <div class="dining-card-footer">
+                            <span class="dining-card-dist">5 Min Drive</span>
+                            <span class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Bru+Coffeebar,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Bru Coffeebar</span><span
+                                class="dining-card-price">$</span></div>
+                        <div class="dining-card-type">Single-Origin Coffee</div>
+                        <p class="dining-card-desc">Artisanal brews from rotating roasters, served in an industrial-chic
+                            hangout space.</p>
+                        <div class="dining-card-footer">
+                            <span class="dining-card-dist">5 Min Drive</span>
+                            <span class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Maru+Coffee,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Maru Coffee</span><span
+                                class="dining-card-price">$</span></div>
+                        <div class="dining-card-type">Minimalist Pour-Over</div>
+                        <p class="dining-card-desc">Exceptional beans and precise brewing techniques. Try their
+                            signature Cream Top iced coffee.</p>
+                        <div class="dining-card-footer">
+                            <span class="dining-card-dist">7 Min Drive</span>
+                            <span class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="dining-category">
+                <h3 class="dining-cat-label">Restaurants</h3>
+                <div class="dining-grid">
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Kismet,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Kismet</span><span
+                                class="dining-card-price">$$</span></div>
+                        <div class="dining-card-type">Cal-Med, Vegetable-Forward</div>
+                        <p class="dining-card-desc">Bright, casual spot serving inventive Middle Eastern leaning plates
+                            that are highly shareable.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">4 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Musso+%26+Frank+Grill,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Musso & Frank Grill</span><span
+                                class="dining-card-price">$$$</span></div>
+                        <div class="dining-card-type">Classic American</div>
+                        <p class="dining-card-desc">Hollywood's oldest restaurant. Legendary martinis, red leather
+                            booths, and old-school waiter service.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">5 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Figaro+Bistrot,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Figaro Bistrot</span><span
+                                class="dining-card-price">$$</span></div>
+                        <div class="dining-card-type">French Bistro</div>
+                        <p class="dining-card-desc">Transport yourself to Paris with escargot, wine, and sidewalk
+                            seating perfect for people-watching.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">5 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Osteria+Mozza,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Osteria Mozza</span><span
+                                class="dining-card-price">$$$</span></div>
+                        <div class="dining-card-type">Italian, Upscale</div>
+                        <p class="dining-card-desc">Nancy Silverton's Michelin-starred Italian masterpiece featuring a
+                            dedicated mozzarella bar.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">7 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Cafe+Stella,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Cafe Stella</span><span
+                                class="dining-card-price">$$$</span></div>
+                        <div class="dining-card-type">French, Date Night</div>
+                        <p class="dining-card-desc">Romantic, dimly-lit French institution nestled in Sunset Junction
+                            with an excellent cocktail bar.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">8 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Edendale,+Los+Angeles"
+                        target="_blank" class="dining-card">
+                        <div class="dining-card-header"><span class="dining-card-title">Edendale</span><span
+                                class="dining-card-price">$$</span></div>
+                        <div class="dining-card-type">Modern American</div>
+                        <p class="dining-card-desc">Housed in a historic 1920s firehouse. Incredible massive back patio
+                            for drinks and dinner.</p>
+                        <div class="dining-card-footer"><span class="dining-card-dist">8 Min Drive</span><span
+                                class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3J: TESTIMONIALS SECTION -->
+    <section class="reviews-section reveal" id="reviews">
+        <div class="reviews-header">
+            <span class="reviews-label">Guest Reviews</span>
+            <h2 class="reviews-heading">The Reviews Are In</h2>
+            <p class="reviews-subhead">4.97 out of 5 from 59+ reviews</p>
+        </div>
+
+        <div class="marquee-container" id="marqueeContainer">
+            <!-- Col 1 -->
+            <div class="marquee-col" id="mCol1"></div>
+            <!-- Col 2 -->
+            <div class="marquee-col" id="mCol2" style="margin-top: -150px;"></div>
+            <!-- Col 3 -->
+            <div class="marquee-col" id="mCol3"></div>
+        </div>
+    </section>
+
+    <!-- 3K: CTA SECTION -->
+    <section class="cta-section" id="reserve">
+        <!-- Photo #10 (Outdoor Dining) -->
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b9948b43-d3f1-4c21-ba60-425e766a0c29.jpeg?im_w=1200"
+            alt="Hollywood Hills Escape" class="cta-bg">
+        <div class="cta-overlay"></div>
+        <div class="cta-content reveal">
+            <span class="cta-label">Book</span>
+            <h2 class="cta-heading">Your Hollywood Hills<br><span>Escape</span> Awaits</h2>
+            <p class="cta-sub">Come for the views. Stay for the vibe.</p>
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass"
+                style="display: inline-flex; justify-content: center;">
+                Check Availability
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3L: FOOTER -->
+    <footer class="site-footer">
+        <a href="#" class="footer-brand">The Artist Bungalow</a>
+        <p class="footer-tag">Where the hills meet the music.</p>
+        <div class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#neighborhood">Neighborhood</a>
+            <a href="#dining">Dining</a>
+            <a href="#reviews">Reviews</a>
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank">Reserve</a>
+        </div>
+        <div class="footer-meta">Hollywood Hills, Los Angeles</div>
+    </footer>
+
+    <script>
+        /* =========================================
+           PHASE 4: JAVASCRIPT BEHAVIORS
+           ========================================= */
+
+        // 1. Scroll Restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'auto';
+        }
+
+        // --- GLOBAL SELECTORS ---
+        const siteNav = document.getElementById('siteNav');
+        const heroWrapper = document.getElementById('heroWrapper');
+        const heroSplash = document.getElementById('heroSplash');
+        const heroSticky = document.getElementById('heroSticky');
+        const heroBg = document.getElementById('heroBg');
+        const splashIndicator = document.getElementById('splashIndicator');
+        const typewriterText = document.getElementById('typewriterText');
+
+        // 2. Typewriter Logic
+        const scripts = [
+            "EXT. HOLLYWOOD HILLS - DAY\nA bungalow perched above the sweeping city.\nThe kind of place that feels like yours the moment you walk in.",
+            "EXT. HOLLYWOOD HILLS - GOLDEN HOUR\nA bungalow kissed by the canyon sun.\nThe kind of place you find and never want to leave...",
+            "EXT. HOLLYWOOD HILLS - MAGIC HOUR\nA glowing retreat above the noise.\nThe kind of place where every morning feels like the opening scene."
+        ];
+
+        let typeScript = scripts[Math.floor(Math.random() * scripts.length)];
+        let typeIndex = 0;
+        let isTyping = true;
+        let typeTimeout;
+        let displayedStr = "";
+
+        // Give the cursor an initial home while waiting
+        typewriterText.innerHTML = '<span class="typewriter-cursor"></span>';
+
+        function typeChar() {
+            if (!isTyping) return;
+            if (typeIndex < typeScript.length) {
+                let char = typeScript.charAt(typeIndex);
+                if (char === '\n') {
+                    displayedStr += '<br>';
+                } else {
+                    displayedStr += char;
+                }
+                typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
+                typeIndex++;
+
+                let delay = 26 + Math.random() * 25; // Slowed down by ~10%
+                if (char === '\n') delay = 350;
+                typeTimeout = setTimeout(typeChar, delay);
+            } else {
+                finishTypewriter();
+            }
+        }
+
+        function finishTypewriter() {
+            isTyping = false;
+            clearTimeout(typeTimeout);
+            displayedStr = typeScript.replace(/\n/g, '<br>');
+            typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
+            splashIndicator.style.opacity = '1';
+            setTimeout(() => {
+                const cursor = typewriterText.querySelector('.typewriter-cursor');
+                if (cursor) cursor.style.opacity = '0';
+            }, 2000);
+        }
+
+        function skipTypewriter() {
+            finishTypewriter();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' && isTyping) skipTypewriter();
+        });
+
+        // 3. Hero Scroll Handler (rAF)
+        let ticking = false;
+        function updateHeroScroll() {
+            const rect = heroWrapper.getBoundingClientRect();
+            // Start at top of wrapper, end when scroll passes scrollHeight
+            const scrollDist = -rect.top;
+            const scrollHeight = window.innerWidth > 900 ? 1500 : 900;
+
+            let progress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
+
+            // Typewriter Fade: 0 to 20%
+            let splashOpacity = 1 - (progress / 0.2);
+            if (splashOpacity < 0) splashOpacity = 0;
+            heroSplash.style.opacity = splashOpacity;
+            if (progress > 0.2) { heroSplash.style.display = 'none'; } else { heroSplash.style.display = 'flex'; }
+
+            // Clip-Path Reveal
+            // Starts: 10% 22%, 90% 22%, 90% 78%, 10% 78%
+            // Ends: 0% 0%, 100% 0%, 100% 100%, 0% 100%
+            let hInset = 10 * (1 - progress);
+            let vInsetTop = 22 * (1 - progress);
+            let vInsetBot = 100 - (22 * (1 - progress));
+            heroSticky.style.clipPath = `polygon(${hInset}% ${vInsetTop}%, ${100 - hInset}% ${vInsetTop}%, ${100 - hInset}% ${vInsetBot}%, ${hInset}% ${vInsetBot}%)`;
+
+            // Opacity fade in
+            heroSticky.style.opacity = Math.min(1, progress * 2);
+
+            // Background Zoom: 1.5 -> 1
+            heroBg.style.transform = `scale(${1.5 - (0.5 * progress)})`;
+
+            // Hero Content Fade (40-65%)
+            let contentOpacity = (progress - 0.4) / 0.25;
+            contentOpacity = Math.max(0, Math.min(1, contentOpacity));
+            document.querySelector('.hero-content').style.opacity = contentOpacity;
+
+            // Nav Bar Fade (60-85%)
+            let navOpacity = (progress - 0.6) / 0.25;
+            navOpacity = Math.max(0, Math.min(1, navOpacity));
+            siteNav.style.opacity = navOpacity;
+            siteNav.style.pointerEvents = navOpacity > 0.8 ? 'auto' : 'none';
+
+            // Glassmorphism check
+            if (window.scrollY > 80 && progress > 0.6) {
+                siteNav.classList.add('scrolled');
+            } else {
+                siteNav.classList.remove('scrolled');
+            }
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) { window.requestAnimationFrame(updateHeroScroll); ticking = true; }
+        });
+
+        // 4. Nav Scroll Spy
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links .nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const sectionTop = sec.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = sec.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 5. Mobile Menu Toggle
+        // In a real build, we'd create a full screen overlay. Keeping it simple here via classes if implemented
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            // Simplified overlay logic
+            let overlay = document.querySelector('.mobile-menu-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'mobile-menu-overlay';
+                Object.assign(overlay.style, {
+                    position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+                    background: 'var(--onyx)', zIndex: 999, display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center', gap: '2rem'
+                });
+                overlay.innerHTML = `
+                    <button class="menu-close" style="position:absolute; top:2rem; right:5vw; background:none; border:none; color:white; font-size:2rem;">&times;</button>
+                    <a href="#about" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">About</a>
+                    <a href="#gallery" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Gallery</a>
+                    <a href="#neighborhood" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Neighborhood</a>
+                    <a href="#dining" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Dining</a>
+                    <a href="#reviews" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Reviews</a>
+                `;
+                document.body.appendChild(overlay);
+                overlay.querySelectorAll('a, .menu-close').forEach(el => {
+                    el.addEventListener('click', () => overlay.style.display = 'none');
+                });
+            } else {
+                overlay.style.display = 'flex';
+            }
+        });
+
+        // 6. Scroll Reveal (IntersectionObserver)
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "-60px" });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+
+        // 7. Gallery Drag & Auto-scroll
+        const galleryContainer = document.getElementById('galleryContainer');
+        const galleryTrack = document.getElementById('galleryTrack');
+        let gPos = 0;
+        let isDragging = false;
+        let startX, prevX;
+        let gVelocity = 0;
+        let gTicking = false;
+
+        // Duplicate the inner track for infinite looping
+        galleryTrack.innerHTML += galleryTrack.innerHTML;
+
+        function updateGallery() {
+            if (!isDragging) {
+                // Auto scroll 0.3px/frame + momentum
+                gPos -= (0.3 + gVelocity);
+                gVelocity *= 0.95; // Damping
+            }
+
+            // Loop check
+            let maxW = galleryTrack.scrollWidth / 2;
+            if (gPos <= -maxW) gPos += maxW;
+            if (gPos > 0) gPos -= maxW;
+
+            galleryTrack.style.transform = `translate3d(${gPos}px, 0, 0)`;
+            requestAnimationFrame(updateGallery);
+        }
+
+        // Drag events
+        const cursorGrab = "url('data:image/svg+xml;utf8,<svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"16\" fill=\"%23C49A3C\" opacity=\"0.9\"/><path d=\"M10 16l4-4v8zM22 16l-4-4v8z\" fill=\"white\"/></svg>') 16 16, auto";
+        const cursorGrabbing = "url('data:image/svg+xml;utf8,<svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"14\" fill=\"%23C49A3C\" opacity=\"1\"/><path d=\"M10 16l4-4v8zM22 16l-4-4v8z\" fill=\"white\"/></svg>') 16 16, auto";
+
+        galleryContainer.style.cursor = cursorGrab;
+
+        galleryContainer.addEventListener('mousedown', e => {
+            isDragging = true;
+            startX = e.pageX;
+            prevX = e.pageX;
+            gVelocity = 0;
+            galleryContainer.style.cursor = cursorGrabbing;
+            e.preventDefault();
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; galleryContainer.style.cursor = cursorGrab; });
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            const delta = e.pageX - prevX;
+            gPos += delta;
+            gVelocity = -delta * 0.1; // momentum impulse
+            prevX = e.pageX;
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        lightbox.addEventListener('click', e => {
+            if (e.target !== lightboxImg) {
+                closeLightbox();
+            }
+        });
+
+        galleryTrack.addEventListener('click', e => {
+            if (Math.abs(gVelocity) > 2) return; // Prevent click if dragging
+            if (e.target.tagName === 'IMG') {
+                lightboxImg.src = e.target.src.replace('?im_w=1200', '?im_w=2560'); // 4k uprez
+                lightbox.classList.add('active');
+            }
+        });
+
+        document.querySelectorAll('.lightbox-trigger').forEach(el => {
+            el.addEventListener('click', e => {
+                lightboxImg.src = e.target.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => lightboxImg.src = '', 400); // clear after wipe
+        }
+
+        // 8. Neighborhood Interactions & Map Init
+        const detailPanel = document.getElementById('detailPanel');
+        const panelOverlay = document.getElementById('panelOverlay');
+        const dpTitle = document.getElementById('dpTitle');
+        const dpDesc = document.getElementById('dpDesc');
+        const dpIcon = document.getElementById('dpIcon');
+        const dpTime = document.getElementById('dpTime');
+        const dpMap = document.getElementById('dpMap');
+        let mapLibreInstance;
+        let homeMarker, destMarker;
+
+        const locData = {
+            'bowl': { title: 'Hollywood Bowl', time: '5 MIN WALK', desc: 'The world\'s most famous outdoor amphitheater. Catching a summer concert under the stars here is practically mandatory.', coords: [-118.3379, 34.1122], icon: 'vignette_hollywood_bowl.png', photos: ['hollywood_bowl_aerial_amphitheater.jpg', 'hollywood_bowl_shell_daytime.jpg', 'hollywood_bowl_evening_lights.png', 'hollywood_bowl_orchestra_performance.png', 'hollywood_bowl_concert_crowd_night.jpg'] },
+            'runyon': { title: 'Runyon Canyon', time: '8 MIN DRIVE', desc: 'LA\'s famous hiking trail offering panoramic views of the entire basin, from downtown to the Pacific.', coords: [-118.3506, 34.1042], icon: 'vignette_runyon_canyon.png', photos: ['runyon_canyon_hikers_winding_trail_golden_hour.jpg', 'runyon_canyon_wide_view_hills_city_clear_day.jpg', 'runyon_canyon_la_skyline_panorama_hazy.jpg', 'runyon_canyon_hilltop_trail_hazy_city_view.jpg', 'runyon_canyon_golden_sunset_hills_silhouette.jpg'] },
+            'griffith': { title: 'Griffith Observatory', time: '12 MIN DRIVE', desc: 'Iconic art deco landmark. Drive up for sunset to watch the city lights turn on across the basin.', coords: [-118.3004, 34.1184], icon: 'vignette_griffith_observatory.png', photos: ['griffith_observatory_archway_telescope_hollywood_sign_view.jpg', 'griffith_observatory_front_facade_crowded_sunset.jpg', 'griffith_park_aerial_hills_and_city_skyline.jpg', 'griffith_observatory_aerial_with_downtown_skyline.jpg', 'griffith_observatory_illuminated_at_dusk.jpg'] },
+            'walk': { title: 'Walk of Fame', time: '10 MIN DRIVE', desc: 'The heart of historic Hollywood. See the stars, the Chinese Theatre, and the Roosevelt Hotel.', coords: [-118.3287, 34.1016], icon: 'vignette_walk_of_fame.png', photos: ['hollywood_blvd_chinese_theatre_street_view.jpg', 'hollywood_blvd_four_ladies_gateway_sculpture_palms.jpg', 'walk_of_fame_david_bowie_star.jpg', 'hollywood_blvd_red_convertible_hard_rock_dolby.jpg', 'hollywood_blvd_ripleys_intersection.jpg'] },
+            'universal': { title: 'Universal Studios', time: '12 MIN DRIVE', desc: 'The ultimate Hollywood backstage experience and theme park, just over the hill in Studio City.', coords: [-118.3533, 34.1381], icon: 'vignette_universal_studios.png', photos: ['universal_studios_1.jpg', 'universal_studios_2.jpg', 'universal_studios_3.jpg', 'universal_studios_4.jpg', 'universal_studios_5.jpg'] },
+            'warner': { title: 'Warner Bros. Studio', time: '15 MIN DRIVE', desc: 'Take a cart tour through the historic working lots where countless classic movies and TV shows are filmed.', coords: [-118.3331, 34.1481], icon: 'vignette_warner_bros.png', photos: ['warner_bros_studio_tour_entrance_and_water_tower.jpg', 'warner_bros_2.jpg', 'warner_bros_3.jpg', 'warner_bros_4.jpg', 'warner_bros_5.jpg'] },
+            'reservoir': { title: 'Hollywood Reservoir', time: '10 MIN DRIVE', desc: 'A serene 3.3-mile paved loop around a lake with incredible, unobstructed views of the Hollywood Sign.', coords: [-118.3340, 34.1190], icon: 'vignette_hollywood_reservoir.png', photos: ['hollywood_sign_clear_blue_sky_front_view.jpg', 'hollywood_sign_distant_hills_golden_sunset.jpg', 'hollywood_sign_with_tower_blue_clouds.jpg', 'hollywood_sign_hills_distant_purple_sunset_landscape.jpg', 'hollywood_sign_hiker_with_dog_golden_hour.jpg'] }
+        };
+
+        function activateLocation(id) {
+            document.querySelectorAll('.survey-bg').forEach(el => el.classList.remove('active'));
+            const bg = document.getElementById('bg-' + id);
+            if (bg) bg.classList.add('active');
+        }
+
+        function openDetailPanel(id) {
+            const data = locData[id];
+            dpTitle.textContent = data.title;
+            dpDesc.textContent = data.desc;
+            dpIcon.src = data.icon;
+            dpTime.querySelector('span').textContent = data.time;
+
+            let photosHtml = '';
+            data.photos.forEach((p, idx) => {
+                let imgClass = 'dp-photo-half';
+                if (idx % 3 === 0) imgClass = 'dp-photo-full';
+                let tag = `<img src="${p}" class="${imgClass} lightbox-trigger">`;
+
+                if (idx % 3 === 0) {
+                    if (idx !== 0) photosHtml += '</div>'; // close previous grid
+                    photosHtml += tag;
+                    if (idx < data.photos.length - 1) photosHtml += '<div class="dp-photo-grid">';
+                } else {
+                    photosHtml += tag;
+                    if (idx % 3 === 2 || idx === data.photos.length - 1) photosHtml += '</div>';
+                }
+            });
+            document.querySelector('.dp-photos').innerHTML = photosHtml;
+
+            // Re-bind lightbox
+            document.querySelectorAll('.dp-photos .lightbox-trigger').forEach(el => {
+                el.addEventListener('click', e => {
+                    document.getElementById('lightboxImg').src = e.target.src;
+                    document.getElementById('lightbox').classList.add('active');
+                });
+            });
+
+            panelOverlay.classList.add('active');
+            detailPanel.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            function getRouteGeoJson(dest) {
+                return {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [[-118.3387, 34.1158], dest]
+                    }
+                };
+            }
+
+            setTimeout(() => {
+                if (!mapLibreInstance) {
+                    mapLibreInstance = new maplibregl.Map({
+                        container: 'dpMap',
+                        style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+                        center: data.coords,
+                        zoom: 13
+                    });
+
+                    // Add home marker
+                    homeMarker = new maplibregl.Marker({ color: "#C2614B" })
+                        .setLngLat([-118.3387, 34.1158])
+                        .addTo(mapLibreInstance);
+
+                    // Add dest marker
+                    destMarker = new maplibregl.Marker({ color: "#C49A3C" })
+                        .setLngLat(data.coords)
+                        .addTo(mapLibreInstance);
+
+                    mapLibreInstance.on('load', () => {
+                        mapLibreInstance.addSource('route', {
+                            'type': 'geojson',
+                            'data': getRouteGeoJson(data.coords)
+                        });
+                        mapLibreInstance.addLayer({
+                            'id': 'route',
+                            'type': 'line',
+                            'source': 'route',
+                            'layout': { 'line-join': 'round', 'line-cap': 'round' },
+                            'paint': { 'line-color': '#C49A3C', 'line-width': 2, 'line-dasharray': [4, 4] }
+                        });
+                        const bounds = new maplibregl.LngLatBounds();
+                        bounds.extend([-118.3387, 34.1158]);
+                        bounds.extend(data.coords);
+                        mapLibreInstance.fitBounds(bounds, { padding: 40 });
+                    });
+                } else {
+                    destMarker.setLngLat(data.coords);
+                    if (mapLibreInstance.getSource('route')) {
+                        mapLibreInstance.getSource('route').setData(getRouteGeoJson(data.coords));
+                        const bounds = new maplibregl.LngLatBounds();
+                        bounds.extend([-118.3387, 34.1158]);
+                        bounds.extend(data.coords);
+                        mapLibreInstance.fitBounds(bounds, { padding: 40, duration: 1000 });
+                    }
+                }
+            }, 600);
+        }
+
+        function closeDetailPanel() {
+            panelOverlay.classList.remove('active');
+            detailPanel.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        // 9. Testimonials Marquee Generation & Auto-Scroll
+        const reviewsData = [
+            { n: "Sara", d: "Jan 2026", c: "brass", t: "The panoramic views from the deck are stunning. Spent hours just watching the city lights come alive." },
+            { n: "Carley", d: "Dec 2025", c: "terracotta", t: "The upright piano was such a special touch. The acoustics in that living room are genuinely wonderful." },
+            { n: "Rachel", d: "Oct 2025", c: "olive", t: "Unbelievably quiet considering how close you are to the Bowl. The steam shower was a daily luxury." },
+            { n: "David", d: "Aug 2025", c: "ocean", t: "Impeccably curated art throughout the house. It really lives up to the 'Artist Bungalow' name." },
+            { n: "Maria", d: "Jul 2025", c: "terracotta", t: "The tropical garden completely hides you from the world. A truly private sanctuary in the hills." },
+            { n: "Jakob", d: "Jan 2026", c: "brass", t: "Waking up to canyon light pouring through those massive windows was the highlight of our trip." },
+            { n: "Thomas", d: "Jan 2026", c: "ocean", t: "You can walk down to the Bowl in minutes. The location is an absolute dream for concert-goers." },
+            { n: "Synthia", d: "Nov 2025", c: "olive", t: "Everything feels solid, Spanish, and historic, but the amenities are completely modern and luxe." },
+            { n: "Nate", d: "Sep 2025", c: "brass", t: "The kitchen has everything you need to cook a real dinner, which we happily did while looking over LA." },
+            { n: "Anika", d: "Jun 2025", c: "terracotta", t: "The crisp white stucco and dark wood beams are textbook California cool. Flawless aesthetic." },
+            { n: "Ellen", d: "Feb 2026", c: "olive", t: "The outdoor dining patio under the stars is magnificent. We cancelled our reservations to stay in." },
+            { n: "Kevin", d: "May 2025", c: "ocean", t: "Incredibly fast wifi for working, but between the views and the piano, you probably won't want to." },
+            { n: "Liz", d: "Sep 2025", c: "brass", t: "Five-star hospitality. The house runs beautifully and everything was spotlessly clean upon arrival." },
+            { n: "Brett", d: "Aug 2025", c: "terracotta", t: "Those deep soaking tubs and the steam shower... I have never felt more relaxed at an Airbnb." },
+            { n: "Jessica", d: "Apr 2025", c: "olive", t: "Felt like living in a mid-century architectural digest spread. The attention to detail is remarkable." },
+            { n: "Reena", d: "Feb 2026", c: "ocean", t: "Perfect weekend retreat. You overlook the noise of Hollywood but you can't hear a single thing." },
+            { n: "Linda", d: "Feb 2026", c: "brass", t: "Loved having my morning coffee on the deck while the hawks circled the canyon. Pure magic." },
+            { n: "Priya", d: "Mar 2025", c: "terracotta", t: "Every square inch of this bungalow is photogenic. The light in the afternoon is absolutely golden." }
+        ];
+
+        function createCardHtml(r) {
+            const gender = ['Sara', 'Carley', 'Rachel', 'Maria', 'Synthia', 'Anika', 'Ellen', 'Liz', 'Jessica', 'Reena', 'Linda', 'Priya'].includes(r.n) ? 'women' : 'men';
+            // Better hash to avoid collisions like Sara vs Synthia
+            let seed = 0;
+            for (let i = 0; i < r.n.length; i++) seed += r.n.charCodeAt(i) * (i + 1);
+            const avatarUrl = 'https://randomuser.me/api/portraits/' + gender + '/' + (seed % 99) + '.jpg';
+            return `
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">${r.t}</p>
+                <div class="review-footer">
+                    <img class="review-avatar" src="${avatarUrl}" alt="${r.n}" style="object-fit:cover;">
+                    <div class="review-meta">
+                        <span class="review-name">${r.n}</span>
+                        <span class="review-date">${r.d}</span>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        const col1 = document.getElementById('mCol1');
+        const col2 = document.getElementById('mCol2');
+        const col3 = document.getElementById('mCol3');
+
+        let c1Html = '', c2Html = '', c3Html = '';
+        for (let i = 0; i < 6; i++) {
+            c1Html += createCardHtml(reviewsData[i]);
+            c2Html += createCardHtml(reviewsData[i + 6]);
+            c3Html += createCardHtml(reviewsData[i + 12]);
+        }
+        // Duplicate for seamless scroll
+        col1.innerHTML = c1Html + c1Html;
+        col2.innerHTML = c2Html + c2Html;
+        col3.innerHTML = c3Html + c3Html;
+
+        let rPos1 = 0, rPos3 = 0;
+        let maxHInitial = col1.scrollHeight / 2;
+        let rPos2 = -maxHInitial;
+        let isMarqueePaused = false;
+
+        document.querySelectorAll('.marquee-col').forEach(col => {
+            col.addEventListener('mouseenter', () => isMarqueePaused = true);
+            col.addEventListener('mouseleave', () => isMarqueePaused = false);
+            col.addEventListener('touchstart', () => isMarqueePaused = true, { passive: true });
+            col.addEventListener('touchend', () => isMarqueePaused = false);
+        });
+
+        function updateMarquee() {
+            if (!isMarqueePaused) {
+                // Speeds: 0.26, -0.195, 0.2275 (middle reversed)
+                rPos1 -= 0.26;
+                rPos2 += 0.195;
+                rPos3 -= 0.2275;
+
+                // Loop reset
+                const maxH = col1.scrollHeight / 2;
+                if (rPos1 <= -maxH) rPos1 += maxH;
+                if (rPos3 <= -maxH) rPos3 += maxH;
+                if (rPos2 >= 0) rPos2 -= maxH;
+
+                col1.style.transform = `translate3d(0, ${rPos1}px, 0)`;
+                col2.style.transform = `translate3d(0, ${rPos2}px, 0)`;
+                col3.style.transform = `translate3d(0, ${rPos3}px, 0)`;
+            }
+            requestAnimationFrame(updateMarquee);
+        }
+
+        // 10. Smooth Scroll Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId === '') return;
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize Boot
+        window.addEventListener('load', () => {
+            typeChar(); // Start typewriter
+            requestAnimationFrame(updateGallery); // Start infinite gallery
+            requestAnimationFrame(updateMarquee); // Start infinite testimonials
+        });
+
+    </script>
+</body>
+
+</html>

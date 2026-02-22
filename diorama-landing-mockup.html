@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Artist Bungalow | Hollywood Hills</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --onyx: #1A1A1A;
+  --brass: #C49A3C;
+  --ivory: #FAF6F0;
+  --terracotta: #C2614B;
+  --olive: #5A6B4A;
+  --ocean: #3B6B8A;
+  --sand: #D4C5A9;
+  --blush: #E8CFC0;
+  --cream: #F0E8D8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Space Grotesk', sans-serif; background: var(--ivory); color: var(--onyx); line-height: 1.6; overflow-x: hidden; }
+.font-display { font-family: 'Instrument Serif', serif; }
+.font-impact { font-family: 'Bebas Neue', sans-serif; }
+.font-body { font-family: 'Space Grotesk', sans-serif; }
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+  transition: all 0.5s;
+}
+nav.scrolled { background: rgba(250,246,240,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 5rem; }
+.nav-brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.15em; color: var(--ivory); text-decoration: none; transition: color 0.5s; }
+nav.scrolled .nav-brand { color: var(--onyx); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,246,240,0.8); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--brass); }
+nav.scrolled .nav-links a { color: rgba(26,26,26,0.7); }
+nav.scrolled .nav-links a:hover { color: var(--brass); }
+.nav-reserve { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--brass); color: var(--ivory); padding: 0.625rem 1.25rem; text-decoration: none; transition: background 0.3s; }
+.nav-reserve:hover { background: rgba(196,154,60,0.9); }
+
+/* ---- HERO ---- */
+.hero { position: relative; height: 100vh; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; transform: scale(1.1); will-change: transform; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,26,26,0.4), rgba(26,26,26,0.2), rgba(26,26,26,0.6)); }
+.hero-content { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 5rem; padding-left: 2.5rem; padding-right: 2.5rem; max-width: 80rem; margin: 0 auto; }
+.hero-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(250,246,240,0.7); margin-bottom: 1rem; animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+.hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.02em; color: var(--ivory); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s both; }
+.hero h1 em { color: var(--brass); }
+.hero-sub { font-size: 0.9rem; color: rgba(250,246,240,0.6); max-width: 28rem; margin-top: 1rem; line-height: 1.7; animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.7s both; }
+.hero-buttons { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.5rem; animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.9s both; }
+.hero-cta { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--brass); color: var(--ivory); padding: 0.875rem 1.75rem; text-decoration: none; transition: all 0.3s; }
+.hero-cta:hover { background: rgba(196,154,60,0.85); }
+.hero-explore { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,246,240,0.7); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,0.3); padding-bottom: 2px; transition: all 0.3s; }
+.hero-explore:hover { color: var(--ivory); border-color: var(--ivory); }
+.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(26,26,26,0.5); backdrop-filter: blur(8px); border-top: 1px solid rgba(250,246,240,0.1); animation: fadeIn 0.6s ease 1.2s both; }
+.hero-stats-inner { max-width: 80rem; margin: 0 auto; padding: 0.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+.hero-stats-left { display: flex; align-items: center; gap: 1.5rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,246,240,0.7); }
+.hero-stats-sep { color: rgba(250,246,240,0.3); }
+.hero-stats-right { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.08em; color: rgba(250,246,240,0.7); }
+.hero-stats-right .star { color: var(--brass); }
+
+/* ---- INTRO ---- */
+.intro { padding: 6rem 2.5rem; }
+.intro-inner { max-width: 56rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+.intro-meta { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--brass); }
+.intro-sub { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.4); margin-top: 0.5rem; }
+.intro-text { font-family: 'Instrument Serif', serif; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.15; letter-spacing: -0.01em; }
+
+/* ---- DIVIDER ---- */
+.divider { max-width: 80rem; margin: 0 auto; padding: 0 2.5rem; }
+.divider hr { border: none; height: 1px; background: rgba(26,26,26,0.1); }
+
+/* ---- GALLERY ---- */
+.gallery { padding: 6rem 2.5rem; }
+.gallery-inner { max-width: 80rem; margin: 0 auto; }
+.gallery-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; }
+.section-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--brass); margin-bottom: 0.75rem; }
+.section-title { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.02em; }
+.gallery-count { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.4); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.gallery-item { position: relative; overflow: hidden; cursor: pointer; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item.hero-shot { grid-column: span 2; grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item .label { position: absolute; bottom: 1rem; left: 1rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ivory); opacity: 0; transition: opacity 0.5s; }
+.gallery-item:hover .label { opacity: 1; }
+.gallery-item::after { content: ''; position: absolute; inset: 0; background: rgba(26,26,26,0); transition: background 0.5s; }
+.gallery-item:hover::after { background: rgba(26,26,26,0.3); }
+
+/* ============================================================
+   DIORAMA INTERLUDE — replaces the old full-bleed photo break
+   ============================================================ */
+.diorama-break {
+  position: relative;
+  padding: 5rem 2.5rem;
+  background: var(--cream);
+  overflow: hidden;
+  text-align: center;
+}
+.diorama-break::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(ellipse, rgba(196,154,60,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.diorama-break-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.diorama-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.diorama-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+.diorama-img-wrap img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 50px rgba(26,26,26,0.15)) drop-shadow(0 8px 16px rgba(26,26,26,0.1));
+}
+/* Placeholder box when no image src is set */
+.diorama-placeholder-v2 {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, rgba(26,26,26,0.03) 0%, rgba(26,26,26,0.06) 100%);
+  border: 2px dashed rgba(196,154,60,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(26,26,26,0.35);
+}
+.diorama-placeholder-v2 .note {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.diorama-text {
+  text-align: left;
+}
+.diorama-text .section-label { margin-bottom: 1rem; }
+.diorama-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: var(--onyx);
+  margin-bottom: 1.5rem;
+}
+.diorama-subtext {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(26,26,26,0.5);
+  line-height: 1.6;
+}
+
+/* ---- ABOUT ---- */
+.about { padding: 6rem 2.5rem; }
+.about-inner { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.about-image { position: relative; }
+.about-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.about-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--brass); padding: 1rem 1.5rem; }
+.about-badge-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.1em; color: var(--ivory); }
+.about-badge-sub { font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(250,246,240,0.8); }
+.about-content { display: flex; flex-direction: column; gap: 2.5rem; }
+.about-body { font-size: 0.95rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+.amenities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.amenity-name { font-size: 0.85rem; font-weight: 500; }
+.amenity-desc { font-size: 0.7rem; color: rgba(26,26,26,0.5); margin-top: 0.15rem; }
+
+/* ---- NEIGHBORHOOD ---- */
+.neighborhood { padding: 6rem 2.5rem; }
+.neighborhood-inner { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.neighborhood-body { font-size: 0.95rem; color: rgba(26,26,26,0.7); line-height: 1.7; margin-bottom: 2.5rem; }
+.hood-item { display: flex; align-items: start; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid rgba(26,26,26,0.08); }
+.hood-item:last-child { border-bottom: none; }
+.hood-place { font-size: 0.85rem; font-weight: 500; }
+.hood-note { font-size: 0.7rem; color: rgba(26,26,26,0.4); margin-top: 0.15rem; }
+.hood-time { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); white-space: nowrap; margin-left: 1rem; }
+.neighborhood-photos { display: flex; flex-direction: column; gap: 0.5rem; }
+.neighborhood-photos img { width: 100%; object-fit: cover; }
+.neighborhood-photos .main { aspect-ratio: 4/3; }
+.neighborhood-photos .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.neighborhood-photos .pair img { aspect-ratio: 1; }
+
+/* ---- HOSTS (DARK) ---- */
+.hosts { background: var(--onyx); padding: 6rem 2.5rem; }
+.hosts-inner { max-width: 56rem; margin: 0 auto; text-align: center; }
+.hosts-title { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--ivory); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+.hosts-body { font-size: 0.95rem; color: rgba(250,246,240,0.6); line-height: 1.7; max-width: 36rem; margin: 0 auto; }
+.hosts-stats { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+.hosts-stat { text-align: center; }
+.hosts-stat-value { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--brass); letter-spacing: 0.08em; }
+.hosts-stat-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,246,240,0.4); margin-top: 0.25rem; }
+.hosts-divider { width: 1px; height: 2.5rem; background: rgba(250,246,240,0.15); }
+
+/* ============================================================
+   HOSTS DIORAMA ACCENT — small floating diorama in hosts section
+   ============================================================ */
+.hosts-diorama {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.hosts-diorama img {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+  opacity: 0.7;
+  transition: opacity 0.4s;
+}
+.hosts-diorama img:hover { opacity: 1; }
+.hosts-diorama .diorama-placeholder-sm {
+  width: 180px;
+  height: 180px;
+  border: 1px dashed rgba(196,154,60,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250,246,240,0.25);
+  opacity: 0.5;
+}
+
+/* ---- BOOK CTA ---- */
+.book-cta { position: relative; padding: 10rem 2.5rem; overflow: hidden; }
+.book-cta-bg { position: absolute; inset: 0; }
+.book-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+.book-cta-bg::after { content: ''; position: absolute; inset: 0; background: rgba(26,26,26,0.5); }
+.book-cta-content { position: relative; z-index: 10; max-width: 48rem; margin: 0 auto; text-align: center; }
+.book-title { font-family: 'Instrument Serif', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); color: var(--ivory); letter-spacing: -0.02em; margin-bottom: 1rem; }
+.book-title em { color: var(--brass); }
+.book-body { font-size: 0.95rem; color: rgba(250,246,240,0.6); line-height: 1.7; max-width: 32rem; margin: 0 auto 2rem; }
+.book-btn { display: inline-block; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--brass); color: var(--ivory); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; }
+.book-btn:hover { background: rgba(196,154,60,0.85); }
+
+/* ---- FOOTER ---- */
+footer { background: var(--onyx); padding: 3rem 2.5rem; }
+.footer-inner { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: start; }
+.footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.15em; color: var(--ivory); }
+.footer-brand-sub { font-size: 0.65rem; color: rgba(250,246,240,0.3); margin-top: 0.5rem; }
+.footer-nav { display: flex; gap: 2rem; }
+.footer-nav a { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,246,240,0.4); text-decoration: none; transition: color 0.3s; }
+.footer-nav a:hover { color: var(--brass); }
+.footer-right { text-align: right; }
+.footer-airbnb { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brass); text-decoration: none; transition: color 0.3s; }
+.footer-airbnb:hover { color: rgba(196,154,60,0.8); }
+.footer-hosted { font-size: 0.65rem; color: rgba(250,246,240,0.2); margin-top: 0.75rem; }
+.footer-hr { border: none; height: 1px; background: rgba(250,246,240,0.06); margin: 2rem 0; max-width: 80rem; margin-left: auto; margin-right: auto; }
+.footer-copy { max-width: 80rem; margin: 0 auto; font-size: 0.55rem; color: rgba(250,246,240,0.2); letter-spacing: 0.08em; }
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .intro-inner { grid-template-columns: 1fr; gap: 1rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item.hero-shot { grid-column: span 2; }
+  .diorama-break-inner { grid-template-columns: 1fr; text-align: center; }
+  .diorama-text { text-align: center; }
+  .about-inner { grid-template-columns: 1fr; }
+  .neighborhood-inner { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-right { text-align: left; }
+}
+
+/* Photo placeholders */
+.photo-placeholder {
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sand);
+  border: 1px solid rgba(212,197,169,0.5);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">THE ARTIST BUNGALOW</a>
+    <div class="nav-links">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#neighborhood">Neighborhood</a>
+      <a href="#book">Book</a>
+      <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="nav-reserve">Reserve</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d2236a4b-bcf1-4993-91d2-85a710f8192e.jpeg?im_w=1200" alt="Panoramic view">
+  </div>
+  <div class="hero-content">
+    <p class="hero-label">Hollywood Hills &middot; Los Angeles</p>
+    <h1>The Artist<br><em>Bungalow</em></h1>
+    <p class="hero-sub">Where the hills meet the music. A light-filled retreat perched above the Hollywood Bowl, with sweeping views from city to ocean.</p>
+    <div class="hero-buttons">
+      <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="hero-cta">Book your stay</a>
+      <a href="#gallery" class="hero-explore">Explore</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hero-stats-left">
+        <span>2 Bedrooms</span>
+        <span class="hero-stats-sep">|</span>
+        <span>2 Baths</span>
+        <span class="hero-stats-sep">|</span>
+        <span>Entire Home</span>
+      </div>
+      <div class="hero-stats-right">
+        <span class="star">&#9733;</span>
+        <span>4.97</span>
+        <span style="color:rgba(250,246,240,0.4); margin-left:0.25rem">Superhost</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STATEMENT -->
+<section class="intro">
+  <div class="intro-inner">
+    <div>
+      <p class="intro-meta">Est. 2024</p>
+      <p class="intro-sub">Guest Favorite</p>
+    </div>
+    <p class="intro-text font-display">
+      An intimate, art-filled retreat in the Hollywood Hills.
+      Steps from the Hollywood Bowl, with sweeping views from
+      downtown to the Pacific.
+    </p>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <div>
+        <p class="section-label">The Space</p>
+        <h2 class="section-title font-display">Gallery</h2>
+      </div>
+      <p class="gallery-count">12 Photos</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item hero-shot">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=1200" alt="Sun-filled living room" style="aspect-ratio:16/10">
+        <span class="label">Sun-filled living room</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d2236a4b-bcf1-4993-91d2-85a710f8192e.jpeg?im_w=720" alt="Panorama" style="aspect-ratio:1">
+        <span class="label">City-to-ocean panorama</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/0bc956c9-352c-4831-9e27-b16f2afe9e3d.jpeg?im_w=720" alt="Deck" style="aspect-ratio:1">
+        <span class="label">The deck</span>
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/69dc25b4-f315-41d1-a150-2a8504974878.jpeg?im_w=1200" alt="Primary bedroom" style="aspect-ratio:16/9">
+        <span class="label">Primary bedroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8080019c-281c-43af-b893-43ee20193232.jpeg?im_w=720" alt="Kitchen" style="aspect-ratio:1">
+        <span class="label">Kitchen and dining</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=720" alt="Exterior" style="aspect-ratio:1">
+        <span class="label">Spanish-style facade</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/10abb5a6-4d20-4c9d-881e-a42e28803185.jpeg?im_w=720" alt="Steam shower" style="aspect-ratio:1">
+        <span class="label">Steam shower</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d525b436-1a3c-4722-bca1-619373a234c4.jpeg?im_w=720" alt="Guest bedroom" style="aspect-ratio:1">
+        <span class="label">Guest bedroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/04325ef8-c51b-476a-9686-a64f9d1fff76.jpeg?im_w=720" alt="Garden" style="aspect-ratio:1">
+        <span class="label">Tropical garden</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIORAMA SECTION — replaces the old full-bleed photo break
+     "CLASSIC HOLLYWOOD MEETS CALIFORNIA COOL"
+     ============================================================ -->
+<section class="diorama-break">
+  <div class="diorama-break-inner">
+    <div class="diorama-visual">
+      <div class="diorama-img-wrap">
+        <img src="diorama.png" alt="The Artist Bungalow — Isometric Diorama">
+      </div>
+    </div>
+    <div class="diorama-text">
+      <p class="section-label">A Place Like No Other</p>
+      <div class="diorama-headline">CLASSIC<br>HOLLYWOOD<br>MEETS<br>CALIFORNIA<br>COOL</div>
+      <p class="diorama-subtext">Spanish-style charm, mid-century soul, and California sun. All in one little bungalow in the hills.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-image">
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=1200" alt="Sun-filled living room">
+      <div class="about-badge">
+        <div class="about-badge-title">SUPERHOST</div>
+        <div class="about-badge-sub">4.97 Stars</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div>
+        <p class="section-label">About the Space</p>
+        <h2 class="section-title font-display" style="margin-bottom:1.5rem">Creative energy meets California calm</h2>
+        <p class="about-body">
+          Perched on a quiet cul-de-sac in the Hollywood Hills, The Artist Bungalow
+          is a sun-drenched 2-bedroom retreat filled with original art, a piano, guitar,
+          and books. The kind of place where you slow down and feel something.
+        </p>
+        <p class="about-body" style="margin-top:1rem">
+          Step onto the deck for sweeping views stretching from downtown LA to the Pacific.
+          Walk five minutes downhill to the Hollywood Bowl. Come home to natural light
+          pouring through every room and the quiet hum of the hills.
+        </p>
+      </div>
+      <hr style="border:none; height:1px; background:rgba(26,26,26,0.1)">
+      <div>
+        <p class="section-label" style="margin-bottom:1.5rem">Highlights</p>
+        <div class="amenities-grid">
+          <div><div class="amenity-name">Sweeping Views</div><div class="amenity-desc">City lights to ocean, sunrise to sunset</div></div>
+          <div><div class="amenity-name">Piano &amp; Guitar</div><div class="amenity-desc">Upright piano and acoustic guitar</div></div>
+          <div><div class="amenity-name">Steam Shower</div><div class="amenity-desc">Full steam shower, spa-quality</div></div>
+          <div><div class="amenity-name">Sun-drenched</div><div class="amenity-desc">Floor-to-ceiling natural light</div></div>
+          <div><div class="amenity-name">Curated Art</div><div class="amenity-desc">Original works and collected pieces</div></div>
+          <div><div class="amenity-name">Private Deck</div><div class="amenity-desc">Striped umbrellas, panoramic views</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEIGHBORHOOD -->
+<section class="neighborhood" id="neighborhood">
+  <div class="neighborhood-inner">
+    <div>
+      <p class="section-label">The Neighborhood</p>
+      <h2 class="section-title font-display" style="margin-bottom:1.5rem">Above the city, in the heart of it all</h2>
+      <p class="neighborhood-body">
+        Tucked into the hills above the Hollywood Bowl, you're minutes from LA's
+        best hikes, restaurants, and cultural landmarks. But up here, it's just
+        birdsong, views, and the occasional coyote.
+      </p>
+      <div>
+        <div class="hood-item"><div><div class="hood-place">Hollywood Bowl</div><div class="hood-note">Walk downhill to concerts</div></div><div class="hood-time">5 min walk</div></div>
+        <div class="hood-item"><div><div class="hood-place">Runyon Canyon</div><div class="hood-note">Iconic LA hiking trails</div></div><div class="hood-time">8 min drive</div></div>
+        <div class="hood-item"><div><div class="hood-place">Griffith Observatory</div><div class="hood-note">The best view in LA</div></div><div class="hood-time">12 min drive</div></div>
+        <div class="hood-item"><div><div class="hood-place">Hollywood Farmers Market</div><div class="hood-note">Every Sunday morning</div></div><div class="hood-time">10 min drive</div></div>
+        <div class="hood-item"><div><div class="hood-place">Sunset Blvd dining</div><div class="hood-note">Every cuisine imaginable</div></div><div class="hood-time">7 min drive</div></div>
+        <div class="hood-item"><div><div class="hood-place">Lake Hollywood</div><div class="hood-note">The Hollywood Sign up close</div></div><div class="hood-time">6 min drive</div></div>
+      </div>
+    </div>
+    <div class="neighborhood-photos">
+      <img class="main" src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=1200" alt="Exterior">
+      <div class="pair">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/f2a0fe1c-b2f3-445a-91e5-dfd8784f50f0.jpeg?im_w=720" alt="Garden">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e3f592c9-d172-4f2a-a252-b9b153eedd0e.jpeg?im_w=720" alt="Palms">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="hosts">
+  <div class="hosts-inner">
+    <p class="section-label">Your Hosts</p>
+    <h2 class="hosts-title">Patrick &amp; Jimena</h2>
+    <p class="hosts-body">
+      We fell in love with this home for the same reasons our guests do: the light, the views,
+      and the feeling that you're somewhere special. We've filled it with art, music,
+      and everything you need to feel at home in the hills.
+    </p>
+    <div class="hosts-stats">
+      <div class="hosts-stat">
+        <div class="hosts-stat-value">4.97</div>
+        <div class="hosts-stat-label">Rating</div>
+      </div>
+      <div class="hosts-divider"></div>
+      <div class="hosts-stat">
+        <div class="hosts-stat-value">59+</div>
+        <div class="hosts-stat-label">Reviews</div>
+      </div>
+      <div class="hosts-divider"></div>
+      <div class="hosts-stat">
+        <div class="hosts-stat-value">&#9733;</div>
+        <div class="hosts-stat-label">Superhost</div>
+      </div>
+    </div>
+
+    <!-- Small diorama accent in hosts section -->
+    <div class="hosts-diorama">
+      <img src="diorama.png" alt="The Artist Bungalow">
+    </div>
+  </div>
+</section>
+
+<!-- BOOK CTA -->
+<section class="book-cta" id="book">
+  <div class="book-cta-bg">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/5c3c8a51-f813-4edf-968a-05c1fd3163ae.jpeg?im_w=1200" alt="Outdoor lounge">
+  </div>
+  <div class="book-cta-content">
+    <p class="section-label" style="margin-bottom:1rem">Ready?</p>
+    <h2 class="book-title">Your <em>Hollywood Hills</em> escape awaits</h2>
+    <p class="book-body">
+      2 bedrooms, 2 baths, sweeping views, and a five-minute walk to the Bowl.
+      Check availability and reserve your dates.
+    </p>
+    <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="book-btn">Check Availability</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">THE ARTIST BUNGALOW</div>
+      <div class="footer-brand-sub">Hollywood Hills, Los Angeles</div>
+    </div>
+    <div class="footer-nav">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#neighborhood">Neighborhood</a>
+      <a href="#book">Book</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="footer-airbnb">View on Airbnb &rarr;</a>
+      <div class="footer-hosted">Hosted by Patrick &amp; Jimena</div>
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <p class="footer-copy">&copy; 2026 The Artist Bungalow. All rights reserved.</p>
+</footer>
+
+<script>
+// Nav scroll behavior
+const nav = document.getElementById('nav');
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 80);
+  heroBg.style.transform = `scale(1.1) translateY(${y * 0.25}px)`;
+}, { passive: true });
+
+// Simple reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.intro, .gallery, .diorama-break, .about, .neighborhood, .hosts, .book-cta').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(32px)';
+  el.style.transition = 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
