@@ -16,6 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Courier+Prime&display=swap"
         rel="stylesheet">
+    <!-- GSAP for Smooth Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- MapLibre GL JS v4.7.1 -->
     <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
@@ -563,6 +566,21 @@
         .intro-body em {
             font-style: italic;
             opacity: 0.6;
+        }
+
+        .property-survey-wrapper {
+            width: 100%;
+            max-width: 1080px;
+            margin: 4rem auto 0;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+        }
+
+        .property-survey {
+            width: 100%;
+            display: block;
+            opacity: 0.75;
+            mix-blend-mode: multiply;
         }
 
         /* --- 3D. ABOUT SECTION --- */
@@ -1672,7 +1690,7 @@
     <nav class="site-nav" id="siteNav">
         <a href="#" class="nav-brand">The Artist Bungalow</a>
         <div class="nav-links">
-            <a href="#about" class="nav-link">About</a>
+            <a href="#intro" class="nav-link">About</a>
             <a href="#gallery" class="nav-link">Gallery</a>
             <a href="#neighborhood" class="nav-link">Neighborhood</a>
             <a href="#dining" class="nav-link">Dining</a>
@@ -1744,6 +1762,10 @@
             <em>Sun-drenched rooms, sweeping views, a piano waiting to be played</em>, and the kind of quiet that makes
             you forget the city is right below.
         </p>
+        <div class="property-survey-wrapper">
+            <img src="../Images/Paseo Survey Drawing/Airbnb_Gemini 3 (Nano Banana Pro)_2026-02-23_01-23-09.png"
+                class="property-survey" alt="Property Survey Sketch">
+        </div>
     </section>
 
     <!-- 3D: ABOUT SECTION -->
@@ -1751,8 +1773,8 @@
         <div class="about-grid">
             <div class="about-left reveal">
                 <!-- Airbnb Exterior Photo #8 -->
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=1200"
-                    alt="Artist Bungalow Exterior" class="about-img">
+                <img src="property_edited/exterior-front-view.png" alt="Artist Bungalow Exterior"
+                    class="about-img lightbox-trigger">
                 <div class="about-badge">
                     <div class="about-badge-val">4.97</div>
                     <div class="about-badge-label">Superhost / Guest Favorite</div>
@@ -1803,9 +1825,8 @@
 
     <!-- 3E: VIEW MOMENT (PHOTO BREAK) -->
     <div class="view-moment reveal">
-        <!-- Photo #7 Fallback -->
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/80446755-772d-40b7-b6bd-8f5acd7a14f0.jpeg?im_w=1200"
-            class="view-moment-img section-bg lightbox-trigger" alt="Living Room Detail Break">
+        <img src="property_edited/living-room-wide-view.png" class="view-moment-img section-bg lightbox-trigger"
+            alt="Living Room Detail Break">
     </div>
 
     <!-- 3F: GALLERY SECTION -->
@@ -1816,58 +1837,41 @@
         </div>
         <div class="gallery-track-container" id="galleryContainer">
             <div class="gallery-track" id="galleryTrack">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=1200"
-                    alt="The Living Room (Cover)" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/69dc25b4-f315-41d1-a150-2a8504974878.jpeg?im_w=1200"
-                    alt="Primary Bedroom" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8080019c-281c-43af-b893-43ee20193232.jpeg?im_w=1200"
-                    alt="Kitchen & Dining" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/5644d5a0-6485-4007-9688-8a6d68c1387e.jpeg?im_w=1200"
-                    alt="Living Room Seating" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/3a68d75b-927f-4c7a-992e-ace6c127b34d.jpeg?im_w=1200"
-                    alt="Original Artwork" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/f9685988-7e27-4054-b173-114e690aab26.jpeg?im_w=1200"
-                    alt="Dining Area" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e990aae8-3151-4bfc-9f8f-347eadf859df.jpeg?im_w=1200"
-                    alt="Living Room Detail" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8d447807-c078-4593-8cad-2712de6a8d90.jpeg?im_w=1200"
-                    alt="The Front (Exterior)" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/f2a0fe1c-b2f3-445a-91e5-dfd8784f50f0.jpeg?im_w=1200"
-                    alt="The Garden" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b9948b43-d3f1-4c21-ba60-425e766a0c29.jpeg?im_w=1200"
-                    alt="Outdoor Dining" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/34a6bfd8-d85a-47a3-aa78-8e410fd334d6.jpeg?im_w=1200"
-                    alt="Living Room Wide" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e534271b-59ca-46a5-a7c6-5d0a0ee6e71f.jpeg?im_w=1200"
-                    alt="Bedroom Detail" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/944586ea-ea29-4b3c-a801-9e7762a50339.jpeg?im_w=1200"
-                    alt="Laundry" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/10abb5a6-4d20-4c9d-881e-a42e28803185.jpeg?im_w=1200"
-                    alt="Steam Shower" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b10f46b6-6c3d-4938-8975-17be9456495e.jpeg?im_w=1200"
-                    alt="Guest Room" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d525b436-1a3c-4722-bca1-619373a234c4.jpeg?im_w=1200"
-                    alt="Guest Bedroom" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/c9a44b20-2b73-4448-962c-40718fcf3aa9.jpeg?im_w=1200"
-                    alt="Bathroom Vanity" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/04325ef8-c51b-476a-9686-a64f9d1fff76.jpeg?im_w=1200"
-                    alt="Tropical Backyard" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/005b510f-7c71-4476-9ef6-7574c5c421a2.jpeg?im_w=1200"
-                    alt="Shower Detail" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/75d19ae8-912c-4f1f-bafd-28b42c4a856f.jpeg?im_w=1200"
-                    alt="Desk Nook" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/d2236a4b-bcf1-4993-91d2-85a710f8192e.jpeg?im_w=1200"
-                    alt="Panoramic View" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/0bc956c9-352c-4831-9e27-b16f2afe9e3d.jpeg?im_w=1200"
-                    alt="The Deck" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/517bf334-7c36-444c-9696-382495180c3b.jpeg?im_w=1200"
-                    alt="House Exterior" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/5c3c8a51-f813-4edf-968a-05c1fd3163ae.jpeg?im_w=1200"
-                    alt="Patio Lounge" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/80446755-772d-40b7-b6bd-8f5acd7a14f0.jpeg?im_w=1200"
-                    alt="Garden View" class="gallery-item">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e3f592c9-d172-4f2a-a252-b9b153eedd0e.jpeg?im_w=1200"
-                    alt="Palm Trees" class="gallery-item">
+                <img src="property_edited/bathroom-glass-tile-shower.png" alt="Bathroom Glass Tile Shower"
+                    class="gallery-item">
+                <img src="property_edited/bathroom-vanity-and-shower.png" alt="Bathroom Vanity And Shower"
+                    class="gallery-item">
+                <img src="property_edited/deck-dining-daytime.png" alt="Deck Dining Daytime" class="gallery-item">
+                <img src="property_edited/deck-lounge-evening.png" alt="Deck Lounge Evening" class="gallery-item">
+                <img src="property_edited/dining-area-vintage-decor.png" alt="Dining Area Vintage Decor"
+                    class="gallery-item">
+                <img src="property_edited/entryway-piano-and-art.png" alt="Entryway Piano And Art" class="gallery-item">
+                <img src="property_edited/exterior-front-view.png" alt="Exterior Front View" class="gallery-item">
+                <img src="property_edited/garden-tropical-seating.png" alt="Garden Tropical Seating"
+                    class="gallery-item">
+                <img src="property_edited/garden-walkway-entrance.png" alt="Garden Walkway Entrance"
+                    class="gallery-item">
+                <img src="property_edited/guest-bathroom-vanity.png" alt="Guest Bathroom Vanity" class="gallery-item">
+                <img src="property_edited/guest-bedroom-blue-bedding.png" alt="Guest Bedroom Blue Bedding"
+                    class="gallery-item">
+                <img src="property_edited/guest-bedroom-reading-nook.png" alt="Guest Bedroom Reading Nook"
+                    class="gallery-item">
+                <img src="property_edited/guest-bedroom-writing-desk.png" alt="Guest Bedroom Writing Desk"
+                    class="gallery-item">
+                <img src="property_edited/kitchen-coffee-bar.png" alt="Kitchen Coffee Bar" class="gallery-item">
+
+                <img src="property_edited/kitchen-sink-and-counters.png" alt="Kitchen Sink And Counters"
+                    class="gallery-item">
+                <img src="property_edited/living-room-fireplace-and-tv.png" alt="Living Room Fireplace And Tv"
+                    class="gallery-item">
+                <img src="property_edited/living-room-wide-view.png" alt="Living Room Wide View" class="gallery-item">
+                <img src="property_edited/master-bedroom-bedside.png" alt="Master Bedroom Bedside" class="gallery-item">
+                <img src="property_edited/master-bedroom-dresser-golden-hour.png"
+                    alt="Master Bedroom Dresser Golden Hour" class="gallery-item">
+                <img src="property_edited/master-bedroom-stained-glass.png" alt="Master Bedroom Stained Glass"
+                    class="gallery-item">
+                <img src="property_edited/neighborhood-city-view.png" alt="Neighborhood City View" class="gallery-item">
+                <img src="property_edited/patio-bistro-dining.png" alt="Patio Bistro Dining" class="gallery-item">
             </div>
         </div>
     </section>
@@ -1880,9 +1884,8 @@
 
     <!-- 3G: PHOTO BREAK 2 -->
     <div class="view-moment reveal">
-        <!-- Photo #7 -->
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/e990aae8-3151-4bfc-9f8f-347eadf859df.jpeg?im_w=1200"
-            alt="Living Room Photo Break">
+        <img src="property_edited/master-bedroom-stained-glass.png" class="view-moment-img section-bg lightbox-trigger"
+            alt="Master Bedroom Stained Glass">
     </div>
 
     <!-- 3H: NEIGHBORHOOD SECTION -->
@@ -2213,8 +2216,7 @@
     <!-- 3K: CTA SECTION -->
     <section class="cta-section" id="reserve">
         <!-- Photo #10 (Outdoor Dining) -->
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/b9948b43-d3f1-4c21-ba60-425e766a0c29.jpeg?im_w=1200"
-            alt="Hollywood Hills Escape" class="cta-bg">
+        <img src="property_edited/deck-lounge-evening.png" alt="Hollywood Hills Escape" class="cta-bg">
         <div class="cta-overlay"></div>
         <div class="cta-content reveal">
             <span class="cta-label">Book</span>
@@ -2235,7 +2237,7 @@
         <a href="#" class="footer-brand">The Artist Bungalow</a>
         <p class="footer-tag">Where the hills meet the music.</p>
         <div class="footer-nav">
-            <a href="#about">About</a>
+            <a href="#intro">About</a>
             <a href="#gallery">Gallery</a>
             <a href="#neighborhood">Neighborhood</a>
             <a href="#dining">Dining</a>
@@ -2410,7 +2412,7 @@
                 });
                 overlay.innerHTML = `
                     <button class="menu-close" style="position:absolute; top:2rem; right:5vw; background:none; border:none; color:white; font-size:2rem;">&times;</button>
-                    <a href="#about" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">About</a>
+                    <a href="#intro" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">About</a>
                     <a href="#gallery" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Gallery</a>
                     <a href="#neighborhood" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Neighborhood</a>
                     <a href="#dining" style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Dining</a>
@@ -2755,6 +2757,32 @@
             typeChar(); // Start typewriter
             requestAnimationFrame(updateGallery); // Start infinite gallery
             requestAnimationFrame(updateMarquee); // Start infinite testimonials
+
+            // GSAP ScrollTrigger Init
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Parallax entrance for property sketch
+            gsap.fromTo(".property-survey-wrapper",
+                {
+                    y: 100,
+                    scale: 0.9,
+                    opacity: 0,
+                    filter: "blur(5px)"
+                },
+                {
+                    y: 0,
+                    scale: 1,
+                    opacity: 1,
+                    filter: "blur(0px)",
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".property-survey-wrapper",
+                        start: "top 85%",
+                        end: "top 45%",
+                        scrub: 1.5 // Smooth scrubbing effect attached to the mouse wheel
+                    }
+                }
+            );
         });
 
     </script>
