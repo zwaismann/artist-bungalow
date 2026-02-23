@@ -239,6 +239,56 @@
             }
         }
 
+        /* Desktop Splash Screen */
+        @media (min-width: 900px) {
+            .hero-splash {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                background-color: var(--onyx);
+                transition: opacity 1s var(--ease-default), visibility 1s;
+                pointer-events: none;
+            }
+
+            .typewriter-text {
+                font-family: var(--font-typewriter);
+                color: rgba(250, 246, 240, 0.55);
+                max-width: 520px;
+                width: 100%;
+                text-align: left;
+                font-size: 1.2rem;
+                white-space: pre-wrap;
+            }
+
+            .typewriter-cursor {
+                display: inline-block;
+                width: 2px;
+                height: 1.1em;
+                background: rgba(250, 246, 240, 0.55);
+                margin-left: 2px;
+                vertical-align: middle;
+                animation: blink 1s step-end infinite;
+            }
+
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+            }
+        }
+
+        @media (max-width: 899px) {
+            .hero-splash {
+                display: none !important;
+            }
+        }
+
         /* Hero Section */
         .hero-sticky {
             position: relative;
@@ -372,6 +422,7 @@
         .stat-item {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 0.25rem;
         }
 
@@ -1574,6 +1625,11 @@
         <button class="menu-toggle">☰</button>
     </nav>
 
+    <!-- Desktop Splash Screen (Auto-dismisses) -->
+    <div class="hero-splash" id="heroSplash">
+        <div class="typewriter-text" id="typewriterText"></div>
+    </div>
+
     <!-- 3B: HERO SECTION -->
     <section class="hero-sticky" id="heroSticky">
         <img src="hollywood_sign_hero.jpg" alt="Hollywood Hills" class="hero-bg" id="heroBg">
@@ -2123,6 +2179,60 @@
 
         // --- GLOBAL SELECTORS ---
         const siteNav = document.getElementById('siteNav');
+        const heroSplash = document.getElementById('heroSplash');
+        const typewriterText = document.getElementById('typewriterText');
+
+        // 2. Desktop Typewriter Logic
+        if (window.innerWidth >= 900 && heroSplash && typewriterText) {
+            const scripts = [
+                "EXT. HOLLYWOOD HILLS - DAY\nA bungalow perched above the sweeping city.\nThe kind of place that feels like yours the moment you walk in.",
+                "EXT. HOLLYWOOD HILLS - GOLDEN HOUR\nA bungalow kissed by the canyon sun.\nThe kind of place you find and never want to leave...",
+                "EXT. HOLLYWOOD HILLS - MAGIC HOUR\nA glowing retreat above the noise.\nThe kind of place where every morning feels like the opening scene."
+            ];
+            let typeScript = scripts[Math.floor(Math.random() * scripts.length)];
+            let typeIndex = 0;
+            let isTyping = true;
+            let typeTimeout;
+            let displayedStr = "";
+            typewriterText.innerHTML = '<span class="typewriter-cursor"></span>';
+
+            function typeChar() {
+                if (!isTyping) return;
+                if (typeIndex < typeScript.length) {
+                    let char = typeScript.charAt(typeIndex);
+                    if (char === '\n') {
+                        displayedStr += '<br>';
+                    } else {
+                        displayedStr += char;
+                    }
+                    typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
+                    typeIndex++;
+                    let delay = 26 + Math.random() * 25;
+                    if (char === '\n') delay = 350;
+                    typeTimeout = setTimeout(typeChar, delay);
+                } else {
+                    finishTypewriter();
+                }
+            }
+
+            function finishTypewriter() {
+                isTyping = false;
+                clearTimeout(typeTimeout);
+                displayedStr = typeScript.replace(/\n/g, '<br>');
+                typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
+
+                // Auto-dismiss smoothly after 2 seconds
+                setTimeout(() => {
+                    heroSplash.style.transition = 'opacity 1s var(--ease-default)';
+                    heroSplash.style.opacity = '0';
+                    setTimeout(() => {
+                        heroSplash.style.display = 'none';
+                    }, 1000);
+                }, 1500);
+            }
+
+            setTimeout(typeChar, 400); // Slight delay before typing begins
+        }
 
         // 3. Simple Hero Parallax (rAF)
         let ticking = false;
@@ -2180,8 +2290,7 @@
         });
 
         // 5. Mobile Menu Toggle
-        // In a real build, we'd create a full screen overlay. Keeping it simple here via classes if
-        implemented
+        // In a real build, we'd create a full screen overlay. Keeping it simple here via classes if implemented
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             // Simplified overlay logic
             let overlay = document.querySelector('.mobile-menu-overlay');
