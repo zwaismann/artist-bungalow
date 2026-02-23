@@ -1,664 +1,1218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guest Guide — The Artist Bungalow</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --ivory: #FAF6F0;
-    --onyx: #1A1A1A;
-    --brass: #C49A3C;
-    --terracotta: #C2614B;
-    --olive: #5A6B4A;
-    --ocean: #3B6B8A;
-    --sand: #D4C5A9;
-    --blush: #E8CFC0;
-    --cream: #F0E8D8;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Guide — The Artist Bungalow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FAF6F0;
+      --onyx: #1A1A1A;
+      --brass: #C49A3C;
+      --terracotta: #C2614B;
+      --olive: #5A6B4A;
+      --ocean: #3B6B8A;
+      --sand: #D4C5A9;
+      --blush: #E8CFC0;
+      --cream: #F0E8D8;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  ::selection { background: var(--brass); color: var(--ivory); }
+    ::selection {
+      background: var(--brass);
+      color: var(--ivory);
+    }
 
-  body {
-    font-family: 'Space Grotesk', sans-serif;
-    background: var(--ivory);
-    color: var(--onyx);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-  }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--ivory);
+      color: var(--onyx);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
 
-  .font-impact { font-family: 'Bebas Neue', sans-serif; }
-  .font-display { font-family: 'Instrument Serif', serif; }
-  .font-body { font-family: 'Space Grotesk', sans-serif; }
+    .font-impact {
+      font-family: 'Bebas Neue', sans-serif;
+    }
 
-  a { color: inherit; text-decoration: none; }
+    .font-display {
+      font-family: 'Instrument Serif', serif;
+    }
 
-  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .font-body {
+      font-family: 'Space Grotesk', sans-serif;
+    }
 
-  /* ── NAV ────────────────────────────────── */
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(26,26,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(250,246,240,0.05);
-  }
-  .nav-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.12em;
-    color: rgba(250,246,240,0.8);
-  }
-  .nav-links { display: flex; align-items: center; gap: 20px; }
-  .nav-link {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(250,246,240,0.4);
-    transition: color 0.3s;
-  }
-  .nav-link:hover { color: var(--brass); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  /* ── HERO ───────────────────────────────── */
-  .hero {
-    position: relative;
-    height: 50vh;
-    min-height: 360px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-  }
-  .hero-img { position: absolute; inset: 0; }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(26,26,26,0.15), rgba(26,26,26,0.65));
-  }
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 960px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 24px 40px;
-  }
-  .hero-label {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(250,246,240,0.4);
-    margin-bottom: 12px;
-  }
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 8vw, 96px);
-    line-height: 0.85;
-    letter-spacing: 0.04em;
-    color: var(--ivory);
-  }
-  .hero-title span { color: var(--brass); }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* ── CONTENT ────────────────────────────── */
-  .content { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    /* ── NAV ────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(250, 246, 240, 0.05);
+    }
 
-  .section { padding: 80px 0; }
-  .section + .section { border-top: 1px solid rgba(26,26,26,0.06); }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--brass);
-    margin-bottom: 20px;
-  }
-  .section-heading {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    letter-spacing: 0.04em;
-    line-height: 0.88;
-    color: var(--onyx);
-    margin-bottom: 24px;
-  }
-  .section-body {
-    font-size: 14px;
-    color: rgba(26,26,26,0.55);
-    line-height: 1.7;
-    max-width: 600px;
-  }
-  .section-body strong {
-    color: var(--onyx);
-    font-weight: 500;
-  }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      color: rgba(250, 246, 240, 0.8);
+    }
 
-  /* ── INFO BLOCKS ────────────────────────── */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3px;
-    margin-top: 32px;
-  }
-  @media (min-width: 640px) {
-    .info-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .info-card {
-    background: var(--onyx);
-    padding: 32px;
-  }
-  .info-card-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--brass);
-    margin-bottom: 10px;
-  }
-  .info-card-value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.06em;
-    color: var(--ivory);
-    line-height: 1.1;
-  }
-  .info-card-note {
-    font-size: 12px;
-    color: rgba(250,246,240,0.35);
-    margin-top: 8px;
-    line-height: 1.5;
-  }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-  /* ── LIST ITEMS ─────────────────────────── */
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(26,26,26,0.06);
-  }
-  .list-item:last-child { border-bottom: none; }
-  .list-name { font-size: 14px; color: var(--onyx); }
-  .list-meta {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--brass);
-  }
+    .nav-link {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 240, 0.4);
+      transition: color 0.3s;
+    }
 
-  /* ── RECS GRID ──────────────────────────── */
-  .recs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 40px;
-  }
-  @media (min-width: 640px) {
-    .recs-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .rec-category-label {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--brass);
-    margin-bottom: 14px;
-  }
-  .rec-item {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(26,26,26,0.06);
-  }
-  .rec-item:last-child { border-bottom: none; }
-  .rec-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--onyx);
-  }
-  .rec-desc {
-    font-size: 12px;
-    color: rgba(26,26,26,0.4);
-    margin-top: 2px;
-  }
+    .nav-link:hover {
+      color: var(--brass);
+    }
 
-  /* ── CALLOUT BOX ────────────────────────── */
-  .callout {
-    border: 1px solid rgba(26,26,26,0.08);
-    padding: 32px;
-    margin-top: 32px;
-  }
-  .callout-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--brass);
-    margin-bottom: 10px;
-  }
+    /* ── HERO ───────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 50vh;
+      min-height: 360px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
 
-  /* ── RULES LIST ─────────────────────────── */
-  .rule {
-    padding: 12px 0 12px 20px;
-    border-left: 2px solid rgba(26,26,26,0.06);
-    font-size: 14px;
-    color: rgba(26,26,26,0.55);
-    line-height: 1.6;
-  }
-  .rule + .rule { margin-top: 8px; }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+    }
 
-  /* ── FULL BLEED PHOTO ───────────────────── */
-  .photo-break {
-    width: 100%;
-    height: 40vh;
-    min-height: 280px;
-    overflow: hidden;
-  }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(26, 26, 26, 0.15), rgba(26, 26, 26, 0.65));
+    }
 
-  /* ── FOOTER ─────────────────────────────── */
-  .footer {
-    background: var(--onyx);
-    padding: 48px 24px;
-    text-align: center;
-  }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.12em;
-    color: rgba(250,246,240,0.6);
-  }
-  .footer-sub {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(250,246,240,0.2);
-    margin-top: 8px;
-  }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px 40px;
+    }
 
-  /* ── RESPONSIVE ─────────────────────────── */
-  @media (min-width: 768px) {
-    .section { padding: 100px 0; }
-    .hero-content { padding-bottom: 56px; }
-  }
+    .hero-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 240, 0.4);
+      margin-bottom: 12px;
+    }
 
-  /* ── PRINT ──────────────────────────────── */
-  @media print {
-    .nav { display: none; }
-    .hero { height: auto; min-height: 0; }
-    .section { padding: 40px 0; }
-    .photo-break { display: none; }
-  }
-</style>
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.85;
+      letter-spacing: 0.04em;
+      color: var(--ivory);
+    }
+
+    .hero-title span {
+      color: var(--brass);
+    }
+
+    /* ── CONTENT ────────────────────────────── */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section+.section {
+      border-top: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 0.04em;
+      line-height: 0.88;
+      color: var(--onyx);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.55);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .section-body strong {
+      color: var(--onyx);
+      font-weight: 500;
+    }
+
+    /* ── INFO BLOCKS ────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3px;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 640px) {
+      .info-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .info-card {
+      padding: 24px;
+      border: 1px solid var(--onyx);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .info-card-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.5);
+    }
+
+    .info-card-value {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--onyx);
+      margin-top: 12px;
+      margin-bottom: 2px;
+    }
+
+    .info-card-note {
+      font-size: 13px;
+      color: rgba(26, 26, 26, 0.6);
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .rule-card {
+      background: var(--onyx);
+      padding: 32px 24px;
+      border: 1px solid var(--terracotta);
+    }
+
+    .rule-card .info-card-label {
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .rule-card .info-card-value {
+      color: var(--ivory);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── LIST ITEMS ─────────────────────────── */
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-name {
+      font-size: 14px;
+      color: var(--onyx);
+    }
+
+    .list-meta {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    /* ── RECS GRID ──────────────────────────── */
+    .recs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 640px) {
+      .recs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .rec-category-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 14px;
+    }
+
+    .rec-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .rec-item:last-child {
+      border-bottom: none;
+    }
+
+    .rec-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--onyx);
+    }
+
+    .rec-desc {
+      font-size: 12px;
+      color: rgba(26, 26, 26, 0.4);
+      margin-top: 2px;
+    }
+
+    /* ── CALLOUT BOX ────────────────────────── */
+    .callout {
+      border: 1px solid rgba(26, 26, 26, 0.08);
+      padding: 32px;
+      margin-top: 32px;
+    }
+
+    .callout-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 10px;
+    }
+
+    /* ── RULES LIST ─────────────────────────── */
+    .rule {
+      padding: 12px 0 12px 20px;
+      border-left: 2px solid rgba(26, 26, 26, 0.06);
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.55);
+      line-height: 1.6;
+    }
+
+    .rule+.rule {
+      margin-top: 8px;
+    }
+
+    /* ── INDEX NAV ────────────────────────── */
+    .guide-index {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--cream);
+      border-radius: 4px;
+      border: 1px solid rgba(26, 26, 26, 0.05);
+    }
+
+    .guide-index a {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--onyx);
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      transition: all 0.3s;
+    }
+
+    .guide-index a:hover {
+      background: var(--onyx);
+      color: var(--ivory);
+    }
+
+    /* ── INTERACTIVE MAP ────────────────────── */
+    .map-container-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .map-container-wrapper {
+        flex-direction: row;
+      }
+    }
+
+    .map-sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: 20px;
+    }
+
+    .map-view-area {
+      flex: 1.5;
+      height: 600px;
+      background: #e9e5df;
+      position: sticky;
+      top: 100px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .map-loc-item {
+      padding: 20px;
+      background: var(--cream);
+      border: 1px solid rgba(26, 26, 26, 0.05);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .map-loc-item:hover,
+    .map-loc-item.active {
+      background: var(--onyx);
+      color: var(--ivory);
+    }
+
+    .map-loc-item:hover .map-loc-title,
+    .map-loc-item.active .map-loc-title {
+      color: var(--ivory);
+    }
+
+    .map-loc-item:hover .map-loc-desc,
+    .map-loc-item.active .map-loc-desc {
+      color: rgba(250, 246, 240, 0.8);
+    }
+
+    .map-loc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      color: var(--onyx);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .map-loc-desc {
+      font-size: 13px;
+      color: rgba(26, 26, 26, 0.6);
+      margin-top: 6px;
+      transition: color 0.2s;
+    }
+
+    /* ── FULL BLEED PHOTO ───────────────────── */
+    .photo-break {
+      width: 100%;
+      height: 40vh;
+      min-height: 280px;
+      overflow: hidden;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    .footer {
+      background: var(--onyx);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      color: rgba(250, 246, 240, 0.6);
+    }
+
+    .footer-sub {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 240, 0.2);
+      margin-top: 8px;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (min-width: 768px) {
+      .section {
+        padding: 100px 0;
+      }
+
+      .hero-content {
+        padding-bottom: 56px;
+      }
+    }
+
+    /* ── PRINT ──────────────────────────────── */
+    @media print {
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 0;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .photo-break {
+        display: none;
+      }
+    }
+  </style>
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="./artist-bungalow-website-v3.html" class="nav-logo">THE ARTIST BUNGALOW</a>
-    <div class="nav-links">
-      <a href="./artist-bungalow-website-v3.html" class="nav-link">Home</a>
-      <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener noreferrer" class="nav-link">Book</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-img">
-    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/21de2c8a-9f9c-48c1-b566-8305a952b1dc.jpeg?im_w=1920" alt="The Artist Bungalow living room" />
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-label">Guest Guide</p>
-    <h1 class="hero-title">WELCOME TO<br/><span>THE BUNGALOW</span></h1>
-  </div>
-</header>
-
-<div class="content">
-
-  <!-- WELCOME -->
-  <div class="section">
-    <p class="section-label">Welcome</p>
-    <h2 class="section-heading">MAKE YOURSELF AT HOME</h2>
-    <p class="section-body">
-      We're so glad you're here. The Artist Bungalow is our personal retreat and
-      we've put a lot of love into making it a place that feels like home from the
-      moment you walk in. This guide has everything you need to settle in, explore
-      the neighborhood, and get the most out of your stay.
-    </p>
-    <p class="section-body" style="margin-top: 16px;">
-      If you need anything at all, don't hesitate to reach out. We're always just
-      a message away.
-    </p>
-    <p class="section-body" style="margin-top: 16px;">
-      <strong>— Patrick &amp; Jimena</strong>
-    </p>
-  </div>
-
-  <!-- CHECK-IN / CHECK-OUT -->
-  <div class="section">
-    <p class="section-label">Arrival &amp; Departure</p>
-    <h2 class="section-heading">CHECK-IN &amp; CHECK-OUT</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <p class="info-card-label">Check-In</p>
-        <p class="info-card-value">3:00 PM</p>
-        <p class="info-card-note">Self check-in with lockbox. Code provided in your Airbnb message the day of arrival.</p>
-      </div>
-      <div class="info-card">
-        <p class="info-card-label">Check-Out</p>
-        <p class="info-card-value">11:00 AM</p>
-        <p class="info-card-note">Just lock the door behind you. No need to strip beds or take out trash.</p>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./artist-bungalow-website-v3.html" class="nav-logo">THE ARTIST BUNGALOW</a>
+      <div class="nav-links">
+        <a href="./artist-bungalow-website-v3.html" class="nav-link">Home</a>
+        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener noreferrer"
+          class="nav-link">Book</a>
       </div>
     </div>
-    <div class="callout">
-      <p class="callout-label">Parking</p>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-img">
+      <img src="./property_optimized/living-room-wide-view.webp" alt="The Artist Bungalow living room" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">Guest Guide</p>
+      <h1 class="hero-title">WELCOME TO<br /><span>THE BUNGALOW</span></h1>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <!-- WELCOME -->
+    <div class="section">
+      <p class="section-label">Welcome</p>
+      <h2 class="section-heading">MAKE YOURSELF AT HOME</h2>
       <p class="section-body">
-        The driveway fits <strong>one car comfortably</strong>. There are also
-        <strong>three street spots on the cul-de-sac</strong> directly in front
-        of the house. The street is quiet and parking is never an issue.
-        If you're arriving without a car, rideshares work great from this location.
+        We're so glad you're here. The Artist Bungalow is our personal retreat and
+        we've put a lot of love into making it a place that feels like home from the
+        moment you walk in. This guide has everything you need to settle in, explore
+        the neighborhood, and get the most out of your stay.
+      </p>
+      <p class="section-body" style="margin-top: 16px;">
+        If you need anything at all, don't hesitate to reach out. We're always just
+        a message away.
+      </p>
+      <p class="section-body" style="margin-top: 16px;">
+        <strong>— Patrick &amp; Jimena</strong>
+      </p>
+
+      <!-- TABLE OF CONTENTS -->
+      <div class="guide-index">
+        <a href="#rules">House Rules</a>
+        <a href="#arrival">Arrival & Departure</a>
+        <a href="#parking">Parking</a>
+        <a href="#essentials">Essentials & WiFi</a>
+        <a href="#kitchen">The Kitchen</a>
+        <a href="#piano">Howard the Piano</a>
+        <a href="#neighborhood">Local Favorites</a>
+        <a href="#emergency">Emergency Info</a>
+      </div>
+    </div>
+
+    <!-- CHECK-IN / CHECK-OUT -->
+    <div class="section">
+      <p class="section-label">Arrival &amp; Departure</p>
+      <h2 class="section-heading" id="arrival">CHECK-IN &amp; CHECK-OUT</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <p class="info-card-label">Check-In</p>
+          <p class="info-card-value">4:00 PM</p>
+          <p class="info-card-note">Enter via keypad. Code is 1948.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Check-Out</p>
+          <p class="info-card-value">10:00 AM</p>
+          <p class="info-card-note">Just lock the door behind you. No need to strip beds or take out trash.</p>
+        </div>
+      </div>
+      <div class="section" id="parking">
+        <p class="section-label">Vehicles</p>
+        <h2 class="section-heading">PARKING</h2>
+        <div class="callout" style="margin-top: 0;">
+          <p class="section-body">
+            The driveway fits <strong>one car comfortably</strong>. There are also
+            <strong>three street spots on the cul-de-sac</strong> directly in front
+            of the house. The street is quiet and parking is never an issue.
+            If you're arriving without a car, rideshares work great from this location.
+          </p>
+        </div>
+      </div>
+
+      <!-- HOUSE RULES -->
+      <div class="section">
+        <p class="section-label" style="color: var(--terracotta);">Important</p>
+        <h2 class="section-heading" id="rules" style="color: var(--terracotta);">A FEW THINGS TO KNOW</h2>
+        <div class="info-grid" style="margin-top: 32px;">
+          <div class="rule-card">
+            <p class="info-card-label">NO SMOKING</p>
+            <p class="info-card-value">No smoking inside the home. The deck and outdoor areas are fine.</p>
+          </div>
+          <div class="rule-card">
+            <p class="info-card-label">NO PARTIES</p>
+            <p class="info-card-value">No parties or events. We love a good time, but the neighbors do too.</p>
+          </div>
+          <div class="rule-card">
+            <p class="info-card-label">QUIET HOURS</p>
+            <p class="info-card-value">Quiet hours after 10 PM. The cul-de-sac is peaceful, let's keep it that way.</p>
+          </div>
+          <div class="rule-card">
+            <p class="info-card-label">PET POLICY</p>
+            <p class="info-card-value">Pets are welcome. Just let us know in advance and keep them off the furniture.
+            </p>
+          </div>
+          <div class="rule-card">
+            <p class="info-card-label">ART & DECOR</p>
+            <p class="info-card-value">Please don't move the art or instruments. They're in their happy places.</p>
+          </div>
+          <div class="rule-card">
+            <p class="info-card-label">LOCK UP</p>
+            <p class="info-card-value">Lock up when you leave. The neighborhood is safe, but it's still LA.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WIFI & ESSENTIALS -->
+      <div class="section">
+        <p class="section-label">Essentials</p>
+        <h2 class="section-heading" id="essentials">WIFI &amp; THE BASICS</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <p class="info-card-label">WiFi Network</p>
+            <p class="info-card-value">6910 Paseo Del Serra</p>
+            <p class="info-card-note">Fast fiber connection for remote work and streaming.</p>
+          </div>
+          <div class="info-card">
+            <p class="info-card-label">WiFi Password</p>
+            <p class="info-card-value">Trilemma</p>
+            <p class="info-card-note">Case-sensitive.</p>
+          </div>
+        </div>
+        <div style="margin-top: 32px;">
+          <div class="list-item">
+            <span class="list-name">Towels &amp; linens</span>
+            <span class="list-meta">Provided</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Washer &amp; dryer</span>
+            <span class="list-meta">In unit</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Hair dryer</span>
+            <span class="list-meta">Bathroom</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Extra blankets &amp; pillows</span>
+            <span class="list-meta">Bedroom closets</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PHOTO BREAK -->
+    <div class="photo-break">
+      <img src="./property_optimized/kitchen-coffee-bar.webp" alt="Kitchen" />
+    </div>
+
+    <div class="content">
+
+      <!-- KITCHEN -->
+      <div class="section">
+        <p class="section-label">The Kitchen</p>
+        <h2 class="section-heading" id="kitchen">FIVE WAYS TO MAKE COFFEE</h2>
+        <p class="section-body">
+          We take coffee seriously. You'll find everything you need to make a great cup
+          your way. There's also a full kitchen with all the basics for cooking in.
+        </p>
+        <div style="margin-top: 24px;">
+          <div class="list-item">
+            <span class="list-name">Drip coffee maker</span>
+            <span class="list-meta">Counter</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">French press</span>
+            <span class="list-meta">Counter</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Pour-over</span>
+            <span class="list-meta">Counter</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Nespresso Virtuo machine</span>
+            <span class="list-meta">Counter</span>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Electric kettle</span>
+            <span class="list-meta">Counter</span>
+          </div>
+        </div>
+        <div class="callout">
+          <p class="callout-label">Stocked for you</p>
+          <p class="section-body">
+            Coffee beans, tea, sugar, cream, olive oil, salt, pepper, and basic
+            spices are provided. The closest grocery store is <a href="https://maps.app.goo.gl/3q2h2R" target="_blank"
+              style="text-decoration: underline; color: var(--terracotta);">Ralphs (7257 W Sunset Blvd)</a>,
+            about a 5-minute drive.
+          </p>
+        </div>
+      </div>
+
+      <!-- THE CREATIVE TOUCHES -->
+      <div class="section">
+        <p class="section-label">The Vibe</p>
+        <h2 class="section-heading" id="piano">HOWARD THE VINTAGE PIANO</h2>
+        <p class="section-body">
+          Meet Howard, our vintage upright piano. He isn't just decoration—you are
+          more than welcome to play him. We only ask that you play him gently and lovingly,
+          as he is an older, delicate instrument. Put on a record, flip through the books,
+          and make yourself at home.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- PHOTO BREAK -->
+    <div class="photo-break">
+      <img src="./property_optimized/deck-dining-daytime.webp" alt="Deck with striped umbrella and views" />
+    </div>
+
+    <div class="content">
+
+      <!-- NEIGHBORHOOD (V3 Split Map Layout) -->
+      <div class="section" style="padding: 0; max-width: 100%; margin-top: 80px;">
+        <style>
+          .map-layout {
+            display: flex;
+            height: 700px;
+            max-height: 90vh;
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            background: var(--cream);
+          }
+
+          .map-sidebar-v3 {
+            width: 450px;
+            flex-shrink: 0;
+            background: var(--cream);
+            border-right: 1px solid rgba(26, 26, 26, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 32px;
+            overflow-y: auto;
+          }
+
+          .map-view-v3 {
+            flex-grow: 1;
+            position: relative;
+            background: #E5E0D8;
+          }
+
+          #v3map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            /* warm, slightly desaturated feel matching brand */
+            filter: sepia(0.05) brightness(0.98) contrast(1.05);
+          }
+
+          @media (max-width: 900px) {
+            .map-layout {
+              flex-direction: column;
+              height: auto;
+            }
+
+            .map-sidebar-v3 {
+              width: 100%;
+              border-right: none;
+              height: 50vh;
+              order: 2;
+              padding: 24px;
+            }
+
+            .map-view-v3 {
+              height: 50vh;
+              order: 1;
+              border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            }
+          }
+
+          /* Custom scrollbar for sidebar */
+          .map-sidebar-v3::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          .map-sidebar-v3::-webkit-scrollbar-thumb {
+            background: rgba(26, 26, 26, 0.2);
+            border-radius: 4px;
+          }
+
+          .m-filter-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--onyx);
+            background: transparent;
+            border: 1px solid rgba(26, 26, 26, 0.2);
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+          }
+
+          .m-filter-btn:hover,
+          .m-filter-btn.active {
+            background: var(--onyx);
+            color: var(--ivory);
+            border-color: var(--onyx);
+          }
+
+          .loc-list-v3 {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-right: 8px;
+          }
+
+          .loc-item-v3 {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            cursor: pointer;
+            color: rgba(26, 26, 26, 0.5);
+            transition: all 0.3s;
+          }
+
+          .loc-item-v3:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+
+          .loc-item-v3:hover,
+          .loc-item-v3.active {
+            color: var(--onyx);
+            border-bottom-color: var(--terracotta);
+          }
+
+          .loc-item-v3.active .loc-meta-v3 {
+            color: var(--terracotta);
+          }
+
+          .loc-name-v3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .loc-meta-v3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(26, 26, 26, 0.4);
+            transition: color 0.3s;
+          }
+
+          .loc-link {
+            font-size: 10px;
+            color: var(--onyx);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            border: 1px solid rgba(26, 26, 26, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+          }
+
+          .loc-link:hover {
+            opacity: 1;
+            background: rgba(26, 26, 26, 0.05);
+          }
+        </style>
+
+        <div class="map-layout" id="neighborhood">
+          <div class="map-sidebar-v3">
+            <p class="section-label" style="color: var(--terracotta); border-color: rgba(194,97,75,0.3);">The
+              Neighborhood</p>
+            <h2 class="section-heading" style="color: var(--onyx); font-size: 32px; margin-bottom: 24px;">LOCAL
+              FAVORITES</h2>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;" id="mapFilters">
+              <button class="m-filter-btn active" data-filter="All">All Spots</button>
+              <button class="m-filter-btn" data-filter="Coffee">Coffee</button>
+              <button class="m-filter-btn" data-filter="Food">Food</button>
+              <button class="m-filter-btn" data-filter="Outdoors">Parks & Views</button>
+            </div>
+
+            <div class="loc-list-v3" id="v3LocList">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          <div class="map-view-v3">
+            <div id="v3map"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- EMERGENCY -->
+      <div class="section">
+        <p class="section-label">In Case of Emergency</p>
+        <h2 class="section-heading" id="emergency">IMPORTANT NUMBERS</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <p class="info-card-label">Emergency</p>
+            <p class="info-card-value">911</p>
+            <p class="info-card-note">Police, fire, and medical emergencies.</p>
+          </div>
+          <div class="info-card">
+            <p class="info-card-label">Your Host</p>
+            <p class="info-card-value"><a href="tel:3235401127" style="text-decoration: underline;">323.540.1127</a></p>
+            <p class="info-card-note">Call or text Patrick anytime. We'll get back to you right away.</p>
+          </div>
+        </div>
+        <div style="margin-top: 24px;">
+          <div class="list-item">
+            <span class="list-name">Nearest hospital</span>
+            <a href="https://maps.app.goo.gl/hG55jJvXQGgG7Bv39" target="_blank" class="list-meta"
+              style="text-decoration: underline;">SoCal Hospital at Hollywood</a>
+          </div>
+          <div class="list-item">
+            <span class="list-name">Police Non-Emergency</span>
+            <a href="tel:2139722971" class="list-meta" style="text-decoration: underline;">213.972.2971</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="background: var(--onyx); padding: 80px 24px; text-align: center;">
+      <p
+        style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 56px); letter-spacing: 0.04em; line-height: 0.88; color: var(--ivory);">
+        ENJOY YOUR STAY
+      </p>
+      <p
+        style="font-family: 'Instrument Serif', serif; font-size: clamp(18px, 2.5vw, 24px); color: rgba(250,246,240,0.45); font-style: italic; margin-top: 16px; letter-spacing: -0.01em;">
+        Come for the views. Stay for the vibe.
+      </p>
+      <p style="margin-top: 24px;">
+        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener noreferrer"
+          style="display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: var(--brass); color: var(--ivory); padding: 14px 40px; transition: opacity 0.3s;"
+          onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          Leave Us a Review
+        </a>
       </p>
     </div>
-  </div>
 
-  <!-- WIFI & ESSENTIALS -->
-  <div class="section">
-    <p class="section-label">Essentials</p>
-    <h2 class="section-heading">WIFI &amp; THE BASICS</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <p class="info-card-label">WiFi Network</p>
-        <p class="info-card-value">[YOUR NETWORK NAME]</p>
-        <p class="info-card-note">Replace this with your actual WiFi name.</p>
-      </div>
-      <div class="info-card">
-        <p class="info-card-label">WiFi Password</p>
-        <p class="info-card-value">[YOUR PASSWORD]</p>
-        <p class="info-card-note">Replace this with your actual WiFi password.</p>
-      </div>
-    </div>
-    <div style="margin-top: 32px;">
-      <div class="list-item">
-        <span class="list-name">Towels &amp; linens</span>
-        <span class="list-meta">Provided</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Washer &amp; dryer</span>
-        <span class="list-meta">In unit</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Iron &amp; steamer</span>
-        <span class="list-meta">In closet</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Hair dryer</span>
-        <span class="list-meta">Bathroom</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Extra blankets &amp; pillows</span>
-        <span class="list-meta">Bedroom closets</span>
-      </div>
-    </div>
-  </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="./artist-bungalow-website-v3.html" class="footer-logo">THE ARTIST BUNGALOW</a>
+      <p class="footer-sub">Hollywood Hills &middot; Los Angeles</p>
+    </footer>
 
-</div>
+    <!-- MAPLIBRE LOCAL FAVORITES SCRIPTS (V2 Midnight Map Logic) -->
+    <script>
+      (function () {
+        const locations = [
+          {
+            title: 'Stereoscope Coffee',
+            time: '10 min drive',
+            type: 'Coffee',
+            coords: [-118.330, 34.095]
+          },
+          {
+            title: 'Sightglass Coffee',
+            time: '12 min drive',
+            type: 'Coffee',
+            coords: [-118.336, 34.088]
+          },
+          {
+            title: 'Chavista Coffee',
+            time: '7 min drive',
+            type: 'Coffee',
+            coords: [-118.315, 34.101]
+          },
+          {
+            title: 'Beachwood Cafe',
+            time: '8 min drive',
+            type: 'Coffee',
+            coords: [-118.320, 34.119]
+          },
+          {
+            title: 'The Trails Cafe',
+            time: '10 min walk',
+            type: 'Coffee',
+            coords: [-118.307, 34.113]
+          },
+          {
+            title: 'Groundwork Coffee',
+            time: '5 min drive',
+            type: 'Coffee',
+            coords: [-118.328, 34.097]
+          },
+          {
+            title: 'Yamashiro Hollywood',
+            time: '8 min drive',
+            type: 'Food',
+            coords: [-118.341, 34.105]
+          },
+          {
+            title: 'Musso & Frank Grill',
+            time: '5 min drive',
+            type: 'Food',
+            coords: [-118.335, 34.101]
+          },
+          {
+            title: 'Luv2eat Thai Bistro',
+            time: '7 min drive',
+            type: 'Food',
+            coords: [-118.335, 34.097]
+          },
+          {
+            title: 'Otis Thai Restaurant',
+            time: '5 min drive',
+            type: 'Food',
+            coords: [-118.341, 34.093]
+          },
+          {
+            title: 'Hollywood Farmers Market',
+            time: '7 min drive',
+            type: 'Food',
+            coords: [-118.328, 34.099]
+          },
+          {
+            title: 'Hollywood Bowl',
+            time: '5 min walk',
+            type: 'Outdoors',
+            coords: [-118.338, 34.112]
+          },
+          {
+            title: 'Runyon Canyon',
+            time: '8 min drive',
+            type: 'Outdoors',
+            coords: [-118.350, 34.105]
+          },
+          {
+            title: 'Griffith Observatory',
+            time: '12 min drive',
+            type: 'Outdoors',
+            coords: [-118.300, 34.118]
+          }
+        ];
 
-<!-- PHOTO BREAK -->
-<div class="photo-break">
-  <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/8080019c-281c-43af-b893-43ee20193232.jpeg?im_w=1920" alt="Kitchen" />
-</div>
+        let map = null;
+        let destMarker = null;
+        const coordsHome = [-118.338, 34.108];
 
-<div class="content">
+        const sidebar = document.getElementById('v3LocList');
 
-  <!-- KITCHEN -->
-  <div class="section">
-    <p class="section-label">The Kitchen</p>
-    <h2 class="section-heading">FIVE WAYS TO MAKE COFFEE</h2>
-    <p class="section-body">
-      We take coffee seriously. You'll find everything you need to make a great cup
-      your way. There's also a full kitchen with all the basics for cooking in.
-    </p>
-    <div style="margin-top: 24px;">
-      <div class="list-item">
-        <span class="list-name">Drip coffee maker</span>
-        <span class="list-meta">Counter</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">French press</span>
-        <span class="list-meta">Counter</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Pour-over</span>
-        <span class="list-meta">Counter</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Espresso machine</span>
-        <span class="list-meta">Counter</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Electric kettle</span>
-        <span class="list-meta">Counter</span>
-      </div>
-    </div>
-    <div class="callout">
-      <p class="callout-label">Stocked for you</p>
-      <p class="section-body">
-        Coffee beans, tea, sugar, cream, olive oil, salt, pepper, and basic
-        spices are provided. The closest grocery store is [YOUR GROCERY STORE]
-        about a 5-minute drive.
-      </p>
-    </div>
-  </div>
+        function renderLocations(filterType) {
+          sidebar.innerHTML = '';
 
-  <!-- STEAM SHOWER -->
-  <div class="section">
-    <p class="section-label">Don't Miss</p>
-    <h2 class="section-heading">THE STEAM SHOWER</h2>
-    <p class="section-body">
-      The primary bathroom has a full steam shower. Guests love it. Turn the steam
-      dial to your preferred temperature and give it about 5 minutes to warm up.
-      There's a bench inside to sit and relax. It's the perfect way to end a day
-      of exploring.
-    </p>
-  </div>
+          let filtered = locations;
+          if (filterType !== 'All') {
+            filtered = locations.filter(l => l.type === filterType);
+          }
 
-  <!-- THE CREATIVE TOUCHES -->
-  <div class="section">
-    <p class="section-label">The Vibe</p>
-    <h2 class="section-heading">PLAY SOMETHING</h2>
-    <p class="section-body">
-      The piano and guitar in the living room aren't just decoration. Please play
-      them. Put on a record. Flip through the books on the shelves. Sketch something
-      on the easel. This is a place that was made to be lived in.
-    </p>
-  </div>
+          filtered.forEach((loc, index) => {
+            const item = document.createElement('div');
+            item.className = 'loc-item-v3';
+            if (index === 0) item.classList.add('active');
 
-</div>
+            item.innerHTML = `
+              <div class="loc-name-v3">
+                ${loc.title}
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.title + ' Los Angeles CA')}" target="_blank" class="loc-link" title="Open in Google Maps">Maps \u2197</a>
+              </div>
+              <div class="loc-meta-v3">${loc.type} &bull; ${loc.time}</div>
+            `;
 
-<!-- PHOTO BREAK -->
-<div class="photo-break">
-  <img src="https://a0.muscache.com/im/pictures/miso/Hosting-736417448669019623/original/0bc956c9-352c-4831-9e27-b16f2afe9e3d.jpeg?im_w=1920" alt="Deck with striped umbrella and views" />
-</div>
+            // Prevent map click when clicking the link
+            const link = item.querySelector('.loc-link');
+            if (link) {
+              link.addEventListener('click', (e) => e.stopPropagation());
+            }
 
-<div class="content">
+            item.addEventListener('click', () => {
+              document.querySelectorAll('.loc-item-v3').forEach(el => el.classList.remove('active'));
+              item.classList.add('active');
 
-  <!-- NEIGHBORHOOD -->
-  <div class="section">
-    <p class="section-label">The Neighborhood</p>
-    <h2 class="section-heading">OUR FAVORITES</h2>
-    <p class="section-body">
-      We've lived in LA for years and these are the spots we actually go to.
-      Not tourist guides, just the places we love.
-    </p>
+              if (destMarker) destMarker.setLngLat(loc.coords);
 
-    <div class="recs-grid">
-      <div>
-        <p class="rec-category-label">Coffee</p>
-        <div class="rec-item">
-          <p class="rec-name">Stereoscope Coffee</p>
-          <p class="rec-desc">Our go-to. Excellent single-origin pour-overs. 10 min drive.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Sightglass Coffee</p>
-          <p class="rec-desc">Great ambiance, solid espresso drinks. 12 min drive.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">[Your Local Spot]</p>
-          <p class="rec-desc">Add your own favorites here.</p>
-        </div>
-      </div>
-      <div>
-        <p class="rec-category-label">Food</p>
-        <div class="rec-item">
-          <p class="rec-name">[Your Taco Spot]</p>
-          <p class="rec-desc">The best tacos near the bungalow. Add your pick.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Hollywood Farmers Market</p>
-          <p class="rec-desc">Sundays. Fresh produce, prepared food, great energy.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">[Your Dinner Spot]</p>
-          <p class="rec-desc">Add your own favorites here.</p>
-        </div>
-      </div>
-      <div>
-        <p class="rec-category-label">Outdoors</p>
-        <div class="rec-item">
-          <p class="rec-name">Hollywood Bowl</p>
-          <p class="rec-desc">5 min walk downhill. Check the schedule for shows.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Runyon Canyon</p>
-          <p class="rec-desc">Classic LA hike with city views. 8 min drive to the trailhead.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Griffith Observatory</p>
-          <p class="rec-desc">Best views in LA. Go at sunset. 12 min drive.</p>
-        </div>
-      </div>
-      <div>
-        <p class="rec-category-label">Culture &amp; Explore</p>
-        <div class="rec-item">
-          <p class="rec-name">The Getty Center</p>
-          <p class="rec-desc">Free admission. Incredible architecture and art. 20 min drive.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">West Hollywood</p>
-          <p class="rec-desc">Walking, shopping, restaurants. Great for an afternoon.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Highland Camrose Park</p>
-          <p class="rec-desc">Quiet local park nearby. Dog-friendly.</p>
-        </div>
-      </div>
-      <div>
-        <p class="rec-category-label">Dog-Friendly</p>
-        <div class="rec-item">
-          <p class="rec-name">Silver Lake Dog Park</p>
-          <p class="rec-desc">Off-leash, great community. About 15 min drive.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Laurel Canyon Dog Park</p>
-          <p class="rec-desc">Closer option. Good shade. 10 min drive.</p>
-        </div>
-      </div>
-      <div>
-        <p class="rec-category-label">Getting Around</p>
-        <div class="rec-item">
-          <p class="rec-name">Rideshare</p>
-          <p class="rec-desc">Uber and Lyft work great from this location. Quick pickups.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">LAX Airport</p>
-          <p class="rec-desc">About 35 minutes depending on traffic. Use Waze.</p>
-        </div>
-        <div class="rec-item">
-          <p class="rec-name">Burbank Airport (BUR)</p>
-          <p class="rec-desc">Only 20 min. Much less hectic than LAX.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+              if (map && map.getSource('route')) {
+                map.getSource('route').setData({
+                  type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coordsHome, loc.coords] }
+                });
+              }
 
-  <!-- HOUSE RULES -->
-  <div class="section">
-    <p class="section-label">House Rules</p>
-    <h2 class="section-heading">A FEW THINGS TO KNOW</h2>
-    <div style="margin-top: 24px;">
-      <div class="rule">No smoking inside the home. The deck and outdoor areas are fine.</div>
-      <div class="rule">No parties or events. We love a good time, but the neighbors do too.</div>
-      <div class="rule">Quiet hours after 10 PM. The cul-de-sac is peaceful, let's keep it that way.</div>
-      <div class="rule">Pets are welcome. Just let us know in advance and keep them off the furniture.</div>
-      <div class="rule">Please don't move the art or instruments. They're in their happy places.</div>
-      <div class="rule">Lock up when you leave. The neighborhood is safe, but it's still LA.</div>
-    </div>
-  </div>
+              const bounds = new maplibregl.LngLatBounds();
+              bounds.extend(coordsHome);
+              bounds.extend(loc.coords);
+              if (map) {
+                map.fitBounds(bounds, { padding: 80, duration: 1500 });
+              }
+            });
 
-  <!-- EMERGENCY -->
-  <div class="section">
-    <p class="section-label">In Case of Emergency</p>
-    <h2 class="section-heading">IMPORTANT NUMBERS</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <p class="info-card-label">Emergency</p>
-        <p class="info-card-value">911</p>
-        <p class="info-card-note">Police, fire, and medical emergencies.</p>
-      </div>
-      <div class="info-card">
-        <p class="info-card-label">Your Hosts</p>
-        <p class="info-card-value">[YOUR PHONE]</p>
-        <p class="info-card-note">Call or text anytime. We'll get back to you right away.</p>
-      </div>
-    </div>
-    <div style="margin-top: 24px;">
-      <div class="list-item">
-        <span class="list-name">Nearest hospital</span>
-        <span class="list-meta">[Add hospital]</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Nearest urgent care</span>
-        <span class="list-meta">[Add urgent care]</span>
-      </div>
-      <div class="list-item">
-        <span class="list-name">Nearest pharmacy</span>
-        <span class="list-meta">[Add pharmacy]</span>
-      </div>
-    </div>
-  </div>
+            sidebar.appendChild(item);
+          });
 
-</div>
+          if (filtered.length > 0) {
+            // Trigger first item
+            setTimeout(() => sidebar.querySelector('.loc-item-v3').click(), 200);
+          }
+        }
 
-<!-- CTA -->
-<div style="background: var(--onyx); padding: 80px 24px; text-align: center;">
-  <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 56px); letter-spacing: 0.04em; line-height: 0.88; color: var(--ivory);">
-    ENJOY YOUR STAY
-  </p>
-  <p style="font-family: 'Instrument Serif', serif; font-size: clamp(18px, 2.5vw, 24px); color: rgba(250,246,240,0.45); font-style: italic; margin-top: 16px; letter-spacing: -0.01em;">
-    Come for the views. Stay for the vibe.
-  </p>
-  <p style="margin-top: 24px;">
-    <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener noreferrer"
-      style="display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: var(--brass); color: var(--ivory); padding: 14px 40px; transition: opacity 0.3s;"
-      onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-      Leave Us a Review
-    </a>
-  </p>
-</div>
+        function initMap() {
+          map = new maplibregl.Map({
+            container: 'v3map',
+            style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+            center: coordsHome,
+            zoom: 12.5,
+            scrollZoom: false,
+            interactive: true
+          });
+          map.addControl(new maplibregl.NavigationControl());
 
-<!-- FOOTER -->
-<footer class="footer">
-  <a href="./artist-bungalow-website-v3.html" class="footer-logo">THE ARTIST BUNGALOW</a>
-  <p class="footer-sub">Hollywood Hills &middot; Los Angeles</p>
-</footer>
+          map.on('load', () => {
+            // Home Marker
+            const hEl = document.createElement('div');
+            hEl.style.width = '18px';
+            hEl.style.height = '18px';
+            hEl.style.background = 'var(--terracotta)';
+            hEl.style.border = '2px solid white';
+            hEl.style.borderRadius = '50%';
+            hEl.style.boxShadow = '0 0 10px rgba(194,97,75,0.5)';
+            new maplibregl.Marker({ element: hEl }).setLngLat(coordsHome).addTo(map);
 
+            // Dest Marker
+            const dEl = document.createElement('div');
+            dEl.style.width = '16px';
+            dEl.style.height = '16px';
+            dEl.style.background = 'var(--onyx)';
+            dEl.style.border = '2px solid white';
+            dEl.style.borderRadius = '50%';
+            dEl.style.boxShadow = '0 0 10px rgba(26,26,26,0.3)';
+            destMarker = new maplibregl.Marker({ element: dEl }).setLngLat(locations[0].coords).addTo(map);
+
+            map.addSource('route', {
+              type: 'geojson',
+              data: { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coordsHome, locations[0].coords] } }
+            });
+
+            map.addLayer({
+              id: 'route',
+              type: 'line',
+              source: 'route',
+              layout: { 'line-join': 'round', 'line-cap': 'round' },
+              paint: { 'line-color': '#1a1a1a', 'line-width': 2, 'line-dasharray': [2, 4], 'line-opacity': 0.4 }
+            });
+
+            renderLocations('All');
+          });
+
+          // Attach filter events
+          document.querySelectorAll('.m-filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              document.querySelectorAll('.m-filter-btn').forEach(b => b.classList.remove('active'));
+              e.target.classList.add('active');
+              renderLocations(e.target.getAttribute('data-filter'));
+            });
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', initMap);
+      })();
+    </script>
 </body>
+
 </html>
