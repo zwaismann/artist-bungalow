@@ -239,65 +239,122 @@
             }
         }
 
-        /* Desktop Splash Screen */
-        @media (min-width: 900px) {
-            .hero-splash {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 1000;
-                background-color: var(--onyx);
-                transition: opacity 1s var(--ease-default), visibility 1s;
-                pointer-events: none;
-            }
-
-            .typewriter-text {
-                font-family: var(--font-typewriter);
-                color: rgba(250, 246, 240, 0.55);
-                max-width: 520px;
-                width: 100%;
-                text-align: left;
-                font-size: 1.2rem;
-                white-space: pre-wrap;
-            }
-
-            .typewriter-cursor {
-                display: inline-block;
-                width: 2px;
-                height: 1.1em;
-                background: rgba(250, 246, 240, 0.55);
-                margin-left: 2px;
-                vertical-align: middle;
-                animation: blink 1s step-end infinite;
-            }
-
-            @keyframes blink {
-                50% {
-                    opacity: 0;
-                }
-            }
-        }
-
-        @media (max-width: 899px) {
-            .hero-splash {
-                display: none !important;
-            }
-        }
-
-        /* Hero Section */
-        .hero-sticky {
+        /* --- 3B. HERO SCROLL WRAPPER --- */
+        .hero-scroll-wrapper {
             position: relative;
+            background-color: var(--onyx);
+            /* Height set by JS or calc, prompt: calc(1500px + 200vh) destkop */
+            height: calc(1500px + 200vh);
+        }
+
+        /* Screenplay Splash */
+        .hero-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .typewriter-text {
+            font-family: var(--font-typewriter);
+            color: rgba(250, 246, 240, 0.55);
+            max-width: 520px;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
+        }
+
+        @media (max-width: 767px) {
+            .typewriter-text {
+                font-size: 0.95rem;
+                max-width: 85vw;
+            }
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: rgba(250, 246, 240, 0.55);
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            animation: scrollIndicatorIn 1s ease 3s forwards;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .scroll-indicator-line {
+            width: 1px;
+            height: 28px;
+            background: rgba(250, 246, 240, 0.3);
+        }
+
+        .scroll-indicator-chevron {
+            width: 14px;
+            height: 14px;
+            border-right: 1px solid rgba(250, 246, 240, 0.4);
+            border-bottom: 1px solid rgba(250, 246, 240, 0.4);
+            transform: rotate(45deg);
+            animation: chevronDrift 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollIndicatorIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes chevronDrift {
+
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(45deg) translateY(4px);
+            }
+        }
+
+        /* Hero Sticky Section */
+        .hero-sticky {
+            position: sticky;
+            top: 0;
             height: 100vh;
             min-height: 600px;
             overflow: hidden;
             display: flex;
             align-items: flex-end;
             padding: 5vw;
+            /* clip-path inset 10% horizontal, 22% vertical to start */
+            clip-path: polygon(10% 22%, 90% 22%, 90% 78%, 10% 78%);
+            opacity: 0;
         }
 
         .hero-bg {
@@ -308,7 +365,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            transform: scale(1.15);
+            transform: scale(1.5);
             transform-origin: center center;
             will-change: transform;
         }
@@ -330,6 +387,34 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+        }
+
+        /* Phase 12: Mobile Bypass */
+        @media (max-width: 899px) {
+            .hero-splash {
+                display: none !important;
+            }
+
+            .hero-scroll-wrapper {
+                height: auto !important;
+            }
+
+            .site-nav {
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+
+            .hero-sticky {
+                position: relative !important;
+                height: auto !important;
+                min-height: 0 !important;
+                clip-path: none !important;
+                opacity: 1 !important;
+            }
+
+            .hero-bg {
+                transform: scale(1) !important;
+            }
         }
 
         .hero-text-group {
@@ -1625,46 +1710,53 @@
         <button class="menu-toggle">☰</button>
     </nav>
 
-    <!-- Desktop Splash Screen (Auto-dismisses) -->
-    <div class="hero-splash" id="heroSplash">
-        <div class="typewriter-text" id="typewriterText"></div>
-    </div>
-
-    <!-- 3B: HERO SECTION -->
-    <section class="hero-sticky" id="heroSticky">
-        <img src="hollywood_sign_hero.jpg" alt="Hollywood Hills" class="hero-bg" id="heroBg">
-        <div class="hero-gradient"></div>
-
-        <div class="hero-content">
-            <div class="hero-text-group">
-                <span class="hero-label">Hollywood Hills, Los Angeles</span>
-                <h1 class="hero-title font-impact">The Artist<br><span>Bungalow</span></h1>
-                <p class="hero-subtitle">Where the hills meet the music.</p>
-                <div class="hero-ctas">
-                    <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass">
-                        Book Your Stay
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="square">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="#intro" class="link-explore">Explore &darr;</a>
-                </div>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bedrooms</span></div>
-                <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bathrooms</span>
-                </div>
-                <div class="stat-item"><span class="stat-val">4.97</span><span class="stat-label">Rating</span>
-                </div>
-                <div class="stat-item"><span class="stat-val">★</span><span class="stat-label">Superhost</span>
-                </div>
-                <div class="stat-item"><span class="stat-val">♥</span><span class="stat-label">Guest Favorite</span>
-                </div>
+    <!-- 3B: HERO SCROLL WRAPPER -->
+    <div class="hero-scroll-wrapper" id="heroWrapper">
+        <!-- Desktop Splash Screen -->
+        <div class="hero-splash" id="heroSplash">
+            <div class="typewriter-text" id="typewriterText"></div>
+            <div class="scroll-indicator" id="splashIndicator" onclick="skipTypewriter()">
+                <div class="scroll-indicator-line"></div>
+                <div class="scroll-indicator-chevron"></div>
             </div>
         </div>
-    </section>
+
+        <!-- 3B: HERO SECTION -->
+        <section class="hero-sticky" id="heroSticky">
+            <img src="hollywood_sign_hero.jpg" alt="Hollywood Hills" class="hero-bg" id="heroBg">
+            <div class="hero-gradient"></div>
+
+            <div class="hero-content">
+                <div class="hero-text-group">
+                    <span class="hero-label">Hollywood Hills, Los Angeles</span>
+                    <h1 class="hero-title font-impact">The Artist<br><span>Bungalow</span></h1>
+                    <p class="hero-subtitle">Where the hills meet the music.</p>
+                    <div class="hero-ctas">
+                        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass">
+                            Book Your Stay
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="square">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#intro" class="link-explore">Explore &darr;</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bedrooms</span></div>
+                    <div class="stat-item"><span class="stat-val">2</span><span class="stat-label">Bathrooms</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">4.97</span><span class="stat-label">Rating</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">★</span><span class="stat-label">Superhost</span>
+                    </div>
+                    <div class="stat-item"><span class="stat-val">♥</span><span class="stat-label">Guest Favorite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End Hero Wrapper -->
 
     <!-- 3C: INTRO SECTION -->
     <section class="intro-section reveal" id="intro">
@@ -1955,7 +2047,7 @@
             <div class="dining-category">
                 <h3 class="dining-cat-label">Coffee & Cafes</h3>
                 <div class="dining-grid">
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Groundwork+Coffee,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Groundwork+Coffee,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Groundwork Coffee</span><span
                                 class="dining-card-price">$</span></div>
@@ -1971,7 +2063,7 @@
                                 </svg></span>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Alcove+Cafe+%26+Bakery,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Alcove+Cafe+%26+Bakery,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Alcove Cafe & Bakery</span><span
                                 class="dining-card-price">$$</span></div>
@@ -1987,7 +2079,7 @@
                                 </svg></span>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Bru+Coffeebar,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Bru+Coffeebar,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Bru Coffeebar</span><span
                                 class="dining-card-price">$</span></div>
@@ -2003,7 +2095,7 @@
                                 </svg></span>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Maru+Coffee,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Maru+Coffee,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Maru Coffee</span><span
                                 class="dining-card-price">$</span></div>
@@ -2026,7 +2118,7 @@
             <div class="dining-category">
                 <h3 class="dining-cat-label">Restaurants</h3>
                 <div class="dining-grid">
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Kismet,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Kismet,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Kismet</span><span
                                 class="dining-card-price">$$</span></div>
@@ -2040,7 +2132,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span></div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Musso+%26+Frank+Grill,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Musso+%26+Frank+Grill,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Musso & Frank Grill</span><span
                                 class="dining-card-price">$$$</span></div>
@@ -2054,7 +2146,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span></div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Figaro+Bistrot,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Figaro+Bistrot,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Figaro Bistrot</span><span
                                 class="dining-card-price">$$</span></div>
@@ -2068,7 +2160,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span></div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Osteria+Mozza,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Osteria+Mozza,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Osteria Mozza</span><span
                                 class="dining-card-price">$$$</span></div>
@@ -2082,7 +2174,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span></div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Cafe+Stella,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Cafe+Stella,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Cafe Stella</span><span
                                 class="dining-card-price">$$$</span></div>
@@ -2096,7 +2188,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span></div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+del+Cerro,+Los+Angeles,+CA+90068/Edendale,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Edendale,+Los+Angeles"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Edendale</span><span
                                 class="dining-card-price">$$</span></div>
@@ -2179,8 +2271,13 @@
 
         // --- GLOBAL SELECTORS ---
         const siteNav = document.getElementById('siteNav');
+        const heroWrapper = document.getElementById('heroWrapper');
         const heroSplash = document.getElementById('heroSplash');
         const typewriterText = document.getElementById('typewriterText');
+        const splashIndicator = document.getElementById('splashIndicator');
+
+        let isTyping = false;
+        let typeTimeout;
 
         // 2. Desktop Typewriter Logic
         if (window.innerWidth >= 900 && heroSplash && typewriterText) {
@@ -2191,8 +2288,7 @@
             ];
             let typeScript = scripts[Math.floor(Math.random() * scripts.length)];
             let typeIndex = 0;
-            let isTyping = true;
-            let typeTimeout;
+            isTyping = true;
             let displayedStr = "";
             typewriterText.innerHTML = '<span class="typewriter-cursor"></span>';
 
@@ -2220,44 +2316,80 @@
                 clearTimeout(typeTimeout);
                 displayedStr = typeScript.replace(/\n/g, '<br>');
                 typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
-
-                // Auto-dismiss smoothly after 2 seconds
-                setTimeout(() => {
-                    heroSplash.style.transition = 'opacity 1s var(--ease-default)';
-                    heroSplash.style.opacity = '0';
-                    setTimeout(() => {
-                        heroSplash.style.display = 'none';
-                    }, 1000);
-                }, 1500);
+                if (splashIndicator) splashIndicator.style.opacity = '1';
             }
+
+            window.skipTypewriter = function () {
+                finishTypewriter();
+            };
 
             setTimeout(typeChar, 400); // Slight delay before typing begins
         }
 
-        // 3. Simple Hero Parallax (rAF)
+        // 3. Hero Scroll Handler (rAF)
         let ticking = false;
         function updateHeroScroll() {
+            const heroWrapper = document.getElementById('heroWrapper');
+            const heroSplash = document.getElementById('heroSplash');
             const heroSticky = document.getElementById('heroSticky');
             const heroBg = document.getElementById('heroBg');
+            const siteNav = document.getElementById('siteNav');
 
-            if (!heroSticky || !heroBg) return;
+            if (!heroSticky || !heroBg || !heroWrapper) return;
 
-            const rect = heroSticky.getBoundingClientRect();
+            const rect = heroWrapper.getBoundingClientRect();
+            // Start at top of wrapper, end when scroll passes scrollHeight
             const scrollDist = -rect.top;
+            const scrollHeight = window.innerWidth > 900 ? 1500 : 900;
 
-            // Only parallax if we haven't scrolled completely past it
-            if (scrollDist > 0 && scrollDist < window.innerHeight) {
-                // Background Zoom: 1.0 -> 1.15 for subtle scale
-                let progress = scrollDist / window.innerHeight;
-                heroBg.style.transform = `scale(${1 + (0.15 * progress)})`;
-            } else if (scrollDist <= 0) {
-                heroBg.style.transform = 'scale(1)';
+            let progress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
+
+            if (window.innerWidth >= 900 && heroSplash) {
+                // Typewriter Fade: 0 to 20%
+                let splashOpacity = 1 - (progress / 0.2);
+                if (splashOpacity < 0) splashOpacity = 0;
+                heroSplash.style.opacity = splashOpacity;
+                if (progress > 0.2) { heroSplash.style.display = 'none'; } else { heroSplash.style.display = 'flex'; }
+
+                // Clip-Path Reveal
+                // Starts: 10% 22%, 90% 22%, 90% 78%, 10% 78%
+                // Ends: 0% 0%, 100% 0%, 100% 100%, 0% 100%
+                let hInset = 10 * (1 - progress);
+                let vInsetTop = 22 * (1 - progress);
+                let vInsetBot = 100 - (22 * (1 - progress));
+                heroSticky.style.clipPath = `polygon(${hInset}% ${vInsetTop}%, ${100 - hInset}% ${vInsetTop}%, ${100 - hInset}% ${vInsetBot}%, ${hInset}% ${vInsetBot}%)`;
+
+                // Opacity fade in
+                heroSticky.style.opacity = Math.min(1, progress * 4);
+
+                // Background Zoom: 1.5 -> 1
+                heroBg.style.transform = `scale(${1.5 - (0.5 * progress)})`;
+
+                // Nav Bar Fade (60-85%)
+                let navOpacity = (progress - 0.6) / 0.25;
+                navOpacity = Math.max(0, Math.min(1, navOpacity));
+                siteNav.style.opacity = navOpacity;
+                siteNav.style.pointerEvents = navOpacity > 0.8 ? 'auto' : 'none';
+            } else {
+                // Mobile simple parallax - reset desktop styles just in case resize
+                heroSticky.style.clipPath = 'none';
+                heroSticky.style.opacity = '1';
+                heroSplash.style.display = 'none';
+                siteNav.style.opacity = '1';
+                siteNav.style.pointerEvents = 'auto';
+
+                if (scrollDist > 0 && scrollDist < window.innerHeight) {
+                    let progress = scrollDist / window.innerHeight;
+                    heroBg.style.transform = `scale(${1 + (0.15 * progress)})`;
+                } else if (scrollDist <= 0) {
+                    heroBg.style.transform = 'scale(1)';
+                }
             }
 
             // Glassmorphism check on Navbar 
-            if (window.scrollY > 80) {
+            if (window.scrollY > 80 && (window.innerWidth < 900 || progress > 0.6)) {
                 siteNav.classList.add('scrolled');
-                siteNav.style.pointerEvents = 'auto';
+                if (window.innerWidth < 900) siteNav.style.pointerEvents = 'auto';
             } else {
                 siteNav.classList.remove('scrolled');
             }
