@@ -244,7 +244,7 @@
             position: relative;
             background-color: var(--onyx);
             /* Height set by JS or calc, prompt: calc(1500px + 200vh) destkop */
-            height: calc(1500px + 200vh);
+            height: calc(2500px + 100vh);
         }
 
         /* Screenplay Splash */
@@ -400,7 +400,6 @@
             }
 
             .site-nav {
-                opacity: 1 !important;
                 pointer-events: auto !important;
             }
 
@@ -737,7 +736,22 @@
             width: auto;
         }
 
-        /* --- 3E. VIEW MOMENT (PHOTO BREAK) --- */
+        /* --- 3E & 3G. VIEW MOMENT (Photo Break) --- */
+        .moment-section {
+            height: 100vh;
+            min-height: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 767px) {
+            .moment-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+        }
+
         .view-moment {
             position: relative;
             width: 100vw;
@@ -835,7 +849,9 @@
 
         @media (max-width: 767px) {
             .gallery-item {
-                width: 280px;
+                width: 75vw;
+                height: auto;
+                aspect-ratio: 3/4;
             }
         }
 
@@ -1137,12 +1153,6 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
-        }
-
-        .dp-icon {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
         }
 
         .dp-title {
@@ -1904,13 +1914,20 @@
     <section class="neighborhood-section" id="neighborhood">
         <div class="survey-bg-container">
             <!-- Background Images -->
-            <img src="survey_hollywood_bowl.png" class="survey-bg" id="bg-bowl" alt="">
-            <img src="survey_runyon_canyon.png" class="survey-bg" id="bg-runyon" alt="">
-            <img src="survey_griffith_observatory.png" class="survey-bg" id="bg-griffith" alt="">
-            <img src="survey_walk_of_fame.png" class="survey-bg" id="bg-walk" alt="">
-            <img src="survey_universal_studios.png" class="survey-bg" id="bg-universal" alt="">
-            <img src="survey_warner_bros.png" class="survey-bg" id="bg-warner" alt="">
-            <img src="survey_hollywood_reservoir.png" class="survey-bg" id="bg-reservoir" alt="">
+            <img src="survey_hollywood_bowl.png" class="survey-bg" id="bg-bowl"
+                alt="Map illustration of the Hollywood Bowl amphitheater">
+            <img src="survey_runyon_canyon.png" class="survey-bg" id="bg-runyon"
+                alt="Map illustration of the Runyon Canyon hiking trails">
+            <img src="survey_griffith_observatory.png" class="survey-bg" id="bg-griffith"
+                alt="Map illustration of the Griffith Observatory dome">
+            <img src="survey_walk_of_fame.png" class="survey-bg" id="bg-walk"
+                alt="Map illustration of the Hollywood Walk of Fame stars">
+            <img src="survey_universal_studios.png" class="survey-bg" id="bg-universal"
+                alt="Map illustration of the Universal Studios Theme Park">
+            <img src="survey_warner_bros.png" class="survey-bg" id="bg-warner"
+                alt="Map illustration of the Warner Bros Studio lot">
+            <img src="survey_hollywood_reservoir.png" class="survey-bg" id="bg-reservoir"
+                alt="Map illustration of the Hollywood Reservoir">
         </div>
 
         <div class="neighborhood-content reveal">
@@ -2010,7 +2027,6 @@
         <button class="dp-close" onclick="closeDetailPanel()">&times;</button>
         <div class="dp-content">
             <div class="dp-header">
-                <img src="" alt="" class="dp-icon" id="dpIcon">
                 <h3 class="dp-title" id="dpTitle">Location</h3>
             </div>
             <div class="dp-time" id="dpTime">
@@ -2047,7 +2063,7 @@
             <div class="dining-category">
                 <h3 class="dining-cat-label">Coffee & Cafes</h3>
                 <div class="dining-grid">
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Groundwork+Coffee,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Groundwork+Coffee,+1501+N+Cahuenga+Blvd,+Los+Angeles,+CA+90028"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Groundwork Coffee</span><span
                                 class="dining-card-price">$</span></div>
@@ -2090,12 +2106,12 @@
                             <span class="dining-card-dist">5 Min Drive</span>
                             <span class="dining-card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9-13a9 9 0 0118 0z" />
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                                     <circle cx="12" cy="10" r="3" />
                                 </svg></span>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Maru+Coffee,+Los+Angeles"
+                    <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Maru+Coffee,+1936+Hillhurst+Ave,+Los+Angeles,+CA+90027"
                         target="_blank" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Maru Coffee</span><span
                                 class="dining-card-price">$</span></div>
@@ -2326,9 +2342,12 @@
             setTimeout(typeChar, 400); // Slight delay before typing begins
         }
 
-        // 3. Hero Scroll Handler (rAF)
-        let ticking = false;
-        function updateHeroScroll() {
+        // 3. Smooth Hero Scroll Handler (Lerp rAF)
+        let targetProgress = 0;
+        let currentProgress = 0;
+        let heroRafId = null;
+
+        function renderHeroFrame() {
             const heroWrapper = document.getElementById('heroWrapper');
             const heroSplash = document.getElementById('heroSplash');
             const heroSticky = document.getElementById('heroSticky');
@@ -2337,12 +2356,15 @@
 
             if (!heroSticky || !heroBg || !heroWrapper) return;
 
-            const rect = heroWrapper.getBoundingClientRect();
-            // Start at top of wrapper, end when scroll passes scrollHeight
-            const scrollDist = -rect.top;
-            const scrollHeight = window.innerWidth > 900 ? 1500 : 900;
+            // Interpolate smoothly towards the target
+            currentProgress += (targetProgress - currentProgress) * 0.08;
 
-            let progress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
+            // Snap when extremely close to stop the loop
+            if (Math.abs(targetProgress - currentProgress) < 0.001) {
+                currentProgress = targetProgress;
+            }
+
+            let progress = currentProgress;
 
             if (window.innerWidth >= 900 && heroSplash) {
                 // Typewriter Fade: 0 to 20%
@@ -2352,8 +2374,6 @@
                 if (progress > 0.2) { heroSplash.style.display = 'none'; } else { heroSplash.style.display = 'flex'; }
 
                 // Clip-Path Reveal
-                // Starts: 10% 22%, 90% 22%, 90% 78%, 10% 78%
-                // Ends: 0% 0%, 100% 0%, 100% 100%, 0% 100%
                 let hInset = 10 * (1 - progress);
                 let vInsetTop = 22 * (1 - progress);
                 let vInsetBot = 100 - (22 * (1 - progress));
@@ -2378,9 +2398,12 @@
                 siteNav.style.opacity = '1';
                 siteNav.style.pointerEvents = 'auto';
 
+                const rect = heroWrapper.getBoundingClientRect();
+                const scrollDist = -rect.top;
+
                 if (scrollDist > 0 && scrollDist < window.innerHeight) {
-                    let progress = scrollDist / window.innerHeight;
-                    heroBg.style.transform = `scale(${1 + (0.15 * progress)})`;
+                    let mProgress = scrollDist / window.innerHeight;
+                    heroBg.style.transform = `scale(${1 + (0.15 * mProgress)})`;
                 } else if (scrollDist <= 0) {
                     heroBg.style.transform = 'scale(1)';
                 }
@@ -2394,12 +2417,53 @@
                 siteNav.classList.remove('scrolled');
             }
 
-            ticking = false;
+            // Continue loop if not reached target
+            if (currentProgress !== targetProgress) {
+                heroRafId = requestAnimationFrame(renderHeroFrame);
+            } else {
+                heroRafId = null;
+            }
         }
 
-        window.addEventListener('scroll', () => {
-            if (!ticking) { window.requestAnimationFrame(updateHeroScroll); ticking = true; }
-        });
+        let snappingToBottom = false;
+
+        function updateHeroTarget() {
+            const heroWrapper = document.getElementById('heroWrapper');
+            if (!heroWrapper) return;
+
+            const rect = heroWrapper.getBoundingClientRect();
+            // Start at top of wrapper
+            const scrollDist = -rect.top;
+
+            // Increased the scroll height to slow down the cinematic transition speed
+            const scrollHeight = window.innerWidth > 900 ? 2500 : 900;
+
+            targetProgress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
+
+            if (window.innerWidth >= 900) {
+                // If user scrolls past 30%, automate the rest of the cinematic reveal
+                if (targetProgress > 0.3 && targetProgress < 1 && !snappingToBottom) {
+                    snappingToBottom = true;
+                    // Automatically scroll the window to the exact end of the scroll wrapper
+                    const targetScrollY = heroWrapper.offsetTop + scrollHeight;
+                    window.scrollTo({
+                        top: targetScrollY,
+                        behavior: 'smooth'
+                    });
+                } else if (targetProgress === 0 || targetProgress >= 1) {
+                    snappingToBottom = false;
+                }
+            }
+
+            if (!heroRafId) {
+                heroRafId = requestAnimationFrame(renderHeroFrame);
+            }
+        }
+
+        window.addEventListener('scroll', updateHeroTarget, { passive: true });
+
+        // Init state on load
+        requestAnimationFrame(() => updateHeroTarget());
 
         // 4. Nav Scroll Spy
         const sections = document.querySelectorAll('section[id]');
@@ -2583,7 +2647,6 @@
         const panelOverlay = document.getElementById('panelOverlay');
         const dpTitle = document.getElementById('dpTitle');
         const dpDesc = document.getElementById('dpDesc');
-        const dpIcon = document.getElementById('dpIcon');
         const dpTime = document.getElementById('dpTime');
         const dpMap = document.getElementById('dpMap');
         let mapLibreInstance;
@@ -2649,10 +2712,10 @@
         }
 
         function openDetailPanel(id) {
+            document.getElementById('detailPanel').scrollTop = 0;
             const data = locData[id];
             dpTitle.textContent = data.title;
             dpDesc.textContent = data.desc;
-            dpIcon.src = data.icon;
             dpTime.querySelector('span').textContent = data.time;
 
             let photosHtml = '';
