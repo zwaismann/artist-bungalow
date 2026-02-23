@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Guidelines — The Artist Bungalow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --ivory: #FAF6F0;
+            --onyx: #1A1A1A;
+            --brass: #C49A3C;
+            --terracotta: #C2614B;
+            --olive: #5A6B4A;
+            --ocean: #3B6B8A;
+            --sand: #D4C5A9;
+            --blush: #E8CFC0;
+            --cream: #F0E8D8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::selection {
+            background: var(--brass);
+            color: var(--ivory);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--ivory);
+            color: var(--onyx);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .font-impact {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Instrument Serif', serif;
+        }
+
+        .font-body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ── NAV ────────────────────────────────── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(250, 246, 240, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 15px;
+            letter-spacing: 0.12em;
+            color: var(--onyx);
+            transition: color 0.3s;
+        }
+
+        .nav-logo:hover {
+            color: var(--brass);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-link {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, 0.5);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--brass);
+        }
+
+        /* ── HERO ───────────────────────────────── */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-img {
+            position: absolute;
+            inset: 0;
+            transform: scale(1.05);
+            animation: gentleZoom 20s linear infinite alternate;
+        }
+
+        @keyframes gentleZoom {
+            0% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.15), rgba(26, 26, 26, 0.75));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 24px 60px;
+        }
+
+        .hero-label {
+            font-size: 11px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(64px, 10vw, 140px);
+            line-height: 0.82;
+            letter-spacing: 0.02em;
+            color: var(--ivory);
+            margin-bottom: 24px;
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-style: italic;
+            color: rgba(250, 246, 240, 0.8);
+            max-width: 600px;
+            line-height: 1.2;
+        }
+
+        /* ── GENERAL CONTENT ────────────────────── */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-border {
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 6vw, 72px);
+            line-height: 0.85;
+            letter-spacing: 0.02em;
+            color: var(--onyx);
+            margin-bottom: 24px;
+        }
+
+        .section-desc {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(26, 26, 26, 0.6);
+            max-width: 600px;
+        }
+
+        /* ── BRAND ESSENCE ──────────────────────── */
+        .essence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .essence-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.1;
+            color: var(--onyx);
+        }
+
+        .essence-text span {
+            color: var(--brass);
+            font-style: italic;
+        }
+
+        .essence-img-wrapper {
+            position: relative;
+            aspect-ratio: 3/4;
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+        @media (max-width: 900px) {
+            .essence-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* ── LOGOS ──────────────────────────────── */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .logo-card {
+            background: var(--onyx);
+            color: var(--ivory);
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .logo-card.light {
+            background: var(--cream);
+            color: var(--onyx);
+        }
+
+        .logo-card.accent {
+            background: var(--brass);
+            color: var(--ivory);
+        }
+
+        .logo-display-primary {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(64px, 8vw, 100px);
+            line-height: 0.85;
+            letter-spacing: 0.04em;
+        }
+
+        .logo-display-secondary {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(48px, 6vw, 72px);
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .logo-caption {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-card {
+                min-height: 300px;
+                padding: 60px 24px;
+            }
+        }
+
+        /* ── COLORS ─────────────────────────────── */
+        .color-category {
+            margin-bottom: 60px;
+        }
+
+        .color-category-title {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, 0.4);
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .color-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-swatch {
+            height: 160px;
+            width: 100%;
+            border: 1px solid rgba(26, 26, 26, 0.05);
+            margin-bottom: 16px;
+        }
+
+        .color-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .color-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.04em;
+            color: var(--onyx);
+            line-height: 1;
+        }
+
+        .color-hex {
+            font-family: monospace;
+            font-size: 12px;
+            color: rgba(26, 26, 26, 0.5);
+        }
+
+        .color-desc {
+            font-size: 12px;
+            color: rgba(26, 26, 26, 0.6);
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        /* ── TYPOGRAPHY ─────────────────────────── */
+        .type-specimen {
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .type-specimen:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .type-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .type-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        .type-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--onyx);
+        }
+
+        .type-role {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        .type-display.instrument {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(48px, 8vw, 120px);
+            line-height: 1;
+            color: var(--onyx);
+        }
+
+        .type-display.instrument-italic {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(48px, 8vw, 120px);
+            line-height: 1;
+            color: var(--brass);
+        }
+
+        .type-display.space {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 5vw, 72px);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--onyx);
+            letter-spacing: -0.02em;
+        }
+
+        .type-display.space-bold {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 4vw, 56px);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--onyx);
+            margin-top: 16px;
+        }
+
+        .type-display.bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(64px, 10vw, 160px);
+            line-height: 0.85;
+            letter-spacing: 0.04em;
+            color: var(--onyx);
+        }
+
+        .type-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px dotted rgba(26, 26, 26, 0.2);
+        }
+
+        .metric-item-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, 0.5);
+            margin-bottom: 4px;
+        }
+
+        .metric-item-value {
+            font-size: 14px;
+            color: var(--onyx);
+        }
+
+        /* ── TONE & PHOTOGRAPHY ─────────────────── */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rule-block {
+            background: var(--cream);
+            padding: 40px;
+        }
+
+        .rule-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            color: var(--onyx);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .rule-list {
+            list-style: none;
+        }
+
+        .rule-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: rgba(26, 26, 26, 0.7);
+            line-height: 1.6;
+        }
+
+        .rule-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--brass);
+            border-radius: 50%;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .photo-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--onyx);
+            overflow: hidden;
+        }
+
+        .photo-item.portrait {
+            aspect-ratio: 3/4;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: var(--ivory);
+            font-size: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ── FOOTER ─────────────────────────────── */
+        .footer {
+            background: var(--onyx);
+            color: var(--ivory);
+            padding: 100px 24px;
+            text-align: center;
+        }
+
+        .footer-crown {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(250, 246, 240, 0.2);
+            border-radius: 50%;
+        }
+
+        .footer-crown svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--brass);
+        }
+
+        .footer-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            letter-spacing: 0.15em;
+            color: var(--ivory);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-tagline {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--brass);
+            margin-bottom: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .footer-links a {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.5);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--brass);
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: rgba(250, 246, 240, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">THE ARTIST BUNGALOW</a>
+            <div class="nav-links">
+                <a href="#identity" class="nav-link">Identity</a>
+                <a href="#logos" class="nav-link">Logos</a>
+                <a href="#colors" class="nav-link">Colors</a>
+                <a href="#typography" class="nav-link">Typography</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-img">
+            <img src="./property_optimized/exterior-front-view.webp" alt="Artist Bungalow Exterior">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-label">The Artist Bungalow</span>
+            <h1 class="hero-title">Brand <span>Guidelines</span></h1>
+            <p class="hero-subtitle">Version 2.0 &mdash; Definitive digital style book and identity system.</p>
+        </div>
+    </header>
+
+    <!-- BRAND ESSENCE -->
+    <section id="identity" class="section section-border">
+        <div class="content-wrapper">
+            <header class="section-header">
+                <span class="section-label">01 // The Identity</span>
+                <h2 class="section-title">Brand Essence</h2>
+            </header>
+
+            <div class="essence-grid">
+                <div>
+                    <p class="essence-text">
+                        Classic Hollywood glamour meets mid-century modernism meets <span>California warmth.</span>
+                    </p>
+                    <div style="margin-top: 40px;">
+                        <p class="section-desc" style="margin-bottom: 24px;">
+                            An intimate, art-filled retreat perched in the Hollywood Hills, steps from the legendary
+                            Hollywood Bowl. Sophisticated but fun, bold but sun-drenched, editorial but personal.
+                        </p>
+                        <p class="section-desc">
+                            <strong>Design Direction:</strong> Stahl House clean lines + Chateau Marmont storied warmth
+                            + Eames playful geometry + Palm Springs golden hour. Never sterile, never corporate. The
+                            visual language of a well-traveled creative who knows good design but doesn't take
+                            themselves too seriously.
+                        </p>
+                    </div>
+                </div>
+                <div class="essence-img-wrapper">
+                    <img src="./property_optimized/living-room-wide-view.webp" alt="Living Room with piano">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section id="logos" class="section section-border">
+        <div class="content-wrapper">
+            <header class="section-header">
+                <span class="section-label">02 // The Marks</span>
+                <h2 class="section-title">Logos & Wordmarks</h2>
+                <p class="section-desc">The brand utilizes purely typographical marks. The primary identity is bold and
+                    cinematic, rooted directly in the aesthetic of mid-century Hollywood theater signage. The secondary
+                    mark is an intimate, editorial signature.</p>
+            </header>
+
+            <div class="logo-grid">
+                <!-- Primary Wordmark Dark -->
+                <div class="logo-card">
+                    <span class="logo-caption">Primary Wordmark / Onyx Container</span>
+                    <div class="logo-display-primary">THE ARTIST BUNGALOW</div>
+                </div>
+                <!-- Primary Wordmark Light -->
+                <div class="logo-card light">
+                    <span class="logo-caption">Primary Wordmark / Cream Container</span>
+                    <div class="logo-display-primary">THE ARTIST BUNGALOW</div>
+                </div>
+                <!-- Secondary Signature -->
+                <div class="logo-card light"
+                    style="grid-column: 1 / -1; align-items: flex-start; text-align: left; padding: 100px 60px;">
+                    <span class="logo-caption">Secondary Signature / Editorial Use Only</span>
+                    <div class="logo-display-secondary">The Artist Bungalow</div>
+                </div>
+                <!-- Monogram / Icon -->
+                <div class="logo-card accent" style="flex-direction: row; justify-content: center; gap: 40px;">
+                    <span class="logo-caption">Brand Accent / Minimal Monogram</span>
+                    <div class="logo-display-secondary" style="font-size: 160px; margin-right: -20px;">A</div>
+                    <div class="logo-display-primary" style="font-size: 180px;">B</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLORS -->
+    <section id="colors" class="section section-border">
+        <div class="content-wrapper">
+            <header class="section-header">
+                <span class="section-label">03 // The Palette</span>
+                <h2 class="section-title">Color Tokens</h2>
+                <p class="section-desc">Nine tones rooted directly in the physical property. Brass fixtures, onyx
+                    silhouettes, sun-washed ivory walls, and terracotta hillside views.</p>
+            </header>
+
+            <!-- Primary -->
+            <div class="color-category">
+                <h3 class="color-category-title">Primary Core</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--onyx);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Onyx</div>
+                                <div class="color-desc">Deep near-black for text, dark sections, grounding contrast.
+                                </div>
+                            </div>
+                            <div class="color-hex">#1A1A1A</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--brass);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Brass</div>
+                                <div class="color-desc">The signature accent. Warm gold with patina, not shiny.</div>
+                            </div>
+                            <div class="color-hex">#C49A3C</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--ivory); border: 1px solid rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Ivory</div>
+                                <div class="color-desc">Warm off-white background. Sun-washed, not clinical.</div>
+                            </div>
+                            <div class="color-hex">#FAF6F0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="color-category">
+                <h3 class="color-category-title">Secondary Accents</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--terracotta);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Terracotta</div>
+                                <div class="color-desc">Spanish tile, warm earth. Accent for warmth and energy.</div>
+                            </div>
+                            <div class="color-hex">#C2614B</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--olive);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Olive</div>
+                                <div class="color-desc">Hillside greenery, tropical garden. Natural and grounding.</div>
+                            </div>
+                            <div class="color-hex">#5A6B4A</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--ocean);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Ocean</div>
+                                <div class="color-desc">City-to-ocean views, bedroom linens. Cool counterpoint.</div>
+                            </div>
+                            <div class="color-hex">#3B6B8A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neutrals -->
+            <div class="color-category" style="margin-bottom: 0;">
+                <h3 class="color-category-title">Neutral Tones</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--sand);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Sand</div>
+                                <div class="color-desc">Rugs, wood tones, natural texture. Warm mid-tone.</div>
+                            </div>
+                            <div class="color-hex">#D4C5A9</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--blush);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Blush</div>
+                                <div class="color-desc">Soft warmth, terracotta's lighter sibling.</div>
+                            </div>
+                            <div class="color-hex">#E8CFC0</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--cream);"></div>
+                        <div class="color-info">
+                            <div>
+                                <div class="color-name">Cream</div>
+                                <div class="color-desc">Section backgrounds, subtle contrast against Ivory.</div>
+                            </div>
+                            <div class="color-hex">#F0E8D8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Rules -->
+            <div class="rules-grid" style="margin-top: 80px;">
+                <div class="rule-block" style="background: transparent; padding: 0;">
+                    <h4 class="rule-title"
+                        style="font-size: 24px; font-style: normal; font-family: 'Space Grotesk', sans-serif; font-weight: 500;">
+                        Usage Rules</h4>
+                    <ul class="rule-list">
+                        <li><strong>Brass</strong> is the hero accent, use for all CTAs, section labels, and star
+                            ratings.</li>
+                        <li><strong>Onyx + Ivory</strong> is the primary contrast pair. Avoid pure white (#FFF) or pure
+                            black (#000).</li>
+                        <li>Terracotta, Olive, and Ocean are supporting accents, not competing leads.</li>
+                        <li>Dark sections should use the Onyx background with Ivory and Brass typography.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section id="typography" class="section section-border">
+        <div class="content-wrapper">
+            <header class="section-header">
+                <span class="section-label">04 // The Typography</span>
+                <h2 class="section-title">Font Families</h2>
+                <p class="section-desc">A carefully balanced trio. Geometric modernism creates a clean UI foundation,
+                    while vintage Hollywood proportions and editorial serifs inject character and elegance.</p>
+            </header>
+
+            <!-- Bebas Neue -->
+            <div class="type-specimen">
+                <div class="type-header">
+                    <div class="type-name">Bebas Neue</div>
+                    <div class="type-role">Brand Moments / Wordmarks</div>
+                </div>
+                <div class="type-display bebas">THE HOLLYWOOD HILLS</div>
+                <div class="type-metrics">
+                    <div>
+                        <div class="metric-item-label">Weights</div>
+                        <div class="metric-item-value">Regular (400)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Tracking</div>
+                        <div class="metric-item-value">Loose (+0.04em to +0.15em)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Case</div>
+                        <div class="metric-item-value">ALL-CAPS Exclusive</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Application</div>
+                        <div class="metric-item-value">Cinematic Headers, Nav Logo</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instrument Serif -->
+            <div class="type-specimen">
+                <div class="type-header">
+                    <div class="type-name">Instrument Serif</div>
+                    <div class="type-role">Display / Editorial Headlines</div>
+                </div>
+                <div class="type-display instrument">A Sun-Drenched Retreat</div>
+                <div class="type-display instrument-italic" style="margin-top: 20px;">Curated for creatives.</div>
+                <div class="type-metrics">
+                    <div>
+                        <div class="metric-item-label">Weights</div>
+                        <div class="metric-item-value">Regular, Italic (400)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Tracking</div>
+                        <div class="metric-item-value">Tight (0em)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Leading</div>
+                        <div class="metric-item-value">Snug (1.0 to 1.1)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Application</div>
+                        <div class="metric-item-value">Story Titles, Quotations</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Space Grotesk -->
+            <div class="type-specimen">
+                <div class="type-header">
+                    <div class="type-name">Space Grotesk</div>
+                    <div class="type-role">Body Copy / Interface / Navigation</div>
+                </div>
+                <div class="type-display space">Geometric sans-serif with modernist DNA.</div>
+                <div class="type-display space-bold">Clean but characterful.</div>
+                <div class="type-metrics">
+                    <div>
+                        <div class="metric-item-label">Weights</div>
+                        <div class="metric-item-value">Light (300), Regular (400), Semi (600)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Tracking</div>
+                        <div class="metric-item-value">Body (0), UI Labels (+0.2em)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Leading</div>
+                        <div class="metric-item-value">Relaxed (1.6 for body text)</div>
+                    </div>
+                    <div>
+                        <div class="metric-item-label">Application</div>
+                        <div class="metric-item-value">Paragraphs, Buttons, Captions</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VOICE & VISUALS -->
+    <section class="section section-border">
+        <div class="content-wrapper">
+            <header class="section-header">
+                <span class="section-label">05 // The Vibe</span>
+                <h2 class="section-title">Voice & Photography</h2>
+            </header>
+
+            <div class="rules-grid">
+                <div class="rule-block">
+                    <h3 class="rule-title">Tone of Voice</h3>
+                    <ul class="rule-list">
+                        <li><strong>Warm & Personal:</strong> Never sound corporate. Speak with local expertise and
+                            casual authority.</li>
+                        <li><strong>Dual Perspective:</strong> Use the property as the protagonist ("A retreat perched
+                            in the hills...") but switch to second-person for experiential moments ("Your mornings start
+                            with canyon light...").</li>
+                        <li><strong>Sensory Language:</strong> Focus on light, breeze, views, and warmth.</li>
+                        <li><strong>Confidentiality:</strong> Keep hosts private. No host names or personal identities.
+                        </li>
+                        <li><strong>Formatting:</strong> Short sentences. Confident pacing. Never use em-dashes (—).
+                        </li>
+                    </ul>
+                </div>
+                <div class="rule-block">
+                    <h3 class="rule-title">Visual Layout</h3>
+                    <ul class="rule-list">
+                        <li><strong>Asymmetric Grids:</strong> Avoid perfectly uniform boxes to keep the layout feeling
+                            organic and editorial.</li>
+                        <li><strong>Whitespace:</strong> Use generous negative space. Let the content breathe.</li>
+                        <li><strong>Sharp Edges:</strong> No rounded corners on photographs. Keeps the design
+                            architectural and crisp.</li>
+                        <li><strong>Minimal Decor:</strong> Use thin horizontal rules as dividers. Avoid heavy drop
+                            shadows or bordered cards.</li>
+                        <li><strong>Micro-Interactions:</strong> Subtle fade-up scroll reveals (0.7s) and parallax hero
+                            images. Hover gallery zooms limited to a gentle 1.05 scale.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="./property_optimized/deck-dining-daytime.webp" alt="Photography Example 1">
+                    <div class="photo-caption">Photography-forward, full-bleed images. Warm, natural light aesthetic
+                        (golden hour energy). No filters, no heavy color grading.</div>
+                </div>
+                <div class="photo-item portrait">
+                    <img src="./property_optimized/kitchen-coffee-bar.webp" alt="Photography Example 2">
+                    <div class="photo-caption">Highlight details with sharp, unrounded crops.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-crown">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+            </svg>
+        </div>
+        <a href="#" class="footer-brand">The Artist Bungalow</a>
+        <p class="footer-tagline">Where the hills meet the music.</p>
+        <div class="footer-links">
+            <a href="./index.html">Main Website</a>
+            <a href="./artist-bungalow-guidebook.html">Guest Guidebook</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 The Artist Bungalow. Designed in Los Angeles.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId) {
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Reset to top for logo
+        document.querySelectorAll('.footer-brand').forEach(brand => {
+            brand.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
