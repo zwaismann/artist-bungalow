@@ -594,8 +594,19 @@
     <div class="section">
       <p class="section-label">Arrival &amp; Departure</p>
       <h2 class="section-heading" id="arrival">CHECK-IN &amp; CHECK-OUT</h2>
+      <div class="info-grid" style="margin-bottom: 32px;">
+        <div class="info-card">
+          <p class="info-card-label">Check-In Time</p>
+          <p class="info-card-value">4:00 PM</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Check-Out Time</p>
+          <p class="info-card-value" style="color: var(--terracotta);">10:00 AM</p>
+        </div>
+      </div>
+
       <!-- KEYS & ENTRY -->
-      <div class="info-grid">
+      <div class="info-grid" style="grid-template-columns: 1fr; margin-bottom: 40px;">
         <div class="info-card">
           <p class="info-card-label" style="display: flex; align-items: center; gap: 8px;">
             <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: var(--brass);">
@@ -621,18 +632,10 @@
       </div>
 
       <!-- CHECK-OUT INSTRUCTIONS -->
-      <div class="section" id="checkout">
-        <p class="section-label">Departure</p>
-        <h2 class="section-heading">CHECK-OUT INSTRUCTIONS</h2>
+      <div class="section" id="checkout" style="padding-top: 0; border-top: none;">
+        <h3 class="section-heading" style="font-size: 32px; margin-bottom: 24px;">CHECK-OUT INSTRUCTIONS</h3>
 
-        <div class="info-grid" style="grid-template-columns: 1fr; gap: 16px;">
-          <div class="info-card" style="padding: 24px;">
-            <p class="info-card-label">Check-Out Time</p>
-            <p class="info-card-value" style="color: var(--terracotta);">10:00 AM</p>
-          </div>
-        </div>
-
-        <div style="margin-top: 32px;">
+        <div>
           <ul class="amenity-list">
             <li><strong>Trash:</strong> Please take out any trash bags from the kitchen only to the outdoor trash bins.
             </li>
