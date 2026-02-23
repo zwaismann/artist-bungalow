@@ -2905,7 +2905,10 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
-                if (targetId === '') return;
+                if (targetId === '') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
                 const targetEl = document.getElementById(targetId);
                 if (targetEl) {
                     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
