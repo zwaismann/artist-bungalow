@@ -2255,23 +2255,50 @@
 
                         galleryContainer.style.cursor = cursorGrab;
 
+                        let totalDragDist = 0;
+
+                        // Drag events (Mouse)
                         galleryContainer.addEventListener('mousedown', e => {
                         isDragging = true;
                         startX = e.pageX;
                         prevX = e.pageX;
                         gVelocity = 0;
+                        totalDragDist = 0;
                         galleryContainer.style.cursor = cursorGrabbing;
                         e.preventDefault();
                         });
-                        window.addEventListener('mouseup', () => { isDragging = false; galleryContainer.style.cursor =
-                        cursorGrab; });
+                        window.addEventListener('mouseup', () => {
+                        isDragging = false;
+                        galleryContainer.style.cursor = cursorGrab;
+                        });
                         window.addEventListener('mousemove', e => {
                         if (!isDragging) return;
                         const delta = e.pageX - prevX;
+                        totalDragDist += Math.abs(delta);
                         gPos += delta;
                         gVelocity = -delta * 0.1; // momentum impulse
                         prevX = e.pageX;
                         });
+
+                        // Touch events (Mobile swipe)
+                        galleryContainer.addEventListener('touchstart', e => {
+                        isDragging = true;
+                        startX = e.touches[0].pageX;
+                        prevX = e.touches[0].pageX;
+                        gVelocity = 0;
+                        totalDragDist = 0;
+                        }, { passive: true });
+                        window.addEventListener('touchend', () => {
+                        isDragging = false;
+                        });
+                        window.addEventListener('touchmove', e => {
+                        if (!isDragging) return;
+                        const delta = e.touches[0].pageX - prevX;
+                        totalDragDist += Math.abs(delta);
+                        gPos += delta;
+                        gVelocity = -delta * 0.1;
+                        prevX = e.touches[0].pageX;
+                        }, { passive: true });
 
                         // Lightbox
                         const lightbox = document.getElementById('lightbox');
@@ -2284,7 +2311,7 @@
                         });
 
                         galleryTrack.addEventListener('click', e => {
-                        if (Math.abs(gVelocity) > 2) return; // Prevent click if dragging
+                        if (totalDragDist > 10) return; // Prevent click if dragging more than 10px
                         if (e.target.tagName === 'IMG') {
                         lightboxImg.src = e.target.src.replace('?im_w=1200', '?im_w=2560'); // 4k uprez
                         lightbox.classList.add('active');
