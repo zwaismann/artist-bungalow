@@ -5,6 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brand Guidelines — The Artist Bungalow</title>
+    <meta name="description"
+        content="Brand guidelines for The Artist Bungalow — logo, palette, typography, voice, and photography standards." />
+    <link rel="canonical" href="https://theartistbungalow.com/artist-bungalow-brand-guide.html" />
+    <meta property="og:title" content="Brand Guidelines — The Artist Bungalow" />
+    <meta property="og:description"
+        content="Brand guidelines for The Artist Bungalow — logo, palette, typography, voice, and photography standards." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://theartistbungalow.com/artist-bungalow-brand-guide.html" />
+    <meta property="og:image" content="https://theartistbungalow.com/og-image.jpg" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -116,6 +128,30 @@
             color: var(--brass);
         }
 
+        /* Mobile: nav links scroll within the viewport instead of widening the page */
+        @media (max-width: 640px) {
+            .nav-inner {
+                gap: 16px;
+            }
+
+            .nav-links {
+                min-width: 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-link {
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+        }
+
         /* ── HERO ───────────────────────────────── */
         .hero {
             position: relative;
@@ -143,10 +179,23 @@
             }
         }
 
+        /* Mobile: no bleed, no scaling — hero image stays exactly within the viewport */
+        @media (max-width: 768px) {
+            .hero-img {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                transform: none;
+                animation: none;
+            }
+        }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.15), rgba(26, 26, 26, 0.75));
+            background:
+                linear-gradient(to top, rgba(26, 26, 26, 0.55) 0%, rgba(26, 26, 26, 0.3) 33%, rgba(26, 26, 26, 0) 60%),
+                linear-gradient(to bottom, rgba(26, 26, 26, 0.15), rgba(26, 26, 26, 0.6));
         }
 
         .hero-content {
@@ -566,14 +615,27 @@
             aspect-ratio: 3/4;
         }
 
+        /* Caption scrim: dark gradient strip so captions stay legible over bright photos */
+        .photo-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 45%;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0));
+            pointer-events: none;
+        }
+
         .photo-caption {
             position: absolute;
             bottom: 20px;
             left: 20px;
             right: 20px;
+            z-index: 1;
             color: var(--ivory);
             font-size: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
         }
 
         /* ── FOOTER ─────────────────────────────── */
@@ -640,6 +702,24 @@
         .footer-copy {
             font-size: 12px;
             color: rgba(250, 246, 240, 0.3);
+        }
+
+        /* ── REDUCED MOTION ─────────────────────── */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .hero-img {
+                animation: none !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -1047,13 +1127,16 @@
         <a href="#" class="footer-brand">The Artist Bungalow</a>
         <p class="footer-tagline">Where the hills meet the music.</p>
         <div class="footer-links">
-            <a href="./index.html">Main Website</a>
+            <a href="/">Main Website</a>
             <a href="./artist-bungalow-guidebook.html">Guest Guidebook</a>
         </div>
         <p class="footer-copy">&copy; 2026 The Artist Bungalow. Designed in Los Angeles.</p>
     </footer>
 
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
         // Smooth scroll for internal links
         document.querySelectorAll('.nav-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1062,7 +1145,7 @@
                 if (targetId) {
                     const targetEl = document.getElementById(targetId);
                     if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        targetEl.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
                     }
                 }
             });
@@ -1072,7 +1155,7 @@
         document.querySelectorAll('.footer-brand').forEach(brand => {
             brand.addEventListener('click', function (e) {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: scrollBehavior });
             });
         });
     </script>

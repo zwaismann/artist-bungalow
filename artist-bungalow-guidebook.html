@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Guest guidebook for The Artist Bungalow - check-in, house guide, WiFi, parking, and our favorite local spots in the Hollywood Hills.">
   <title>Guest Guide — The Artist Bungalow</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -104,6 +108,9 @@
       text-transform: uppercase;
       color: rgba(250, 246, 240, 0.4);
       transition: color 0.3s;
+      /* 40px+ tap target without changing the nav's visual height */
+      padding: 13px 8px;
+      margin: -13px -8px;
     }
 
     .nav-link:hover {
@@ -194,7 +201,7 @@
 
     .section-body {
       font-size: 14px;
-      color: rgba(26, 26, 26, 0.55);
+      color: rgba(26, 26, 26, 0.78);
       line-height: 1.7;
       max-width: 600px;
     }
@@ -244,7 +251,7 @@
     }
 
     .info-card-note {
-      font-size: 13px;
+      font-size: 14px;
       color: rgba(26, 26, 26, 0.6);
       line-height: 1.4;
       margin-top: 8px;
@@ -332,7 +339,7 @@
 
     .rec-desc {
       font-size: 12px;
-      color: rgba(26, 26, 26, 0.4);
+      color: rgba(26, 26, 26, 0.78);
       margin-top: 2px;
     }
 
@@ -489,7 +496,7 @@
     }
 
     .footer-sub {
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: rgba(250, 246, 240, 0.2);
@@ -532,6 +539,17 @@
     }
 
     /* ── RESPONSIVE ─────────────────────────── */
+    /* Tighten the nested check-out → parking subsection gap at mobile widths */
+    @media (max-width: 767px) {
+      #checkout {
+        padding-bottom: 40px;
+      }
+
+      #parking {
+        padding-top: 40px;
+      }
+    }
+
     @media (min-width: 768px) {
       .section {
         padding: 100px 0;
@@ -573,7 +591,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo">THE ARTIST BUNGALOW</a>
       <div class="nav-links">
-        <a href="./artist-bungalow-website-v3.html" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
         <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener noreferrer"
           class="nav-link">Book</a>
       </div>
@@ -825,7 +843,9 @@
           <p class="callout-label">Stocked for you</p>
           <p class="section-body">
             Coffee beans, tea, sugar, cream, olive oil, salt, pepper, and basic
-            spices are provided. The closest grocery store is <a href="https://maps.app.goo.gl/3q2h2R" target="_blank"
+            spices are provided. The closest grocery store is <a
+              href="https://www.google.com/maps/search/?api=1&query=Ralphs%207257%20W%20Sunset%20Blvd%20Los%20Angeles%20CA%2090046"
+              target="_blank" rel="noopener"
               style="text-decoration: underline; color: var(--terracotta);">Ralphs (7257 W Sunset Blvd)</a>,
             about a 5-minute drive.
           </p>
@@ -930,7 +950,8 @@
             color: var(--onyx);
             background: transparent;
             border: 1px solid rgba(26, 26, 26, 0.2);
-            padding: 8px 16px;
+            padding: 12px 18px;
+            min-height: 40px;
             border-radius: 40px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -1057,7 +1078,8 @@
         <div style="margin-top: 24px;">
           <div class="list-item">
             <span class="list-name">Nearest hospital</span>
-            <a href="https://maps.app.goo.gl/hG55jJvXQGgG7Bv39" target="_blank" class="list-meta"
+            <a href="https://www.google.com/maps/search/?api=1&query=Southern%20California%20Hospital%20at%20Hollywood%206245%20De%20Longpre%20Ave%20Los%20Angeles"
+              target="_blank" rel="noopener" class="list-meta"
               style="text-decoration: underline;">SoCal Hospital at Hollywood</a>
           </div>
           <div class="list-item">
@@ -1090,7 +1112,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <a href="./artist-bungalow-website-v4.html" class="footer-logo">THE ARTIST BUNGALOW</a>
+      <a href="/" class="footer-logo">THE ARTIST BUNGALOW</a>
       <p class="footer-sub">Hollywood Hills &middot; Los Angeles</p>
       <div class="footer-divider"></div>
       <div class="footer-social">
@@ -1225,7 +1247,7 @@
             item.innerHTML = `
               <div class="loc-name-v3">
                 ${loc.title}
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.title + ' Los Angeles CA')}" target="_blank" class="loc-link" title="Open in Google Maps">Maps \u2197</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.title + ' Los Angeles CA')}" target="_blank" rel="noopener" class="loc-link" title="Open in Google Maps">Maps \u2197</a>
               </div>
               <div class="loc-meta-v3">${loc.type} &bull; ${loc.time}</div>
             `;

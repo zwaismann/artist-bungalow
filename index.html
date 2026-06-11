@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://theartistbungalow.com/">
     <meta property="og:title" content="The Artist Bungalow | Hollywood Hills Vacation Rental Near Hollywood Bowl">
     <meta property="og:description" content="An intimate, art-filled retreat in the Hollywood Hills. 2 bed, 2 bath with panoramic views, a piano, and a 5-minute walk to the Hollywood Bowl. 4.97 rating, Superhost.">
-    <meta property="og:image" content="https://theartistbungalow.com/hollywood_sign_hero.jpg">
+    <meta property="og:image" content="https://theartistbungalow.com/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="The Artist Bungalow">
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Artist Bungalow | Hollywood Hills Vacation Rental">
     <meta name="twitter:description" content="An intimate, art-filled retreat in the Hollywood Hills. 2 bed, 2 bath with panoramic views, a piano, and a 5-minute walk to the Hollywood Bowl.">
-    <meta name="twitter:image" content="https://theartistbungalow.com/hollywood_sign_hero.jpg">
+    <meta name="twitter:image" content="https://theartistbungalow.com/og-image.jpg">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -36,7 +36,7 @@
       "name": "The Artist Bungalow",
       "description": "An intimate, art-filled retreat in the Hollywood Hills. 2 bed, 2 bath with panoramic views, a piano, and a 5-minute walk to the Hollywood Bowl. 4.97 rating, Superhost.",
       "url": "https://theartistbungalow.com",
-      "image": "https://theartistbungalow.com/hollywood_sign_hero.jpg",
+      "image": "https://theartistbungalow.com/og-image.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "6910 Paseo Del Serra",
@@ -87,6 +87,8 @@
     <!-- SVG Favicon -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,13 +96,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Courier+Prime&display=swap"
         rel="stylesheet">
-    <!-- GSAP for Smooth Scroll Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
 
-    <!-- MapLibre GL JS v4.7.1 -->
+    <!-- MapLibre CSS (small; JS moved to end of body so it no longer blocks render) -->
     <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
-    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 
     <style>
         /* =========================================
@@ -141,7 +142,7 @@
             font-family: var(--font-body);
             font-size: 0.875rem;
             line-height: 1.75;
-            color: rgba(26, 26, 26, 0.6);
+            color: rgba(26, 26, 26, 0.72);
             /* Default text on light */
             background-color: var(--ivory);
             overflow-x: hidden;
@@ -188,10 +189,10 @@
         }
 
         /* Sharp edges rule */
-        img,
-        div,
+        img:not(.review-avatar),
+        div:not(.review-avatar),
         section,
-        button,
+        button:not(.dp-close):not(.lightbox-close),
         a {
             border-radius: 0 !important;
         }
@@ -270,7 +271,7 @@
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(250, 246, 240, 0.4);
+            color: rgba(250, 246, 240, 0.65);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -314,6 +315,9 @@
                 color: var(--ivory);
                 font-size: 1.5rem;
                 cursor: pointer;
+                min-width: 44px;
+                min-height: 44px;
+                padding: 8px 10px;
             }
         }
 
@@ -484,9 +488,11 @@
             .hero-sticky {
                 position: relative !important;
                 height: auto !important;
-                min-height: 0 !important;
+                min-height: 100vh !important;
+                min-height: 100svh !important;
                 clip-path: none !important;
                 opacity: 1 !important;
+                padding-top: 110px;
             }
 
             .hero-bg {
@@ -523,7 +529,8 @@
             font-family: var(--font-display);
             font-style: italic;
             font-size: clamp(1.25rem, 3vw, 1.875rem);
-            color: rgba(250, 246, 240, 0.6);
+            color: rgba(250, 246, 240, 0.9);
+            text-shadow: 0 1px 12px rgba(26, 26, 26, 0.55);
             margin-bottom: 2.5rem;
         }
 
@@ -563,7 +570,7 @@
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(250, 246, 240, 0.5);
+            color: rgba(250, 246, 240, 0.78);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -1663,6 +1670,11 @@
             display: block;
         }
 
+        .cta-heading,
+        .cta-sub {
+            text-shadow: 0 2px 18px rgba(26, 26, 26, 0.65);
+        }
+
         .cta-heading {
             font-family: var(--font-impact);
             font-size: clamp(3.5rem, 8vw, 6rem);
@@ -1703,7 +1715,7 @@
             font-family: var(--font-display);
             font-style: italic;
             font-size: 1.25rem;
-            color: rgba(250, 246, 240, 0.25);
+            color: rgba(250, 246, 240, 0.55);
             margin-bottom: 3rem;
         }
 
@@ -1721,9 +1733,11 @@
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(250, 246, 240, 0.4);
+            color: rgba(250, 246, 240, 0.65);
             text-decoration: none;
             transition: color 0.3s;
+            padding: 12px 4px;
+            margin: -12px -4px;
         }
 
         .footer-nav a:hover {
@@ -1736,50 +1750,74 @@
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(250, 246, 240, 0.15);
+            color: rgba(250, 246, 240, 0.5);
         }
 
-        /* --- Test Elements to verify Phase 1 & 2 --- */
-        .test-section {
-            padding: 15vh 5vw;
-            background-color: var(--onyx);
-            color: var(--ivory);
-            height: 100vh;
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(250, 246, 240, 0.12);
+            margin: 0 auto 2rem;
+        }
+
+        .footer-social {
             display: flex;
-            align-items: center;
             justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-bottom: 2rem;
         }
 
-        .test-section h1 {
-            font-size: 5rem;
+        .footer-social a {
+            font-family: var(--font-body);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 246, 240, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 4px;
+            margin: -12px -4px;
+        }
+
+        .footer-social a:hover {
             color: var(--brass);
         }
 
-        .test-section h2 {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 3rem;
-            font-weight: normal;
-            margin-top: 1rem;
+        .footer-social svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
 
-        .test-section p {
-            font-family: var(--font-typewriter);
-            margin-top: 2rem;
-            opacity: 0.55;
-        }
+        /* Reduced motion: kill continuous/scroll-driven animation, show content */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
 
-        .test-section-light {
-            padding: 15vh 5vw;
-            background-color: var(--cream);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
     </style>
+    <noscript>
+        <style>
+            .reveal { opacity: 1 !important; transform: none !important; }
+            .hero-sticky { opacity: 1 !important; clip-path: none !important; }
+            .hero-splash { display: none !important; }
+        </style>
+    </noscript>
 </head>
 
 <body>
@@ -1792,10 +1830,10 @@
             <a href="#neighborhood" class="nav-link">Neighborhood</a>
             <a href="#dining" class="nav-link">Dining</a>
             <a href="#reviews" class="nav-link">Reviews</a>
-            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank"
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener"
                 class="nav-link nav-reserve">Reserve</a>
         </div>
-        <button class="menu-toggle">☰</button>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
     </nav>
 
     <!-- 3B: HERO SCROLL WRAPPER -->
@@ -1811,7 +1849,7 @@
 
         <!-- 3B: HERO SECTION -->
         <section class="hero-sticky" id="heroSticky">
-            <img src="hollywood_sign_hero.jpg" alt="Hollywood Hills" class="hero-bg" id="heroBg">
+            <img src="hollywood_sign_hero.webp" alt="Hollywood Hills" class="hero-bg" id="heroBg" fetchpriority="high">
             <div class="hero-gradient"></div>
 
             <div class="hero-content">
@@ -1820,7 +1858,7 @@
                     <h1 class="hero-title font-impact">The Artist<br><span>Bungalow</span></h1>
                     <p class="hero-subtitle">Where the hills meet the music.</p>
                     <div class="hero-ctas">
-                        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass">
+                        <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener" class="btn-brass">
                             Book Your Stay
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="square">
@@ -1859,7 +1897,7 @@
             you forget the city is right below.
         </p>
         <div class="property-survey-wrapper">
-            <img src="property_optimized/paseo_survey.webp" class="property-survey" alt="Property Survey Sketch">
+            <img src="property_webp/paseo_survey.webp" class="property-survey" alt="Property Survey Sketch" loading="lazy" decoding="async">
         </div>
     </section>
 
@@ -1868,8 +1906,8 @@
         <div class="about-grid">
             <div class="about-left reveal">
                 <!-- Airbnb Exterior Photo #8 -->
-                <img src="property_optimized/exterior-front-view.webp" alt="Artist Bungalow Exterior"
-                    class="about-img lightbox-trigger">
+                <img src="property_webp/exterior-front-view.webp" alt="Artist Bungalow Exterior"
+                    class="about-img lightbox-trigger" loading="lazy" decoding="async">
                 <div class="about-badge">
                     <div class="about-badge-val">4.97</div>
                     <div class="about-badge-label">Superhost / Guest Favorite</div>
@@ -1911,8 +1949,8 @@
                 </div>
 
                 <div class="about-badges">
-                    <img src="superhost-badge.png" alt="Superhost">
-                    <img src="guest-favorite.png" alt="Guest Favorite">
+                    <img src="superhost-badge.png" alt="Superhost" loading="lazy" decoding="async">
+                    <img src="guest-favorite.png" alt="Guest Favorite" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -1920,8 +1958,8 @@
 
     <!-- 3E: VIEW MOMENT (PHOTO BREAK) -->
     <div class="view-moment reveal">
-        <img src="property_optimized/living-room-wide-view.webp" class="view-moment-img section-bg lightbox-trigger"
-            alt="Living Room Detail Break">
+        <img src="property_webp/living-room-wide-view.webp" class="view-moment-img section-bg lightbox-trigger"
+            alt="Living Room Detail Break" loading="lazy" decoding="async">
     </div>
 
     <!-- 3F: GALLERY SECTION -->
@@ -1932,79 +1970,79 @@
         </div>
         <div class="gallery-track-container" id="galleryContainer">
             <div class="gallery-track" id="galleryTrack">
-                <img src="property_optimized/bathroom-glass-tile-shower.webp" alt="Bathroom Glass Tile Shower"
-                    class="gallery-item">
-                <img src="property_optimized/bathroom-vanity-and-shower.webp" alt="Bathroom Vanity And Shower"
-                    class="gallery-item">
-                <img src="property_optimized/deck-dining-daytime.webp" alt="Deck Dining Daytime" class="gallery-item">
-                <img src="property_optimized/deck-lounge-evening.webp" alt="Deck Lounge Evening" class="gallery-item">
-                <img src="property_optimized/dining-area-vintage-decor.webp" alt="Dining Area Vintage Decor"
-                    class="gallery-item">
-                <img src="property_optimized/entryway-piano-and-art.webp" alt="Entryway Piano And Art"
-                    class="gallery-item">
-                <img src="property_optimized/exterior-front-view.webp" alt="Exterior Front View" class="gallery-item">
-                <img src="property_optimized/garden-tropical-seating.webp" alt="Garden Tropical Seating"
-                    class="gallery-item">
-                <img src="property_optimized/garden-walkway-entrance.webp" alt="Garden Walkway Entrance"
-                    class="gallery-item">
-                <img src="property_optimized/guest-bathroom-vanity.webp" alt="Guest Bathroom Vanity"
-                    class="gallery-item">
-                <img src="property_optimized/guest-bedroom-blue-bedding.webp" alt="Guest Bedroom Blue Bedding"
-                    class="gallery-item">
-                <img src="property_optimized/guest-bedroom-reading-nook.webp" alt="Guest Bedroom Reading Nook"
-                    class="gallery-item">
-                <img src="property_optimized/guest-bedroom-writing-desk.webp" alt="Guest Bedroom Writing Desk"
-                    class="gallery-item">
-                <img src="property_optimized/kitchen-coffee-bar.webp" alt="Kitchen Coffee Bar" class="gallery-item">
+                <img src="property_webp/bathroom-glass-tile-shower.webp" alt="Bathroom Glass Tile Shower"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/bathroom-vanity-and-shower.webp" alt="Bathroom Vanity And Shower"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/deck-dining-daytime.webp" alt="Deck Dining Daytime" class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/deck-lounge-evening.webp" alt="Deck Lounge Evening" class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/dining-area-vintage-decor.webp" alt="Dining Area Vintage Decor"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/entryway-piano-and-art.webp" alt="Entryway Piano And Art"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/exterior-front-view.webp" alt="Exterior Front View" class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/garden-tropical-seating.webp" alt="Garden Tropical Seating"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/garden-walkway-entrance.webp" alt="Garden Walkway Entrance"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/guest-bathroom-vanity.webp" alt="Guest Bathroom Vanity"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/guest-bedroom-blue-bedding.webp" alt="Guest Bedroom Blue Bedding"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/guest-bedroom-reading-nook.webp" alt="Guest Bedroom Reading Nook"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/guest-bedroom-writing-desk.webp" alt="Guest Bedroom Writing Desk"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/kitchen-coffee-bar.webp" alt="Kitchen Coffee Bar" class="gallery-item" loading="lazy" decoding="async">
 
-                <img src="property_optimized/kitchen-sink-and-counters.webp" alt="Kitchen Sink And Counters"
-                    class="gallery-item">
-                <img src="property_optimized/living-room-fireplace-and-tv.webp" alt="Living Room Fireplace And Tv"
-                    class="gallery-item">
-                <img src="property_optimized/living-room-wide-view.webp" alt="Living Room Wide View"
-                    class="gallery-item">
-                <img src="property_optimized/master-bedroom-bedside.webp" alt="Master Bedroom Bedside"
-                    class="gallery-item">
-                <img src="property_optimized/master-bedroom-dresser-golden-hour.webp"
-                    alt="Master Bedroom Dresser Golden Hour" class="gallery-item">
-                <img src="property_optimized/master-bedroom-stained-glass.webp" alt="Master Bedroom Stained Glass"
-                    class="gallery-item">
-                <img src="property_optimized/neighborhood-city-view.webp" alt="Neighborhood City View"
-                    class="gallery-item">
-                <img src="property_optimized/patio-bistro-dining.webp" alt="Patio Bistro Dining" class="gallery-item">
+                <img src="property_webp/kitchen-sink-and-counters.webp" alt="Kitchen Sink And Counters"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/living-room-fireplace-and-tv.webp" alt="Living Room Fireplace And Tv"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/living-room-wide-view.webp" alt="Living Room Wide View"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/master-bedroom-bedside.webp" alt="Master Bedroom Bedside"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/master-bedroom-dresser-golden-hour.webp"
+                    alt="Master Bedroom Dresser Golden Hour" class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/master-bedroom-stained-glass.webp" alt="Master Bedroom Stained Glass"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/neighborhood-city-view.webp" alt="Neighborhood City View"
+                    class="gallery-item" loading="lazy" decoding="async">
+                <img src="property_webp/patio-bistro-dining.webp" alt="Patio Bistro Dining" class="gallery-item" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
 
     <!-- LIGHTBOX UI -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <img src="" alt="Expanded View" class="lightbox-img" id="lightboxImg">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+        <img alt="Expanded View" class="lightbox-img" id="lightboxImg" loading="lazy" decoding="async">
     </div>
 
     <!-- 3G: PHOTO BREAK 2 -->
     <div class="view-moment reveal">
-        <img src="property_optimized/master-bedroom-stained-glass.webp"
-            class="view-moment-img section-bg lightbox-trigger" alt="Master Bedroom Stained Glass">
+        <img src="property_webp/master-bedroom-stained-glass.webp"
+            class="view-moment-img section-bg lightbox-trigger" alt="Master Bedroom Stained Glass" loading="lazy" decoding="async">
     </div>
 
     <!-- 3H: NEIGHBORHOOD SECTION -->
     <section class="neighborhood-section" id="neighborhood">
         <div class="survey-bg-container">
             <!-- Background Images -->
-            <img src="survey_hollywood_bowl.png" class="survey-bg" id="bg-bowl"
+            <img src="survey_hollywood_bowl.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-bowl"
                 alt="Map illustration of the Hollywood Bowl amphitheater">
-            <img src="survey_runyon_canyon.png" class="survey-bg" id="bg-runyon"
+            <img src="survey_runyon_canyon.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-runyon"
                 alt="Map illustration of the Runyon Canyon hiking trails">
-            <img src="survey_griffith_observatory.png" class="survey-bg" id="bg-griffith"
+            <img src="survey_griffith_observatory.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-griffith"
                 alt="Map illustration of the Griffith Observatory dome">
-            <img src="survey_walk_of_fame.png" class="survey-bg" id="bg-walk"
+            <img src="survey_walk_of_fame.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-walk"
                 alt="Map illustration of the Hollywood Walk of Fame stars">
-            <img src="survey_universal_studios.png" class="survey-bg" id="bg-universal"
+            <img src="survey_universal_studios.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-universal"
                 alt="Map illustration of the Universal Studios Theme Park">
-            <img src="survey_warner_bros.png" class="survey-bg" id="bg-warner"
+            <img src="survey_warner_bros.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-warner"
                 alt="Map illustration of the Warner Bros Studio lot">
-            <img src="survey_hollywood_reservoir.png" class="survey-bg" id="bg-reservoir"
+            <img src="survey_hollywood_reservoir.webp" loading="lazy" decoding="async" class="survey-bg" id="bg-reservoir"
                 alt="Map illustration of the Hollywood Reservoir">
         </div>
 
@@ -2018,7 +2056,9 @@
 
             <div class="neighborhood-grid">
                 <div class="location-list">
-                    <div class="location-item" onmouseenter="activateLocation('bowl')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('bowl')"
+                        onfocus="activateLocation(\'bowl\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'bowl\')}"
                         onclick="openDetailPanel('bowl')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Hollywood Bowl</span>
@@ -2029,7 +2069,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('runyon')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('runyon')"
+                        onfocus="activateLocation(\'runyon\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'runyon\')}"
                         onclick="openDetailPanel('runyon')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Runyon Canyon</span>
@@ -2040,7 +2082,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('griffith')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('griffith')"
+                        onfocus="activateLocation(\'griffith\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'griffith\')}"
                         onclick="openDetailPanel('griffith')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Griffith Observatory</span>
@@ -2051,7 +2095,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('walk')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('walk')"
+                        onfocus="activateLocation(\'walk\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'walk\')}"
                         onclick="openDetailPanel('walk')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Walk of Fame</span>
@@ -2062,7 +2108,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('universal')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('universal')"
+                        onfocus="activateLocation(\'universal\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'universal\')}"
                         onclick="openDetailPanel('universal')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Universal Studios</span>
@@ -2073,7 +2121,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('warner')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('warner')"
+                        onfocus="activateLocation(\'warner\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'warner\')}"
                         onclick="openDetailPanel('warner')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Warner Bros. Studio</span>
@@ -2084,7 +2134,9 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </div>
-                    <div class="location-item" onmouseenter="activateLocation('reservoir')"
+                    <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('reservoir')"
+                        onfocus="activateLocation(\'reservoir\')"
+                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'reservoir\')}"
                         onclick="openDetailPanel('reservoir')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Hollywood Reservoir</span>
@@ -2102,7 +2154,7 @@
     <!-- Neighborhood Detail Panel & Overlay -->
     <div class="panel-overlay" id="panelOverlay" onclick="closeDetailPanel()"></div>
     <div class="detail-panel" id="detailPanel">
-        <button class="dp-close" onclick="closeDetailPanel()">&times;</button>
+        <button class="dp-close" onclick="closeDetailPanel()" aria-label="Close panel">&times;</button>
         <div class="dp-content">
             <div class="dp-header">
                 <h3 class="dp-title" id="dpTitle">Location</h3>
@@ -2119,10 +2171,10 @@
             <div class="dp-map" id="dpMap"></div>
 
             <div class="dp-photos" id="dpPhotos">
-                <img src="" class="dp-photo-full lightbox-trigger" id="dpPhoto1" alt="">
+                <img class="dp-photo-full lightbox-trigger" id="dpPhoto1" alt="" loading="lazy" decoding="async">
                 <div class="dp-photo-grid">
-                    <img src="" class="dp-photo-half lightbox-trigger" id="dpPhoto2" alt="">
-                    <img src="" class="dp-photo-half lightbox-trigger" id="dpPhoto3" alt="">
+                    <img class="dp-photo-half lightbox-trigger" id="dpPhoto2" alt="" loading="lazy" decoding="async">
+                    <img class="dp-photo-half lightbox-trigger" id="dpPhoto3" alt="" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -2142,7 +2194,7 @@
                 <h3 class="dining-cat-label">Coffee & Cafes</h3>
                 <div class="dining-grid">
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Groundwork+Coffee,+1501+N+Cahuenga+Blvd,+Los+Angeles,+CA+90028"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Groundwork Coffee</span><span
                                 class="dining-card-price">$</span></div>
                         <div class="dining-card-type">Specialty Roaster</div>
@@ -2158,7 +2210,7 @@
                         </div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Alcove+Cafe+%26+Bakery,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Alcove Cafe & Bakery</span><span
                                 class="dining-card-price">$$</span></div>
                         <div class="dining-card-type">All-Day Cafe & Bakery</div>
@@ -2174,7 +2226,7 @@
                         </div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Bru+Coffeebar,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Bru Coffeebar</span><span
                                 class="dining-card-price">$</span></div>
                         <div class="dining-card-type">Single-Origin Coffee</div>
@@ -2190,7 +2242,7 @@
                         </div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Maru+Coffee,+1936+Hillhurst+Ave,+Los+Angeles,+CA+90027"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Maru Coffee</span><span
                                 class="dining-card-price">$</span></div>
                         <div class="dining-card-type">Minimalist Pour-Over</div>
@@ -2213,7 +2265,7 @@
                 <h3 class="dining-cat-label">Restaurants</h3>
                 <div class="dining-grid">
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Kismet,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Kismet</span><span
                                 class="dining-card-price">$$</span></div>
                         <div class="dining-card-type">Cal-Med, Vegetable-Forward</div>
@@ -2227,7 +2279,7 @@
                                 </svg></span></div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Musso+%26+Frank+Grill,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Musso & Frank Grill</span><span
                                 class="dining-card-price">$$$</span></div>
                         <div class="dining-card-type">Classic American</div>
@@ -2241,7 +2293,7 @@
                                 </svg></span></div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Figaro+Bistrot,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Figaro Bistrot</span><span
                                 class="dining-card-price">$$</span></div>
                         <div class="dining-card-type">French Bistro</div>
@@ -2255,7 +2307,7 @@
                                 </svg></span></div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Osteria+Mozza,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Osteria Mozza</span><span
                                 class="dining-card-price">$$$</span></div>
                         <div class="dining-card-type">Italian, Upscale</div>
@@ -2269,7 +2321,7 @@
                                 </svg></span></div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Cafe+Stella,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Cafe Stella</span><span
                                 class="dining-card-price">$$$</span></div>
                         <div class="dining-card-type">French, Date Night</div>
@@ -2283,7 +2335,7 @@
                                 </svg></span></div>
                     </a>
                     <a href="https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Edendale,+Los+Angeles"
-                        target="_blank" class="dining-card">
+                        target="_blank" rel="noopener" class="dining-card">
                         <div class="dining-card-header"><span class="dining-card-title">Edendale</span><span
                                 class="dining-card-price">$$</span></div>
                         <div class="dining-card-type">Modern American</div>
@@ -2322,13 +2374,13 @@
     <!-- 3K: CTA SECTION -->
     <section class="cta-section" id="reserve">
         <!-- Photo #10 (Outdoor Dining) -->
-        <img src="property_optimized/deck-lounge-evening.webp" alt="Hollywood Hills Escape" class="cta-bg">
+        <img src="property_webp/deck-lounge-evening.webp" alt="Hollywood Hills Escape" class="cta-bg" loading="lazy" decoding="async">
         <div class="cta-overlay"></div>
         <div class="cta-content reveal">
             <span class="cta-label">Book</span>
             <h2 class="cta-heading">Your Hollywood Hills<br><span>Escape</span> Awaits</h2>
             <p class="cta-sub">Come for the views. Stay for the vibe.</p>
-            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" class="btn-brass"
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener" class="btn-brass"
                 style="display: inline-flex; justify-content: center;">
                 Check Availability
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
@@ -2348,11 +2400,33 @@
             <a href="#neighborhood">Neighborhood</a>
             <a href="#dining">Dining</a>
             <a href="#reviews">Reviews</a>
-            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank">Reserve</a>
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener">Reserve</a>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/theartistbungalow/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 011.47.957c.453.453.757.91.957 1.47.163.46.349 1.26.404 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.241 1.97-.404 2.43a4.088 4.088 0 01-.957 1.47 4.088 4.088 0 01-1.47.957c-.46.163-1.26.349-2.43.404-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.97-.241-2.43-.404a4.088 4.088 0 01-1.47-.957 4.088 4.088 0 01-.957-1.47c-.163-.46-.349-1.26-.404-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.055-1.17.241-1.97.404-2.43a4.088 4.088 0 01.957-1.47A4.088 4.088 0 015.064 2.293c.46-.163 1.26-.349 2.43-.404C8.76 1.831 9.14 1.819 12 1.819zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.902.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.902.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.151.558 2.913a5.876 5.876 0 001.384 2.126 5.876 5.876 0 002.126 1.384c.762.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.151-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.762.5-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.151-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.098.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+            </a>
+            <a href="https://www.pinterest.com/theartistbungalow/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.993 3.995-.282 1.193.599 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.893 2.745a.36.36 0 01.083.345c-.091.378-.293 1.193-.333 1.36-.052.22-.174.266-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                Pinterest
+            </a>
+            <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.656c-.398 1.479-1.968 3.156-3.592 3.549-1.104.267-2.032.133-2.865-.232-.12-.053-.236-.111-.348-.176l-.292-.173c-.576-.36-1.003-.756-1.471-1.381-.804-1.072-1.099-2.317-.791-3.334.236-.779.818-1.31 1.513-1.39.612-.07 1.183.204 1.481.71.108.184.191.39.244.606l.155.628c.104.422.214.65.452.908.348.376.878.508 1.381.33.573-.201.962-.71 1.116-1.393.221-1.002-.092-2.358-.968-3.324-.904-.998-2.244-1.553-3.654-1.491-1.838.081-3.387 1.166-4.057 2.806-.756 1.851-.363 4.117 1.005 5.609.144.157.152.394.024.561-.167.218-.358.467-.43.555-.119.144-.377.194-.564.075-1.065-.681-1.826-1.66-2.228-2.855-.568-1.688-.436-3.577.362-5.178.899-1.8 2.62-3.065 4.641-3.399 1.611-.266 3.238.005 4.533.803 1.548.955 2.596 2.551 2.78 4.218.117 1.06-.088 2.148-.495 3.118z"/></svg>
+                Airbnb
+            </a>
+            <a href="https://linktr.ee/theartistbungalow" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M7.953 15.066l-.038-4.086 4.074-.001.001-3.966h3.982v3.966h4.075l-.039 4.087h-4.035v8.921h-3.984v-8.921H7.953zm3.964-14.063l5.507 5.529-2.818 2.832L12.049 6.8l-2.557 2.564-2.818-2.832L12.18 1.003h-.263z"/></svg>
+                All Links
+            </a>
         </div>
         <div class="footer-meta">Hollywood Hills, Los Angeles</div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
     <script>
         /* =========================================
            PHASE 4: JAVASCRIPT BEHAVIORS
@@ -2362,6 +2436,8 @@
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'auto';
         }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // --- GLOBAL SELECTORS ---
         const siteNav = document.getElementById('siteNav');
@@ -2417,7 +2493,16 @@
                 finishTypewriter();
             };
 
-            setTimeout(typeChar, 400); // Slight delay before typing begins
+            // Anywhere-click skips the typewriter; show the scroll cue early so
+            // visitors aren't stuck staring at a black screen with no affordance.
+            heroSplash.addEventListener('click', finishTypewriter);
+            setTimeout(() => { if (splashIndicator) splashIndicator.style.opacity = '1'; }, 1500);
+
+            if (prefersReducedMotion) {
+                finishTypewriter();
+            } else {
+                setTimeout(typeChar, 400); // Slight delay before typing begins
+            }
         }
 
         // 3. Smooth Hero Scroll Handler (Lerp rAF)
@@ -2504,6 +2589,7 @@
         }
 
         let snappingToBottom = false;
+        let lastSnapScrollY = window.scrollY;
 
         function updateHeroTarget() {
             const heroWrapper = document.getElementById('heroWrapper');
@@ -2518,9 +2604,13 @@
 
             targetProgress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
 
-            if (window.innerWidth >= 900) {
-                // If user scrolls past 30%, automate the rest of the cinematic reveal
-                if (targetProgress > 0.3 && targetProgress < 1 && !snappingToBottom) {
+            const scrollingDown = window.scrollY > lastSnapScrollY;
+            lastSnapScrollY = window.scrollY;
+
+            if (window.innerWidth >= 900 && !prefersReducedMotion) {
+                // Only snap while scrolling DOWN; re-triggering on upward scroll traps the
+                // user mid-page and breaks back-to-top links.
+                if (scrollingDown && targetProgress > 0.3 && targetProgress < 1 && !snappingToBottom) {
                     snappingToBottom = true;
                     // Automatically scroll the window to the exact end of the scroll wrapper
                     const targetScrollY = heroWrapper.offsetTop + scrollHeight;
@@ -2528,7 +2618,7 @@
                         top: targetScrollY,
                         behavior: 'smooth'
                     });
-                } else if (targetProgress === 0 || targetProgress >= 1) {
+                } else if (targetProgress === 0 || targetProgress >= 1 || !scrollingDown) {
                     snappingToBottom = false;
                 }
             }
@@ -2577,8 +2667,8 @@
                     alignItems: 'center', justifyContent: 'center', gap: '2rem'
                 });
                 overlay.innerHTML = `
-                    <button class="menu-close"
-                        style="position:absolute; top:2rem; right:5vw; background:none; border:none; color:white; font-size:2rem;">&times;</button>
+                    <button class="menu-close" aria-label="Close menu"
+                        style="position:absolute; top:1.5rem; right:5vw; background:none; border:none; color:white; font-size:2rem; padding:12px; cursor:pointer;">&times;</button>
                     <a href="#intro"
                         style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">About</a>
                     <a href="#gallery"
@@ -2589,6 +2679,8 @@
                         style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Dining</a>
                     <a href="#reviews"
                         style="color:var(--ivory); font-family:var(--font-impact); font-size:3rem; text-decoration:none;">Reviews</a>
+                    <a href="https://www.airbnb.com/rooms/736417448669019623" target="_blank" rel="noopener"
+                        style="color:var(--onyx); background:var(--brass); font-family:var(--font-body); font-size:13px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; padding:16px 32px; margin-top:1rem;">Reserve</a>
                     `;
                 document.body.appendChild(overlay);
                 overlay.querySelectorAll('a, .menu-close').forEach(el => {
@@ -2607,7 +2699,7 @@
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: "-60px" });
+        }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 
@@ -2627,7 +2719,7 @@
         function updateGallery() {
             if (!isDragging) {
                 // Auto scroll 0.3px/frame + momentum
-                gPos -= (0.3 + gVelocity);
+                gPos -= ((prefersReducedMotion ? 0 : 0.3) + gVelocity);
                 gVelocity *= 0.95; // Damping
             }
 
@@ -2703,7 +2795,7 @@
         galleryTrack.addEventListener('click', e => {
             if (totalDragDist > 10) return; // Prevent click if dragging more than 10px
             if (e.target.tagName === 'IMG') {
-                lightboxImg.src = e.target.src.replace('?im_w=1200', '?im_w=2560'); // 4k uprez
+                lightboxImg.src = e.target.src;
                 lightbox.classList.add('active');
             }
         });
@@ -2717,8 +2809,21 @@
 
         function closeLightbox() {
             lightbox.classList.remove('active');
-            setTimeout(() => lightboxImg.src = '', 400); // clear after wipe
+            setTimeout(() => lightboxImg.removeAttribute('src'), 400); // clear after wipe
         }
+
+        // Escape closes whatever overlay is open (lightbox first, then panel, then menu)
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            const menuOverlay = document.querySelector('.mobile-menu-overlay');
+            if (lightbox.classList.contains('active')) {
+                closeLightbox();
+            } else if (detailPanel.classList.contains('open')) {
+                closeDetailPanel();
+            } else if (menuOverlay && menuOverlay.style.display !== 'none') {
+                menuOverlay.style.display = 'none';
+            }
+        });
 
         // 8. Neighborhood Interactions & Map Init
         const detailPanel = document.getElementById('detailPanel');
@@ -2733,53 +2838,53 @@
         const locData = {
             'bowl': {
                 title: 'Hollywood Bowl', time: '5 MIN WALK', desc: `The world's most famous outdoor amphitheater.Catching a summer concert under the stars here is practically mandatory.`, coords:
-                    [-118.3379, 34.1122], icon: 'vignette_hollywood_bowl.png', photos:
-                    ['hollywood_bowl_aerial_amphitheater.jpg', 'hollywood_bowl_shell_daytime.jpg',
-                        'hollywood_bowl_evening_lights.png', 'hollywood_bowl_orchestra_performance.png',
+                    [-118.3379, 34.1122], photos:
+                    ['hollywood_bowl_aerial_amphitheater.webp', 'hollywood_bowl_shell_daytime.jpg',
+                        'hollywood_bowl_evening_lights.png', 'hollywood_bowl_orchestra_performance.webp',
                         'hollywood_bowl_concert_crowd_night.jpg']
             },
             'runyon': {
                 title: 'Runyon Canyon', time: '8 MIN DRIVE', desc: `LA's famous hiking trail offering panoramic views of the entire basin, from downtown to the Pacific.`, coords:
-                    [-118.3506, 34.1042], icon: 'vignette_runyon_canyon.png', photos:
-                    ['runyon_canyon_hikers_winding_trail_golden_hour.jpg',
-                        'runyon_canyon_wide_view_hills_city_clear_day.jpg',
-                        'runyon_canyon_la_skyline_panorama_hazy.jpg', 'runyon_canyon_hilltop_trail_hazy_city_view.jpg',
-                        'runyon_canyon_golden_sunset_hills_silhouette.jpg']
+                    [-118.3506, 34.1042], photos:
+                    ['runyon_canyon_hikers_winding_trail_golden_hour.webp',
+                        'runyon_canyon_wide_view_hills_city_clear_day.webp',
+                        'runyon_canyon_la_skyline_panorama_hazy.webp', 'runyon_canyon_hilltop_trail_hazy_city_view.webp',
+                        'runyon_canyon_golden_sunset_hills_silhouette.webp']
             },
             'griffith': {
                 title: 'Griffith Observatory', time: '12 MIN DRIVE', desc: `Iconic art deco landmark.Drive up for sunset to watch the city lights turn on across the basin.`, coords:
-                    [-118.3004, 34.1184], icon: 'vignette_griffith_observatory.png', photos:
-                    ['griffith_observatory_archway_telescope_hollywood_sign_view.jpg',
-                        'griffith_observatory_front_facade_crowded_sunset.jpg',
-                        'griffith_park_aerial_hills_and_city_skyline.jpg',
-                        'griffith_observatory_aerial_with_downtown_skyline.jpg',
-                        'griffith_observatory_illuminated_at_dusk.jpg']
+                    [-118.3004, 34.1184], photos:
+                    ['griffith_observatory_archway_telescope_hollywood_sign_view.webp',
+                        'griffith_observatory_front_facade_crowded_sunset.webp',
+                        'griffith_park_aerial_hills_and_city_skyline.webp',
+                        'griffith_observatory_aerial_with_downtown_skyline.webp',
+                        'griffith_observatory_illuminated_at_dusk.webp']
             },
             'walk': {
                 title: 'Walk of Fame', time: '10 MIN DRIVE', desc: `The heart of historic Hollywood. See the stars, the Chinese Theatre, and the Roosevelt Hotel.`, coords: [-118.3287, 34.1016],
-                icon: 'vignette_walk_of_fame.png', photos: ['hollywood_blvd_chinese_theatre_street_view.jpg',
-                    'hollywood_blvd_four_ladies_gateway_sculpture_palms.jpg', 'walk_of_fame_david_bowie_star.jpg',
-                    'hollywood_blvd_red_convertible_hard_rock_dolby.jpg', 'hollywood_blvd_ripleys_intersection.jpg']
+                photos: ['hollywood_blvd_chinese_theatre_street_view.webp',
+                    'hollywood_blvd_four_ladies_gateway_sculpture_palms.webp', 'walk_of_fame_david_bowie_star.webp',
+                    'hollywood_blvd_red_convertible_hard_rock_dolby.webp', 'hollywood_blvd_ripleys_intersection.webp']
             },
             'universal': {
                 title: 'Universal Studios', time: '12 MIN DRIVE', desc: `The ultimate Hollywood backstage experience and theme park, just over the hill in Studio City.`, coords: [-118.3533,
-                    34.1381], icon: 'vignette_universal_studios.png', photos: ['universal_studios_1.jpg',
-                        'universal_studios_2.jpg', 'universal_studios_3.jpg', 'universal_studios_4.jpg',
-                        'universal_studios_5.jpg']
+                    34.1381], photos: ['universal_studios_1.webp',
+                        'universal_studios_2.webp', 'universal_studios_3.webp', 'universal_studios_4.webp',
+                        'universal_studios_5.webp']
             },
             'warner': {
                 title: 'Warner Bros. Studio', time: '15 MIN DRIVE', desc: `Take a cart tour through the historic working lots where countless classic movies and TV shows are filmed.`, coords:
-                    [-118.3331, 34.1481], icon: 'vignette_warner_bros.png', photos:
-                    ['warner_bros_studio_tour_entrance_and_water_tower.jpg', 'warner_bros_2.jpg',
-                        'warner_bros_3.jpg', 'warner_bros_4.jpg', 'warner_bros_5.jpg']
+                    [-118.3331, 34.1481], photos:
+                    ['warner_bros_studio_tour_entrance_and_water_tower.webp', 'warner_bros_2.webp',
+                        'warner_bros_3.webp', 'warner_bros_4.webp', 'warner_bros_5.webp']
             },
             'reservoir': {
                 title: 'Hollywood Reservoir', time: '10 MIN DRIVE', desc: `A serene 3.3-mile paved loop around a lake with incredible, unobstructed views of the Hollywood Sign.`, coords:
-                    [-118.3340, 34.1190], icon: 'vignette_hollywood_reservoir.png', photos:
-                    ['hollywood_sign_clear_blue_sky_front_view.jpg',
-                        'hollywood_sign_distant_hills_golden_sunset.jpg', 'hollywood_sign_with_tower_blue_clouds.jpg',
-                        'hollywood_sign_hills_distant_purple_sunset_landscape.jpg',
-                        'hollywood_sign_hiker_with_dog_golden_hour.jpg']
+                    [-118.3340, 34.1190], photos:
+                    ['hollywood_sign_clear_blue_sky_front_view.webp',
+                        'hollywood_sign_distant_hills_golden_sunset.webp', 'hollywood_sign_with_tower_blue_clouds.webp',
+                        'hollywood_sign_hills_distant_purple_sunset_landscape.webp',
+                        'hollywood_sign_hiker_with_dog_golden_hour.webp']
             }
         };
 
@@ -2800,7 +2905,7 @@
             data.photos.forEach((p, idx) => {
                 let imgClass = 'dp-photo-half';
                 if (idx % 3 === 0) imgClass = 'dp-photo-full';
-                let tag = `<img src="${p}" class="${imgClass} lightbox-trigger">`;
+                let tag = `<img src="${p}" class="${imgClass} lightbox-trigger" loading="lazy" decoding="async">`;
 
                 if (idx % 3 === 0) {
                     if (idx !== 0) photosHtml += '</div>'; // close previous grid
@@ -2924,7 +3029,7 @@
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">${r.t}</p>
                 <div class="review-footer">
-                    <img class="review-avatar" src="${avatarUrl}" alt="${r.n}" style="object-fit:cover;">
+                    <img class="review-avatar" src="${avatarUrl}" alt="${r.n}" style="object-fit:cover;" loading="lazy" decoding="async">
                     <div class="review-meta">
                         <span class="review-name">${r.n}</span>
                         <span class="review-date">${r.d}</span>
@@ -2961,7 +3066,7 @@
         });
 
         function updateMarquee() {
-            if (!isMarqueePaused) {
+            if (!isMarqueePaused && !prefersReducedMotion) {
                 // Speeds: 0.26, -0.195, 0.2275 (middle reversed)
                 rPos1 -= 0.26;
                 rPos2 += 0.195;
