@@ -1,0 +1,70 @@
+[    1658ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-static/assets/v2.157.1/_next/static/chunks/1027-500b43ac1e18defb.js:9
+[    2042ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/:0
+[   12903ms] [WARNING] [Amplitude] Setup promise not initialized @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[   13189ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/list-your-property:0
+[   13191ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[  124919ms] [WARNING] [Meta Pixel] - You are sending a non-standard event 'List Your Property Step 1'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information. @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[  125725ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/list-your-property:0
+[  125899ms] [ERROR] Attestation check for Attribution Reporting on https://www.google-analytics.com failed. @ https://www.furnishedfinder.com/list-your-property:0
+[  126284ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/lyp-payment-v2:0
+[  126453ms] [WARNING] No token found. @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[  127379ms] [WARNING] Allow attribute will take precedence over 'allowpaymentrequest'. @ https://js.chargebee.com/v2/chargebee.js:1
+[  729360ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o252526.ingest.us.sentry.io/api/4507984744349696/envelope/?sentry_version=7&sentry_key=f74d00cb3a49e01646e6a09c4cd4f885&sentry_client=sentry.javascript.nextjs%2F8.54.0:0
+[ 1367385ms] [WARNING] Amplitude Logger [Warn]: Error while capturing replay:  SecurityError: Failed to read a named property 'removeEventListener' from 'Window': An attempt was made to break through the security policy of the user agent. @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[ 1437149ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/lyp-payment-v2:0
+[ 1437151ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/lyp-payment-v2:0
+[ 1437264ms] [ERROR] Attestation check for Attribution Reporting on https://www.google-analytics.com failed. @ https://www.furnishedfinder.com/lyp-payment-v2:0
+[ 1441958ms] [WARNING] [Amplitude] Setup promise not initialized @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[ 1442014ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-ecom/assets/v2.202.2/_next/static/chunks/8940-8b7a2204f2feb888.js:20
+[ 1442436ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/listing-setup?p=TEMP2739073:0
+[ 1447539ms] [ERROR] Error fetching sidebar feature flags: Error: Expected "Experiment" (for Amplitude experiment SDK) to be globally defined
+    at loadAmplitudeExperimentSDK (<anonymous>:20:9)
+    at <anonymous>:128:31
+    at retryWithBackoff (<anonymous>:111:28)
+    at getFeatureFlagSidebar (<anonymous>:125:19)
+    at HTMLDocument.<anonymous> (<anonymous>:35:19)
+    at e (https://code.jquery.com/jquery-3.4.1.min.js:2:29453)
+    at t (https://code.jquery.com/jquery-3.4.1.min.js:2:29755) @ :138
+[ 1447604ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/edit-property?p=TEMP2739073:0
+[ 1499034ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-location?p=TEMP2739073:0
+[ 1748347ms] [ERROR] Error fetching sidebar feature flags: Error: Expected "Experiment" (for Amplitude experiment SDK) to be globally defined
+    at loadAmplitudeExperimentSDK (<anonymous>:20:9)
+    at <anonymous>:129:31
+    at retryWithBackoff (<anonymous>:112:28)
+    at getFeatureFlagSidebar (<anonymous>:126:19)
+    at HTMLDocument.<anonymous> (<anonymous>:36:15)
+    at e (https://code.jquery.com/jquery-3.7.1.min.js:2:27028)
+    at t (https://code.jquery.com/jquery-3.7.1.min.js:2:27330) @ :139
+[ 1748436ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-details?p=TEMP2739073:0
+[ 1749099ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-details?p=TEMP2739073_1:0
+[ 1750371ms] TypeError: Cannot read properties of undefined (reading 'variant')
+    at GrabFeatureFlagSidebar (<anonymous>:48:56)
+[ 1893069ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-amenities-and-nearby?p=TEMP2739073_1:0
+[ 2071093ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-Photos?p=TEMP2739073_1:0
+[ 2148744ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-Photos?p=TEMP2739073_1:0
+[ 2151051ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2161482ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-Photos?p=TEMP2739073_1:0
+[ 2163340ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163473ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163490ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163549ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163571ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163756ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163871ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2163969ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2164025ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2164044ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2164050ms] TypeError: img.removeAttribute is not a function
+    at img.onload (https://www.furnishedfinder.com/members/pm-add-photos?p=TEMP2739073_1:488:25)
+[ 2219382ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Edit-amenities-and-nearby?p=TEMP2739073_1:0

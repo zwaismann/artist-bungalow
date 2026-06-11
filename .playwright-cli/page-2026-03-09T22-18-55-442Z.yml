@@ -1,0 +1,175 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button "pw" [ref=e28]:
+                - img [ref=e30]
+                - generic [ref=e33]: pw
+    - generic [ref=e34]:
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+            - /url: /members/pm-dashboard
+            - img [ref=e42]
+            - text: Dashboard
+            - generic [ref=e45]: (current)
+        - listitem [ref=e46]:
+          - link "My Profile" [ref=e47] [cursor=pointer]:
+            - /url: /members/profile
+            - img [ref=e48]
+            - text: My Profile
+        - listitem [ref=e53]:
+          - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+            - /url: /members/my-saved-search
+            - img [ref=e55]
+            - text: My Saved Searches
+        - listitem [ref=e59]:
+          - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+            - /url: /members/tenant-lead
+            - img [ref=e61]
+            - text: Tenant Leads
+        - listitem [ref=e65]:
+          - link "Messages" [ref=e66] [cursor=pointer]:
+            - /url: /members/Tenant-Message
+            - img [ref=e67]
+            - text: Messages
+        - listitem [ref=e71]:
+          - generic [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Edit Listing
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Contact Info" [ref=e78] [cursor=pointer]:
+                - /url: /members/edit-property
+            - listitem [ref=e79]:
+              - link "Location" [ref=e80] [cursor=pointer]:
+                - /url: /members/pm/edit-location
+            - listitem [ref=e81]:
+              - link "Details" [ref=e82] [cursor=pointer]:
+                - /url: /members/pm/edit-details
+            - listitem [ref=e83]:
+              - link "Amenities" [ref=e84] [cursor=pointer]:
+                - /url: /members/pm/edit-amenities-and-nearby
+            - listitem [ref=e85]:
+              - link "Photos" [ref=e86] [cursor=pointer]:
+                - /url: /members/pm/edit-photos
+            - listitem [ref=e87]:
+              - link "Calendar" [ref=e88] [cursor=pointer]:
+                - /url: /members/pm/availability
+            - listitem [ref=e89]:
+              - link "Notification Settings" [ref=e90] [cursor=pointer]:
+                - /url: /members/notification-settings
+            - listitem [ref=e91]:
+              - link "Verification" [ref=e92] [cursor=pointer]:
+                - /url: /members/pm/verification
+            - listitem [ref=e93]:
+              - link "Listing Status" [ref=e94] [cursor=pointer]:
+                - /url: /members/pm/listing-status
+            - listitem [ref=e95]:
+              - link "House Rules" [ref=e96] [cursor=pointer]:
+                - /url: /members/houserules
+        - listitem [ref=e97]:
+          - generic [ref=e98] [cursor=pointer]:
+            - img [ref=e99]
+            - text: Landlord Tools
+        - listitem [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]:
+            - img [ref=e103]
+            - text: My Properties
+        - listitem [ref=e106]:
+          - generic [ref=e107] [cursor=pointer]:
+            - img [ref=e108]
+            - text: Account
+        - listitem [ref=e110]:
+          - generic [ref=e111] [cursor=pointer]:
+            - img [ref=e112]
+            - text: Favorite Properties
+        - listitem [ref=e115]:
+          - link "Contact Us" [ref=e116] [cursor=pointer]:
+            - /url: https://support.furnishedfinder.com/hc/en-us
+            - img [ref=e117]
+            - text: Contact Us
+      - generic [ref=e122]:
+        - generic [ref=e125]:
+          - img [ref=e127]
+          - generic [ref=e129]: Edit Listing - Verification
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - generic [ref=e136]: "Select Property:"
+            - combobox [ref=e138]
+          - generic [ref=e139]:
+            - img "progress" [ref=e141]
+            - generic [ref=e142]:
+              - heading "Verification Process" [level=1] [ref=e143]
+              - paragraph [ref=e144]: Every Furnished Finder property owner goes through a comprehensive identity verification process.
+              - paragraph [ref=e145]: We have partnered with Jumio, an industry leader in ID verification, to ensure the safety and security of our marketplace. Your listing can only go live on our site after you have completed the verification process.
+              - paragraph [ref=e146]: Building trust between tenants and landlords is critical to your success with Furnished Finder and thus this owner-verification process is an imperative step of your account creation. Thank you for your help in making our marketplace safe!
+            - generic [ref=e147]:
+              - button "Restart" [ref=e149] [cursor=pointer]
+              - button "Next" [ref=e151] [cursor=pointer]: Next
+  - contentinfo [ref=e152]:
+    - list [ref=e158]:
+      - listitem [ref=e159]:
+        - link "About Us" [ref=e160] [cursor=pointer]:
+          - /url: /about-us
+      - listitem [ref=e161]:
+        - link "Contact Us" [ref=e162] [cursor=pointer]:
+          - /url: https://furnishedfinder.zendesk.com/hc/en-us
+      - listitem [ref=e163]:
+        - link "Careers" [ref=e164] [cursor=pointer]:
+          - /url: https://furnishedfinder.applytojob.com/apply
+      - listitem [ref=e165]:
+        - link "FAQs" [ref=e166] [cursor=pointer]:
+          - /url: /faq
+      - listitem [ref=e167]:
+        - link "Blog" [ref=e168] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e169]:
+        - link "Landlord Diaries" [ref=e170] [cursor=pointer]:
+          - /url: /Resources/podcast
+      - listitem [ref=e171]:
+        - link "KeyCheck" [ref=e172] [cursor=pointer]:
+          - /url: https://www.keycheck.com/
+      - listitem [ref=e173]:
+        - link "Our Reviews" [ref=e174] [cursor=pointer]:
+          - /url: /reviews
+      - listitem [ref=e175]:
+        - link "Our App" [ref=e176] [cursor=pointer]:
+          - /url: /app
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]: © 2026 Furnished Finder
+          - generic [ref=e183]: PO Box 30374, Austin, Texas 78755
+        - list [ref=e184]:
+          - listitem [ref=e185]:
+            - link "Terms Of Use" [ref=e186] [cursor=pointer]:
+              - /url: /terms-of-use
+          - listitem [ref=e187]:
+            - link "Privacy Policy" [ref=e188] [cursor=pointer]:
+              - /url: /privacy
+      - list [ref=e190]:
+        - listitem [ref=e191]:
+          - link "Navigate to Furnished Finder Facebook page" [ref=e192] [cursor=pointer]:
+            - /url: https://www.facebook.com/FURNISHEDFINDER
+            - img "Facebook logo" [ref=e193]
+        - listitem [ref=e195]:
+          - link "Navigate to Furnished Finder Instagram account" [ref=e196] [cursor=pointer]:
+            - /url: https://www.instagram.com/furnishedfinder/
+            - img "Instagram logo" [ref=e197]
+        - listitem [ref=e199]:
+          - link "Navigate to Furnished Finder LinkedIn" [ref=e200] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/furnished-finder/
+            - img "LinkedIn logo" [ref=e201]
+  - generic [ref=e203]:
+    - iframe [ref=e205]:
+      
+    - img "Video Tutorial" [ref=e207] [cursor=pointer]

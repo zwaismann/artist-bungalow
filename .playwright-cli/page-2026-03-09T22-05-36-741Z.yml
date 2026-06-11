@@ -1,0 +1,238 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img [ref=e8]
+          - generic [ref=e24]:
+            - generic:
+              - list
+            - list [ref=e26]:
+              - listitem [ref=e27] [cursor=pointer]:
+                - button "pw" [ref=e28]:
+                  - img [ref=e30]
+                  - generic [ref=e33]: pw
+      - text:          
+    - generic [ref=e34]:
+      - generic [ref=e36]:
+        - text: 
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+              - /url: /members/pm-dashboard
+              - img [ref=e42]
+              - text: Dashboard
+              - generic [ref=e45]: (current)
+          - listitem [ref=e46]:
+            - link "My Profile" [ref=e47] [cursor=pointer]:
+              - /url: /members/profile
+              - img [ref=e48]
+              - text: My Profile
+              - generic [ref=e52]: 
+          - listitem [ref=e53]:
+            - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+              - /url: /members/my-saved-search
+              - img [ref=e55]
+              - text: My Saved Searches
+          - listitem [ref=e59]:
+            - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+              - /url: /members/tenant-lead
+              - img [ref=e61]
+              - text: Tenant Leads
+          - listitem [ref=e65]:
+            - link "Messages" [ref=e66] [cursor=pointer]:
+              - /url: /members/Tenant-Message
+              - img [ref=e67]
+              - text: Messages
+          - listitem [ref=e71]:
+            - link "Edit Listing" [ref=e72] [cursor=pointer]:
+              - /url: "#editlisting"
+              - img [ref=e73]
+              - text: Edit Listing
+              - img [ref=e76]
+            - list [ref=e78]:
+              - listitem [ref=e79]:
+                - link "Contact Info" [ref=e80] [cursor=pointer]:
+                  - /url: /members/edit-property?p=TEMP2739073
+                  - text: Contact Info
+              - listitem [ref=e82]:
+                - link "Location" [ref=e83] [cursor=pointer]:
+                  - /url: /members/PM/Edit-location?p=TEMP2739073
+                  - text: Location
+              - listitem [ref=e85]:
+                - link "Details" [ref=e86] [cursor=pointer]:
+                  - /url: /members/PM/Edit-details?p=TEMP2739073
+                  - text: Details
+              - listitem [ref=e88]:
+                - link "Amenities" [ref=e89] [cursor=pointer]:
+                  - /url: /members/PM/Edit-amenities-and-nearby?p=TEMP2739073
+                  - text: Amenities
+              - listitem [ref=e91]:
+                - link "Photos" [ref=e92] [cursor=pointer]:
+                  - /url: /members/PM/Edit-Photos?p=TEMP2739073
+                  - text: Photos
+              - listitem [ref=e94]:
+                - link "Calendar" [ref=e95] [cursor=pointer]:
+                  - /url: /members/PM/Availability?p=TEMP2739073
+                  - text: Calendar
+              - listitem [ref=e97]:
+                - link "Notification Settings" [ref=e98] [cursor=pointer]:
+                  - /url: /members/notification-settings?p=TEMP2739073
+                  - text: Notification Settings
+              - listitem [ref=e100]:
+                - link "Verification" [ref=e101] [cursor=pointer]:
+                  - /url: /members/pm/verification?p=TEMP2739073
+                  - text: Verification
+              - listitem [ref=e103]:
+                - link "Listing Status" [ref=e104] [cursor=pointer]:
+                  - /url: /members/PM/Listing-Status?p=TEMP2739073
+                  - text: Listing Status
+              - listitem [ref=e106]:
+                - link "House Rules" [ref=e107] [cursor=pointer]:
+                  - /url: /members/houserules?p=TEMP2739073
+                  - text: House Rules
+          - listitem [ref=e109]:
+            - link "Landlord Tools" [ref=e110] [cursor=pointer]:
+              - /url: "#landlordtools"
+              - img [ref=e111]
+              - text: Landlord Tools
+              - img [ref=e113]
+          - listitem [ref=e115]:
+            - link "My Properties" [ref=e116] [cursor=pointer]:
+              - /url: "#MyPropertiesLink"
+              - img [ref=e117]
+              - text: My Properties
+              - img [ref=e120]
+          - listitem [ref=e122]:
+            - link "Account" [ref=e123] [cursor=pointer]:
+              - /url: "#account"
+              - img [ref=e124]
+              - text: Account
+              - img [ref=e126]
+          - listitem [ref=e128]:
+            - link "Favorite Properties" [ref=e129] [cursor=pointer]:
+              - /url: /members/favorites.aspx
+              - img [ref=e130]
+              - text: Favorite Properties
+          - listitem [ref=e133]:
+            - link "Market Insights NEW" [ref=e134] [cursor=pointer]:
+              - /url: /stats
+              - img [ref=e135]
+              - text: Market Insights
+              - generic [ref=e139]: NEW
+          - listitem [ref=e140]:
+            - link "Contact Us" [ref=e141] [cursor=pointer]:
+              - /url: https://support.furnishedfinder.com/hc/en-us
+              - img [ref=e142]
+              - text: Contact Us
+      - generic [ref=e147]:
+        - generic [ref=e150]:
+          - img [ref=e152]
+          - generic [ref=e154]: Edit Listing - Contact Info - Step 1 of 10
+        - generic [ref=e158]:
+          - generic [ref=e160]:
+            - generic [ref=e162]: Updating Property Details for
+            - combobox [ref=e164]:
+              - option "<No Property Headline>" [selected]
+          - generic [ref=e166]:
+            - heading "Property TEMP2739073" [level=3] [ref=e167]
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - text: Property Headline
+                - generic [ref=e173]: 
+                - text: "*"
+              - textbox "Allowed only .,'&()/- special characters" [active] [ref=e276]:
+                - /placeholder: ""
+                - text: Light Filled Artist Bungalow | Hollywood Hills
+              - generic [ref=e277]: Allowed only .,'&()/- special characters
+            - generic [ref=e176]:
+              - heading "Property Contact Info" [level=5] [ref=e177]
+              - generic [ref=e178]:
+                - generic [ref=e180]:
+                  - generic [ref=e182]: First Name*
+                  - textbox "First Name" [ref=e184]: Patrick
+                - generic [ref=e186]:
+                  - generic [ref=e188]: Last Name*
+                  - textbox "Last Name" [ref=e190]: Waismann
+                - generic [ref=e192]:
+                  - generic [ref=e194]: Email*
+                  - textbox "Email" [ref=e196]: pwaismann@gmail.com
+                - generic [ref=e198]:
+                  - generic [ref=e200]: Website
+                  - textbox "Website" [ref=e202]: https://theartistbungalow.com
+                - generic [ref=e204]:
+                  - generic [ref=e206]: Phone*
+                  - generic [ref=e207]:
+                    - textbox "Phone" [ref=e208]: "3235401127"
+                    - generic [ref=e209] [cursor=pointer]:
+                      - checkbox "Hide phone number from travelers" [checked] [ref=e210]
+                      - generic [ref=e211]: Hide phone number from travelers
+              - generic [ref=e212]:
+                - button "Save" [ref=e213] [cursor=pointer]
+                - paragraph [ref=e214]:
+                  - text: Need help?
+                  - link "Contact Us." [ref=e215] [cursor=pointer]:
+                    - /url: https://support.furnishedfinder.com/hc/en-us
+                - button "Next" [ref=e217] [cursor=pointer]:
+                  - text: Next
+                  - img [ref=e218]
+  - contentinfo [ref=e220]:
+    - list [ref=e226]:
+      - listitem [ref=e227]:
+        - link "About Us" [ref=e228] [cursor=pointer]:
+          - /url: /about-us
+      - listitem [ref=e229]:
+        - link "Contact Us" [ref=e230] [cursor=pointer]:
+          - /url: https://furnishedfinder.zendesk.com/hc/en-us
+      - listitem [ref=e231]:
+        - link "Careers" [ref=e232] [cursor=pointer]:
+          - /url: https://furnishedfinder.applytojob.com/apply
+      - listitem [ref=e233]:
+        - link "FAQs" [ref=e234] [cursor=pointer]:
+          - /url: /faq
+      - listitem [ref=e235]:
+        - link "Blog" [ref=e236] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e237]:
+        - link "Landlord Diaries" [ref=e238] [cursor=pointer]:
+          - /url: /Resources/podcast
+      - listitem [ref=e239]:
+        - link "KeyCheck" [ref=e240] [cursor=pointer]:
+          - /url: https://www.keycheck.com/
+      - listitem [ref=e241]:
+        - link "Our Reviews" [ref=e242] [cursor=pointer]:
+          - /url: /reviews
+      - listitem [ref=e243]:
+        - link "Our App" [ref=e244] [cursor=pointer]:
+          - /url: /app
+    - generic [ref=e247]:
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - generic [ref=e250]: © 2026 Furnished Finder
+          - generic [ref=e251]: PO Box 30374, Austin, Texas 78755
+        - list [ref=e252]:
+          - listitem [ref=e253]:
+            - link "Terms Of Use" [ref=e254] [cursor=pointer]:
+              - /url: /terms-of-use
+          - listitem [ref=e255]:
+            - link "Privacy Policy" [ref=e256] [cursor=pointer]:
+              - /url: /privacy
+      - list [ref=e258]:
+        - listitem [ref=e259]:
+          - link "Navigate to Furnished Finder Facebook page" [ref=e260] [cursor=pointer]:
+            - /url: https://www.facebook.com/FURNISHEDFINDER
+            - img "Facebook logo" [ref=e261]
+        - listitem [ref=e263]:
+          - link "Navigate to Furnished Finder Instagram account" [ref=e264] [cursor=pointer]:
+            - /url: https://www.instagram.com/furnishedfinder/
+            - img "Instagram logo" [ref=e265]
+        - listitem [ref=e267]:
+          - link "Navigate to Furnished Finder LinkedIn" [ref=e268] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/furnished-finder/
+            - img "LinkedIn logo" [ref=e269]
+  - generic [ref=e271]:
+    - iframe [ref=e273]:
+      
+    - img "Video Tutorial" [ref=e275] [cursor=pointer]

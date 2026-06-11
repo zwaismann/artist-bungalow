@@ -1,0 +1,346 @@
+- generic [ref=e668]:
+  - generic [ref=e6]:
+    - generic [ref=e9]:
+      - link "Instagram" [ref=e669] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=e670]
+      - generic [ref=e22]:
+        - link "Home" [ref=e671] [cursor=pointer]:
+          - /url: /
+          - img "Home" [ref=e672]
+        - link "Reels" [ref=e673] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=e674]
+        - link "Messages" [ref=e675] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Messages" [ref=e676]
+        - link "Search" [ref=e677] [cursor=pointer]:
+          - /url: "#"
+          - img "Search" [ref=e678]
+        - link "Explore" [ref=e679] [cursor=pointer]:
+          - /url: /explore/
+          - img "Explore" [ref=e680]
+        - link "Notifications" [ref=e681] [cursor=pointer]:
+          - /url: "#"
+          - img "Notifications" [ref=e682]
+        - link "New post" [ref=e683] [cursor=pointer]:
+          - /url: "#"
+          - img "New post" [ref=e684]
+        - link "theartistbungalow's profile picture" [ref=e685] [cursor=pointer]:
+          - /url: /theartistbungalow/
+          - link "theartistbungalow's profile picture" [ref=e686]:
+            - img "theartistbungalow's profile picture" [ref=e687]
+      - generic [ref=e113]:
+        - link "Settings" [ref=e688] [cursor=pointer]:
+          - /url: "#"
+          - img "Settings" [ref=e689]
+        - link "Also from Meta" [ref=e690] [cursor=pointer]:
+          - /url: "#"
+          - img "Also from Meta" [ref=e691]
+    - generic [ref=e132]:
+      - main [ref=e133]:
+        - generic [ref=e138]:
+          - generic [ref=e140]:
+            - article [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e144]:
+                  - button "cristiano's profile picture" [ref=e692] [cursor=pointer]:
+                    - link "cristiano's profile picture" [ref=e693]:
+                      - img "cristiano's profile picture" [ref=e694]
+                  - generic [ref=e155]:
+                    - generic [ref=e157]:
+                      - generic [ref=e159]:
+                        - link "cristiano" [ref=e695] [cursor=pointer]:
+                          - /url: /cristiano/
+                          - generic [ref=e168]: cristiano
+                        - img "Verified" [ref=e696]
+                      - generic [ref=e172]:
+                        - generic [ref=e174]: •
+                        - link "2d" [ref=e697] [cursor=pointer]:
+                          - /url: /p/DVld0u9iN3K/
+                          - time [ref=e178]: 2d
+                    - button "Follow" [ref=e698] [cursor=pointer]
+                  - button "More options" [ref=e699] [cursor=pointer]:
+                    - img "More options" [ref=e700]
+                - button [ref=e193]:
+                  - generic [ref=e197] [cursor=pointer]:
+                    - button [ref=e198]:
+                      - img [ref=e200]
+                    - button [ref=e203]:
+                      - img [ref=e205]
+                - generic [ref=e209]:
+                  - generic [ref=e210]:
+                    - generic [ref=e211]:
+                      - button "Like" [ref=e701] [cursor=pointer]:
+                        - img "Like" [ref=e702]
+                      - button "2.6M" [ref=e703] [cursor=pointer]
+                      - button "Comment" [ref=e704] [cursor=pointer]:
+                        - img "Comment" [ref=e705]
+                      - button "36.7K" [ref=e706] [cursor=pointer]
+                      - button "Share" [ref=e707] [cursor=pointer]:
+                        - img "Share" [ref=e708]
+                    - button "Save" [ref=e709] [cursor=pointer]:
+                      - button "Save" [ref=e710]:
+                        - img "Save" [ref=e711]
+                  - generic [ref=e237]:
+                    - link "cristiano Verified" [ref=e712] [cursor=pointer]:
+                      - /url: /cristiano/
+                      - generic [ref=e244]:
+                        - generic [ref=e245]: cristiano
+                        - img "Verified" [ref=e713]
+                    - generic [ref=e250]: Recovering and ready to watch the game today. Let’s go, Al Nassr! 🟡🔵
+            - article [ref=e251]:
+              - generic [ref=e252]:
+                - generic [ref=e254]:
+                  - button "jetjoc51's profile picture" [disabled] [ref=e714]:
+                    - link "jetjoc51's profile picture" [disabled] [ref=e715] [cursor=pointer]:
+                      - img "jetjoc51's profile picture" [ref=e716]
+                  - generic [ref=e265]:
+                    - generic [ref=e266]:
+                      - generic [ref=e267]:
+                        - generic [ref=e269]:
+                          - link "jetjoc51" [ref=e717] [cursor=pointer]:
+                            - /url: /jetjoc51/
+                            - generic [ref=e278]: jetjoc51
+                          - img "Verified" [ref=e718]
+                        - generic [ref=e282]:
+                          - generic [ref=e284]: •
+                          - link "1w" [ref=e719] [cursor=pointer]:
+                            - /url: /p/DVMHoIsgafq/
+                            - time [ref=e288]: 1w
+                      - link "Santa Monica, California" [ref=e720] [cursor=pointer]:
+                        - /url: /explore/locations/137242643/santa-monica-california/
+                    - button "Follow" [ref=e721] [cursor=pointer]
+                  - button "More options" [ref=e722] [cursor=pointer]:
+                    - img "More options" [ref=e723]
+                - button [ref=e307]:
+                  - img [ref=e313]
+                - generic [ref=e318]:
+                  - generic [ref=e319]:
+                    - button "Like" [ref=e724] [cursor=pointer]:
+                      - img "Like" [ref=e725]
+                    - button "5.8K" [ref=e726] [cursor=pointer]
+                    - button "Comment" [ref=e727] [cursor=pointer]:
+                      - img "Comment" [ref=e728]
+                    - button "Share" [ref=e729] [cursor=pointer]:
+                      - img "Share" [ref=e730]
+                  - button "Save" [ref=e731] [cursor=pointer]:
+                    - button "Save" [ref=e732]:
+                      - img "Save" [ref=e733]
+            - article [ref=e344]:
+              - generic [ref=e345]:
+                - generic [ref=e347]:
+                  - button "michaeljackson's profile picture" [disabled] [ref=e734]:
+                    - link "michaeljackson's profile picture" [disabled] [ref=e735] [cursor=pointer]:
+                      - img "michaeljackson's profile picture" [ref=e736]
+                  - generic [ref=e358]:
+                    - generic [ref=e360]:
+                      - generic [ref=e362]:
+                        - link "michaeljackson" [ref=e737] [cursor=pointer]:
+                          - /url: /michaeljackson/
+                          - generic [ref=e371]: michaeljackson
+                        - img "Verified" [ref=e738]
+                      - generic [ref=e375]:
+                        - generic [ref=e377]: •
+                        - link "8h" [ref=e739] [cursor=pointer]:
+                          - /url: /p/DVq2wRsDU-p/
+                          - time [ref=e381]: 8h
+                    - button "Follow" [ref=e740] [cursor=pointer]
+                  - button "More options" [ref=e741] [cursor=pointer]:
+                    - img "More options" [ref=e742]
+                - button [ref=e396]:
+                  - img [ref=e402]
+                - generic [ref=e406]:
+                  - generic [ref=e407]:
+                    - generic [ref=e408]:
+                      - button "Like" [ref=e743] [cursor=pointer]:
+                        - img "Like" [ref=e744]
+                      - button "153.9K" [ref=e745] [cursor=pointer]
+                      - button "Comment" [ref=e746] [cursor=pointer]:
+                        - img "Comment" [ref=e747]
+                      - button "594" [ref=e748] [cursor=pointer]
+                      - button "Share" [ref=e749] [cursor=pointer]:
+                        - img "Share" [ref=e750]
+                    - button "Save" [ref=e751] [cursor=pointer]:
+                      - button "Save" [ref=e752]:
+                        - img "Save" [ref=e753]
+                  - generic [ref=e434]:
+                    - link "michaeljackson Verified" [ref=e754] [cursor=pointer]:
+                      - /url: /michaeljackson/
+                      - generic [ref=e441]:
+                        - generic [ref=e442]: michaeljackson
+                        - img "Verified" [ref=e755]
+                    - generic [ref=e446]:
+                      - generic [ref=e447]: On this date in 1993, Michael Jackson won three Soul Train awards including the Humanitarian Award presented by Eddie
+                      - generic [ref=e448]:
+                        - text: ...
+                        - button "more" [ref=e756] [cursor=pointer]:
+                          - generic [ref=e450]: more
+            - article [ref=e451]:
+              - generic [ref=e452]:
+                - generic [ref=e454]:
+                  - button "indiancricketteam's profile picture" [ref=e757] [cursor=pointer]:
+                    - link "indiancricketteam's profile picture" [ref=e758]:
+                      - img "indiancricketteam's profile picture" [ref=e759]
+                  - generic [ref=e465]:
+                    - generic [ref=e467]:
+                      - generic [ref=e469]:
+                        - link "indiancricketteam" [ref=e760] [cursor=pointer]:
+                          - /url: /indiancricketteam/
+                          - generic [ref=e478]: indiancricketteam
+                        - img "Verified" [ref=e761]
+                      - generic [ref=e482]:
+                        - generic [ref=e484]: •
+                        - link "23h" [ref=e762] [cursor=pointer]:
+                          - /url: /p/DVpTJZ9F4Yp/
+                          - time [ref=e488]: 23h
+                    - button "Follow" [ref=e763] [cursor=pointer]
+                  - button "More options" [ref=e764] [cursor=pointer]:
+                    - img "More options" [ref=e765]
+                - button [ref=e503]:
+                  - img [ref=e509]
+                - generic [ref=e513]:
+                  - generic [ref=e514]:
+                    - generic [ref=e515]:
+                      - button "Like" [ref=e766] [cursor=pointer]:
+                        - img "Like" [ref=e767]
+                      - button "404.8K" [ref=e768] [cursor=pointer]
+                      - button "Comment" [ref=e769] [cursor=pointer]:
+                        - img "Comment" [ref=e770]
+                      - button "555" [ref=e771] [cursor=pointer]
+                      - button "Share" [ref=e772] [cursor=pointer]:
+                        - img "Share" [ref=e773]
+                    - button "Save" [ref=e774] [cursor=pointer]:
+                      - button "Save" [ref=e775]:
+                        - img "Save" [ref=e776]
+                  - generic [ref=e541]:
+                    - link "indiancricketteam Verified" [ref=e777] [cursor=pointer]:
+                      - /url: /indiancricketteam/
+                      - generic [ref=e548]:
+                        - generic [ref=e549]: indiancricketteam
+                        - img "Verified" [ref=e778]
+                    - generic [ref=e553]:
+                      - generic [ref=e555]:
+                        - text: Waking up as 𝗪𝗼𝗿𝗹𝗱 𝗖𝗵𝗮𝗺𝗽𝗶𝗼𝗻𝘀 😎✌️
+                        - link "#TeamIndia" [ref=e779] [cursor=pointer]:
+                          - /url: /explore/tags/teamindia/
+                        - text: "|"
+                      - generic [ref=e557]:
+                        - text: ...
+                        - button "more" [ref=e780] [cursor=pointer]:
+                          - generic [ref=e559]: more
+          - progressbar [ref=e561]:
+            - img "Loading..." [ref=e781]
+      - contentinfo [ref=e575]:
+        - generic [ref=e576]:
+          - generic [ref=e578]:
+            - link "Meta" [ref=e782] [cursor=pointer]:
+              - /url: https://about.meta.com/
+              - generic [ref=e581]: Meta
+            - link "About" [ref=e783] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+              - generic [ref=e584]: About
+            - link "Blog" [ref=e784] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+              - generic [ref=e587]: Blog
+            - link "Jobs" [ref=e785] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+              - generic [ref=e590]: Jobs
+            - link "Help" [ref=e786] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+              - generic [ref=e593]: Help
+            - link "API" [ref=e787] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+              - generic [ref=e596]: API
+            - link "Privacy" [ref=e788] [cursor=pointer]:
+              - /url: /legal/privacy/
+              - generic [ref=e599]: Privacy
+            - link "Consumer Health Privacy" [ref=e789] [cursor=pointer]:
+              - /url: /legal/privacy/health_privacy_policy/
+              - generic [ref=e602]: Consumer Health Privacy
+            - link "Terms" [ref=e790] [cursor=pointer]:
+              - /url: /legal/terms/
+              - generic [ref=e605]: Terms
+            - link "Locations" [ref=e791] [cursor=pointer]:
+              - /url: /explore/locations/
+              - generic [ref=e608]: Locations
+            - link "Instagram Lite" [ref=e792] [cursor=pointer]:
+              - /url: /web/lite/
+              - generic [ref=e611]: Instagram Lite
+            - link "Meta AI" [ref=e793] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+              - generic [ref=e614]: Meta AI
+            - link "Threads" [ref=e794] [cursor=pointer]:
+              - /url: https://www.threads.com/
+              - generic [ref=e617]: Threads
+            - link "Contact Uploading & Non-Users" [ref=e795] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+              - generic [ref=e620]: Contact Uploading & Non-Users
+            - link "Meta Verified" [ref=e796] [cursor=pointer]:
+              - /url: /accounts/meta_verified/?entrypoint=web_footer
+              - generic [ref=e623]: Meta Verified
+          - generic [ref=e624]:
+            - generic [ref=e625] [cursor=pointer]:
+              - generic [ref=e626]:
+                - generic [ref=e627]: English
+                - img "Down chevron icon" [ref=e797]
+              - combobox "Switch Display Language" [ref=e798]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English" [selected]
+                - option "English (UK)"
+                - option "Español (España)"
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=e634]: © 2026 Instagram from Meta
+  - button "Messages" [ref=e637] [cursor=pointer]:
+    - generic "Messages" [ref=e638]:
+      - generic [ref=e639]:
+        - img "Messages" [ref=e642]
+        - generic [ref=e645]: Messages

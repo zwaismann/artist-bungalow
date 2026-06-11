@@ -1,0 +1,425 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Skip to content" [ref=e3] [cursor=pointer]:
+      - /url: "#page-content"
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "Google Logo" [ref=e9] [cursor=pointer]:
+          - /url: https://business.google.com/us/
+          - img "Google Logo" [ref=e11]
+        - navigation "Global navigation" [ref=e13]:
+          - menubar [ref=e14]:
+            - menuitem "Where to start?" [ref=e15] [cursor=pointer]
+            - menuitem "Solutions" [ref=e16] [cursor=pointer]
+            - menuitem "Learning & insights" [ref=e17] [cursor=pointer]
+            - menuitem "Get support" [ref=e18] [cursor=pointer]
+        - button "Sign in" [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]: person
+      - generic [ref=e27]:
+        - link "Google Business Profile" [ref=e28] [cursor=pointer]:
+          - /url: https://business.google.com/us/business-profile/
+          - generic [ref=e29]: Google Business Profile
+        - navigation "Google Business Profile navigation" [ref=e31]:
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "Retail" [ref=e34] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/retail/
+            - listitem [ref=e35]:
+              - link "Services" [ref=e36] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/services/
+            - listitem [ref=e37]:
+              - link "Restaurants" [ref=e38] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/restaurants/
+        - generic [ref=e39]:
+          - link "Sign in" [ref=e40] [cursor=pointer]:
+            - /url: https://business.google.com/?gmbsrc=us-en-z-z-z-gmb-l-z-d%7Ebgcmhp-hom_sig-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sig&cbp=hom&cbt=sig
+          - link "Start now" [ref=e41] [cursor=pointer]:
+            - /url: https://business.google.com/create/new?gmbsrc=us-en-z-z-z-gmb-s-z-u%7Ebgcmhp-hom_nav-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=nav&cbp=hom&cbt=now
+  - main [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - heading "Stand out on Google with a free Business Profile" [level=1] [ref=e51]:
+            - generic [ref=e52]: Stand out on Google with a free Business Profile
+          - generic [ref=e53]: Turn people who find you on Google Search and Maps into new customers with a free Business Profile for your storefront or service area. Personalize your profile with photos, offers, posts, and more.
+          - link "Create a Google Business Profile" [ref=e56] [cursor=pointer]:
+            - /url: https://business.google.com/create/new?gmbsrc=us-en-z-z-z-gmb-s-z-u%7Ebgcmhp-hom_hr-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=hr&cbp=hom&cbt=now
+            - text: Start now
+        - generic [ref=e58]:
+          - generic "Video showing the Google search of Electricians near me followed by the Business Profile of Detroit Voltage" [ref=e59]
+          - button "Pause" [ref=e60] [cursor=pointer]:
+            - img [ref=e62]
+      - list [ref=e69]:
+        - listitem [ref=e70]:
+          - generic [ref=e71]:
+            - img "Blue circle icon with a price tag" [ref=e75]
+            - generic [ref=e77]:
+              - heading "Free" [level=2] [ref=e78]
+              - paragraph [ref=e80]: Create a Business Profile at no cost
+        - listitem [ref=e81]:
+          - generic [ref=e82]:
+            - img "Icon Easy to manage" [ref=e86]
+            - generic [ref=e88]:
+              - heading "Easy" [level=2] [ref=e89]
+              - paragraph [ref=e91]: Manage your profile from Search and Maps
+        - listitem [ref=e92]:
+          - generic [ref=e93]:
+            - img "Gear icon with blue background." [ref=e97]
+            - generic [ref=e99]:
+              - heading "Personalized" [level=2] [ref=e100]
+              - paragraph [ref=e102]: Add hours, photos, posts, and more
+      - generic [ref=e105]:
+        - generic [ref=e108]:
+          - heading "Take charge of your first impression" [level=2] [ref=e109]:
+            - generic [ref=e110]: Take charge of your first impression
+          - generic [ref=e111]: Highlight essential info and show what makes your business unique, right on your Business Profile.
+        - generic [ref=e115]:
+          - button "Add essential info Add information like your phone number and operating hours, so customers know what to expect." [expanded] [ref=e116]:
+            - generic [ref=e117] [cursor=pointer]: Add essential info
+            - paragraph [ref=e120]: Add information like your phone number and operating hours, so customers know what to expect.
+          - button "Share photos and logos" [ref=e121]:
+            - generic [ref=e122] [cursor=pointer]: Share photos and logos
+            - paragraph [ref=e124]: Show your business’s personality with photos, a cover image, your logo, and more to stand out to customers.
+          - button "Show who you are" [ref=e125]:
+            - generic [ref=e126] [cursor=pointer]: Show who you are
+            - paragraph [ref=e128]: Add attributes to show your business identifies as Black-owned, women-owned, veteran-owned, and is LGBTQ+ friendly so people can learn more about your business.
+        - generic [ref=e131]:
+          - generic:
+            - img:
+              - generic:
+                - generic: Detroit Voltage
+                - generic: Overview
+                - generic: Detroit, MI 48226
+                - generic: Today 9:00 am - 5:00 pm
+                - generic: Today 9:00 am - 5:00 pm
+                - generic: (800) -258-1352
+                - generic: https://detroitvoltage.com/
+      - generic [ref=e134]:
+        - generic [ref=e137]:
+          - heading "Easily connect with customers" [level=2] [ref=e138]:
+            - generic [ref=e139]: Easily connect with customers
+          - generic [ref=e140]: Update customers with the latest via posts, offers, and more.
+        - generic [ref=e144]:
+          - button "Create posts, offers, and events Add posts to your Business Profile to promote special offers, events, and updates to keep customers in the loop." [expanded] [ref=e145]:
+            - generic [ref=e146] [cursor=pointer]: Create posts, offers, and events
+            - paragraph [ref=e149]: Add posts to your Business Profile to promote special offers, events, and updates to keep customers in the loop.
+          - button "Respond to reviews" [ref=e150]:
+            - generic [ref=e151] [cursor=pointer]: Respond to reviews
+            - paragraph [ref=e153]: Reply to public customer reviews to build trust with new and returning customers.
+          - button "Post answers to frequently asked questions" [ref=e154]:
+            - generic [ref=e155] [cursor=pointer]: Post answers to frequently asked questions
+            - paragraph [ref=e157]: List helpful business info upfront and save time by posting answers to common questions. Even let customers answer questions, too.
+        - generic [ref=e160]:
+          - generic:
+            - img:
+              - generic:
+                - generic: Overview
+                - generic: The Good Design Store
+                - generic: New pillow cover colors in stock. Order now.
+                - generic: Order online
+      - generic [ref=e163]:
+        - generic [ref=e165]:
+          - heading "Show what you offer, from products to services" [level=2] [ref=e167]
+          - generic [ref=e169]: Whether you’re a restaurant, store, or service provider, your profile helps customers do business with you easily and directly with product inventory, ordering, bookings, quotes, and more.
+        - list [ref=e173]:
+          - listitem [ref=e174]:
+            - generic [ref=e176]:
+              - generic [ref=e178]:
+                - generic:
+                  - img "Image of a Business Profile in a mobile device popping out the buttons for order pickup and order delivery":
+                    - generic:
+                      - generic: Bobby’s BBQ Catering
+                      - generic: ORDER PICKUP
+                      - generic: ORDER DELIVERY
+              - generic [ref=e179]:
+                - heading "Accept food orders and more" [level=2] [ref=e180]
+                - paragraph
+                - paragraph [ref=e181]: Take orders for delivery and pickup and let customers make reservations. Even add your menu, so people can discover your best dishes.
+                - paragraph
+              - link "Learn More" [disabled] [ref=e183] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/restaurants/
+          - listitem [ref=e184]:
+            - generic [ref=e186]:
+              - generic [ref=e188]:
+                - generic:
+                  - img "Image of a Business Profile on a Mobile device with a list of products":
+                    - generic:
+                      - generic: Products
+                      - generic: Paintbrush
+                      - generic: Wool Roll
+                      - generic: Oil paint set
+                      - generic: $3.25
+                      - generic: $7.99
+                      - generic: $16.99
+                      - generic: In Stock
+                      - generic: In Stock
+                      - generic: In Stock
+              - generic [ref=e189]:
+                - heading "Be found for what you sell" [level=2] [ref=e190]
+                - paragraph
+                - paragraph [ref=e191]: Be found by automatically listing your in-store products for free, right from your Business Profile.
+                - paragraph
+              - link "Learn more" [disabled] [ref=e193] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/retail/
+          - listitem [ref=e194]:
+            - generic [ref=e196]:
+              - generic [ref=e198]:
+                - generic:
+                  - img "Image of an electrician’s business profile with ‘request a quote’ called out."
+              - generic [ref=e199]:
+                - heading "Offer your services" [level=2] [ref=e200]
+                - paragraph
+                - paragraph [ref=e201]: Show a list of your business services and provide online quotes, so customers get the info they need to choose you.
+                - paragraph
+              - link "Learn more" [disabled] [ref=e203] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/services/
+      - generic [ref=e207]:
+        - generic [ref=e209]:
+          - heading "Know how customers find your business" [level=2] [ref=e210]:
+            - generic [ref=e211]: Know how customers find your business
+          - generic [ref=e212]: Discover what keywords people search to find you, and get insights on calls, reviews, bookings, and more to understand how your business connects with customers.
+        - generic [ref=e213]:
+          - generic:
+            - img "Image of business profile performance metrics on a graph.":
+              - generic:
+                - generic: Business Profile Performance
+                - generic: Time period
+                - generic: All interactions
+                - generic: 8,210
+                - generic: Business Profile interactions
+      - generic [ref=e215]:
+        - heading "What success looks like" [level=2] [ref=e219]
+        - region "Carousel list of case studies" [ref=e224]:
+          - generic [ref=e226]:
+            - generic "Case study number 1 / 4" [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e231]:
+                  - heading "“I always asked customers, ‘What made you call me?’ and oftentimes they tell me, “We reached out because of your Business Profile on Google.”" [level=3] [ref=e232]
+                  - paragraph [ref=e233]:
+                    - text: Detroit Voltage
+                    - text: Detroit, Michigan
+                  - link "Watch Story" [ref=e236] [cursor=pointer]:
+                    - /url: https://youtu.be/-MId593uOSQ
+                    - img [ref=e238]
+                    - text: Watch Story
+                - img "A woman writes on a clipboard while an electrician wearing a safety vest and hardhat works on a breaker box" [ref=e243]
+            - generic [ref=e245]:
+              - generic [ref=e248]:
+                - heading [level=3] [ref=e249]: “Getting Yogolandia on Google was absolutely key. It truly legitimizes you as a business. It’s free, there are photos, and we’ve gotten phenomenal reviews.”
+                - paragraph [ref=e250]: Yogolandia Yogurt and Botana Bar Chicago, Illinois
+              - img [ref=e254]
+            - generic [ref=e256]:
+              - generic [ref=e259]:
+                - heading [level=3] [ref=e260]: “We love the insights that we get on searches.”
+                - paragraph [ref=e261]: Chicago Music Exchange Chicago, Illinois
+              - img [ref=e265]
+            - generic [ref=e267]:
+              - generic [ref=e270]:
+                - heading [level=3] [ref=e271]: “We’re able to clearly say what we’re about and what our mission is.”
+                - paragraph [ref=e272]: Honest Soul Yoga Alexandria, Virginia
+              - img [ref=e276]
+          - generic [ref=e277]:
+            - generic [ref=e278]:
+              - paragraph [ref=e279]:
+                - generic [ref=e280]: Page number
+                - text: 1 / 4
+              - img
+            - button "Go to the next slide" [ref=e281] [cursor=pointer]:
+              - img
+      - generic [ref=e286]:
+        - heading "Show the best of your business" [level=2] [ref=e287]
+        - generic [ref=e288]: Reach more customers in three simple steps with your free Business Profile.
+        - link "Create your free Business Profile" [ref=e290] [cursor=pointer]:
+          - /url: https://business.google.com/create/new
+          - text: Start now
+      - list [ref=e295]:
+        - listitem [ref=e296]:
+          - generic [ref=e297]:
+            - img "one" [ref=e301]
+            - generic [ref=e303]:
+              - heading "Claim" [level=3] [ref=e304]:
+                - generic [ref=e305]: Claim
+              - paragraph [ref=e307]: Create a Business Profile, or manage an existing profile on Search and Maps
+        - listitem [ref=e308]:
+          - generic [ref=e309]:
+            - img "two" [ref=e313]
+            - generic [ref=e315]:
+              - heading "Personalize" [level=3] [ref=e316]:
+                - generic [ref=e317]: Personalize
+              - paragraph [ref=e319]: Add hours, photos, and other details and get discovered by customers near you
+        - listitem [ref=e320]:
+          - generic [ref=e321]:
+            - img "three" [ref=e325]
+            - generic [ref=e327]:
+              - heading "Manage" [level=3] [ref=e328]:
+                - generic [ref=e329]: Manage
+              - paragraph [ref=e331]: Share updates, respond to reviews, and connect with customers on Google
+      - generic [ref=e335]:
+        - heading "Your questions, answered" [level=2] [ref=e337]
+        - generic [ref=e339]:
+          - button "Toggle all panels" [ref=e341] [cursor=pointer]:
+            - generic [ref=e342]: Expand all
+            - generic [ref=e343]: expand_all
+          - generic [ref=e345]:
+            - heading "Is a Business Profile on Google free?" [level=3] [ref=e346]:
+              - button "Is a Business Profile on Google free?" [ref=e347] [cursor=pointer]:
+                - generic [ref=e349]: Is a Business Profile on Google free?
+                - generic [ref=e351]: add
+            - generic [ref=e352]: Yes, creating a Business Profile and listing your business on Google is free. Create your profile at no cost, and you can manage your business from Google Search and Maps to start reaching more customers.
+  - contentinfo [ref=e353]:
+    - heading "Footer links" [level=2] [ref=e354]
+    - generic [ref=e358]:
+      - paragraph [ref=e359]: Follow us
+      - list [ref=e360]:
+        - listitem [ref=e361]:
+          - link "Follow Google Ads on X" [ref=e362] [cursor=pointer]:
+            - /url: https://x.com/googleads
+            - img
+        - listitem [ref=e363]:
+          - link "Follow Google Ads on YouTube" [ref=e364] [cursor=pointer]:
+            - /url: https://www.youtube.com/googleads
+            - img
+        - listitem [ref=e365]:
+          - link "Follow Google Ads on Facebook" [ref=e366] [cursor=pointer]:
+            - /url: https://www.facebook.com/GoogleAds/
+            - img
+    - navigation "Footer links" [ref=e367]:
+      - generic [ref=e368]:
+        - generic [ref=e369]:
+          - heading "Products" [level=3] [ref=e370]:
+            - generic [ref=e371]: Products
+          - list "Products" [ref=e373]:
+            - listitem [ref=e374]:
+              - link "Google Ads" [ref=e375] [cursor=pointer]:
+                - /url: https://business.google.com/us/google-ads/
+            - listitem [ref=e376]:
+              - link "YouTube Ads" [ref=e377] [cursor=pointer]:
+                - /url: https://business.google.com/us/ad-solutions/youtube-ads/
+            - listitem [ref=e378]:
+              - link "Merchant Center" [ref=e379] [cursor=pointer]:
+                - /url: https://business.google.com/us/merchant-center/
+            - listitem [ref=e380]:
+              - link "Business Profile" [ref=e381] [cursor=pointer]:
+                - /url: https://business.google.com/us/business-profile/
+            - listitem [ref=e382]:
+              - link "Google Analytics" [ref=e383] [cursor=pointer]:
+                - /url: https://business.google.com/us/google-analytics/
+            - listitem [ref=e384]:
+              - link "Manufacturer Center" [ref=e385] [cursor=pointer]:
+                - /url: https://business.google.com/us/merchant-center/manufacturer-center/
+        - generic [ref=e386]:
+          - heading "Learning and support" [level=3] [ref=e387]:
+            - generic [ref=e388]: Learning and support
+          - list "Learning and support" [ref=e390]:
+            - listitem [ref=e391]:
+              - link "Accelerate with Google" [ref=e392] [cursor=pointer]:
+                - /url: https://business.google.com/us/accelerate/
+            - listitem [ref=e393]:
+              - link "Think with Google" [ref=e394] [cursor=pointer]:
+                - /url: https://business.google.com/us/think/
+            - listitem [ref=e395]:
+              - link "Google Ads Help Center" [ref=e396] [cursor=pointer]:
+                - /url: https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=us-en-et-awhp-footer&utm_content=
+            - listitem [ref=e397]:
+              - link "Your guide to Merchant Center" [ref=e398] [cursor=pointer]:
+                - /url: https://support.google.com/merchants/answer/12159157
+            - listitem [ref=e399]:
+              - link "Your guide to Google Ads" [ref=e400] [cursor=pointer]:
+                - /url: https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords
+            - listitem [ref=e401]:
+              - link "Google Advertiser Community" [ref=e402] [cursor=pointer]:
+                - /url: https://support.google.com/google-ads/community?ctx=lithium
+        - generic [ref=e403]:
+          - heading "Partners and developers" [level=3] [ref=e404]:
+            - generic [ref=e405]: Partners and developers
+          - list "Partners and developers" [ref=e407]:
+            - listitem [ref=e408]:
+              - link "Google Partners" [ref=e409] [cursor=pointer]:
+                - /url: https://partnersdirectory.withgoogle.com/?premier=true
+            - listitem [ref=e410]:
+              - link "Google Developers site" [ref=e411] [cursor=pointer]:
+                - /url: https://developers.google.com/
+            - listitem [ref=e412]:
+              - link "Google Ads Scripts" [ref=e413] [cursor=pointer]:
+                - /url: https://developers.google.com/google-ads/scripts/docs/start
+            - listitem [ref=e414]:
+              - link "Google Ads Remarketing Tags" [ref=e415] [cursor=pointer]:
+                - /url: https://support.google.com/google-ads/answer/2476688
+            - listitem [ref=e416]:
+              - link "Google Ads API" [ref=e417] [cursor=pointer]:
+                - /url: https://business.google.com/us/ad-tools/google-ads-api/
+        - generic [ref=e418]:
+          - heading "More solutions" [level=3] [ref=e419]:
+            - generic [ref=e420]: More solutions
+          - list "More solutions" [ref=e422]:
+            - listitem [ref=e423]:
+              - link "Workspace" [ref=e424] [cursor=pointer]:
+                - /url: https://workspace.google.com/
+            - listitem [ref=e425]:
+              - link "Chrome" [ref=e426] [cursor=pointer]:
+                - /url: https://www.google.com/chrome/
+            - listitem [ref=e427]:
+              - link "Google Cloud" [ref=e428] [cursor=pointer]:
+                - /url: https://cloud.google.com/
+            - listitem [ref=e429]:
+              - link "AdSense" [ref=e430] [cursor=pointer]:
+                - /url: https://adsense.google.com/start/
+            - listitem [ref=e431]:
+              - link "AdMob" [ref=e432] [cursor=pointer]:
+                - /url: https://admob.google.com/home/get-started/
+    - paragraph [ref=e434]: Actual results will vary by advertiser.
+    - generic [ref=e435]:
+      - link "Google" [ref=e437] [cursor=pointer]:
+        - /url: https://www.google.com
+        - img [ref=e438]
+      - list [ref=e440]:
+        - listitem [ref=e441]:
+          - link "About Google" [ref=e442] [cursor=pointer]:
+            - /url: https://www.google.com/intl/en/about
+        - listitem [ref=e443]:
+          - link "Google products" [ref=e444] [cursor=pointer]:
+            - /url: https://www.google.com/intl/en/about/products
+        - listitem [ref=e445]:
+          - link "Privacy" [ref=e446] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?authuser=0
+        - listitem [ref=e447]:
+          - link "Terms" [ref=e448] [cursor=pointer]:
+            - /url: https://policies.google.com/terms
+      - list [ref=e449]:
+        - listitem [ref=e450]:
+          - link "Help" [ref=e451] [cursor=pointer]:
+            - /url: https://support.google.com/business/
+            - img [ref=e452]
+            - text: Help
+        - listitem [ref=e454]:
+          - combobox "Change language or region" [ref=e455]:
+            - option "Australia and New Zealand - English"
+            - option "Brasil - Português (Brasil)"
+            - option "Canada - English"
+            - option "Canada - Français"
+            - option "Česká Republika - Čeština"
+            - option "Deutschland - Deutsch"
+            - option "English (Global)"
+            - option "España - Español"
+            - option "Español (Latinoamérica)"
+            - option "France - Français"
+            - option "India - English"
+            - option "Indonesia - Bahasa Indonesia"
+            - option "Italia - Italiano"
+            - option "Nederland - Nederlands"
+            - option "Polska - Polski"
+            - option "Русский"
+            - option "România - Română"
+            - option "Sverige - Svenska"
+            - option "Türkiye - Türkçe"
+            - option "United Kingdom - English"
+            - option "United States - English" [selected]
+            - option "Việt Nam - Tiếng Việt"
+            - option "ישראל - עברית"
+            - option "العربية"
+            - option "简体中文"
+            - option "繁體中文"
+            - option "日本 - 日本語"
+            - option "대한민국 - 한국어"
+            - option "ไทย - ไทย"
+            - option "Україна - Українська"

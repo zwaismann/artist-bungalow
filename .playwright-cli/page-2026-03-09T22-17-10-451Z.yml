@@ -1,0 +1,670 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button "pw" [ref=e28]:
+                - img [ref=e30]
+                - generic [ref=e33]: pw
+    - generic [ref=e34]:
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+            - /url: /members/pm-dashboard
+            - img [ref=e42]
+            - text: Dashboard
+            - generic [ref=e45]: (current)
+        - listitem [ref=e46]:
+          - link "My Profile Your phone or email is not verified. Please go to profile to complete verification." [ref=e47] [cursor=pointer]:
+            - /url: /members/profile
+            - img [ref=e48]
+            - text: My Profile
+            - generic "Your phone or email is not verified. Please go to profile to complete verification." [ref=e51]
+        - listitem [ref=e53]:
+          - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+            - /url: /members/my-saved-search
+            - img [ref=e55]
+            - text: My Saved Searches
+        - listitem [ref=e59]:
+          - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+            - /url: /members/tenant-lead
+            - img [ref=e61]
+            - text: Tenant Leads
+        - listitem [ref=e65]:
+          - link "Messages" [ref=e66] [cursor=pointer]:
+            - /url: /members/Tenant-Message
+            - img [ref=e67]
+            - text: Messages
+        - listitem [ref=e71]:
+          - generic [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Edit Listing
+            - img [ref=e76]
+          - list [ref=e78]:
+            - listitem [ref=e79]:
+              - link "Contact Info" [ref=e80] [cursor=pointer]:
+                - /url: /members/edit-property?p=TEMP2739073
+                - text: Contact Info
+            - listitem [ref=e82]:
+              - link "Location" [ref=e83] [cursor=pointer]:
+                - /url: /members/PM/Edit-location?p=TEMP2739073
+                - text: Location
+            - listitem [ref=e85]:
+              - link "Details" [ref=e86] [cursor=pointer]:
+                - /url: /members/PM/Edit-details?p=TEMP2739073_1
+                - text: Details
+            - listitem [ref=e88]:
+              - link "Amenities" [ref=e89] [cursor=pointer]:
+                - /url: /members/PM/Edit-amenities-and-nearby?p=TEMP2739073_1
+                - text: Amenities
+            - listitem [ref=e91]:
+              - link "Photos" [ref=e92] [cursor=pointer]:
+                - /url: /members/PM/Edit-Photos?p=TEMP2739073_1
+                - text: Photos
+            - listitem [ref=e94]:
+              - link "Calendar" [ref=e95] [cursor=pointer]:
+                - /url: /members/PM/Availability?p=TEMP2739073_1
+                - text: Calendar
+            - listitem [ref=e97]:
+              - link "Notification Settings" [ref=e98] [cursor=pointer]:
+                - /url: /members/notification-settings?p=TEMP2739073
+                - text: Notification Settings
+            - listitem [ref=e100]:
+              - link "Verification" [ref=e101] [cursor=pointer]:
+                - /url: /members/pm/verification?p=TEMP2739073
+                - text: Verification
+            - listitem [ref=e103]:
+              - link "Listing Status" [ref=e104] [cursor=pointer]:
+                - /url: /members/PM/Listing-Status?p=TEMP2739073_1
+                - text: Listing Status
+            - listitem [ref=e106]:
+              - link "House Rules" [ref=e107] [cursor=pointer]:
+                - /url: /members/houserules?p=TEMP2739073_1
+                - text: House Rules
+        - listitem [ref=e109]:
+          - generic [ref=e110] [cursor=pointer]:
+            - img [ref=e111]
+            - text: Landlord Tools
+            - img [ref=e113]
+        - listitem [ref=e115]:
+          - generic [ref=e116] [cursor=pointer]:
+            - img [ref=e117]
+            - text: My Properties
+            - img [ref=e120]
+        - listitem [ref=e122]:
+          - generic [ref=e123] [cursor=pointer]:
+            - img [ref=e124]
+            - text: Account
+            - img [ref=e126]
+        - listitem [ref=e128]:
+          - generic [ref=e129] [cursor=pointer]:
+            - img [ref=e130]
+            - text: Favorite Properties
+        - listitem [ref=e133]:
+          - link "Contact Us" [ref=e134] [cursor=pointer]:
+            - /url: https://support.furnishedfinder.com/hc/en-us
+            - img [ref=e135]
+            - text: Contact Us
+      - generic [ref=e140]:
+        - generic [ref=e143]:
+          - img [ref=e145]
+          - generic [ref=e148]: Edit Listing - Photos - Step 5 of 10
+        - generic [ref=e152]:
+          - generic [ref=e154]:
+            - generic [ref=e156]: "Updating Photos for:"
+            - combobox [ref=e158]:
+              - option "<No Property Headline>" [selected]
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - heading "Property TEMP2739073_1" [level=3] [ref=e162]
+                - text: 
+              - alert [ref=e165] [cursor=pointer]:
+                - paragraph [ref=e166]: Your property is pending approval, but you can still complete your listing while waiting for approval.
+                - generic [ref=e167]:
+                  - text: Let us take care of the setup—
+                  - link "learn more about our Listing Set Up Service." [ref=e168]:
+                    - /url: /members/listing-setup?p=TEMP2739073_1&s=edit
+                - progressbar [ref=e171]: 62% Complete
+            - generic [ref=e172]:
+              - heading "Property Photos" [level=5] [ref=e173]
+              - generic [ref=e174]:
+                - paragraph [ref=e175]: Add images to your listing by dragging and dropping your images into the box below, or click the box to select the images you want to upload.
+                - heading "Drop files here or click to upload." [level=3] [ref=e180] [cursor=pointer]
+                - paragraph [ref=e181]: Please add at least two photos to your listing.
+              - iframe [ref=e182]:
+                - generic [active] [ref=f56e1]:
+                  - heading "Current Photos" [level=2] [ref=f56e2]:
+                    - generic [ref=f56e3]: Current Photos
+                  - paragraph [ref=f56e4]: You can rearrange your images by dragging it to where you want it to display.
+                  - list [ref=f56e7]:
+                    - listitem [ref=f56e8]:
+                      - generic [ref=f56e9]:
+                        - img [ref=f56e10]
+                        - generic [ref=f56e11]: Featured
+                    - listitem [ref=f56e12]:
+                      - generic [ref=f56e13]:
+                        - combobox [ref=f56e14]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e15]:
+                          - link "Crop Image" [ref=f56e16] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e17]
+                          - img [ref=f56e20]
+                          - generic [ref=f56e21]:
+                            - img [ref=f56e23] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e26]
+                        - list [ref=f56e28]:
+                          - listitem [ref=f56e29]:
+                            - link "Multiple Delete" [ref=f56e30] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e31]
+                          - listitem [ref=f56e33]:
+                            - link "Add Caption" [ref=f56e34] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e35]
+                          - listitem [ref=f56e37]:
+                            - link "Delete Image" [ref=f56e38] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e39]
+                          - listitem [ref=f56e41]:
+                            - link "Rotate Right" [ref=f56e42] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e43]
+                          - listitem [ref=f56e46]:
+                            - link "Rotate Left" [ref=f56e47] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e48]
+                          - listitem [ref=f56e51]:
+                            - link "Use as Featured Image" [ref=f56e52] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e53]
+                    - listitem [ref=f56e55]:
+                      - generic [ref=f56e56]:
+                        - combobox [ref=f56e57]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e58]:
+                          - link "Crop Image" [ref=f56e59] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e60]
+                          - img [ref=f56e63]
+                          - generic [ref=f56e64]:
+                            - img [ref=f56e66] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e69]
+                        - list [ref=f56e71]:
+                          - listitem [ref=f56e72]:
+                            - link "Multiple Delete" [ref=f56e73] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e74]
+                          - listitem [ref=f56e76]:
+                            - link "Add Caption" [ref=f56e77] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e78]
+                          - listitem [ref=f56e80]:
+                            - link "Delete Image" [ref=f56e81] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e82]
+                          - listitem [ref=f56e84]:
+                            - link "Rotate Right" [ref=f56e85] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e86]
+                          - listitem [ref=f56e89]:
+                            - link "Rotate Left" [ref=f56e90] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e91]
+                          - listitem [ref=f56e94]:
+                            - link "Use as Featured Image" [ref=f56e95] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e96]
+                    - listitem [ref=f56e98]:
+                      - generic [ref=f56e99]:
+                        - combobox [ref=f56e100]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e101]:
+                          - link "Crop Image" [ref=f56e102] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e103]
+                          - img [ref=f56e106]
+                          - generic [ref=f56e107]:
+                            - img [ref=f56e109] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e112]
+                        - list [ref=f56e114]:
+                          - listitem [ref=f56e115]:
+                            - link "Multiple Delete" [ref=f56e116] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e117]
+                          - listitem [ref=f56e119]:
+                            - link "Add Caption" [ref=f56e120] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e121]
+                          - listitem [ref=f56e123]:
+                            - link "Delete Image" [ref=f56e124] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e125]
+                          - listitem [ref=f56e127]:
+                            - link "Rotate Right" [ref=f56e128] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e129]
+                          - listitem [ref=f56e132]:
+                            - link "Rotate Left" [ref=f56e133] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e134]
+                          - listitem [ref=f56e137]:
+                            - link "Use as Featured Image" [ref=f56e138] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e139]
+                    - listitem [ref=f56e141]:
+                      - generic [ref=f56e142]:
+                        - combobox [ref=f56e143]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e144]:
+                          - link "Crop Image" [ref=f56e145] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e146]
+                          - img [ref=f56e149]
+                          - generic [ref=f56e150]:
+                            - img [ref=f56e152] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e155]
+                        - list [ref=f56e157]:
+                          - listitem [ref=f56e158]:
+                            - link "Multiple Delete" [ref=f56e159] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e160]
+                          - listitem [ref=f56e162]:
+                            - link "Add Caption" [ref=f56e163] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e164]
+                          - listitem [ref=f56e166]:
+                            - link "Delete Image" [ref=f56e167] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e168]
+                          - listitem [ref=f56e170]:
+                            - link "Rotate Right" [ref=f56e171] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e172]
+                          - listitem [ref=f56e175]:
+                            - link "Rotate Left" [ref=f56e176] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e177]
+                          - listitem [ref=f56e180]:
+                            - link "Use as Featured Image" [ref=f56e181] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e182]
+                    - listitem [ref=f56e184]:
+                      - generic [ref=f56e185]:
+                        - combobox [ref=f56e186]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e187]:
+                          - link "Crop Image" [ref=f56e188] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e189]
+                          - img [ref=f56e192]
+                          - generic [ref=f56e193]:
+                            - img [ref=f56e195] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e198]
+                        - list [ref=f56e200]:
+                          - listitem [ref=f56e201]:
+                            - link "Multiple Delete" [ref=f56e202] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e203]
+                          - listitem [ref=f56e205]:
+                            - link "Add Caption" [ref=f56e206] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e207]
+                          - listitem [ref=f56e209]:
+                            - link "Delete Image" [ref=f56e210] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e211]
+                          - listitem [ref=f56e213]:
+                            - link "Rotate Right" [ref=f56e214] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e215]
+                          - listitem [ref=f56e218]:
+                            - link "Rotate Left" [ref=f56e219] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e220]
+                          - listitem [ref=f56e223]:
+                            - link "Use as Featured Image" [ref=f56e224] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e225]
+                    - listitem [ref=f56e227]:
+                      - generic [ref=f56e228]:
+                        - combobox [ref=f56e229]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e230]:
+                          - link "Crop Image" [ref=f56e231] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e232]
+                          - img [ref=f56e235]
+                          - generic [ref=f56e236]:
+                            - img [ref=f56e238] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e241]
+                        - list [ref=f56e243]:
+                          - listitem [ref=f56e244]:
+                            - link "Multiple Delete" [ref=f56e245] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e246]
+                          - listitem [ref=f56e248]:
+                            - link "Add Caption" [ref=f56e249] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e250]
+                          - listitem [ref=f56e252]:
+                            - link "Delete Image" [ref=f56e253] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e254]
+                          - listitem [ref=f56e256]:
+                            - link "Rotate Right" [ref=f56e257] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e258]
+                          - listitem [ref=f56e261]:
+                            - link "Rotate Left" [ref=f56e262] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e263]
+                          - listitem [ref=f56e266]:
+                            - link "Use as Featured Image" [ref=f56e267] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e268]
+                    - listitem [ref=f56e270]:
+                      - generic [ref=f56e271]:
+                        - combobox [ref=f56e272]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e273]:
+                          - link "Crop Image" [ref=f56e274] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e275]
+                          - img [ref=f56e278]
+                          - generic [ref=f56e279]:
+                            - img [ref=f56e281] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e284]
+                        - list [ref=f56e286]:
+                          - listitem [ref=f56e287]:
+                            - link "Multiple Delete" [ref=f56e288] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e289]
+                          - listitem [ref=f56e291]:
+                            - link "Add Caption" [ref=f56e292] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e293]
+                          - listitem [ref=f56e295]:
+                            - link "Delete Image" [ref=f56e296] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e297]
+                          - listitem [ref=f56e299]:
+                            - link "Rotate Right" [ref=f56e300] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e301]
+                          - listitem [ref=f56e304]:
+                            - link "Rotate Left" [ref=f56e305] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e306]
+                          - listitem [ref=f56e309]:
+                            - link "Use as Featured Image" [ref=f56e310] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e311]
+                    - listitem [ref=f56e313]:
+                      - generic [ref=f56e314]:
+                        - combobox [ref=f56e315]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e316]:
+                          - link "Crop Image" [ref=f56e317] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e318]
+                          - img [ref=f56e321]
+                          - generic [ref=f56e322]:
+                            - img [ref=f56e324] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e327]
+                        - list [ref=f56e329]:
+                          - listitem [ref=f56e330]:
+                            - link "Multiple Delete" [ref=f56e331] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e332]
+                          - listitem [ref=f56e334]:
+                            - link "Add Caption" [ref=f56e335] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e336]
+                          - listitem [ref=f56e338]:
+                            - link "Delete Image" [ref=f56e339] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e340]
+                          - listitem [ref=f56e342]:
+                            - link "Rotate Right" [ref=f56e343] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e344]
+                          - listitem [ref=f56e347]:
+                            - link "Rotate Left" [ref=f56e348] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e349]
+                          - listitem [ref=f56e352]:
+                            - link "Use as Featured Image" [ref=f56e353] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e354]
+                    - listitem [ref=f56e356]:
+                      - generic [ref=f56e357]:
+                        - combobox [ref=f56e358]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e359]:
+                          - link "Crop Image" [ref=f56e360] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e361]
+                          - img [ref=f56e364]
+                          - generic [ref=f56e365]:
+                            - img [ref=f56e367] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e370]
+                        - list [ref=f56e372]:
+                          - listitem [ref=f56e373]:
+                            - link "Multiple Delete" [ref=f56e374] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e375]
+                          - listitem [ref=f56e377]:
+                            - link "Add Caption" [ref=f56e378] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e379]
+                          - listitem [ref=f56e381]:
+                            - link "Delete Image" [ref=f56e382] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e383]
+                          - listitem [ref=f56e385]:
+                            - link "Rotate Right" [ref=f56e386] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e387]
+                          - listitem [ref=f56e390]:
+                            - link "Rotate Left" [ref=f56e391] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e392]
+                          - listitem [ref=f56e395]:
+                            - link "Use as Featured Image" [ref=f56e396] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e397]
+                    - listitem [ref=f56e399]:
+                      - generic [ref=f56e400]:
+                        - combobox [ref=f56e401]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e402]:
+                          - link "Crop Image" [ref=f56e403] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e404]
+                          - img [ref=f56e407]
+                          - generic [ref=f56e408]:
+                            - img [ref=f56e410] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e413]
+                        - list [ref=f56e415]:
+                          - listitem [ref=f56e416]:
+                            - link "Multiple Delete" [ref=f56e417] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e418]
+                          - listitem [ref=f56e420]:
+                            - link "Add Caption" [ref=f56e421] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e422]
+                          - listitem [ref=f56e424]:
+                            - link "Delete Image" [ref=f56e425] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e426]
+                          - listitem [ref=f56e428]:
+                            - link "Rotate Right" [ref=f56e429] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e430]
+                          - listitem [ref=f56e433]:
+                            - link "Rotate Left" [ref=f56e434] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e435]
+                          - listitem [ref=f56e438]:
+                            - link "Use as Featured Image" [ref=f56e439] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e440]
+                    - listitem [ref=f56e442]:
+                      - generic [ref=f56e443]:
+                        - combobox [ref=f56e444]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f56e445]:
+                          - link "Crop Image" [ref=f56e446] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f56e447]
+                          - img [ref=f56e450]
+                          - generic [ref=f56e451]:
+                            - img [ref=f56e453] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f56e456]
+                        - list [ref=f56e458]:
+                          - listitem [ref=f56e459]:
+                            - link "Multiple Delete" [ref=f56e460] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e461]
+                          - listitem [ref=f56e463]:
+                            - link "Add Caption" [ref=f56e464] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e465]
+                          - listitem [ref=f56e467]:
+                            - link "Delete Image" [ref=f56e468] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e469]
+                          - listitem [ref=f56e471]:
+                            - link "Rotate Right" [ref=f56e472] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e473]
+                          - listitem [ref=f56e476]:
+                            - link "Rotate Left" [ref=f56e477] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e478]
+                          - listitem [ref=f56e481]:
+                            - link "Use as Featured Image" [ref=f56e482] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f56e483]
+            - separator [ref=e183]
+            - generic [ref=e184]:
+              - button "Save" [ref=e185] [cursor=pointer]
+              - paragraph [ref=e186]:
+                - text: Need help?
+                - link "Contact Us." [ref=e187] [cursor=pointer]:
+                  - /url: https://support.furnishedfinder.com/hc/en-us
+              - button "Next" [ref=e189] [cursor=pointer]:
+                - text: Next
+                - img [ref=e190]
+  - contentinfo [ref=e192]:
+    - list [ref=e198]:
+      - listitem [ref=e199]:
+        - link "About Us" [ref=e200] [cursor=pointer]:
+          - /url: /about-us
+      - listitem [ref=e201]:
+        - link "Contact Us" [ref=e202] [cursor=pointer]:
+          - /url: https://furnishedfinder.zendesk.com/hc/en-us
+      - listitem [ref=e203]:
+        - link "Careers" [ref=e204] [cursor=pointer]:
+          - /url: https://furnishedfinder.applytojob.com/apply
+      - listitem [ref=e205]:
+        - link "FAQs" [ref=e206] [cursor=pointer]:
+          - /url: /faq
+      - listitem [ref=e207]:
+        - link "Blog" [ref=e208] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e209]:
+        - link "Landlord Diaries" [ref=e210] [cursor=pointer]:
+          - /url: /Resources/podcast
+      - listitem [ref=e211]:
+        - link "KeyCheck" [ref=e212] [cursor=pointer]:
+          - /url: https://www.keycheck.com/
+      - listitem [ref=e213]:
+        - link "Our Reviews" [ref=e214] [cursor=pointer]:
+          - /url: /reviews
+      - listitem [ref=e215]:
+        - link "Our App" [ref=e216] [cursor=pointer]:
+          - /url: /app
+    - generic [ref=e219]:
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]: © 2026 Furnished Finder
+          - generic [ref=e223]: PO Box 30374, Austin, Texas 78755
+        - list [ref=e224]:
+          - listitem [ref=e225]:
+            - link "Terms Of Use" [ref=e226] [cursor=pointer]:
+              - /url: /terms-of-use
+          - listitem [ref=e227]:
+            - link "Privacy Policy" [ref=e228] [cursor=pointer]:
+              - /url: /privacy
+      - list [ref=e230]:
+        - listitem [ref=e231]:
+          - link "Navigate to Furnished Finder Facebook page" [ref=e232] [cursor=pointer]:
+            - /url: https://www.facebook.com/FURNISHEDFINDER
+            - img "Facebook logo" [ref=e233]
+        - listitem [ref=e235]:
+          - link "Navigate to Furnished Finder Instagram account" [ref=e236] [cursor=pointer]:
+            - /url: https://www.instagram.com/furnishedfinder/
+            - img "Instagram logo" [ref=e237]
+        - listitem [ref=e239]:
+          - link "Navigate to Furnished Finder LinkedIn" [ref=e240] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/furnished-finder/
+            - img "LinkedIn logo" [ref=e241]
+  - generic [ref=e243]:
+    - iframe [ref=e245]:
+      
+    - img "Video Tutorial" [ref=e247] [cursor=pointer]

@@ -1,0 +1,3 @@
+[     439ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Listing-Status?p=972077_1:0
+[   88484ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[   88630ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/profile:0

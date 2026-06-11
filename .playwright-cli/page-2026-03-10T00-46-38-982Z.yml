@@ -1,0 +1,1111 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#site-content"
+    - text: Skip to content
+    - img [ref=e3]
+  - alert
+  - generic [ref=e8]:
+    - generic [ref=e11]:
+      - navigation "Primary" [ref=e14]:
+        - generic [ref=e15]:
+          - link "Airbnb Hosting homepage" [ref=e20] [cursor=pointer]:
+            - /url: /hosting
+            - img [ref=e22]
+          - generic [ref=e27]:
+            - link "Today" [ref=e28] [cursor=pointer]:
+              - /url: /hosting
+              - generic [ref=e29]: Today
+            - link "Calendar" [ref=e30] [cursor=pointer]:
+              - /url: /calendar-router
+              - generic [ref=e31]: Calendar
+            - link "Listings" [ref=e32] [cursor=pointer]:
+              - /url: /hosting/listings
+              - generic [ref=e33]: Listings
+            - link "Messages 2 unread messages" [ref=e527] [cursor=pointer]:
+              - /url: /hosting/messages
+              - generic [ref=e35]:
+                - text: Messages
+                - generic [ref=e529]: 2 unread messages
+          - generic [ref=e39]:
+            - link "Switch to traveling" [ref=e40] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e41]: Switch to traveling
+            - link "Profile" [ref=e42] [cursor=pointer]:
+              - /url: /users/profile/about?context=host
+              - img [ref=e47]
+            - button "Main navigation menu" [ref=e531] [cursor=pointer]:
+              - img [ref=e533]
+      - generic [ref=e59]:
+        - main [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e63]:
+              - group "Calendar controls" [ref=e538]:
+                - generic [ref=e539]: Calendar controls
+                - generic [ref=e541]:
+                  - button "March" [ref=e543] [cursor=pointer]:
+                    - generic [ref=e544]:
+                      - heading "March" [level=3] [ref=e547]
+                      - img [ref=e548]
+                  - generic [ref=e550]:
+                    - button "Month" [ref=e553] [cursor=pointer]:
+                      - generic [ref=e555]:
+                        - generic [ref=e556]: Month
+                        - img [ref=e557]
+                    - button "Open the keyboard shortcuts panel" [ref=e560] [cursor=pointer]:
+                      - generic [ref=e561]:
+                        - img [ref=e562]
+                        - generic [ref=e564]: Open the keyboard shortcuts panel
+              - list [ref=e566]:
+                - listitem [ref=e567]: Sun
+                - listitem [ref=e568]: Mon
+                - listitem [ref=e569]: Tue
+                - listitem [ref=e570]: Wed
+                - listitem [ref=e571]: Thu
+                - listitem [ref=e572]: Fri
+                - listitem [ref=e573]: Sat
+            - generic [ref=e83]:
+              - generic [ref=e576]:
+                - region "February 2026" [ref=e579]:
+                  - heading "February" [level=3] [ref=e583]:
+                    - generic [ref=e584]: February
+                  - grid "February 2026" [ref=e586]:
+                    - rowgroup [ref=e587]:
+                      - row "Sunday 1 Feb Monday 2 Feb Tuesday 3 Feb Nightly price $350 Wednesday 4 Feb Thursday 5 Feb Friday 6 Feb Saturday 7 Feb" [ref=e588]:
+                        - generic:
+                          - button [ref=e589] [cursor=pointer]:
+                            - generic [ref=e592]:
+                              - generic [ref=e593]: Reservation
+                              - img [ref=e596]
+                              - generic [ref=e599]: Cory + 2
+                              - generic [ref=e600]: Checkin on Feb 1, 2026, checkout on Feb 3, 2026.
+                          - button [ref=e601] [cursor=pointer]:
+                            - generic [ref=e604]:
+                              - generic [ref=e605]: Reservation
+                              - img [ref=e608]
+                              - generic [ref=e611]: Ellen + 1
+                              - generic [ref=e612]: Checkin on Feb 4, 2026, checkout on Feb 18, 2026.
+                        - gridcell "Sunday 1 Feb" [ref=e613]:
+                          - button "Sunday 1 Feb" [disabled] [ref=e614]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 1 Feb
+                                        - generic: "1"
+                        - gridcell "Monday 2 Feb" [ref=e615]:
+                          - button "Monday 2 Feb" [disabled] [ref=e616]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Monday 2 Feb
+                                        - generic: "2"
+                        - gridcell "Tuesday 3 Feb Nightly price $350" [ref=e617]:
+                          - button "Tuesday 3 Feb Nightly price $350" [disabled] [ref=e618]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Tuesday 3 Feb
+                                        - generic: "3"
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $350
+                        - gridcell "Wednesday 4 Feb" [ref=e619]:
+                          - button "Wednesday 4 Feb" [disabled] [ref=e620]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Wednesday 4 Feb
+                                        - generic: "4"
+                        - gridcell "Thursday 5 Feb" [ref=e621]:
+                          - button "Thursday 5 Feb" [disabled] [ref=e622]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Thursday 5 Feb
+                                        - generic: "5"
+                        - gridcell "Friday 6 Feb" [ref=e623]:
+                          - button "Friday 6 Feb" [disabled] [ref=e624]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Friday 6 Feb
+                                        - generic: "6"
+                        - gridcell "Saturday 7 Feb" [ref=e625]:
+                          - button "Saturday 7 Feb" [disabled] [ref=e626]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Saturday 7 Feb
+                                        - generic: "7"
+                      - row "Sunday 8 Feb Monday 9 Feb Tuesday 10 Feb Wednesday 11 Feb Thursday 12 Feb Friday 13 Feb Saturday 14 Feb" [ref=e627]:
+                        - button [ref=e628] [cursor=pointer]:
+                          - generic [ref=e630]:
+                            - generic [ref=e631]: Reservation
+                            - generic [ref=e632]: Checkin on Feb 4, 2026, checkout on Feb 18, 2026.
+                        - gridcell "Sunday 8 Feb" [ref=e633]:
+                          - button "Sunday 8 Feb" [disabled] [ref=e634]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 8 Feb
+                                        - generic: "8"
+                        - gridcell "Monday 9 Feb" [ref=e635]:
+                          - button "Monday 9 Feb" [disabled] [ref=e636]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Monday 9 Feb
+                                        - generic: "9"
+                        - gridcell "Tuesday 10 Feb" [ref=e637]:
+                          - button "Tuesday 10 Feb" [disabled] [ref=e638]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Tuesday 10 Feb
+                                        - generic: "10"
+                        - gridcell "Wednesday 11 Feb" [ref=e639]:
+                          - button "Wednesday 11 Feb" [disabled] [ref=e640]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Wednesday 11 Feb
+                                        - generic: "11"
+                        - gridcell "Thursday 12 Feb" [ref=e641]:
+                          - button "Thursday 12 Feb" [disabled] [ref=e642]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Thursday 12 Feb
+                                        - generic: "12"
+                        - gridcell "Friday 13 Feb" [ref=e643]:
+                          - button "Friday 13 Feb" [disabled] [ref=e644]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Friday 13 Feb
+                                        - generic: "13"
+                        - gridcell "Saturday 14 Feb" [ref=e645]:
+                          - button "Saturday 14 Feb" [disabled] [ref=e646]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Saturday 14 Feb
+                                        - generic: "14"
+                      - row "Sunday 15 Feb Monday 16 Feb Tuesday 17 Feb Wednesday 18 Feb Thursday 19 Feb Friday 20 Feb Saturday 21 Feb" [ref=e647]:
+                        - generic:
+                          - button [ref=e648] [cursor=pointer]:
+                            - generic [ref=e650]:
+                              - generic [ref=e651]: Reservation
+                              - generic [ref=e652]: Checkin on Feb 4, 2026, checkout on Feb 18, 2026.
+                          - button [ref=e653] [cursor=pointer]:
+                            - generic [ref=e656]:
+                              - generic [ref=e657]: Reservation
+                              - img [ref=e660]
+                              - generic [ref=e663]: Reena + 3
+                              - generic [ref=e664]: Checkin on Feb 18, 2026, checkout on Feb 20, 2026.
+                          - button [ref=e665] [cursor=pointer]:
+                            - generic [ref=e668]:
+                              - generic [ref=e669]: Reservation
+                              - img [ref=e672]
+                              - generic [ref=e675]: Linda + 2
+                              - generic [ref=e676]: Checkin on Feb 20, 2026, checkout on Feb 26, 2026.
+                        - gridcell "Sunday 15 Feb" [ref=e677]:
+                          - button "Sunday 15 Feb" [disabled] [ref=e678]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 15 Feb
+                                        - generic: "15"
+                        - gridcell "Monday 16 Feb" [ref=e679]:
+                          - button "Monday 16 Feb" [disabled] [ref=e680]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Monday 16 Feb
+                                        - generic: "16"
+                        - gridcell "Tuesday 17 Feb" [ref=e681]:
+                          - button "Tuesday 17 Feb" [disabled] [ref=e682]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Tuesday 17 Feb
+                                        - generic: "17"
+                        - gridcell "Wednesday 18 Feb" [ref=e683]:
+                          - button "Wednesday 18 Feb" [disabled] [ref=e684]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Wednesday 18 Feb
+                                        - generic: "18"
+                        - gridcell "Thursday 19 Feb" [ref=e685]:
+                          - button "Thursday 19 Feb" [disabled] [ref=e686]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Thursday 19 Feb
+                                        - generic: "19"
+                        - gridcell "Friday 20 Feb" [ref=e687]:
+                          - button "Friday 20 Feb" [disabled] [ref=e688]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Friday 20 Feb
+                                        - generic: "20"
+                        - gridcell "Saturday 21 Feb" [ref=e689]:
+                          - button "Saturday 21 Feb" [disabled] [ref=e690]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Saturday 21 Feb
+                                        - generic: "21"
+                      - row "Sunday 22 Feb Monday 23 Feb Tuesday 24 Feb Wednesday 25 Feb Thursday 26 Feb Friday 27 Feb Saturday 28 Feb" [ref=e691]:
+                        - generic:
+                          - button [ref=e692] [cursor=pointer]:
+                            - generic [ref=e694]:
+                              - generic [ref=e695]: Reservation
+                              - generic [ref=e696]: Checkin on Feb 20, 2026, checkout on Feb 26, 2026.
+                          - button [ref=e697] [cursor=pointer]:
+                            - generic [ref=e700]:
+                              - generic [ref=e701]: Reservation
+                              - img [ref=e704]
+                              - generic [ref=e707]: Katia + 3
+                              - generic [ref=e708]: Checkin on Feb 26, 2026, checkout on Mar 1, 2026.
+                        - gridcell "Sunday 22 Feb" [ref=e709]:
+                          - button "Sunday 22 Feb" [disabled] [ref=e710]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 22 Feb
+                                        - generic: "22"
+                        - gridcell "Monday 23 Feb" [ref=e711]:
+                          - button "Monday 23 Feb" [disabled] [ref=e712]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Monday 23 Feb
+                                        - generic: "23"
+                        - gridcell "Tuesday 24 Feb" [ref=e713]:
+                          - button "Tuesday 24 Feb" [disabled] [ref=e714]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Tuesday 24 Feb
+                                        - generic: "24"
+                        - gridcell "Wednesday 25 Feb" [ref=e715]:
+                          - button "Wednesday 25 Feb" [disabled] [ref=e716]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Wednesday 25 Feb
+                                        - generic: "25"
+                        - gridcell "Thursday 26 Feb" [ref=e717]:
+                          - button "Thursday 26 Feb" [disabled] [ref=e718]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Thursday 26 Feb
+                                        - generic: "26"
+                        - gridcell "Friday 27 Feb" [ref=e719]:
+                          - button "Friday 27 Feb" [disabled] [ref=e720]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Friday 27 Feb
+                                        - generic: "27"
+                        - gridcell "Saturday 28 Feb" [ref=e721]:
+                          - button "Saturday 28 Feb" [disabled] [ref=e722]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Saturday 28 Feb
+                                        - generic: "28"
+                - region "March 2026" [ref=e725]:
+                  - heading "March" [level=3] [ref=e729]:
+                    - generic [ref=e730]: March
+                  - grid "March 2026" [ref=e732]:
+                    - rowgroup [ref=e733]:
+                      - row "Sunday 1 Mar Nightly price $385 Smart pricing off Monday 2 Mar Unavailable Nightly price $425 Smart pricing off Tuesday 3 Mar Unavailable Nightly price $425 Smart pricing off Wednesday 4 Mar Unavailable Nightly price $425 Smart pricing off Thursday 5 Mar Unavailable Nightly price $425 Smart pricing off Friday 6 Mar Unavailable Nightly price $425 Smart pricing off Saturday 7 Mar" [ref=e734]:
+                        - button [ref=e735] [cursor=pointer]:
+                          - generic [ref=e738]:
+                            - generic [ref=e739]: Reservation
+                            - img [ref=e742]
+                            - generic [ref=e745]: Connie + 3
+                            - generic [ref=e746]: Checkin on Mar 7, 2026, checkout on Mar 9, 2026.
+                        - gridcell "Sunday 1 Mar Nightly price $385 Smart pricing off" [ref=e747]:
+                          - button "Sunday 1 Mar Nightly price $385 Smart pricing off" [disabled] [ref=e748]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 1 Mar
+                                        - generic: "1"
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $385
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Monday 2 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e749]:
+                          - button "Monday 2 Mar Unavailable Nightly price $425 Smart pricing off" [disabled] [ref=e750]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Monday 2 Mar
+                                        - generic: "2"
+                                        - generic: Unavailable
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $425
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Tuesday 3 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e751]:
+                          - button "Tuesday 3 Mar Unavailable Nightly price $425 Smart pricing off" [disabled] [ref=e752]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Tuesday 3 Mar
+                                        - generic: "3"
+                                        - generic: Unavailable
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $425
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Wednesday 4 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e753]:
+                          - button "Wednesday 4 Mar Unavailable Nightly price $425 Smart pricing off" [disabled] [ref=e754]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Wednesday 4 Mar
+                                        - generic: "4"
+                                        - generic: Unavailable
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $425
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Thursday 5 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e755]:
+                          - button "Thursday 5 Mar Unavailable Nightly price $425 Smart pricing off" [disabled] [ref=e756]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Thursday 5 Mar
+                                        - generic: "5"
+                                        - generic: Unavailable
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $425
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Friday 6 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e757]:
+                          - button "Friday 6 Mar Unavailable Nightly price $425 Smart pricing off" [disabled] [ref=e758]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Friday 6 Mar
+                                        - generic: "6"
+                                        - generic: Unavailable
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Nightly price
+                                          - generic: $425
+                                          - generic:
+                                            - img "Smart pricing off"
+                        - gridcell "Saturday 7 Mar" [ref=e759]:
+                          - button "Saturday 7 Mar" [disabled] [ref=e760]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Saturday 7 Mar
+                                        - generic: "7"
+                      - row "Sunday 8 Mar Today, Monday 9 Mar Unavailable Nightly price $360 Smart pricing off Tuesday 10 Mar Wednesday 11 Mar Thursday 12 Mar Friday 13 Mar Saturday 14 Mar" [ref=e761]:
+                        - generic:
+                          - button [ref=e762] [cursor=pointer]:
+                            - generic [ref=e764]:
+                              - generic [ref=e765]: Reservation
+                              - generic [ref=e766]: Checkin on Mar 7, 2026, checkout on Mar 9, 2026.
+                          - button [ref=e767] [cursor=pointer]:
+                            - generic [ref=e770]:
+                              - generic [ref=e771]: Reservation
+                              - img [ref=e774]
+                              - generic [ref=e777]: Olivia + 1
+                              - generic [ref=e778]: Checkin on Mar 10, 2026, checkout on Mar 11, 2026.
+                          - button [ref=e779] [cursor=pointer]:
+                            - generic [ref=e782]:
+                              - generic [ref=e783]: Reservation
+                              - img [ref=e786]
+                              - generic [ref=e789]: Malgosia&Joe + 1
+                              - generic [ref=e790]: Checkin on Mar 11, 2026, checkout on Mar 17, 2026.
+                        - gridcell "Sunday 8 Mar" [ref=e791]:
+                          - button "Sunday 8 Mar" [disabled] [ref=e792]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Sunday 8 Mar
+                                        - generic: "8"
+                        - gridcell "Today, Monday 9 Mar Unavailable Nightly price $360 Smart pricing off" [ref=e793]:
+                          - button "Today, Monday 9 Mar Unavailable Nightly price $360 Smart pricing off" [ref=e794] [cursor=pointer]:
+                            - generic [ref=e798]:
+                              - generic [ref=e800]:
+                                - generic [ref=e801]: Today, Monday 9 Mar
+                                - generic [ref=e802]: "9"
+                                - generic [ref=e803]: Unavailable
+                              - generic [ref=e806]:
+                                - generic [ref=e807]: Nightly price
+                                - generic [ref=e808]: $360
+                                - img "Smart pricing off" [ref=e810]
+                        - gridcell "Tuesday 10 Mar" [ref=e813]:
+                          - button "Tuesday 10 Mar" [ref=e814] [cursor=pointer]:
+                            - generic [ref=e820]:
+                              - generic [ref=e821]: Tuesday 10 Mar
+                              - generic [ref=e822]: "10"
+                        - gridcell "Wednesday 11 Mar" [ref=e823]:
+                          - button "Wednesday 11 Mar" [ref=e824] [cursor=pointer]:
+                            - generic [ref=e830]:
+                              - generic [ref=e831]: Wednesday 11 Mar
+                              - generic [ref=e832]: "11"
+                        - gridcell "Thursday 12 Mar" [ref=e833]:
+                          - button "Thursday 12 Mar" [ref=e834] [cursor=pointer]:
+                            - generic [ref=e840]:
+                              - generic [ref=e841]: Thursday 12 Mar
+                              - generic [ref=e842]: "12"
+                        - gridcell "Friday 13 Mar" [ref=e843]:
+                          - button "Friday 13 Mar" [ref=e844] [cursor=pointer]:
+                            - generic [ref=e850]:
+                              - generic [ref=e851]: Friday 13 Mar
+                              - generic [ref=e852]: "13"
+                        - gridcell "Saturday 14 Mar" [ref=e853]:
+                          - button "Saturday 14 Mar" [ref=e854] [cursor=pointer]:
+                            - generic [ref=e860]:
+                              - generic [ref=e861]: Saturday 14 Mar
+                              - generic [ref=e862]: "14"
+                      - row "Sunday 15 Mar Monday 16 Mar Tuesday 17 Mar Unavailable Nightly price $425 Smart pricing off Wednesday 18 Mar Unavailable Nightly price $425 Smart pricing off Thursday 19 Mar Unavailable Nightly price $425 Smart pricing off Friday 20 Mar Nightly price $415 Smart pricing off Saturday 21 Mar Nightly price $415 Smart pricing off" [ref=e863]:
+                        - button [ref=e864] [cursor=pointer]:
+                          - generic [ref=e866]:
+                            - generic [ref=e867]: Reservation
+                            - generic [ref=e868]: Checkin on Mar 11, 2026, checkout on Mar 17, 2026.
+                        - gridcell "Sunday 15 Mar" [ref=e869]:
+                          - button "Sunday 15 Mar" [ref=e870] [cursor=pointer]:
+                            - generic [ref=e876]:
+                              - generic [ref=e877]: Sunday 15 Mar
+                              - generic [ref=e878]: "15"
+                        - gridcell "Monday 16 Mar" [ref=e879]:
+                          - button "Monday 16 Mar" [ref=e880] [cursor=pointer]:
+                            - generic [ref=e886]:
+                              - generic [ref=e887]: Monday 16 Mar
+                              - generic [ref=e888]: "16"
+                        - gridcell "Tuesday 17 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e889]:
+                          - button "Tuesday 17 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e890] [cursor=pointer]:
+                            - generic [ref=e894]:
+                              - generic [ref=e896]:
+                                - generic [ref=e897]: Tuesday 17 Mar
+                                - generic [ref=e898]: "17"
+                                - generic [ref=e899]: Unavailable
+                              - generic [ref=e902]:
+                                - generic [ref=e903]: Nightly price
+                                - generic [ref=e904]: $425
+                                - img "Smart pricing off" [ref=e906]
+                        - gridcell "Wednesday 18 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e909]:
+                          - button "Wednesday 18 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e910] [cursor=pointer]:
+                            - generic [ref=e914]:
+                              - generic [ref=e916]:
+                                - generic [ref=e917]: Wednesday 18 Mar
+                                - generic [ref=e918]: "18"
+                                - generic [ref=e919]: Unavailable
+                              - generic [ref=e922]:
+                                - generic [ref=e923]: Nightly price
+                                - generic [ref=e924]: $425
+                                - img "Smart pricing off" [ref=e926]
+                        - gridcell "Thursday 19 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e929]:
+                          - button "Thursday 19 Mar Unavailable Nightly price $425 Smart pricing off" [ref=e930] [cursor=pointer]:
+                            - generic [ref=e934]:
+                              - generic [ref=e936]:
+                                - generic [ref=e937]: Thursday 19 Mar
+                                - generic [ref=e938]: "19"
+                                - generic [ref=e939]: Unavailable
+                              - generic [ref=e942]:
+                                - generic [ref=e943]: Nightly price
+                                - generic [ref=e944]: $425
+                                - img "Smart pricing off" [ref=e946]
+                        - gridcell "Friday 20 Mar Nightly price $415 Smart pricing off" [ref=e949]:
+                          - button "Friday 20 Mar Nightly price $415 Smart pricing off" [ref=e950] [cursor=pointer]:
+                            - generic [ref=e954]:
+                              - generic [ref=e956]:
+                                - generic [ref=e957]: Friday 20 Mar
+                                - generic [ref=e958]: "20"
+                              - generic [ref=e961]:
+                                - generic [ref=e962]: Nightly price
+                                - generic [ref=e963]: $415
+                                - img "Smart pricing off" [ref=e965]
+                        - gridcell "Saturday 21 Mar Nightly price $415 Smart pricing off" [ref=e968]:
+                          - button "Saturday 21 Mar Nightly price $415 Smart pricing off" [ref=e969] [cursor=pointer]:
+                            - generic [ref=e973]:
+                              - generic [ref=e975]:
+                                - generic [ref=e976]: Saturday 21 Mar
+                                - generic [ref=e977]: "21"
+                              - generic [ref=e980]:
+                                - generic [ref=e981]: Nightly price
+                                - generic [ref=e982]: $415
+                                - img "Smart pricing off" [ref=e984]
+                      - row "Sunday 22 Mar Nightly price $380 Smart pricing off Monday 23 Mar Tuesday 24 Mar Wednesday 25 Mar Thursday 26 Mar Friday 27 Mar Nightly price $400 Smart pricing off Saturday 28 Mar Nightly price $400 Smart pricing off" [ref=e987]:
+                        - button [ref=e988] [cursor=pointer]:
+                          - generic [ref=e991]:
+                            - generic [ref=e992]: Reservation
+                            - img [ref=e995]
+                            - generic [ref=e998]: Clive + 1
+                            - generic [ref=e999]: Checkin on Mar 23, 2026, checkout on Mar 27, 2026.
+                        - gridcell "Sunday 22 Mar Nightly price $380 Smart pricing off" [ref=e1000]:
+                          - button "Sunday 22 Mar Nightly price $380 Smart pricing off" [ref=e1001] [cursor=pointer]:
+                            - generic [ref=e1005]:
+                              - generic [ref=e1007]:
+                                - generic [ref=e1008]: Sunday 22 Mar
+                                - generic [ref=e1009]: "22"
+                              - generic [ref=e1012]:
+                                - generic [ref=e1013]: Nightly price
+                                - generic [ref=e1014]: $380
+                                - img "Smart pricing off" [ref=e1016]
+                        - gridcell "Monday 23 Mar" [ref=e1019]:
+                          - button "Monday 23 Mar" [ref=e1020] [cursor=pointer]:
+                            - generic [ref=e1026]:
+                              - generic [ref=e1027]: Monday 23 Mar
+                              - generic [ref=e1028]: "23"
+                        - gridcell "Tuesday 24 Mar" [ref=e1029]:
+                          - button "Tuesday 24 Mar" [ref=e1030] [cursor=pointer]:
+                            - generic [ref=e1036]:
+                              - generic [ref=e1037]: Tuesday 24 Mar
+                              - generic [ref=e1038]: "24"
+                        - gridcell "Wednesday 25 Mar" [ref=e1039]:
+                          - button "Wednesday 25 Mar" [ref=e1040] [cursor=pointer]:
+                            - generic [ref=e1046]:
+                              - generic [ref=e1047]: Wednesday 25 Mar
+                              - generic [ref=e1048]: "25"
+                        - gridcell "Thursday 26 Mar" [ref=e1049]:
+                          - button "Thursday 26 Mar" [ref=e1050] [cursor=pointer]:
+                            - generic [ref=e1056]:
+                              - generic [ref=e1057]: Thursday 26 Mar
+                              - generic [ref=e1058]: "26"
+                        - gridcell "Friday 27 Mar Nightly price $400 Smart pricing off" [ref=e1059]:
+                          - button "Friday 27 Mar Nightly price $400 Smart pricing off" [ref=e1060] [cursor=pointer]:
+                            - generic [ref=e1064]:
+                              - generic [ref=e1066]:
+                                - generic [ref=e1067]: Friday 27 Mar
+                                - generic [ref=e1068]: "27"
+                              - generic [ref=e1071]:
+                                - generic [ref=e1072]: Nightly price
+                                - generic [ref=e1073]: $400
+                                - img "Smart pricing off" [ref=e1075]
+                        - gridcell "Saturday 28 Mar Nightly price $400 Smart pricing off" [ref=e1078]:
+                          - button "Saturday 28 Mar Nightly price $400 Smart pricing off" [ref=e1079] [cursor=pointer]:
+                            - generic [ref=e1083]:
+                              - generic [ref=e1085]:
+                                - generic [ref=e1086]: Saturday 28 Mar
+                                - generic [ref=e1087]: "28"
+                              - generic [ref=e1090]:
+                                - generic [ref=e1091]: Nightly price
+                                - generic [ref=e1092]: $400
+                                - img "Smart pricing off" [ref=e1094]
+                      - row "Sunday 29 Mar Monday 30 Mar Tuesday 31 Mar" [ref=e1097]:
+                        - button [ref=e1098] [cursor=pointer]:
+                          - generic [ref=e1101]:
+                            - generic [ref=e1102]: Reservation
+                            - img [ref=e1105]
+                            - generic [ref=e1108]: Leanne + 2
+                            - generic [ref=e1109]: Checkin on Mar 29, 2026, checkout on Apr 1, 2026.
+                        - gridcell "Sunday 29 Mar" [ref=e1110]:
+                          - button "Sunday 29 Mar" [ref=e1111] [cursor=pointer]:
+                            - generic [ref=e1117]:
+                              - generic [ref=e1118]: Sunday 29 Mar
+                              - generic [ref=e1119]: "29"
+                        - gridcell "Monday 30 Mar" [ref=e1120]:
+                          - button "Monday 30 Mar" [ref=e1121] [cursor=pointer]:
+                            - generic [ref=e1127]:
+                              - generic [ref=e1128]: Monday 30 Mar
+                              - generic [ref=e1129]: "30"
+                        - gridcell "Tuesday 31 Mar" [ref=e1130]:
+                          - button "Tuesday 31 Mar" [ref=e1131] [cursor=pointer]:
+                            - generic [ref=e1137]:
+                              - generic [ref=e1138]: Tuesday 31 Mar
+                              - generic [ref=e1139]: "31"
+                        - gridcell [ref=e1140]
+                        - gridcell [ref=e1141]
+                        - gridcell [ref=e1142]
+                        - gridcell [ref=e1143]
+                - region "April 2026" [ref=e1146]:
+                  - heading "April" [level=3] [ref=e1150]:
+                    - generic [ref=e1151]: April
+                  - grid "April 2026" [ref=e1153]:
+                    - rowgroup [ref=e1154]:
+                      - row "Wednesday 1 Apr Thursday 2 Apr Friday 3 Apr Saturday 4 Apr" [ref=e1155]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button [ref=e1156] [cursor=pointer]
+                              - button [ref=e1158] [cursor=pointer]:
+                                - generic [ref=e1161]:
+                                  - generic [ref=e1162]: Reservation
+                                  - img [ref=e1165]
+                                  - generic [ref=e1168]: Kim + 2
+                                  - generic [ref=e1169]: Checkin on Apr 1, 2026, checkout on Apr 6, 2026.
+                        - gridcell [ref=e1170]
+                        - gridcell [ref=e1171]
+                        - gridcell [ref=e1172]
+                        - gridcell "Wednesday 1 Apr" [ref=e1173]:
+                          - button "Wednesday 1 Apr" [ref=e1174] [cursor=pointer]:
+                            - generic [ref=e1180]:
+                              - generic [ref=e1181]: Wednesday 1 Apr
+                              - generic [ref=e1182]: "1"
+                        - gridcell "Thursday 2 Apr" [ref=e1183]:
+                          - button "Thursday 2 Apr" [ref=e1184] [cursor=pointer]:
+                            - generic [ref=e1190]:
+                              - generic [ref=e1191]: Thursday 2 Apr
+                              - generic [ref=e1192]: "2"
+                        - gridcell "Friday 3 Apr" [ref=e1193]:
+                          - button "Friday 3 Apr" [ref=e1194] [cursor=pointer]:
+                            - generic [ref=e1200]:
+                              - generic [ref=e1201]: Friday 3 Apr
+                              - generic [ref=e1202]: "3"
+                        - gridcell "Saturday 4 Apr" [ref=e1203]:
+                          - button "Saturday 4 Apr" [ref=e1204] [cursor=pointer]:
+                            - generic [ref=e1210]:
+                              - generic [ref=e1211]: Saturday 4 Apr
+                              - generic [ref=e1212]: "4"
+                      - row "Sunday 5 Apr Monday 6 Apr Tuesday 7 Apr Wednesday 8 Apr Nightly price $350 Thursday 9 Apr Nightly price $350 Friday 10 Apr Nightly price $400 Smart pricing off Saturday 11 Apr" [ref=e1213]:
+                        - generic:
+                          - button [ref=e1214] [cursor=pointer]:
+                            - generic [ref=e1216]:
+                              - generic [ref=e1217]: Reservation
+                              - generic [ref=e1218]: Checkin on Apr 1, 2026, checkout on Apr 6, 2026.
+                          - button [ref=e1219] [cursor=pointer]:
+                            - generic [ref=e1222]:
+                              - generic [ref=e1223]: Reservation
+                              - img [ref=e1226]
+                              - generic [ref=e1229]: Rebecca + 3
+                              - generic [ref=e1230]: Checkin on Apr 6, 2026, checkout on Apr 8, 2026.
+                          - button [ref=e1231] [cursor=pointer]:
+                            - generic [ref=e1234]:
+                              - generic [ref=e1235]: Reservation
+                              - img [ref=e1238]
+                              - generic [ref=e1241]: Samantha
+                              - generic [ref=e1242]: Checkin on Apr 11, 2026, checkout on Apr 15, 2026.
+                        - gridcell "Sunday 5 Apr" [ref=e1243]:
+                          - button "Sunday 5 Apr" [ref=e1244] [cursor=pointer]:
+                            - generic [ref=e1250]:
+                              - generic [ref=e1251]: Sunday 5 Apr
+                              - generic [ref=e1252]: "5"
+                        - gridcell "Monday 6 Apr" [ref=e1253]:
+                          - button "Monday 6 Apr" [ref=e1254] [cursor=pointer]:
+                            - generic [ref=e1260]:
+                              - generic [ref=e1261]: Monday 6 Apr
+                              - generic [ref=e1262]: "6"
+                        - gridcell "Tuesday 7 Apr" [ref=e1263]:
+                          - button "Tuesday 7 Apr" [ref=e1264] [cursor=pointer]:
+                            - generic [ref=e1270]:
+                              - generic [ref=e1271]: Tuesday 7 Apr
+                              - generic [ref=e1272]: "7"
+                        - gridcell "Wednesday 8 Apr Nightly price $350" [ref=e1273]:
+                          - button "Wednesday 8 Apr Nightly price $350" [ref=e1274] [cursor=pointer]:
+                            - generic [ref=e1278]:
+                              - generic [ref=e1280]:
+                                - generic [ref=e1281]: Wednesday 8 Apr
+                                - generic [ref=e1282]: "8"
+                              - generic [ref=e1285]:
+                                - generic [ref=e1286]: Nightly price
+                                - generic [ref=e1287]: $350
+                        - gridcell "Thursday 9 Apr Nightly price $350" [ref=e1288]:
+                          - button "Thursday 9 Apr Nightly price $350" [ref=e1289] [cursor=pointer]:
+                            - generic [ref=e1293]:
+                              - generic [ref=e1295]:
+                                - generic [ref=e1296]: Thursday 9 Apr
+                                - generic [ref=e1297]: "9"
+                              - generic [ref=e1300]:
+                                - generic [ref=e1301]: Nightly price
+                                - generic [ref=e1302]: $350
+                        - gridcell "Friday 10 Apr Nightly price $400 Smart pricing off" [ref=e1303]:
+                          - button "Friday 10 Apr Nightly price $400 Smart pricing off" [ref=e1304] [cursor=pointer]:
+                            - generic [ref=e1308]:
+                              - generic [ref=e1310]:
+                                - generic [ref=e1311]: Friday 10 Apr
+                                - generic [ref=e1312]: "10"
+                              - generic [ref=e1315]:
+                                - generic [ref=e1316]: Nightly price
+                                - generic [ref=e1317]: $400
+                                - img "Smart pricing off" [ref=e1319]
+                        - gridcell "Saturday 11 Apr" [ref=e1322]:
+                          - button "Saturday 11 Apr" [ref=e1323] [cursor=pointer]:
+                            - generic [ref=e1329]:
+                              - generic [ref=e1330]: Saturday 11 Apr
+                              - generic [ref=e1331]: "11"
+                      - row "Sunday 12 Apr Monday 13 Apr Tuesday 14 Apr Wednesday 15 Apr Nightly price $350 Thursday 16 Apr Nightly price $350 Friday 17 Apr Saturday 18 Apr" [ref=e1332]:
+                        - generic:
+                          - button [ref=e1333] [cursor=pointer]:
+                            - generic [ref=e1335]:
+                              - generic [ref=e1336]: Reservation
+                              - generic [ref=e1337]: Checkin on Apr 11, 2026, checkout on Apr 15, 2026.
+                          - button [ref=e1338] [cursor=pointer]:
+                            - generic [ref=e1341]:
+                              - generic [ref=e1342]: Reservation
+                              - img [ref=e1345]
+                              - generic [ref=e1348]: Christopher
+                              - generic [ref=e1349]: Checkin on Apr 17, 2026, checkout on Apr 21, 2026.
+                        - gridcell "Sunday 12 Apr" [ref=e1350]:
+                          - button "Sunday 12 Apr" [ref=e1351] [cursor=pointer]:
+                            - generic [ref=e1357]:
+                              - generic [ref=e1358]: Sunday 12 Apr
+                              - generic [ref=e1359]: "12"
+                        - gridcell "Monday 13 Apr" [ref=e1360]:
+                          - button "Monday 13 Apr" [ref=e1361] [cursor=pointer]:
+                            - generic [ref=e1367]:
+                              - generic [ref=e1368]: Monday 13 Apr
+                              - generic [ref=e1369]: "13"
+                        - gridcell "Tuesday 14 Apr" [ref=e1370]:
+                          - button "Tuesday 14 Apr" [ref=e1371] [cursor=pointer]:
+                            - generic [ref=e1377]:
+                              - generic [ref=e1378]: Tuesday 14 Apr
+                              - generic [ref=e1379]: "14"
+                        - gridcell "Wednesday 15 Apr Nightly price $350" [ref=e1380]:
+                          - button "Wednesday 15 Apr Nightly price $350" [ref=e1381] [cursor=pointer]:
+                            - generic [ref=e1385]:
+                              - generic [ref=e1387]:
+                                - generic [ref=e1388]: Wednesday 15 Apr
+                                - generic [ref=e1389]: "15"
+                              - generic [ref=e1392]:
+                                - generic [ref=e1393]: Nightly price
+                                - generic [ref=e1394]: $350
+                        - gridcell "Thursday 16 Apr Nightly price $350" [ref=e1395]:
+                          - button "Thursday 16 Apr Nightly price $350" [ref=e1396] [cursor=pointer]:
+                            - generic [ref=e1400]:
+                              - generic [ref=e1402]:
+                                - generic [ref=e1403]: Thursday 16 Apr
+                                - generic [ref=e1404]: "16"
+                              - generic [ref=e1407]:
+                                - generic [ref=e1408]: Nightly price
+                                - generic [ref=e1409]: $350
+                        - gridcell "Friday 17 Apr" [ref=e1410]:
+                          - button "Friday 17 Apr" [ref=e1411] [cursor=pointer]:
+                            - generic [ref=e1417]:
+                              - generic [ref=e1418]: Friday 17 Apr
+                              - generic [ref=e1419]: "17"
+                        - gridcell "Saturday 18 Apr" [ref=e1420]:
+                          - button "Saturday 18 Apr" [ref=e1421] [cursor=pointer]:
+                            - generic [ref=e1427]:
+                              - generic [ref=e1428]: Saturday 18 Apr
+                              - generic [ref=e1429]: "18"
+                      - row "Sunday 19 Apr Monday 20 Apr Tuesday 21 Apr Nightly price $362 Wednesday 22 Apr Nightly price $350 Thursday 23 Apr Nightly price $350 Friday 24 Apr Nightly price $400 Smart pricing off Saturday 25 Apr Nightly price $400 Smart pricing off" [ref=e1430]:
+                        - button [ref=e1431] [cursor=pointer]:
+                          - generic [ref=e1433]:
+                            - generic [ref=e1434]: Reservation
+                            - generic [ref=e1435]: Checkin on Apr 17, 2026, checkout on Apr 21, 2026.
+                        - gridcell "Sunday 19 Apr" [ref=e1436]:
+                          - button "Sunday 19 Apr" [ref=e1437] [cursor=pointer]:
+                            - generic [ref=e1443]:
+                              - generic [ref=e1444]: Sunday 19 Apr
+                              - generic [ref=e1445]: "19"
+                        - gridcell "Monday 20 Apr" [ref=e1446]:
+                          - button "Monday 20 Apr" [ref=e1447] [cursor=pointer]:
+                            - generic [ref=e1453]:
+                              - generic [ref=e1454]: Monday 20 Apr
+                              - generic [ref=e1455]: "20"
+                        - gridcell "Tuesday 21 Apr Nightly price $362" [ref=e1456]:
+                          - button "Tuesday 21 Apr Nightly price $362" [ref=e1457] [cursor=pointer]:
+                            - generic [ref=e1461]:
+                              - generic [ref=e1463]:
+                                - generic [ref=e1464]: Tuesday 21 Apr
+                                - generic [ref=e1465]: "21"
+                              - generic [ref=e1468]:
+                                - generic [ref=e1469]: Nightly price
+                                - generic [ref=e1470]: $362
+                        - gridcell "Wednesday 22 Apr Nightly price $350" [ref=e1471]:
+                          - button "Wednesday 22 Apr Nightly price $350" [ref=e1472] [cursor=pointer]:
+                            - generic [ref=e1476]:
+                              - generic [ref=e1478]:
+                                - generic [ref=e1479]: Wednesday 22 Apr
+                                - generic [ref=e1480]: "22"
+                              - generic [ref=e1483]:
+                                - generic [ref=e1484]: Nightly price
+                                - generic [ref=e1485]: $350
+                        - gridcell "Thursday 23 Apr Nightly price $350" [ref=e1486]:
+                          - button "Thursday 23 Apr Nightly price $350" [ref=e1487] [cursor=pointer]:
+                            - generic [ref=e1491]:
+                              - generic [ref=e1493]:
+                                - generic [ref=e1494]: Thursday 23 Apr
+                                - generic [ref=e1495]: "23"
+                              - generic [ref=e1498]:
+                                - generic [ref=e1499]: Nightly price
+                                - generic [ref=e1500]: $350
+                        - gridcell "Friday 24 Apr Nightly price $400 Smart pricing off" [ref=e1501]:
+                          - button "Friday 24 Apr Nightly price $400 Smart pricing off" [ref=e1502] [cursor=pointer]:
+                            - generic [ref=e1506]:
+                              - generic [ref=e1508]:
+                                - generic [ref=e1509]: Friday 24 Apr
+                                - generic [ref=e1510]: "24"
+                              - generic [ref=e1513]:
+                                - generic [ref=e1514]: Nightly price
+                                - generic [ref=e1515]: $400
+                                - img "Smart pricing off" [ref=e1517]
+                        - gridcell "Saturday 25 Apr Nightly price $400 Smart pricing off" [ref=e1520]:
+                          - button "Saturday 25 Apr Nightly price $400 Smart pricing off" [ref=e1521] [cursor=pointer]:
+                            - generic [ref=e1525]:
+                              - generic [ref=e1527]:
+                                - generic [ref=e1528]: Saturday 25 Apr
+                                - generic [ref=e1529]: "25"
+                              - generic [ref=e1532]:
+                                - generic [ref=e1533]: Nightly price
+                                - generic [ref=e1534]: $400
+                                - img "Smart pricing off" [ref=e1536]
+                      - row "Sunday 26 Apr Nightly price $350 Monday 27 Apr Nightly price $350 Tuesday 28 Apr Nightly price $350 Wednesday 29 Apr Thursday 30 Apr" [ref=e1539]:
+                        - button [ref=e1540] [cursor=pointer]:
+                          - generic [ref=e1543]:
+                            - generic [ref=e1544]: Reservation
+                            - img [ref=e1547]
+                            - generic [ref=e1550]: Eddie + 1
+                            - generic [ref=e1551]: Checkin on Apr 29, 2026, checkout on May 4, 2026.
+                        - gridcell "Sunday 26 Apr Nightly price $350" [ref=e1552]:
+                          - button "Sunday 26 Apr Nightly price $350" [ref=e1553] [cursor=pointer]:
+                            - generic [ref=e1557]:
+                              - generic [ref=e1559]:
+                                - generic [ref=e1560]: Sunday 26 Apr
+                                - generic [ref=e1561]: "26"
+                              - generic [ref=e1564]:
+                                - generic [ref=e1565]: Nightly price
+                                - generic [ref=e1566]: $350
+                        - gridcell "Monday 27 Apr Nightly price $350" [ref=e1567]:
+                          - button "Monday 27 Apr Nightly price $350" [ref=e1568] [cursor=pointer]:
+                            - generic [ref=e1572]:
+                              - generic [ref=e1574]:
+                                - generic [ref=e1575]: Monday 27 Apr
+                                - generic [ref=e1576]: "27"
+                              - generic [ref=e1579]:
+                                - generic [ref=e1580]: Nightly price
+                                - generic [ref=e1581]: $350
+                        - gridcell "Tuesday 28 Apr Nightly price $350" [ref=e1582]:
+                          - button "Tuesday 28 Apr Nightly price $350" [ref=e1583] [cursor=pointer]:
+                            - generic [ref=e1587]:
+                              - generic [ref=e1589]:
+                                - generic [ref=e1590]: Tuesday 28 Apr
+                                - generic [ref=e1591]: "28"
+                              - generic [ref=e1594]:
+                                - generic [ref=e1595]: Nightly price
+                                - generic [ref=e1596]: $350
+                        - gridcell "Wednesday 29 Apr" [ref=e1597]:
+                          - button "Wednesday 29 Apr" [ref=e1598] [cursor=pointer]:
+                            - generic [ref=e1604]:
+                              - generic [ref=e1605]: Wednesday 29 Apr
+                              - generic [ref=e1606]: "29"
+                        - gridcell "Thursday 30 Apr" [ref=e1607]:
+                          - button "Thursday 30 Apr" [ref=e1608] [cursor=pointer]:
+                            - generic [ref=e1614]:
+                              - generic [ref=e1615]: Thursday 30 Apr
+                              - generic [ref=e1616]: "30"
+                        - gridcell [ref=e1617]
+                        - gridcell [ref=e1618]
+              - button "Today" [ref=e1623] [cursor=pointer]:
+                - generic [ref=e1625]:
+                  - img [ref=e1628]
+                  - generic [ref=e1631]: Today
+        - region "Pricing and availability settings sidebar" [ref=e423]:
+          - generic [ref=e425]:
+            - generic [ref=e426]: Pricing and availability settings sidebar
+            - generic [ref=e427]:
+              - button "Back" [ref=e429] [cursor=pointer]:
+                - img [ref=e430]
+              - generic [ref=e433]:
+                - heading "Availability settings" [level=1] [ref=e434]:
+                  - generic [ref=e435]: Availability settings
+                - paragraph [ref=e436]: These apply to all nights, unless you customize them by date.
+            - tabpanel [ref=e437]:
+              - generic [ref=e438]:
+                - heading "Trip length" [level=2] [ref=e440]:
+                  - generic [ref=e441]: Trip length
+                - generic [ref=e442]:
+                  - link "Minimum nights 1" [ref=e443] [cursor=pointer]:
+                    - /url: /multicalendar/736417448669019623/availability-settings/minimum-stay
+                    - generic [ref=e444]:
+                      - generic [ref=e445]: Minimum nights
+                      - generic [ref=e446]: "1"
+                  - link "Maximum nights 730" [ref=e447] [cursor=pointer]:
+                    - /url: /multicalendar/736417448669019623/availability-settings/maximum-stay
+                    - generic [ref=e448]:
+                      - generic [ref=e449]: Maximum nights
+                      - generic [ref=e450]: "730"
+              - generic [ref=e451]:
+                - heading "Availability" [level=2] [ref=e453]:
+                  - generic [ref=e454]: Availability
+                - generic [ref=e455]:
+                  - button "Advance notice Same day" [ref=e458] [cursor=pointer]:
+                    - generic [ref=e459]:
+                      - generic [ref=e460]:
+                        - generic [ref=e461]: Advance notice
+                        - generic [ref=e462]: Same day
+                      - img [ref=e464]
+                  - button "Same day advance notice 10:00 AM" [ref=e468] [cursor=pointer]:
+                    - generic [ref=e469]:
+                      - generic [ref=e470]:
+                        - generic [ref=e471]: Same day advance notice
+                        - generic [ref=e472]: 10:00 AM
+                      - img [ref=e474]
+                  - button "Preparation time None" [ref=e478] [cursor=pointer]:
+                    - generic [ref=e479]:
+                      - generic [ref=e480]:
+                        - generic [ref=e481]: Preparation time
+                        - generic [ref=e482]: None
+                      - img [ref=e484]
+                  - button "Availability window 6 months in advance Requests allowed beyond this window" [ref=e488] [cursor=pointer]:
+                    - generic [ref=e489]:
+                      - generic [ref=e490]:
+                        - generic [ref=e491]: Availability window
+                        - generic [ref=e492]: 6 months in advance
+                        - generic [ref=e493]: Requests allowed beyond this window
+                      - img [ref=e495]
+                  - link "More availability settings Restrict check-in and checkout days" [ref=e497] [cursor=pointer]:
+                    - /url: /multicalendar/736417448669019623/availability-settings/additional-controls
+                    - generic [ref=e498]:
+                      - generic [ref=e501]:
+                        - generic [ref=e502]: More availability settings
+                        - generic [ref=e503]: Restrict check-in and checkout days
+                      - img [ref=e505]
+              - generic [ref=e507]:
+                - heading "Connect calendars" [level=2] [ref=e509]:
+                  - generic [ref=e510]: Connect calendars
+                - generic [ref=e1685]:
+                  - generic [ref=e1686]:
+                    - generic [ref=e1687]:
+                      - text: Houfy
+                      - generic [ref=e1688]: Last updated at Mar 9, 5:46 PM
+                    - button "Refresh" [ref=e1690] [cursor=pointer]:
+                      - generic [ref=e1691]:
+                        - img [ref=e1693]
+                        - text: Refresh
+                    - link "Edit" [ref=e1696] [cursor=pointer]:
+                      - /url: /multicalendar/736417448669019623/availability-settings/sharing-settings/edit-calendar/U3RheUxpc3RpbmdFeHRlcm5hbENhbGVuZGFyOjEwMjUwMzQ5
+                      - generic [ref=e1697]:
+                        - img [ref=e1698]
+                        - text: Edit
+                  - link "Connect another calendar" [ref=e1701] [cursor=pointer]:
+                    - /url: /multicalendar/736417448669019623/availability-settings/sharing-settings/connect-another-calendar
+                    - generic [ref=e1702]:
+                      - generic [ref=e1706]: Connect another calendar
+                      - img [ref=e1708]
+    - generic [ref=e1710]: "Success: Houfy added"
+  - group [ref=e1714]:
+    - img [ref=e1716]
+    - generic [ref=e1719]:
+      - generic [ref=e1720]: "Success:"
+      - text: Houfy added

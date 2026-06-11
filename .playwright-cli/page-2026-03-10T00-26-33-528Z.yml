@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button [ref=e28]:
+                - img [ref=e30]
+                - img [ref=e33]
+    - generic [ref=e38]:
+      - generic [ref=e41]:
+        - img [ref=e43]
+        - generic [ref=e46]: Edit Listing - Listing Status
+      - generic [ref=e49]:
+        - img "progress" [ref=e51]
+        - generic [ref=e52]:
+          - generic [ref=e54]:
+            - generic [ref=e56]: Checking listing status for
+            - combobox [ref=e58]
+          - text: 
+  - contentinfo

@@ -1,0 +1,113 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button "pw" [ref=e28]:
+                - img [ref=e30]
+                - generic [ref=e33]: pw
+    - generic [ref=e34]:
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+            - /url: /members/pm-dashboard
+            - img [ref=e42]
+            - text: Dashboard
+            - generic [ref=e45]: (current)
+        - listitem [ref=e46]:
+          - link "My Profile Your phone or email is not verified. Please go to profile to complete verification." [ref=e47] [cursor=pointer]:
+            - /url: /members/profile
+            - img [ref=e48]
+            - text: My Profile
+            - generic "Your phone or email is not verified. Please go to profile to complete verification." [ref=e51]
+        - listitem [ref=e53]:
+          - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+            - /url: /members/my-saved-search
+            - img [ref=e55]
+            - text: My Saved Searches
+        - listitem [ref=e59]:
+          - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+            - /url: /members/tenant-lead
+            - img [ref=e61]
+            - text: Tenant Leads
+        - listitem [ref=e65]:
+          - link "Messages" [ref=e66] [cursor=pointer]:
+            - /url: /members/Tenant-Message
+            - img [ref=e67]
+            - text: Messages
+        - listitem [ref=e71]:
+          - generic [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Edit Listing
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Contact Info" [ref=e78] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/edit-property?p=972077_1
+            - listitem [ref=e79]:
+              - link "Location" [ref=e80] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/edit-location?p=972077_1
+            - listitem [ref=e81]:
+              - link "Details" [ref=e82] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/edit-details?p=972077_1
+            - listitem [ref=e83]:
+              - link "Amenities" [ref=e84] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/edit-amenities-and-nearby?p=972077_1
+            - listitem [ref=e85]:
+              - link "Photos" [ref=e86] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/edit-photos?p=972077_1
+            - listitem [ref=e87]:
+              - link "Calendar" [ref=e88] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/availability?p=972077_1
+            - listitem [ref=e89]:
+              - link "Notification Settings" [ref=e90] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/notification-settings?p=972077_1
+            - listitem [ref=e91]:
+              - link "Verification" [ref=e92] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/verification?p=972077_1
+            - listitem [ref=e93]:
+              - link "Listing Status" [ref=e94] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/pm/listing-status?p=972077_1
+            - listitem [ref=e95]:
+              - link "House Rules" [ref=e96] [cursor=pointer]:
+                - /url: https://www.furnishedfinder.com/members/houserules?p=972077_1
+        - listitem [ref=e97]:
+          - generic [ref=e98] [cursor=pointer]:
+            - img [ref=e99]
+            - text: Landlord Tools
+        - listitem [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]:
+            - img [ref=e103]
+            - text: My Properties
+        - listitem [ref=e106]:
+          - generic [ref=e107] [cursor=pointer]:
+            - img [ref=e108]
+            - text: Account
+        - listitem [ref=e110]:
+          - generic [ref=e111] [cursor=pointer]:
+            - img [ref=e112]
+            - text: Favorite Properties
+        - listitem [ref=e115]:
+          - link "Contact Us" [ref=e116] [cursor=pointer]:
+            - /url: https://support.furnishedfinder.com/hc/en-us
+            - img [ref=e117]
+            - text: Contact Us
+      - generic [ref=e122]:
+        - generic [ref=e125]:
+          - img [ref=e127]
+          - generic [ref=e130]: Edit Listing - Listing Status
+        - generic [ref=e133]:
+          - img "progress" [ref=e135]
+          - generic [ref=e136]:
+            - generic [ref=e138]:
+              - generic [ref=e140]: Checking listing status for
+              - combobox [ref=e142]
+            - img "progress" [ref=e144]
+            - text: 
+  - contentinfo

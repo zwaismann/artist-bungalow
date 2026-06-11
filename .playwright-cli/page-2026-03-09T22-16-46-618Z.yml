@@ -1,0 +1,239 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button "pw" [ref=e28]:
+                - img [ref=e30]
+                - generic [ref=e33]: pw
+    - generic [ref=e34]:
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+            - /url: /members/pm-dashboard
+            - img [ref=e42]
+            - text: Dashboard
+            - generic [ref=e45]: (current)
+        - listitem [ref=e46]:
+          - link "My Profile Your phone or email is not verified. Please go to profile to complete verification." [ref=e47] [cursor=pointer]:
+            - /url: /members/profile
+            - img [ref=e48]
+            - text: My Profile
+            - generic "Your phone or email is not verified. Please go to profile to complete verification." [ref=e51]
+        - listitem [ref=e53]:
+          - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+            - /url: /members/my-saved-search
+            - img [ref=e55]
+            - text: My Saved Searches
+        - listitem [ref=e59]:
+          - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+            - /url: /members/tenant-lead
+            - img [ref=e61]
+            - text: Tenant Leads
+        - listitem [ref=e65]:
+          - link "Messages" [ref=e66] [cursor=pointer]:
+            - /url: /members/Tenant-Message
+            - img [ref=e67]
+            - text: Messages
+        - listitem [ref=e71]:
+          - generic [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Edit Listing
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Contact Info" [ref=e78] [cursor=pointer]:
+                - /url: /members/edit-property?p=TEMP2739073
+            - listitem [ref=e79]:
+              - link "Location" [ref=e80] [cursor=pointer]:
+                - /url: /members/PM/Edit-location?p=TEMP2739073
+            - listitem [ref=e81]:
+              - link "Details" [ref=e82] [cursor=pointer]:
+                - /url: /members/PM/Edit-details?p=TEMP2739073_1
+            - listitem [ref=e83]:
+              - link "Amenities" [ref=e84] [cursor=pointer]:
+                - /url: /members/PM/Edit-amenities-and-nearby?p=TEMP2739073_1
+            - listitem [ref=e85]:
+              - link "Photos" [ref=e86] [cursor=pointer]:
+                - /url: /members/PM/Edit-Photos?p=TEMP2739073_1
+            - listitem [ref=e87]:
+              - link "Calendar" [ref=e88] [cursor=pointer]:
+                - /url: /members/PM/Availability?p=TEMP2739073_1
+            - listitem [ref=e89]:
+              - link "Notification Settings" [ref=e90] [cursor=pointer]:
+                - /url: /members/notification-settings?p=TEMP2739073
+            - listitem [ref=e91]:
+              - link "Verification" [ref=e92] [cursor=pointer]:
+                - /url: /members/pm/verification?p=TEMP2739073
+            - listitem [ref=e93]:
+              - link "Listing Status" [ref=e94] [cursor=pointer]:
+                - /url: /members/PM/Listing-Status?p=TEMP2739073_1
+            - listitem [ref=e95]:
+              - link "House Rules" [ref=e96] [cursor=pointer]:
+                - /url: /members/houserules?p=TEMP2739073_1
+        - listitem [ref=e97]:
+          - generic [ref=e98] [cursor=pointer]:
+            - img [ref=e99]
+            - text: Landlord Tools
+        - listitem [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]:
+            - img [ref=e103]
+            - text: My Properties
+        - listitem [ref=e106]:
+          - generic [ref=e107] [cursor=pointer]:
+            - img [ref=e108]
+            - text: Account
+        - listitem [ref=e110]:
+          - generic [ref=e111] [cursor=pointer]:
+            - img [ref=e112]
+            - text: Favorite Properties
+        - listitem [ref=e115]:
+          - link "Contact Us" [ref=e116] [cursor=pointer]:
+            - /url: https://support.furnishedfinder.com/hc/en-us
+            - img [ref=e117]
+            - text: Contact Us
+      - generic [ref=e122]:
+        - generic [ref=e125]:
+          - img [ref=e127]
+          - generic [ref=e130]: Edit Listing - Photos
+        - generic [ref=e134]:
+          - generic [ref=e136]:
+            - generic [ref=e138]: "Updating Photos for:"
+            - combobox [ref=e140]:
+              - option "<No Property Headline>" [selected]
+          - generic [ref=e141]:
+            - generic [ref=e143]:
+              - heading "Property TEMP2739073_1" [level=3] [ref=e144]
+              - link " Another Unit" [ref=e145] [cursor=pointer]:
+                - /url: "#AddUnitModal"
+                - generic [ref=e146]: 
+                - text: Another Unit
+            - generic [ref=e148]:
+              - heading "Property Photos" [level=5] [ref=e149]
+              - generic [ref=e150]:
+                - paragraph [ref=e151]: Add images to your listing by dragging and dropping your images into the box below, or click the box to select the images you want to upload.
+                - heading "Drop files here or click to upload." [level=3] [ref=e156] [cursor=pointer]
+                - paragraph [ref=e157]: Please add at least two photos to your listing.
+              - iframe [ref=e158]:
+                - generic [active] [ref=f54e1]:
+                  - heading "Current Photos" [level=2] [ref=f54e2]:
+                    - generic [ref=f54e3]: Current Photos
+                  - paragraph [ref=f54e4]: You can rearrange your images by dragging it to where you want it to display.
+                  - list [ref=f54e7]:
+                    - listitem [ref=f54e8]:
+                      - generic [ref=f54e9]:
+                        - img [ref=f54e10]
+                        - generic [ref=f54e11]: Featured
+                    - listitem [ref=f54e12]:
+                      - generic [ref=f54e13]:
+                        - combobox [ref=f54e14]:
+                          - option "Select Category" [selected]
+                          - option "Exterior"
+                          - option "Interior"
+                          - option "Exterior Amenity"
+                          - option "Interior Amenity"
+                        - generic [ref=f54e15]:
+                          - link "Crop Image" [ref=f54e16] [cursor=pointer]:
+                            - /url: javascript:void(0);
+                            - img [ref=f54e17]
+                          - img [ref=f54e20]
+                          - generic [ref=f54e21]:
+                            - img [ref=f54e23] [cursor=pointer]
+                            - textbox "Add Caption here" [ref=f54e26]
+                        - list [ref=f54e28]:
+                          - listitem [ref=f54e29]:
+                            - link "Multiple Delete" [ref=f54e30] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e31]
+                          - listitem [ref=f54e33]:
+                            - link "Add Caption" [ref=f54e34] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e35]
+                          - listitem [ref=f54e37]:
+                            - link "Delete Image" [ref=f54e38] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e39]
+                          - listitem [ref=f54e41]:
+                            - link "Rotate Right" [ref=f54e42] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e43]
+                          - listitem [ref=f54e46]:
+                            - link "Rotate Left" [ref=f54e47] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e48]
+                          - listitem [ref=f54e51]:
+                            - link "Use as Featured Image" [ref=f54e52] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - img [ref=f54e53]
+            - separator [ref=e159]
+            - generic [ref=e160]:
+              - button "Save" [ref=e161] [cursor=pointer]
+              - paragraph [ref=e162]:
+                - text: Need help?
+                - link "Contact Us." [ref=e163] [cursor=pointer]:
+                  - /url: https://support.furnishedfinder.com/hc/en-us
+              - button "Next" [ref=e165] [cursor=pointer]: Next
+  - contentinfo [ref=e166]:
+    - list [ref=e172]:
+      - listitem [ref=e173]:
+        - link "About Us" [ref=e174] [cursor=pointer]:
+          - /url: /about-us
+      - listitem [ref=e175]:
+        - link "Contact Us" [ref=e176] [cursor=pointer]:
+          - /url: https://furnishedfinder.zendesk.com/hc/en-us
+      - listitem [ref=e177]:
+        - link "Careers" [ref=e178] [cursor=pointer]:
+          - /url: https://furnishedfinder.applytojob.com/apply
+      - listitem [ref=e179]:
+        - link "FAQs" [ref=e180] [cursor=pointer]:
+          - /url: /faq
+      - listitem [ref=e181]:
+        - link "Blog" [ref=e182] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e183]:
+        - link "Landlord Diaries" [ref=e184] [cursor=pointer]:
+          - /url: /Resources/podcast
+      - listitem [ref=e185]:
+        - link "KeyCheck" [ref=e186] [cursor=pointer]:
+          - /url: https://www.keycheck.com/
+      - listitem [ref=e187]:
+        - link "Our Reviews" [ref=e188] [cursor=pointer]:
+          - /url: /reviews
+      - listitem [ref=e189]:
+        - link "Our App" [ref=e190] [cursor=pointer]:
+          - /url: /app
+    - generic [ref=e193]:
+      - generic [ref=e194]:
+        - generic [ref=e195]:
+          - generic [ref=e196]: © 2026 Furnished Finder
+          - generic [ref=e197]: PO Box 30374, Austin, Texas 78755
+        - list [ref=e198]:
+          - listitem [ref=e199]:
+            - link "Terms Of Use" [ref=e200] [cursor=pointer]:
+              - /url: /terms-of-use
+          - listitem [ref=e201]:
+            - link "Privacy Policy" [ref=e202] [cursor=pointer]:
+              - /url: /privacy
+      - list [ref=e204]:
+        - listitem [ref=e205]:
+          - link "Navigate to Furnished Finder Facebook page" [ref=e206] [cursor=pointer]:
+            - /url: https://www.facebook.com/FURNISHEDFINDER
+            - img "Facebook logo" [ref=e207]
+        - listitem [ref=e209]:
+          - link "Navigate to Furnished Finder Instagram account" [ref=e210] [cursor=pointer]:
+            - /url: https://www.instagram.com/furnishedfinder/
+            - img "Instagram logo" [ref=e211]
+        - listitem [ref=e213]:
+          - link "Navigate to Furnished Finder LinkedIn" [ref=e214] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/furnished-finder/
+            - img "LinkedIn logo" [ref=e215]
+  - generic [ref=e217]:
+    - iframe [ref=e219]:
+      
+    - img "Video Tutorial" [ref=e221] [cursor=pointer]

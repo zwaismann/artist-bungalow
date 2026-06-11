@@ -1,0 +1,393 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - banner [ref=e6]:
+        - link [ref=e7] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e11] [cursor=pointer]:
+          - generic [ref=e12]:
+            - img [ref=e13]
+            - generic [ref=e15]: Location
+          - generic [ref=e17]: Dates
+          - generic [ref=e20]: Guests
+          - button "Submit search" [ref=e21]:
+            - img [ref=e22]
+        - generic [ref=e24]:
+          - button [ref=e25] [cursor=pointer]:
+            - img [ref=e26]
+          - button [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+          - button [ref=e31] [cursor=pointer]:
+            - img [ref=e32]
+          - img "Patrick Waismann" [ref=e35] [cursor=pointer]
+      - generic [ref=e36]:
+        - complementary [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: Edit Listing
+              - generic [ref=e41]: Select the listing you want to edit
+              - 'button "Light Filled Artist Bungalow | Hollywood Hills Live Listing #: 331139" [ref=e44] [cursor=pointer]':
+                - generic [ref=e45]:
+                  - link [ref=e46]:
+                    - /url: /lodging/light-filled-artist-bungalow-or-hollywood-hills/331139
+                  - generic [ref=e47]:
+                    - generic [ref=e48]:
+                      - generic [ref=e49]: Light Filled Artist Bungalow | Hollywood Hills
+                      - generic [ref=e50]:
+                        - img [ref=e51]
+                        - text: Live
+                    - generic [ref=e54]: "Listing #: 331139"
+                - img [ref=e55]
+              - link "Promote" [ref=e58] [cursor=pointer]:
+                - /url: /new/goal
+                - img [ref=e60]
+                - generic [ref=e61]: Promote
+              - link "Connect to Channel Manager Sync calendar & pricing" [ref=e62] [cursor=pointer]:
+                - /url: https://www.houfy.com/channel-managers
+                - img [ref=e65]
+                - generic [ref=e66]:
+                  - generic [ref=e67]: Connect to Channel Manager
+                  - generic [ref=e68]: Sync calendar & pricing
+              - navigation [ref=e69]:
+                - generic [ref=e70]:
+                  - button "Overview Describe your listing" [ref=e71] [cursor=pointer]:
+                    - generic [ref=e72]:
+                      - img [ref=e75]
+                      - generic [ref=e76]:
+                        - generic [ref=e77]: Overview
+                        - generic [ref=e78]: Describe your listing
+                    - img [ref=e79]
+                  - generic [ref=e81]:
+                    - link "Property details Describe your listing" [ref=e82] [cursor=pointer]:
+                      - /url: /edit-listing/331139/overview
+                      - img [ref=e85]
+                      - generic [ref=e86]:
+                        - generic [ref=e87]: Property details
+                        - generic [ref=e88]: Describe your listing
+                    - link "Location Add the location" [ref=e89] [cursor=pointer]:
+                      - /url: /edit-listing/331139/location
+                      - img [ref=e92]
+                      - generic [ref=e93]:
+                        - generic [ref=e94]: Location
+                        - generic [ref=e95]: Add the location
+                    - link "Amenities Select amenities" [ref=e96] [cursor=pointer]:
+                      - /url: /edit-listing/331139/amenities
+                      - img [ref=e99]
+                      - generic [ref=e100]:
+                        - generic [ref=e101]: Amenities
+                        - generic [ref=e102]: Select amenities
+                    - link "Suitability Allow or restrict certain types of reservations" [ref=e103] [cursor=pointer]:
+                      - /url: /edit-listing/331139/suitability
+                      - img [ref=e106]
+                      - generic [ref=e107]:
+                        - generic [ref=e108]: Suitability
+                        - generic [ref=e109]: Allow or restrict certain types of reservations
+                    - link "Activities Select activities your guests can enjoy" [ref=e110] [cursor=pointer]:
+                      - /url: /edit-listing/331139/activities
+                      - img [ref=e113]
+                      - generic [ref=e114]:
+                        - generic [ref=e115]: Activities
+                        - generic [ref=e116]: Select activities your guests can enjoy
+                - link "Photos Upload your best pictures here" [ref=e117] [cursor=pointer]:
+                  - /url: /edit-listing/331139/photos
+                  - img [ref=e120]
+                  - generic [ref=e121]:
+                    - generic [ref=e122]: Photos
+                    - generic [ref=e123]: Upload your best pictures here
+                - button "Pricing Set pricing for your listing" [ref=e125] [cursor=pointer]:
+                  - generic [ref=e126]:
+                    - img [ref=e129]
+                    - generic [ref=e130]:
+                      - generic [ref=e131]: Pricing
+                      - generic [ref=e132]: Set pricing for your listing
+                  - img [ref=e133]
+                - button "Settings Set settings for your listing" [ref=e136] [cursor=pointer]:
+                  - generic [ref=e137]:
+                    - img [ref=e140]
+                    - generic [ref=e141]:
+                      - generic [ref=e142]: Settings
+                      - generic [ref=e143]: Set settings for your listing
+                  - img [ref=e144]
+                - link "Reviews View and request reviews" [ref=e146] [cursor=pointer]:
+                  - /url: /edit-listing/331139/reviews
+                  - img [ref=e149]
+                  - generic [ref=e150]:
+                    - generic [ref=e151]: Reviews
+                    - generic [ref=e152]: View and request reviews
+                - link "Calendar Sync your calendars & edit your pricing" [ref=e153] [cursor=pointer]:
+                  - /url: /edit-listing/331139/reservations/calendar
+                  - img [ref=e156]
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: Calendar
+                    - generic [ref=e159]: Sync your calendars & edit your pricing
+            - link "Create new listing" [ref=e161] [cursor=pointer]:
+              - /url: /new/listing
+              - img [ref=e163]
+              - generic [ref=e164]: Create new listing
+        - generic [ref=e167]:
+          - heading "Property details" [level=1] [ref=e168]
+          - paragraph [ref=e169]: Guests like to know as much as possible about the charter before they connect with you. Please complete this section as detailed as possible.
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - button "Listing Type Vacation Rental" [ref=e172] [cursor=pointer]:
+                - generic [ref=e173]:
+                  - img [ref=e175]
+                  - generic [ref=e179]:
+                    - heading "Listing Type" [level=3] [ref=e180]
+                    - paragraph [ref=e181]: Vacation Rental
+                - img [ref=e183]
+              - generic [ref=e186]:
+                - button "Vacation Rental" [ref=e187] [cursor=pointer]:
+                  - img [ref=e189]
+                  - paragraph [ref=e192]: Vacation Rental
+                  - img [ref=e194]
+                - button "Charter Boat" [ref=e196] [cursor=pointer]:
+                  - img [ref=e198]
+                  - paragraph [ref=e201]: Charter Boat
+            - generic [ref=e202]:
+              - button "Type of Property Vacation Home · Entire Place · 0 sq ft" [ref=e203] [cursor=pointer]:
+                - generic [ref=e204]:
+                  - img [ref=e206]
+                  - generic [ref=e209]:
+                    - heading "Type of Property" [level=3] [ref=e210]
+                    - paragraph [ref=e211]: Vacation Home · Entire Place · 0 sq ft
+                - img [ref=e213]
+              - generic [ref=e216]:
+                - generic [ref=e217]:
+                  - generic [ref=e218]: Type of Property
+                  - generic [ref=e219]:
+                    - button "Condo" [ref=e220] [cursor=pointer]:
+                      - img [ref=e221]
+                      - generic [ref=e224]: Condo
+                    - button "Vacation Home" [ref=e225] [cursor=pointer]:
+                      - img [ref=e226]
+                      - generic [ref=e229]: Vacation Home
+                    - button "Apartment" [ref=e230] [cursor=pointer]:
+                      - img [ref=e231]
+                      - generic [ref=e234]: Apartment
+                    - button "Villa" [ref=e235] [cursor=pointer]:
+                      - img [ref=e236]
+                      - generic [ref=e240]: Villa
+                    - button "Cottage" [ref=e241] [cursor=pointer]:
+                      - img [ref=e242]
+                      - generic [ref=e245]: Cottage
+                    - button "Cabin" [ref=e246] [cursor=pointer]:
+                      - img [ref=e247]
+                      - generic [ref=e249]: Cabin
+                    - button "Chalet" [ref=e250] [cursor=pointer]:
+                      - img [ref=e251]
+                      - generic [ref=e253]: Chalet
+                    - button "Camper/RV" [ref=e254] [cursor=pointer]:
+                      - img [ref=e255]
+                      - generic [ref=e260]: Camper/RV
+                  - button "Show more property types" [ref=e262] [cursor=pointer]
+                - generic [ref=e263]:
+                  - generic [ref=e264]: Room Type
+                  - generic [ref=e265]:
+                    - button "Entire Place Guests have the whole place to themselves" [ref=e266] [cursor=pointer]:
+                      - generic [ref=e267]:
+                        - paragraph [ref=e268]: Entire Place
+                        - paragraph [ref=e269]: Guests have the whole place to themselves
+                      - img [ref=e271]
+                    - button "Private Room Guests have a private room but share some spaces" [ref=e273] [cursor=pointer]:
+                      - generic [ref=e274]:
+                        - paragraph [ref=e275]: Private Room
+                        - paragraph [ref=e276]: Guests have a private room but share some spaces
+                    - button "Shared Room Guests sleep in a shared space" [ref=e278] [cursor=pointer]:
+                      - generic [ref=e279]:
+                        - paragraph [ref=e280]: Shared Room
+                        - paragraph [ref=e281]: Guests sleep in a shared space
+                - generic [ref=e283]:
+                  - generic [ref=e284]: Living Area
+                  - generic [ref=e285]:
+                    - textbox "e.g., 1500" [ref=e287]: "0"
+                    - generic [ref=e288]:
+                      - button "Sq ft" [ref=e289] [cursor=pointer]
+                      - button "Sq m" [ref=e290] [cursor=pointer]
+            - generic [ref=e291]:
+              - button "Listing Name, Headline & Overview Light Filled Artist Bungalow | Hollywood..." [ref=e292] [cursor=pointer]:
+                - generic [ref=e293]:
+                  - img [ref=e295]
+                  - generic [ref=e298]:
+                    - heading "Listing Name, Headline & Overview" [level=3] [ref=e299]
+                    - paragraph [ref=e300]: Light Filled Artist Bungalow | Hollywood...
+                - img [ref=e302]
+              - generic [ref=e305]:
+                - generic [ref=e306]:
+                  - generic [ref=e307]:
+                    - generic [ref=e308]: Listing Name
+                    - generic [ref=e309]: 46/50
+                  - textbox "Give your listing a catchy name" [ref=e310]: Light Filled Artist Bungalow | Hollywood Hills
+                  - paragraph [ref=e311]: Your listing name should highlight what makes your property unique.
+                - generic [ref=e312]:
+                  - generic [ref=e313]:
+                    - generic [ref=e314]: "Headline:"
+                    - generic [ref=e315]: 86/150
+                  - textbox "A short, attention-grabbing headline" [ref=e316]: Art-filled Hollywood Hills retreat with panoramic views, steps from the Hollywood Bowl
+                  - paragraph [ref=e317]: Your listing headline should grab attention, stand out and be noticed.
+                - generic [ref=e318]:
+                  - generic [ref=e319]:
+                    - generic [ref=e320]: "Overview:"
+                    - generic [ref=e321]: 608/20,000
+                  - generic [ref=e322]:
+                    - textbox "Describe what makes your place special..." [ref=e323]: An intimate, art-filled retreat perched in the Hollywood Hills, steps from the legendary Hollywood Bowl. The Artist Bungalow features Spanish-style architecture, curated mid-century interiors, panoramic city-to-ocean views, a tropical garden, an upright piano, and a private deck for al fresco dining. 2 bedrooms, 2 bathrooms, full kitchen with a 5-method coffee bar, steam shower, and smart home throughout. Walk to the Hollywood Bowl in 5 minutes. Hike Runyon Canyon, visit Griffith Observatory, or explore the Walk of Fame, all within minutes. 4.97 rating across 59+ reviews. Superhost and Guest Favorite.
+                    - paragraph [ref=e324]: This overview should be used to give more information on your property's primary features. Then provide an inspiring and compelling description.
+            - generic [ref=e325]:
+              - button "Sleeping Configuration 4 guests · 2 bedrooms · 2 baths" [ref=e326] [cursor=pointer]:
+                - generic [ref=e327]:
+                  - img [ref=e329]
+                  - generic [ref=e331]:
+                    - heading "Sleeping Configuration" [level=3] [ref=e332]
+                    - paragraph [ref=e333]: 4 guests · 2 bedrooms · 2 baths
+                - img [ref=e335]
+              - generic [ref=e338]:
+                - generic [ref=e339]:
+                  - generic [ref=e340]:
+                    - generic [ref=e341]:
+                      - img [ref=e343]
+                      - generic [ref=e348]: Guests
+                    - generic [ref=e349]:
+                      - button [ref=e350] [cursor=pointer]:
+                        - img [ref=e351]
+                      - generic [ref=e352]: "4"
+                      - button [ref=e353] [cursor=pointer]:
+                        - img [ref=e354]
+                  - generic [ref=e355]:
+                    - generic [ref=e356]:
+                      - img [ref=e358]
+                      - generic [ref=e361]: Bedrooms
+                    - generic [ref=e362]:
+                      - button [ref=e363] [cursor=pointer]:
+                        - img [ref=e364]
+                      - generic [ref=e365]: "2"
+                      - button [ref=e366] [cursor=pointer]:
+                        - img [ref=e367]
+                  - generic [ref=e368]:
+                    - generic [ref=e369]:
+                      - img [ref=e371]
+                      - generic [ref=e374]: Bathrooms
+                    - generic [ref=e375]:
+                      - button [ref=e376] [cursor=pointer]:
+                        - img [ref=e377]
+                      - generic [ref=e378]: "2"
+                      - button [ref=e379] [cursor=pointer]:
+                        - img [ref=e380]
+                - generic [ref=e381]:
+                  - generic [ref=e382]:
+                    - generic [ref=e383]:
+                      - heading "Room Details" [level=4] [ref=e384]
+                      - paragraph [ref=e385]: Add details about each sleeping area
+                    - button "Add" [ref=e386] [cursor=pointer]:
+                      - img [ref=e387]
+                      - text: Add
+                  - generic [ref=e388]:
+                    - img [ref=e390]
+                    - paragraph [ref=e392]: No room details added yet
+                    - paragraph [ref=e393]: Add details about beds in each room
+                    - button "Add Room" [ref=e394] [cursor=pointer]:
+                      - img [ref=e395]
+                      - text: Add Room
+            - generic [ref=e396]:
+              - button "Custom Link houfy.com/h/artist-bungalow-hollywood-hills" [ref=e397] [cursor=pointer]:
+                - generic [ref=e398]:
+                  - img [ref=e400]
+                  - generic [ref=e403]:
+                    - heading "Custom Link" [level=3] [ref=e404]
+                    - paragraph [ref=e405]: houfy.com/h/artist-bungalow-hollywood-hills
+                - img [ref=e407]
+              - generic [ref=e410]:
+                - paragraph [ref=e411]:
+                  - text: A memorable link can make it easy to share your listing on business cards, websites or on social media.
+                  - link "Review our custom link policy" [ref=e412] [cursor=pointer]:
+                    - /url: https://www.houfy.com/houfy-custom-link-guidelines
+                    - text: Review our custom link policy
+                    - img [ref=e413]
+                - generic [ref=e417]:
+                  - generic [ref=e418]:
+                    - generic [ref=e419]: Default Link
+                    - button "Copy" [ref=e420] [cursor=pointer]:
+                      - img [ref=e421]
+                      - text: Copy
+                  - generic [ref=e424]:
+                    - generic [ref=e425]: houfy.com/
+                    - textbox [ref=e426]: "331139"
+                - generic [ref=e427]:
+                  - generic [ref=e429]: Custom Link
+                  - generic [ref=e431]:
+                    - generic [ref=e432]:
+                      - img [ref=e434]
+                      - generic [ref=e437]:
+                        - paragraph [ref=e438]: Custom Link
+                        - paragraph [ref=e439]: houfy.com/h/artist-bungalow-hollywood-hills
+                    - generic [ref=e440]:
+                      - button "Copy Link" [ref=e441] [cursor=pointer]:
+                        - img [ref=e442]
+                        - text: Copy Link
+                      - link "Visit" [ref=e445] [cursor=pointer]:
+                        - /url: https://houfy.com/h/artist-bungalow-hollywood-hills
+                        - img [ref=e446]
+                        - text: Visit
+                      - button "Edit" [ref=e450] [cursor=pointer]:
+                        - img [ref=e451]
+                        - text: Edit
+            - generic [ref=e453]:
+              - button "Widgets 2 widgets available" [ref=e454] [cursor=pointer]:
+                - generic [ref=e455]:
+                  - img [ref=e457]
+                  - generic [ref=e461]:
+                    - heading "Widgets" [level=3] [ref=e462]
+                    - paragraph [ref=e463]: 2 widgets available
+                - img [ref=e465]
+              - generic [ref=e468]:
+                - paragraph [ref=e469]: Add these widgets to your own website to display your listing information.
+                - generic [ref=e470]:
+                  - link "Overview Display your listing overview on any website" [ref=e471] [cursor=pointer]:
+                    - /url: /widgets?page=overview&listingid=331139
+                    - img [ref=e473]
+                    - generic [ref=e477]:
+                      - paragraph [ref=e478]: Overview
+                      - paragraph [ref=e479]: Display your listing overview on any website
+                    - img [ref=e480]
+                  - link "Listing short info Show a compact summary of your listing" [ref=e484] [cursor=pointer]:
+                    - /url: /widgets?page=summary&listingid=331139
+                    - img [ref=e486]
+                    - generic [ref=e490]:
+                      - paragraph [ref=e491]: Listing short info
+                      - paragraph [ref=e492]: Show a compact summary of your listing
+                    - img [ref=e493]
+                - paragraph [ref=e497]: Click on a widget to get the embed code for your website.
+            - generic [ref=e498]:
+              - button "Remove listing This action cannot be undone" [ref=e499] [cursor=pointer]:
+                - generic [ref=e500]:
+                  - img [ref=e502]
+                  - generic [ref=e505]:
+                    - heading "Remove listing" [level=3] [ref=e506]
+                    - paragraph [ref=e507]: This action cannot be undone
+                - img [ref=e509]
+              - generic [ref=e512]:
+                - generic [ref=e513]:
+                  - 'heading "Warning: This action is permanent" [level=4] [ref=e514]'
+                  - paragraph [ref=e515]: Removing this listing is permanent and cannot be reversed.
+                  - list [ref=e516]:
+                    - listitem [ref=e517]:
+                      - generic [ref=e519]: All listing data will be permanently deleted
+                    - listitem [ref=e520]:
+                      - generic [ref=e522]: Past bookings and reviews will no longer be associated
+                    - listitem [ref=e523]:
+                      - generic [ref=e525]: This action cannot be undone
+                - generic [ref=e526]:
+                  - button "Remove Listing" [ref=e527] [cursor=pointer]:
+                    - img [ref=e528]
+                    - text: Remove Listing
+                  - link "Learn more about removing listings" [ref=e531] [cursor=pointer]:
+                    - /url: /help/how-do-i-hide-or-remove-my-listing-on-houfy-12297
+          - button "Continue" [ref=e533] [cursor=pointer]:
+            - generic [ref=e534]: Continue
+            - img [ref=e535]
+    - button "Toggle chat" [ref=e538] [cursor=pointer]:
+      - generic [ref=e539]:
+        - img
+    - generic:
+      - button "Close notification":
+        - img
+  - alert [ref=e540]

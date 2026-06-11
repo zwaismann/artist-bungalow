@@ -1,0 +1,487 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - link "Skip to main content" [ref=e4] [cursor=pointer]:
+      - /url: "#main-content"
+    - region "Notifications alt+T"
+    - generic [ref=e6]:
+      - banner [ref=e7]:
+        - navigation "navbar" [ref=e8]:
+          - link "Furnished Finder logo" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - img "Furnished Finder logo" [ref=e12]
+          - generic [ref=e29]:
+            - link "Market Insights NEW" [ref=e30] [cursor=pointer]:
+              - /url: /stats
+              - text: Market Insights
+              - generic [ref=e31]: NEW
+            - link "Housing request" [ref=e32] [cursor=pointer]:
+              - /url: /housing-request
+            - link "About monthly rentals" [ref=e33] [cursor=pointer]:
+              - /url: /about-monthly-furnished-rentals
+            - group [ref=e34]:
+              - link "Resources" [ref=e35] [cursor=pointer]:
+                - /url: "#"
+              - list "Resources" [ref=e36]
+          - generic [ref=e37]:
+            - link "List your property" [ref=e38] [cursor=pointer]:
+              - /url: /list-your-property
+            - button "User menu" [ref=e40] [cursor=pointer]:
+              - generic [ref=e41]:
+                - img [ref=e43]
+                - img [ref=e47]
+        - navigation:
+          - button "Close sidebar" [ref=e52] [cursor=pointer]:
+            - img [ref=e53]
+      - main [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - heading "Trusted by 6 million travelers" [level=2] [ref=e64]
+                - generic:
+                  - paragraph
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - 'heading "Ranked #1 in Real Estate—Newsweek''s 2025 America''s Best Online Platforms—scoring above Zillow, Airbnb, and Vrbo" [level=5] [ref=e68]':
+                    - strong [ref=e69]: "Ranked #1 in Real Estate—Newsweek's 2025 America's Best Online Platforms—scoring above Zillow, Airbnb, and Vrbo"
+                  - paragraph
+                - img "Newsweek Award Horizontal - Basic" [ref=e70]
+                - generic [ref=e71]:
+                  - paragraph [ref=e72]:
+                    - strong [ref=e73]:
+                      - emphasis [ref=e74]: "\"With Furnished Finder, I’ve been able to connect with reliable traveling professionals and keep my place booked for months.\""
+                  - paragraph [ref=e75]: Yesenia G., 1 Furnished Finder listing
+                - generic [ref=e76]:
+                  - paragraph [ref=e77]:
+                    - strong [ref=e78]:
+                      - emphasis [ref=e79]: "\"My husband and I have been successfully using Furnished Finder for our monthly rentals for over 5 years. My rentals stay 95% full with nurses and other traveling nomads.\""
+                  - paragraph [ref=e80]: Patricia S., 4 Furnished Finder listings
+            - generic [ref=e83]:
+              - heading "No commissions. No booking fees. Just 30+ day stays." [level=3] [ref=e84]
+              - paragraph [ref=e85]:
+                - text: "Wondering whether your property's the right fit? Let's talk:"
+                - link "(855) 616-8588" [ref=e86] [cursor=pointer]:
+                  - /url: tel:(855) 616-8588
+              - form "No commissions. No booking fees. Just 30+ day stays." [ref=e87]:
+                - group [ref=e88]:
+                  - generic [ref=e90]:
+                    - generic [ref=e91] [cursor=pointer]:
+                      - radio "icon Entire Place" [checked] [active] [ref=e92]
+                      - img "icon" [ref=e93]:
+                        - img [ref=e578]
+                      - generic [ref=e97]: Entire Place
+                    - generic [ref=e98] [cursor=pointer]:
+                      - radio "icon Private Room" [ref=e99]
+                      - img "icon" [ref=e100]:
+                        - img [ref=e581]
+                      - generic [ref=e104]: Private Room
+                    - generic [ref=e105] [cursor=pointer]:
+                      - radio "icon Hotel" [ref=e106]
+                      - img "icon" [ref=e107]:
+                        - img [ref=e584]
+                      - generic [ref=e111]: Hotel
+                    - generic [ref=e112] [cursor=pointer]:
+                      - radio "icon Apartment Complex" [ref=e113]
+                      - img "icon" [ref=e114]:
+                        - img [ref=e587]
+                      - generic [ref=e118]: Apartment Complex
+                - group [ref=e119]:
+                  - generic [ref=e120]:
+                    - generic [ref=e122]:
+                      - text: First Name
+                      - generic [ref=e123]: "*"
+                    - textbox "First Name" [ref=e125]
+                  - generic [ref=e126]:
+                    - generic [ref=e128]:
+                      - text: Last Name
+                      - generic [ref=e129]: "*"
+                    - textbox "Last Name" [ref=e131]
+                  - generic [ref=e132]:
+                    - generic [ref=e134]:
+                      - text: Email
+                      - generic [ref=e135]: "*"
+                    - textbox "Email" [ref=e137]
+                  - generic [ref=e138]:
+                    - generic [ref=e140]:
+                      - text: Phone number
+                      - generic [ref=e141]: "*"
+                    - textbox "phonenumber" [ref=e143]
+                  - generic [ref=e144]:
+                    - generic [ref=e146]:
+                      - text: Rental Property State
+                      - generic [ref=e147]: "*"
+                    - combobox "Rental Property State" [ref=e148]:
+                      - option "Select" [disabled] [selected]
+                      - option "Alabama"
+                      - option "Alaska"
+                      - option "Arizona"
+                      - option "Arkansas"
+                      - option "California"
+                      - option "Colorado"
+                      - option "Connecticut"
+                      - option "Delaware"
+                      - option "District of Columbia"
+                      - option "Florida"
+                      - option "Georgia"
+                      - option "Guam"
+                      - option "Hawaii"
+                      - option "Idaho"
+                      - option "Illinois"
+                      - option "Indiana"
+                      - option "Iowa"
+                      - option "Kansas"
+                      - option "Kentucky"
+                      - option "Louisiana"
+                      - option "Maine"
+                      - option "Maryland"
+                      - option "Massachusetts"
+                      - option "Michigan"
+                      - option "Minnesota"
+                      - option "Mississippi"
+                      - option "Missouri"
+                      - option "Montana"
+                      - option "Nebraska"
+                      - option "Nevada"
+                      - option "New Hampshire"
+                      - option "New Jersey"
+                      - option "New Mexico"
+                      - option "New York"
+                      - option "North Carolina"
+                      - option "North Dakota"
+                      - option "Ohio"
+                      - option "Oklahoma"
+                      - option "Oregon"
+                      - option "Palau"
+                      - option "Pennsylvania"
+                      - option "Puerto Rico"
+                      - option "Rhode Island"
+                      - option "South Carolina"
+                      - option "South Dakota"
+                      - option "Tennessee"
+                      - option "Texas"
+                      - option "Utah"
+                      - option "Vermont"
+                      - option "Virgin Islands"
+                      - option "Virginia"
+                      - option "Washington"
+                      - option "West Virginia"
+                      - option "Wisconsin"
+                      - option "Wyoming"
+                  - generic [ref=e149]:
+                    - generic [ref=e151]:
+                      - text: Rental Property City
+                      - generic [ref=e152]: "*"
+                    - combobox "Rental Property City" [ref=e153]:
+                      - option "Select State First" [disabled] [selected]
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - checkbox "terms" [ref=e157] [cursor=pointer]
+                    - img "check"
+                  - generic [ref=e158]:
+                    - paragraph [ref=e159]:
+                      - text: I agree to receive messages and calls from Furnished Finder regarding my property listing, general communications, and marketing. To opt out, reply STOP, or request support by replying HELP. Message frequency varies. Message and data rates may apply. I understand and agree to the
+                      - link "Privacy Policy" [ref=e160] [cursor=pointer]:
+                        - /url: https://www.furnishedfinder.com/privacy
+                      - text: ","
+                      - link "Terms of Use" [ref=e161] [cursor=pointer]:
+                        - /url: https://www.furnishedfinder.com/terms-of-use
+                      - text: ", and"
+                      - link "Property Listing Terms & Conditions" [ref=e162] [cursor=pointer]:
+                        - /url: https://www.furnishedfinder.com/property-listing-terms-and-conditions
+                      - text: .
+                    - generic [ref=e163]: "*"
+                - generic [ref=e164]: Step 1 of 2
+                - button "Continue" [ref=e166] [cursor=pointer]
+          - generic [ref=e168]:
+            - heading "Listing with Furnished Finder is just good business" [level=2] [ref=e170]
+            - generic [ref=e173]:
+              - generic [ref=e174]:
+                - img "Type=Key holding" [ref=e179]:
+                  - img [ref=e180]
+                - generic [ref=e184]:
+                  - generic [ref=e185]: You're in control of your rental
+                  - paragraph [ref=e187]: We don't interfere with your bookings. Charge what you want, when you want. And you decide who you let in the door.
+              - generic [ref=e188]:
+                - img "Type=Chat bubbles" [ref=e193]:
+                  - img [ref=e194]
+                - generic [ref=e197]:
+                  - generic [ref=e198]: Talk directly with tenant leads
+                  - paragraph [ref=e200]: There's no middleman here to get in your way. You interact and talk directly with the people who want to rent your home.
+              - generic [ref=e201]:
+                - img "Type=CreditCard" [ref=e206]:
+                  - img [ref=e207]
+                - generic [ref=e211]:
+                  - generic [ref=e212]: We charge just a $199 flat fee
+                  - paragraph [ref=e214]: There's no commissions here, and we never take a cut of your bookings. One booking can pay for your entire annual subscription.
+              - generic [ref=e215]:
+                - img "Type=House details" [ref=e220]:
+                  - img [ref=e221]
+                - generic [ref=e225]:
+                  - generic [ref=e226]: A better ROI
+                  - paragraph [ref=e228]: On average, our landlords earn 60x return on their investment, and you can earn tens of thousands in passive rental income.
+          - generic [ref=e230]:
+            - heading "We serve millions of traveling professionals looking for monthly stays" [level=2] [ref=e232]
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - img "Business Traveler" [ref=e238]
+                - generic [ref=e239]:
+                  - heading "Business Travelers" [level=3] [ref=e240]
+                  - paragraph [ref=e241]: From temporary business assignments to an increasing work-from-anywhere movement, Furnished Finder welcomes hundreds of thousands of business professionals and digital nomads looking to stay in a new city for a few months while they work.
+              - generic [ref=e242]:
+                - img "Medical Traveler" [ref=e244]
+                - generic [ref=e245]:
+                  - heading "Medical Professionals" [level=3] [ref=e246]
+                  - paragraph [ref=e247]: For travel nurses, physicians and other traveling medical professionals, Furnished Finder has long been the go-to source for this community looking for a place to stay on their next assignment.
+              - generic [ref=e248]:
+                - img "Relocating Traveler" [ref=e250]
+                - generic [ref=e251]:
+                  - heading "Relocating Families" [level=3] [ref=e252]
+                  - paragraph [ref=e253]: Families turn to Furnished Finder for temporary housing when exploring new neighborhoods or cities before buying a home. We're also a trusted resource for families displaced by natural disasters who need interim housing.
+              - generic [ref=e254]:
+                - img "Academic-2 Traveler" [ref=e256]
+                - generic [ref=e257]:
+                  - heading "Professors & Students" [level=3] [ref=e258]
+                  - paragraph [ref=e259]: Furnished Finder is also a trusted housing solution for traveling professors, relocating faculty, and graduate students who use our site in search of temporary housing during internships and work assignments.
+          - generic [ref=e261]:
+            - heading "Getting your listing live is easy." [level=2] [ref=e263]
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - img "Type=Newspaper--Streamline-Font-Awesome" [ref=e272]:
+                  - img [ref=e273]
+                - generic [ref=e275]:
+                  - generic [ref=e276]: Sign up for just $199
+                  - paragraph [ref=e278]: You can get going online, or give our award winning housing specialist team a call for help.
+              - generic [ref=e279]:
+                - img "Type=Listing" [ref=e284]:
+                  - img [ref=e285]
+                - generic [ref=e290]:
+                  - generic [ref=e291]: Build your property listing
+                  - paragraph [ref=e293]: It's an easy process, just enter the details about your rental. We're here to help if you need us.
+              - generic [ref=e294]:
+                - img "Type=TenantLeads" [ref=e299]:
+                  - img [ref=e300]
+                - generic [ref=e304]:
+                  - generic [ref=e305]: Connect with unlimited leads
+                  - paragraph [ref=e307]: You talk directly to potential tenants, and you decide who stays at your property, every time.
+          - generic [ref=e308]:
+            - heading "Ready to get started?" [level=2] [ref=e309]
+            - link "List Your Property" [ref=e311] [cursor=pointer]:
+              - /url: /list-your-property
+          - generic [ref=e313]:
+            - generic [ref=e314]:
+              - heading "Still exploring monthly rentals?" [level=2] [ref=e315]
+              - paragraph [ref=e317]: Discover what’s driving demand, and why more than 240,000 landlords choose Furnished Finder.
+            - generic [ref=e320]:
+              - generic [ref=e321]:
+                - img "Market insights" [ref=e590]:
+                  - img [ref=e591]
+                - generic [ref=e327]:
+                  - generic [ref=e328]: Get demand insights for your local market
+                  - generic [ref=e329]:
+                    - paragraph [ref=e330]: See real-time, city-level data. Powered by Furnished Finder demand activity, this tool helps you understand who’s searching, what they’re looking for, and pricing trends—all unique to your market.
+                    - paragraph
+                - link "Get Local Insights" [ref=e332] [cursor=pointer]:
+                  - /url: https://www.furnishedfinder.com/stats
+              - generic [ref=e333]:
+                - img "Report" [ref=e595]:
+                  - img [ref=e596]
+                - generic [ref=e339]:
+                  - generic [ref=e340]: Learn why monthly rentals are the hidden gem of housing
+                  - paragraph [ref=e342]: In partnership with AirDNA, we analyzed the rise of monthly rentals and their growing role in today’s housing market. This free report reveals what’s driving the surge and how landlords can benefit.
+                - link "View Industry Report" [ref=e344] [cursor=pointer]:
+                  - /url: https://www.furnishedfinder.com/resources/monthly-rental-market-trends-report
+          - generic [ref=e346]:
+            - heading "Hear from other landlords" [level=2] [ref=e348]
+            - region "LL Testimonials" [ref=e351]:
+              - generic [ref=e353]:
+                - generic [ref=e355]:
+                  - group [ref=e356]:
+                    - generic [ref=e357]:
+                      - generic [ref=e358]:
+                        - paragraph [ref=e360]: Furnished Finder significantly simplifies one of the most critical functions of running our business - effective and efficient tenant acquisition. The simplicity and straightforward functionality of the platform allows me to focus my energy on other parts of the business without spending an exorbitant amount of time worrying about marketing.
+                        - button "Show full testimonial from Tammy B" [ref=e361] [cursor=pointer]: Read More
+                      - generic [ref=e362]:
+                        - generic [ref=e365]: TB
+                        - generic [ref=e366]:
+                          - generic [ref=e367]: Tammy B
+                          - generic [ref=e368]: Furnished Finder Landlord with 5 listings
+                  - group [ref=e369]:
+                    - generic [ref=e370]:
+                      - generic [ref=e371]:
+                        - paragraph [ref=e373]: We’ve used Furnished Finder for 5 years and never looked back. The quality and quantity of residents, the flexibility to adjust rents according to season and the ease of working with Furnished Finder all make this rental platform an easy choice. I recommend it to all friends and acquaintances looking to rent residences.
+                        - button "Show full testimonial from Jill H" [ref=e374] [cursor=pointer]: Read More
+                      - generic [ref=e375]:
+                        - generic [ref=e378]: JH
+                        - generic [ref=e379]:
+                          - generic [ref=e380]: Jill H
+                          - generic [ref=e381]: Furnished Finder Landlord with 1 listing
+                  - group [ref=e382]:
+                    - generic [ref=e383]:
+                      - generic [ref=e384]:
+                        - paragraph [ref=e386]: Their platform allows me to communicate and negotiate directly with tenants. Furnished Finder helps facilitate a mid-term rental experience without trying to control it.
+                        - button "Show full testimonial from Jeff B" [ref=e387] [cursor=pointer]: Read More
+                      - generic [ref=e388]:
+                        - generic [ref=e391]: JB
+                        - generic [ref=e392]:
+                          - generic [ref=e393]: Jeff B
+                          - generic [ref=e394]: Furnished Finder Landlord with 2 listings
+                  - group [ref=e395]:
+                    - generic [ref=e396]:
+                      - generic [ref=e397]:
+                        - paragraph [ref=e399]: Furnished Finder has helped my furnished rental business A TON! I've been able to secure tons of guests for my properties and the platform makes it super simple to do! My 1st tip for anyone wanting to rent out their property as a mid-term rental is to put it on Furnished Finder!
+                        - button "Show full testimonial from Bailey K" [ref=e400] [cursor=pointer]: Read More
+                      - generic [ref=e401]:
+                        - generic [ref=e404]: BK
+                        - generic [ref=e405]:
+                          - generic [ref=e406]: Bailey K
+                          - generic [ref=e407]: Furnished Finder Landlord with 7 listings
+                  - group [ref=e408]:
+                    - generic [ref=e409]:
+                      - generic [ref=e410]:
+                        - paragraph [ref=e412]: Furnished Finder gave me the tools I needed to succeed. I got access to market insights, marketing materials, and customer support. I was also able to connect with other landlords in the Furnished Finder community. I know that I couldn't have done it without Furnished Finder. They were there for me every step of the way, and they helped me achieve my goals. If you're thinking about starting a mid-term rental business, I highly recommend Furnished Finder. They have everything you need to succeed.
+                        - button "Show full testimonial from Jesse V" [ref=e413] [cursor=pointer]: Read More
+                      - generic [ref=e414]:
+                        - generic [ref=e417]: JV
+                        - generic [ref=e418]:
+                          - generic [ref=e419]: Jesse V
+                          - generic [ref=e420]: Furnished Finder Landlord with 6 listings
+                  - group [ref=e421]:
+                    - generic [ref=e422]:
+                      - generic [ref=e423]:
+                        - paragraph [ref=e425]: I've found Furnished Finder to be an invaluable asset to our business for several years. The platform's ease of use made setting up our account a breeze, enabling us to quickly showcase our furnished accommodations to potential guests. Moreover, their ancillary service, KeyCheck, has been instrumental in streamlining our operations by providing comprehensive background and credit checks for potential guests, ensuring the safety and security of our properties. This platform is a must-have for any housing provider in the Airbnb, OTA, or corporate space.
+                        - button "Show full testimonial from Shawn C" [ref=e426] [cursor=pointer]: Read More
+                      - generic [ref=e427]:
+                        - generic [ref=e430]: SC
+                        - generic [ref=e431]:
+                          - generic [ref=e432]: Shawn C
+                          - generic [ref=e433]: Furnished Finder Landlord with 2 listings
+                  - group [ref=e434]:
+                    - generic [ref=e435]:
+                      - generic [ref=e436]:
+                        - paragraph [ref=e438]: Furnished Finder has completely transformed our business model. It has given us full control over our revenue as we focus on sales and reservations. Moreover, it has opened up new opportunities for expansion into different areas and markets, while also providing us with a database of loyal repeat clients.
+                        - button "Show full testimonial from Robert N" [ref=e439] [cursor=pointer]: Read More
+                      - generic [ref=e440]:
+                        - generic [ref=e443]: RN
+                        - generic [ref=e444]:
+                          - generic [ref=e445]: Robert N
+                          - generic [ref=e446]: Furnished Finder Landlord with 69 listings
+                - button "Go to next slide" [ref=e447] [cursor=pointer]:
+                  - img [ref=e448]
+              - generic [ref=e450]:
+                - button "Slide 1" [ref=e451]
+                - button "Slide 2" [ref=e452]
+                - button "Slide 3" [ref=e453]
+                - button "Slide 4" [ref=e454]
+                - button "Slide 5" [ref=e455]
+          - generic [ref=e457]:
+            - heading "You've got questions, we've got answers" [level=2] [ref=e459]
+            - generic [ref=e462]:
+              - heading "Can I list a room for rent instead of the whole house?" [level=3] [ref=e465]:
+                - button "Can I list a room for rent instead of the whole house?" [ref=e466] [cursor=pointer]:
+                  - text: Can I list a room for rent instead of the whole house?
+                  - img [ref=e468]
+              - heading "I’m new to renting. How does payment work, and how do I screen potential tenants?" [level=3] [ref=e472]:
+                - button "I’m new to renting. How does payment work, and how do I screen potential tenants?" [ref=e473] [cursor=pointer]:
+                  - text: I’m new to renting. How does payment work, and how do I screen potential tenants?
+                  - img [ref=e475]
+              - heading "How much does it cost?" [level=3] [ref=e479]:
+                - button "How much does it cost?" [ref=e480] [cursor=pointer]:
+                  - text: How much does it cost?
+                  - img [ref=e482]
+              - heading "What are the best practices for setting competitive pricing for my listing?" [level=3] [ref=e486]:
+                - button "What are the best practices for setting competitive pricing for my listing?" [ref=e487] [cursor=pointer]:
+                  - text: What are the best practices for setting competitive pricing for my listing?
+                  - img [ref=e489]
+              - heading "How does the booking process work on Furnished Finder?" [level=3] [ref=e493]:
+                - button "How does the booking process work on Furnished Finder?" [ref=e494] [cursor=pointer]:
+                  - text: How does the booking process work on Furnished Finder?
+                  - img [ref=e496]
+      - contentinfo [ref=e498]:
+        - generic [ref=e499]:
+          - generic [ref=e500]:
+            - generic [ref=e501]: Our app makes monthly rentals easier
+            - generic [ref=e502]: Whether you’re a landlord or a traveler, the Furnished Finder app helps you respond to messages faster, search more efficiently, and connect with ease—right from your phone.
+          - generic [ref=e503]:
+            - generic [ref=e504]:
+              - button "GET IT ON Google Play" [ref=e505] [cursor=pointer]:
+                - generic [ref=e506]:
+                  - img [ref=e508]
+                  - generic [ref=e513]:
+                    - generic [ref=e514]: GET IT ON
+                    - paragraph [ref=e515]: Google Play
+              - button "Download on the App Store" [ref=e516] [cursor=pointer]:
+                - generic [ref=e517]:
+                  - img [ref=e519]
+                  - generic [ref=e522]:
+                    - generic [ref=e523]: Download on the
+                    - paragraph [ref=e524]: App Store
+            - generic [ref=e525]:
+              - img "Download app QR code" [ref=e527]
+              - generic [ref=e528]: Download App
+        - generic [ref=e533]:
+          - link "Navigate to About Us page" [ref=e535] [cursor=pointer]:
+            - /url: https://www.furnishedfinder.com/about-us
+            - text: About Us
+          - link "Navigate to Contact Us page" [ref=e537] [cursor=pointer]:
+            - /url: https://furnishedfinder.zendesk.com/hc/en-us
+            - text: Contact Us
+          - link "Navigate to Careers page" [ref=e539] [cursor=pointer]:
+            - /url: https://furnishedfinder.applytojob.com/apply
+            - text: Careers
+          - link "Navigate to FAQs page" [ref=e541] [cursor=pointer]:
+            - /url: /faq
+            - text: FAQs
+          - link "Navigate to Blog page" [ref=e543] [cursor=pointer]:
+            - /url: /blog
+            - text: Blog
+          - link "Navigate to Landlord Diaries page" [ref=e545] [cursor=pointer]:
+            - /url: /Resources/podcast
+            - text: Landlord Diaries
+          - link "Navigate to KeyCheck page" [ref=e547] [cursor=pointer]:
+            - /url: https://www.keycheck.com/
+            - text: KeyCheck
+          - link "Navigate to Our Reviews page" [ref=e549] [cursor=pointer]:
+            - /url: /reviews
+            - text: Our Reviews
+          - link "Navigate to Our App page" [ref=e551] [cursor=pointer]:
+            - /url: /app
+            - text: Our App
+        - generic [ref=e554]:
+          - generic [ref=e555]:
+            - generic [ref=e556]:
+              - generic [ref=e557]: © 2026 Furnished Finder
+              - generic [ref=e558]: PO Box 30374, Austin, Texas 78755
+            - generic [ref=e559]:
+              - link "Navigate to Terms of Use page" [ref=e560] [cursor=pointer]:
+                - /url: /terms-of-use
+                - text: Terms of Use
+              - link "Navigate to Privacy Policy page" [ref=e561] [cursor=pointer]:
+                - /url: /privacy
+                - text: Privacy Policy
+          - generic [ref=e562]:
+            - link "Navigate to Furnished Finder Facebook page" [ref=e563] [cursor=pointer]:
+              - /url: https://www.facebook.com/FURNISHEDFINDER
+              - img "Facebook logo" [ref=e564]
+            - link "Navigate to Furnished Finder Instagram account" [ref=e566] [cursor=pointer]:
+              - /url: https://www.instagram.com/furnishedfinder/
+              - img "Instagram logo" [ref=e567]
+            - link "Navigate to Furnished Finder LinkedIn" [ref=e569] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/furnished-finder/
+              - img "LinkedIn logo" [ref=e570]
+      - note [ref=e572]:
+        - generic [ref=e573]: web-ecom prod v2.202.2
+        - button "Close version banner" [ref=e574]:
+          - img [ref=e575]
+  - alert [ref=e577]
+  - generic:
+    - generic:
+      - generic [ref=e599]:
+        - iframe [ref=e600]:
+          - button "Close message from company" [ref=f13e4] [cursor=pointer]:
+            - img [ref=f13e5]
+        - iframe [ref=e601]:
+          - button "Hi there! How can I help you today?" [ref=f14e5] [cursor=pointer]
+      - iframe [ref=e602]:
+        - button "Open messaging window" [ref=f15e5] [cursor=pointer]:
+          - img [ref=f15e7]
+          - img [ref=f15e10]

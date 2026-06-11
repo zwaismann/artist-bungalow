@@ -1,0 +1,19 @@
+[     845ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[    1183ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification:0
+[    4756ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=start:0
+[   22817ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=7f632900-9959-4609-980f-e5542936576c/id-capture-screen:0
+[   46455ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=start:0
+[   50063ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[   50211ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=start:0
+[  954996ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification/error:0
+[ 5122811ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification:0
+[ 5124375ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=start:0
+[ 5125275ms] [ERROR] Datadog Browser SDK: DD_RUM is already initialized. @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[ 5126565ms] [ERROR] Datadog Browser SDK: DD_RUM is already initialized. @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[ 5126572ms] [ERROR] Datadog Browser SDK: DD_RUM is already initialized. @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[ 5128152ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=ea68e8d7-c96d-4835-991a-3676cf2e2a67/id-capture-screen:0
+[ 5227726ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=4ac000c9-1434-4062-8739-3c0f57755ce7/identity-jumio-standard-guidance:0
+[ 5233215ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=4ac000c9-1434-4062-8739-3c0f57755ce7/identity-jumio-standard-capture-screen:0
+[ 5253384ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification#step=finish:0
+[ 5269665ms] [WARNING] Amplitude Logger [Warn]: Plugin with name @amplitude/plugin-page-url-enrichment-browser already exists, skipping registration @ https://www.furnishedfinder.com/web-dashboard/assets/v2.278.0/_next/static/chunks/5950-890bddfde7709520.js:20
+[ 5269987ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/pm/verification/success:0

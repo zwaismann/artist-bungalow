@@ -1,0 +1,243 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - link "Skip to main content" [ref=e4] [cursor=pointer]:
+      - /url: "#main-content"
+    - region "Notifications alt+T"
+    - generic [ref=e6]:
+      - banner [ref=e7]:
+        - navigation "navbar" [ref=e8]:
+          - link "Furnished Finder logo" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - img "Furnished Finder logo" [ref=e12]
+          - generic [ref=e29]:
+            - link "Market Insights NEW" [ref=e30] [cursor=pointer]:
+              - /url: /stats
+              - text: Market Insights
+              - generic [ref=e31]: NEW
+            - link "Housing request" [ref=e32] [cursor=pointer]:
+              - /url: /housing-request
+            - link "About monthly rentals" [ref=e33] [cursor=pointer]:
+              - /url: /about-monthly-furnished-rentals
+            - group [ref=e34]:
+              - link "Resources" [ref=e35] [cursor=pointer]:
+                - /url: "#"
+              - list "Resources" [ref=e36]
+          - generic [ref=e37]:
+            - link "List your property" [ref=e38] [cursor=pointer]:
+              - /url: /list-your-property
+            - button "User menu" [ref=e40] [cursor=pointer]:
+              - generic [ref=e41]:
+                - img [ref=e43]
+                - img [ref=e47]
+        - navigation:
+          - button "Close sidebar" [ref=e52] [cursor=pointer]:
+            - img [ref=e53]
+      - main [ref=e58]:
+        - generic [ref=e662]:
+          - generic [ref=e663]:
+            - generic [ref=e664]:
+              - img "Check circle" [ref=e665]
+              - generic [ref=e667]: We never charge booking fees
+            - generic [ref=e668]:
+              - img "Check circle" [ref=e669]
+              - generic [ref=e671]: Average length of stay is 92 days
+            - generic [ref=e672]:
+              - img "Check circle" [ref=e673]
+              - generic [ref=e675]: Receive traveler contact details every time
+          - generic [ref=e677]:
+            - generic [ref=e678]:
+              - heading "Complete the payment information below to list your property" [level=2] [ref=e679]
+              - paragraph [ref=e680]:
+                - text: Call us with your questions 7 days a week!
+                - link "(855) 616-8588" [ref=e681] [cursor=pointer]:
+                  - /url: tel:(855) 616-8588
+            - form [ref=e682]:
+              - generic [ref=e684]:
+                - generic [ref=e686]:
+                  - heading "Pay with:" [level=3] [ref=e687]
+                  - radiogroup "Payment method" [ref=e689]:
+                    - generic [ref=e690]:
+                      - generic [ref=e691] [cursor=pointer]:
+                        - radio "Credit Card" [checked] [ref=e692]
+                        - img [ref=e694]
+                        - generic [ref=e698]: Credit Card
+                      - iframe [ref=e703]:
+                        - generic [active] [ref=f19e1]:
+                          - alert [ref=f19e2]
+                          - generic [ref=f19e11]:
+                            - generic [ref=f19e14]:
+                              - generic [ref=f19e16]:
+                                - generic [ref=f19e17]: First name *
+                                - textbox "First name *" [ref=f19e19]:
+                                  - /placeholder: First name
+                              - generic [ref=f19e21]:
+                                - generic [ref=f19e22]: Last name *
+                                - textbox "Last name *" [ref=f19e24]:
+                                  - /placeholder: Last name
+                            - generic [ref=f19e26]:
+                              - generic [ref=f19e28]:
+                                - generic [ref=f19e29]: Card number *
+                                - generic [ref=f19e31]:
+                                  - textbox "Card number *" [ref=f19e32]:
+                                    - /placeholder: 1234 1234 1234 1234
+                                  - img [ref=f19e35]
+                              - generic [ref=f19e41]:
+                                - generic [ref=f19e42]:
+                                  - generic [ref=f19e43]: Expiration *
+                                  - textbox "Expiration *" [ref=f19e45]:
+                                    - /placeholder: MM/YY
+                                - generic [ref=f19e46]:
+                                  - generic [ref=f19e47]: CVV *
+                                  - textbox "CVV *" [ref=f19e49]:
+                                    - /placeholder: CVV
+                            - generic [ref=f19e54]:
+                              - generic [ref=f19e55]: Zip *
+                              - textbox "Zip *" [ref=f19e57]:
+                                - /placeholder: Billing zip code
+                    - generic [ref=e704]:
+                      - generic [ref=e705] [cursor=pointer]:
+                        - radio "Google Pay" [ref=e706]
+                        - img [ref=e708]
+                        - generic [ref=e714]: Google Pay
+                      - paragraph [ref=e715]: You'll complete payment securely through Google Pay
+                - region "Payment Summary" [ref=e716]:
+                  - generic [ref=e720]:
+                    - heading "Order summary" [level=2] [ref=e721]
+                    - 'group "Price: 199.00 dollars" [ref=e722]':
+                      - paragraph [ref=e723]:
+                        - text: $199.00
+                        - generic "Price details"
+                    - button "Apply coupon" [ref=e724] [cursor=pointer]
+                    - generic [ref=e725]:
+                      - generic [ref=e726]:
+                        - generic [ref=e727]:
+                          - paragraph [ref=e728]: Property - Standard
+                          - paragraph [ref=e729]: $199.00
+                        - paragraph [ref=e730]: Los Angeles, California
+                        - paragraph [ref=e731]: $199.00 / year
+                      - generic [ref=e734]:
+                        - paragraph [ref=e735]: Total due today
+                        - paragraph [ref=e736]: $199.00
+                  - generic [ref=e739]:
+                    - button "Learn More" [ref=e740] [cursor=pointer]
+                    - generic [ref=e741]: Popular
+                    - heading "Expert listing setup service" [level=3] [ref=e742]
+                    - generic [ref=e743]:
+                      - list [ref=e744]:
+                        - listitem [ref=e745]:
+                          - generic [ref=e746]: •
+                          - generic [ref=e747]: 1-on-1 help from a Listing Specialist
+                        - listitem [ref=e748]:
+                          - generic [ref=e749]: •
+                          - generic [ref=e750]: Professionally written headline and description
+                        - listitem [ref=e751]:
+                          - generic [ref=e752]: •
+                          - generic [ref=e753]: Pricing guidance and photo recommendations
+                        - listitem [ref=e754]:
+                          - generic [ref=e755]: •
+                          - generic [ref=e756]: Great for new landlords or saving time
+                      - button "Add Professional Setup for $119.00" [ref=e757] [cursor=pointer]
+                      - paragraph [ref=e758]: One time fee and will not recur.
+                  - separator [ref=e759]
+                  - generic [ref=e762]:
+                    - generic [ref=e763]:
+                      - checkbox "terms" [ref=e764] [cursor=pointer]
+                      - img "check"
+                    - generic [ref=e765]:
+                      - text: I acknowledge that my subscription will auto-renew, and I can manage this in my account at any time.
+                      - generic [ref=e766]: "*"
+                  - generic [ref=e768]:
+                    - button "Buy annual subscription now" [ref=e770] [cursor=pointer]
+                    - region "Secure credit card payment" [ref=e771]:
+                      - paragraph [ref=e772]:
+                        - img [ref=e773]
+                        - text: Secure credit card payment
+                      - paragraph [ref=e775]: Your payment is protected with 128-bit SSL encryption.
+                  - contentinfo [ref=e777]:
+                    - text: "*By submitting this form you agree to the"
+                    - link "Terms and Conditions (opens in new tab)" [ref=e778] [cursor=pointer]:
+                      - /url: /property-listing-terms-and-conditions
+                      - text: Terms & Conditions
+                    - text: .
+            - generic [ref=e780]:
+              - button [ref=e781] [cursor=pointer]:
+                - img [ref=e783]
+              - generic [ref=e785]: Step 2 out of 2
+            - paragraph [ref=e787]: Property owners are verified and listings are screened for quality and safety. Additional ownership documents may be required.
+      - contentinfo [ref=e498]:
+        - generic [ref=e499]:
+          - generic [ref=e500]:
+            - generic [ref=e501]: Our app makes monthly rentals easier
+            - generic [ref=e502]: Whether you’re a landlord or a traveler, the Furnished Finder app helps you respond to messages faster, search more efficiently, and connect with ease—right from your phone.
+          - generic [ref=e503]:
+            - generic [ref=e504]:
+              - button "GET IT ON Google Play" [ref=e505] [cursor=pointer]:
+                - generic [ref=e506]:
+                  - img [ref=e508]
+                  - generic [ref=e513]:
+                    - generic [ref=e514]: GET IT ON
+                    - paragraph [ref=e515]: Google Play
+              - button "Download on the App Store" [ref=e516] [cursor=pointer]:
+                - generic [ref=e517]:
+                  - img [ref=e519]
+                  - generic [ref=e522]:
+                    - generic [ref=e523]: Download on the
+                    - paragraph [ref=e524]: App Store
+            - generic [ref=e525]:
+              - img "Download app QR code" [ref=e527]
+              - generic [ref=e528]: Download App
+        - generic [ref=e533]:
+          - link "Navigate to About Us page" [ref=e535] [cursor=pointer]:
+            - /url: https://www.furnishedfinder.com/about-us
+            - text: About Us
+          - link "Navigate to Contact Us page" [ref=e537] [cursor=pointer]:
+            - /url: https://furnishedfinder.zendesk.com/hc/en-us
+            - text: Contact Us
+          - link "Navigate to Careers page" [ref=e539] [cursor=pointer]:
+            - /url: https://furnishedfinder.applytojob.com/apply
+            - text: Careers
+          - link "Navigate to FAQs page" [ref=e541] [cursor=pointer]:
+            - /url: /faq
+            - text: FAQs
+          - link "Navigate to Blog page" [ref=e543] [cursor=pointer]:
+            - /url: /blog
+            - text: Blog
+          - link "Navigate to Landlord Diaries page" [ref=e545] [cursor=pointer]:
+            - /url: /Resources/podcast
+            - text: Landlord Diaries
+          - link "Navigate to KeyCheck page" [ref=e547] [cursor=pointer]:
+            - /url: https://www.keycheck.com/
+            - text: KeyCheck
+          - link "Navigate to Our Reviews page" [ref=e549] [cursor=pointer]:
+            - /url: /reviews
+            - text: Our Reviews
+          - link "Navigate to Our App page" [ref=e551] [cursor=pointer]:
+            - /url: /app
+            - text: Our App
+        - generic [ref=e554]:
+          - generic [ref=e555]:
+            - generic [ref=e556]:
+              - generic [ref=e557]: © 2026 Furnished Finder
+              - generic [ref=e558]: PO Box 30374, Austin, Texas 78755
+            - generic [ref=e559]:
+              - link "Navigate to Terms of Use page" [ref=e560] [cursor=pointer]:
+                - /url: /terms-of-use
+                - text: Terms of Use
+              - link "Navigate to Privacy Policy page" [ref=e561] [cursor=pointer]:
+                - /url: /privacy
+                - text: Privacy Policy
+          - generic [ref=e562]:
+            - link "Navigate to Furnished Finder Facebook page" [ref=e563] [cursor=pointer]:
+              - /url: https://www.facebook.com/FURNISHEDFINDER
+              - img "Facebook logo" [ref=e564]
+            - link "Navigate to Furnished Finder Instagram account" [ref=e566] [cursor=pointer]:
+              - /url: https://www.instagram.com/furnishedfinder/
+              - img "Instagram logo" [ref=e567]
+            - link "Navigate to Furnished Finder LinkedIn" [ref=e569] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/furnished-finder/
+              - img "LinkedIn logo" [ref=e570]
+      - note [ref=e572]:
+        - generic [ref=e573]: web-ecom prod v2.202.2
+        - button "Close version banner" [ref=e574]:
+          - img [ref=e575]
+  - alert [ref=e577]

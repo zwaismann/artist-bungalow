@@ -1,0 +1,245 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]:
+          - img [ref=e12]
+          - generic [ref=e14]: Location
+        - generic [ref=e16]: Dates
+        - generic [ref=e19]: Guests
+        - button "Submit search" [ref=e20]:
+          - img [ref=e21]
+      - generic [ref=e23]:
+        - button [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+        - button [ref=e27] [cursor=pointer]:
+          - img [ref=e28]
+        - button [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+        - img "Patrick Waismann" [ref=e34] [cursor=pointer]
+    - generic [ref=e36]:
+      - complementary [ref=e37]:
+        - link "Patrick View your profile" [ref=e39] [cursor=pointer]:
+          - /url: /patrick82/home
+          - generic [ref=e41]:
+            - generic [ref=e42]: Patrick
+            - paragraph [ref=e43]: View your profile
+        - navigation [ref=e45]:
+          - link "Edit Profile Update your personal information" [ref=e46] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/editprofile
+            - img [ref=e48]
+            - generic [ref=e52]:
+              - text: Edit Profile
+              - paragraph [ref=e53]: Update your personal information
+          - link "Security & Login Manage logins & account security" [ref=e54] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/settings?tab=1
+            - img [ref=e56]
+            - generic [ref=e58]:
+              - text: Security & Login
+              - paragraph [ref=e59]: Manage logins & account security
+          - link "Notifications Choose how you receive alerts" [ref=e60] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/settings?tab=3
+            - img [ref=e62]
+            - generic [ref=e65]:
+              - text: Notifications
+              - paragraph [ref=e66]: Choose how you receive alerts
+          - link "Settings & Privacy Privacy & general account settings" [ref=e67] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/settings?tab=2
+            - img [ref=e69]
+            - generic [ref=e72]:
+              - text: Settings & Privacy
+              - paragraph [ref=e73]: Privacy & general account settings
+          - link "Houfy Pay View payments & receipts" [ref=e74] [cursor=pointer]:
+            - /url: https://www.houfy.com/houfypay
+            - img [ref=e76]
+            - generic [ref=e78]:
+              - text: Houfy Pay
+              - paragraph [ref=e79]: View payments & receipts
+          - link "Language & Regions Select your language & region" [ref=e80] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/settings?tab=5
+            - img [ref=e82]
+            - generic [ref=e85]:
+              - text: Language & Regions
+              - paragraph [ref=e86]: Select your language & region
+          - link "Reviews See reviews you received or posted" [ref=e87] [cursor=pointer]:
+            - /url: https://www.houfy.com/account/my-reviews?type=by
+            - img [ref=e89]
+            - generic [ref=e91]:
+              - text: Reviews
+              - paragraph [ref=e92]: See reviews you received or posted
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - link "Terms" [ref=e95] [cursor=pointer]:
+              - /url: https://www.houfy.com/help/terms-of-service-11153
+            - link "Privacy" [ref=e96] [cursor=pointer]:
+              - /url: https://www.houfy.com/help/houfy-privacy-policy-12139
+            - link "Cookies" [ref=e97] [cursor=pointer]:
+              - /url: https://www.houfy.com/houfy-cookies-policy
+          - paragraph [ref=e98]: © 2026 Houfy, Inc
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - heading "Edit Profile" [level=1] [ref=e103]
+          - paragraph [ref=e104]: Manage your personal information and settings
+        - generic [ref=e106]:
+          - generic [ref=e108] [cursor=pointer]:
+            - img "Profile" [ref=e110]
+            - button [ref=e111]:
+              - img [ref=e112]
+          - generic [ref=e115]:
+            - heading "Profile Photo" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Drag and drop or click to change photo
+            - link "View profile" [ref=e118] [cursor=pointer]:
+              - /url: /patrick82/home
+              - img [ref=e119]
+              - text: View profile
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - heading "Personal Information" [level=3] [ref=e125]
+            - paragraph [ref=e126]: Update your personal details
+          - generic [ref=e127]:
+            - generic [ref=e129]:
+              - generic [ref=e130]:
+                - generic [ref=e131]:
+                  - generic [ref=e132]: First Name
+                  - generic [ref=e133]: Patrick
+                - generic [ref=e134]:
+                  - generic [ref=e135]: Last Name
+                  - generic [ref=e136]: Waismann
+              - button [ref=e138] [cursor=pointer]:
+                - img [ref=e139]
+            - generic [ref=e141]:
+              - img [ref=e143]
+              - generic [ref=e146]:
+                - generic [ref=e147]: Location
+                - generic [ref=e148]:
+                  - paragraph [ref=e149]: Not specified
+                  - button [ref=e150] [cursor=pointer]:
+                    - img [ref=e151]
+            - generic [ref=e153]:
+              - img [ref=e155]
+              - generic [ref=e158]:
+                - generic [ref=e159]: Gender
+                - generic [ref=e160]:
+                  - paragraph [ref=e161]: Not specified
+                  - button [ref=e162] [cursor=pointer]:
+                    - img [ref=e163]
+            - generic [ref=e165]:
+              - img [ref=e167]
+              - generic [ref=e170]:
+                - generic [ref=e171]: Languages
+                - generic [ref=e172]:
+                  - paragraph [ref=e173]: "15"
+                  - button [ref=e174] [cursor=pointer]:
+                    - img [ref=e175]
+            - generic [ref=e177]:
+              - img [ref=e179]
+              - generic [ref=e181]:
+                - generic [ref=e182]: Birthday
+                - generic [ref=e183]:
+                  - paragraph
+                  - button [ref=e184] [cursor=pointer]:
+                    - img [ref=e185]
+            - generic [ref=e187]:
+              - img [ref=e189]
+              - generic [ref=e192]:
+                - generic [ref=e193]: Website
+                - generic [ref=e194]:
+                  - paragraph [ref=e195]: Not specified
+                  - button [ref=e196] [cursor=pointer]:
+                    - img [ref=e197]
+            - generic [ref=e199]:
+              - generic [ref=e201]: About Me
+              - button "Write about yourself" [ref=e203] [cursor=pointer]:
+                - img [ref=e204]
+                - text: Write about yourself
+        - generic [ref=e205]:
+          - heading "Contact Information" [level=2] [ref=e206]
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - button "Email Addresses 1 of 1 verified" [ref=e209] [cursor=pointer]:
+                - generic [ref=e210]:
+                  - img [ref=e212]
+                  - generic [ref=e215]:
+                    - heading "Email Addresses" [level=3] [ref=e216]
+                    - paragraph [ref=e217]: 1 of 1 verified
+                - img [ref=e219]
+              - generic [ref=e269]:
+                - generic [ref=e272]:
+                  - generic [ref=e273]:
+                    - img [ref=e300]
+                    - generic [ref=e303]:
+                      - paragraph [ref=e304]: zwaismann@gmail.com
+                      - paragraph [ref=e305]: Primary email • Verified
+                  - button "Change" [ref=e307] [cursor=pointer]:
+                    - img [ref=e308]
+                    - generic [ref=e311]: Change
+                - button "Add secondary email" [ref=e287] [cursor=pointer]:
+                  - img [ref=e288]
+                  - text: Add secondary email
+                - generic [ref=e289]:
+                  - img [ref=e290]
+                  - paragraph [ref=e293]: Secondary emails can be used to recover your account and receive notifications.
+              - generic [ref=e314]:
+                - img [ref=e316]
+                - heading "Change Email Address" [level=3] [ref=e319]
+                - paragraph [ref=e320]:
+                  - text: Change primary email to
+                  - strong
+                - generic [ref=e321]:
+                  - generic [ref=e322]: Enter your password to confirm
+                  - textbox "Your password" [active] [ref=e323]
+                - generic [ref=e324]:
+                  - button "Cancel" [ref=e325] [cursor=pointer]
+                  - button "Confirm" [disabled] [ref=e326]
+            - button "Phone Numbers 1 of 1 verified" [ref=e222] [cursor=pointer]:
+              - generic [ref=e223]:
+                - img [ref=e225]
+                - generic [ref=e227]:
+                  - heading "Phone Numbers" [level=3] [ref=e228]
+                  - paragraph [ref=e229]: 1 of 1 verified
+              - img [ref=e231]
+        - generic [ref=e234]:
+          - generic [ref=e235]:
+            - heading "Time zone" [level=3] [ref=e236]
+            - paragraph [ref=e237]: Set your preferred timezone
+          - generic [ref=e239]:
+            - img [ref=e241]
+            - generic [ref=e244]:
+              - generic [ref=e245]: Time Zone
+              - generic [ref=e246]:
+                - paragraph [ref=e247]: Not specified
+                - button [ref=e248] [cursor=pointer]:
+                  - img [ref=e249]
+        - generic [ref=e251]:
+          - heading "Account" [level=3] [ref=e252]
+          - generic [ref=e253]:
+            - link "Security & Verifications" [ref=e254] [cursor=pointer]:
+              - /url: /account/settings?tab=1
+              - generic [ref=e255]: Security & Verifications
+              - img [ref=e256]
+            - link "Notification Settings" [ref=e258] [cursor=pointer]:
+              - /url: /account/settings?tab=3
+              - generic [ref=e259]: Notification Settings
+              - img [ref=e260]
+    - button "Toggle chat" [ref=e263] [cursor=pointer]:
+      - generic [ref=e264]:
+        - img
+    - generic:
+      - button "Close notification":
+        - img
+  - alert [ref=e265]
+  - iframe [ref=e268]:
+    - generic [ref=f5e2]:
+      - generic [ref=f5e5]:
+        - link "Privacy" [ref=f5e6] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/privacy/
+        - text: "-"
+        - link "Terms" [ref=f5e7] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/terms/
+      - generic [ref=f5e8]:
+        - generic [ref=f5e9]:
+          - text: protected by
+          - strong [ref=f5e10]: reCAPTCHA
+        - generic [ref=f5e11]: "-"

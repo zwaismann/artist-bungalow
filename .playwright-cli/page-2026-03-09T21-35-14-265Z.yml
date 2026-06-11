@@ -1,0 +1,959 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - banner [ref=e6]:
+        - link [ref=e7] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e9]:
+          - button [ref=e10] [cursor=pointer]:
+            - img [ref=e11]
+          - button [ref=e13] [cursor=pointer]:
+            - img [ref=e14]
+          - button [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+          - img "Patrick Waismann" [ref=e20] [cursor=pointer]
+      - generic [ref=e21]:
+        - generic [ref=e24]:
+          - search "Vacation rental search section" [ref=e26]:
+            - group "Search form inputs" [ref=e27]:
+              - generic [ref=e28] [cursor=pointer]:
+                - generic [ref=e29]:
+                  - generic [ref=e30]: Where
+                  - textbox "Search by destination or city name" [ref=e31]:
+                    - /placeholder: Search destinations
+                - listbox "Search suggestions"
+              - button "Select dates" [ref=e33] [cursor=pointer]:
+                - generic [ref=e34]:
+                  - generic [ref=e35]: When
+                  - generic [ref=e36]: Add dates
+              - button "Select number of guests" [ref=e38] [cursor=pointer]:
+                - generic [ref=e39]:
+                  - generic [ref=e40]: Guests
+                  - generic [ref=e42]: Add guests
+                - button "Submit search" [ref=e44]:
+                  - img [ref=e45]
+          - generic [ref=e47]:
+            - heading "Why Pay Service Fees? Save With Houfy" [level=1] [ref=e48]
+            - paragraph [ref=e49]: Book vacation rentals directly with property owners. No service charges. Just amazing properties at the best prices.
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - heading "Featured vacation rentals" [level=2] [ref=e53]
+            - paragraph [ref=e54]: Discover handpicked properties from trusted hosts around the world
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - heading "Featured" [level=4] [ref=e59]
+                - button "toggle favorite" [ref=e60] [cursor=pointer]:
+                  - img [ref=e62]
+                - link "SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI next" [ref=e63] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/2025-renovated-o-on-sapphire-beach-o-king-bed/129200
+                  - generic [ref=e65]:
+                    - generic [ref=e66]:
+                      - img "SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI" [ref=e68]
+                      - img "SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI" [ref=e70]
+                    - text: prev
+                    - generic: next
+              - generic [ref=e85]:
+                - generic [ref=e86]:
+                  - img [ref=e87]
+                  - link "St. Thomas" [ref=e90] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/St.-Thomas--St.-Thomas--U.S.-Virgin-Islands
+                  - generic [ref=e91]: •
+                  - link "U.S. Virgin Islands" [ref=e92] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/U.S.-Virgin-Islands
+                - heading "SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI" [level=3] [ref=e93]:
+                  - link "SeaLaVie • On Sapphire Beach & Resort • St. Thomas, USVI" [ref=e94] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/2025-renovated-o-on-sapphire-beach-o-king-bed/129200
+                - generic [ref=e95]:
+                  - img [ref=e96]
+                  - generic [ref=e101]: 0 bedrooms
+                  - img [ref=e102]
+                  - generic [ref=e105]: 1 bathroom
+                - generic [ref=e106]:
+                  - generic [ref=e107]:
+                    - img [ref=e108]
+                    - generic [ref=e110]: "5"
+                  - generic [ref=e111]: 29 reviews
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - heading "Featured" [level=4] [ref=e115]
+                - button "toggle favorite" [ref=e116] [cursor=pointer]:
+                  - img [ref=e118]
+                - link "Stillwaters in Corolla Stillwaters in Corolla next" [ref=e119] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/stillwaters-in-corolla/330333
+                  - generic [ref=e121]:
+                    - generic [ref=e122]:
+                      - img "Stillwaters in Corolla" [ref=e124]
+                      - img "Stillwaters in Corolla" [ref=e126]
+                    - text: prev
+                    - generic: next
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - img [ref=e141]
+                  - link "Currituck County" [ref=e144] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Currituck-County--North-Carolina--United-States
+                  - generic [ref=e145]: •
+                  - link "North Carolina" [ref=e146] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/North-Carolina--United-States
+                - heading "Stillwaters in Corolla" [level=3] [ref=e147]:
+                  - link "Stillwaters in Corolla" [ref=e148] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/stillwaters-in-corolla/330333
+                - generic [ref=e149]:
+                  - img [ref=e150]
+                  - generic [ref=e155]: 5 bedrooms
+                  - img [ref=e156]
+                  - generic [ref=e159]: 4½ bathrooms
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - heading "Featured" [level=4] [ref=e163]
+                - button "toggle favorite" [ref=e164] [cursor=pointer]:
+                  - img [ref=e166]
+                - link "Rome Vacation Home Rome Vacation Home next" [ref=e167] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/rome-vacation-home/330299
+                  - generic [ref=e169]:
+                    - generic [ref=e170]:
+                      - img "Rome Vacation Home" [ref=e172]
+                      - img "Rome Vacation Home" [ref=e174]
+                    - text: prev
+                    - generic: next
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - img [ref=e189]
+                  - link "Rome" [ref=e192] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Rome--Lazio--Italy
+                  - generic [ref=e193]: •
+                  - link "Lazio" [ref=e194] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Lazio--Italy
+                - heading "Rome Vacation Home" [level=3] [ref=e195]:
+                  - link "Rome Vacation Home" [ref=e196] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/rome-vacation-home/330299
+                - generic [ref=e197]:
+                  - img [ref=e198]
+                  - generic [ref=e203]: 3 bedrooms
+                  - img [ref=e204]
+                  - generic [ref=e207]: 3½ bathrooms
+            - generic [ref=e208]:
+              - generic [ref=e209]:
+                - heading "Featured" [level=4] [ref=e211]
+                - button "toggle favorite" [ref=e212] [cursor=pointer]:
+                  - img [ref=e214]
+                - link "Private House with Lots of Outdoor Treats! Private House with Lots of Outdoor Treats! next" [ref=e215] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/private-house-with-lots-of-outdoor-treats/330871
+                  - generic [ref=e217]:
+                    - generic [ref=e218]:
+                      - img "Private House with Lots of Outdoor Treats!" [ref=e220]
+                      - img "Private House with Lots of Outdoor Treats!" [ref=e222]
+                    - text: prev
+                    - generic: next
+              - generic [ref=e235]:
+                - generic [ref=e236]:
+                  - img [ref=e237]
+                  - link "Fort Lauderdale" [ref=e240] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Fort-Lauderdale--Florida--United-States
+                  - generic [ref=e241]: •
+                  - link "Florida" [ref=e242] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Florida--United-States
+                - heading "Private House with Lots of Outdoor Treats!" [level=3] [ref=e243]:
+                  - link "Private House with Lots of Outdoor Treats!" [ref=e244] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/private-house-with-lots-of-outdoor-treats/330871
+                - generic [ref=e245]:
+                  - img [ref=e246]
+                  - generic [ref=e251]: 1 bedroom
+                  - img [ref=e252]
+                  - generic [ref=e255]: 1 bathroom
+            - generic [ref=e256]:
+              - generic [ref=e257]:
+                - heading "Featured" [level=4] [ref=e259]
+                - button "toggle favorite" [ref=e260] [cursor=pointer]:
+                  - img [ref=e262]
+                - link "next" [ref=e263] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/serenity-s-edge/12128
+                  - generic [ref=e265]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - img [ref=e285]
+                  - link "Cape Coral" [ref=e288] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Cape-Coral--Florida--United-States
+                  - generic [ref=e289]: •
+                  - link "Florida" [ref=e290] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Florida--United-States
+                - heading "Serenity’s Edge" [level=3] [ref=e291]:
+                  - link "Serenity’s Edge" [ref=e292] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/serenity-s-edge/12128
+                - generic [ref=e293]:
+                  - img [ref=e294]
+                  - generic [ref=e299]: 4 bedrooms
+                  - img [ref=e300]
+                  - generic [ref=e303]: 4 bathrooms
+                - generic [ref=e304]:
+                  - generic [ref=e305]:
+                    - img [ref=e306]
+                    - generic [ref=e308]: "5"
+                  - generic [ref=e309]: 1 review
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - heading "Featured" [level=4] [ref=e313]
+                - button "toggle favorite" [ref=e314] [cursor=pointer]:
+                  - img [ref=e316]
+                - link "next" [ref=e317] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/grand-master-suite-luxury-beach-golf-resort/330277
+                  - generic [ref=e319]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e337]:
+                - generic [ref=e338]:
+                  - img [ref=e339]
+                  - link "Cabo San Lucas" [ref=e342] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Cabo-San-Lucas--Baja-California-Sur--Mexico
+                  - generic [ref=e343]: •
+                  - link "Baja California Sur" [ref=e344] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Baja-California-Sur--Mexico
+                - heading "Grand Master Suite Luxury Beach & Golf Resort" [level=3] [ref=e345]:
+                  - link "Grand Master Suite Luxury Beach & Golf Resort" [ref=e346] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/grand-master-suite-luxury-beach-golf-resort/330277
+                - generic [ref=e347]:
+                  - img [ref=e348]
+                  - generic [ref=e353]: 1 bedroom
+                  - img [ref=e354]
+                  - generic [ref=e357]: 2 bathrooms
+                - generic [ref=e358]:
+                  - generic [ref=e359]:
+                    - img [ref=e360]
+                    - generic [ref=e362]: "5"
+                  - generic [ref=e363]: 4 reviews
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - heading "Featured" [level=4] [ref=e367]
+                - button "toggle favorite" [ref=e368] [cursor=pointer]:
+                  - img [ref=e370]
+                - link "next" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/private-log-cabin-near-helen-alpenhaus-cabins/326940
+                  - generic [ref=e373]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e391]:
+                - generic [ref=e392]:
+                  - img [ref=e393]
+                  - link "Sautee Nacoochee" [ref=e396] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Sautee-Nacoochee--Georgia--United-States
+                  - generic [ref=e397]: •
+                  - link "Georgia" [ref=e398] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Georgia--United-States
+                - heading "Private Log Cabin with Hot Tub-Alpenhaus Cabins" [level=3] [ref=e399]:
+                  - link "Private Log Cabin with Hot Tub-Alpenhaus Cabins" [ref=e400] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/private-log-cabin-near-helen-alpenhaus-cabins/326940
+                - generic [ref=e401]:
+                  - img [ref=e402]
+                  - generic [ref=e407]: 2 bedrooms
+                  - img [ref=e408]
+                  - generic [ref=e411]: 2 bathrooms
+                - generic [ref=e412]:
+                  - generic [ref=e413]:
+                    - img [ref=e414]
+                    - generic [ref=e416]: "5"
+                  - generic [ref=e417]: 32 reviews
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - heading "Featured" [level=4] [ref=e421]
+                - button "toggle favorite" [ref=e422] [cursor=pointer]:
+                  - img [ref=e424]
+                - link "next" [ref=e425] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/relaxing-safest-place-to-stay/329459
+                  - generic [ref=e427]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e445]:
+                - generic [ref=e446]:
+                  - img [ref=e447]
+                  - link "Danville" [ref=e450] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Danville--California--United-States
+                  - generic [ref=e451]: •
+                  - link "California" [ref=e452] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/California--United-States
+                - heading "Relaxing & safest place to stay !" [level=3] [ref=e453]:
+                  - link "Relaxing & safest place to stay !" [ref=e454] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/relaxing-safest-place-to-stay/329459
+                - generic [ref=e455]:
+                  - img [ref=e456]
+                  - generic [ref=e461]: 5 bedrooms
+                  - img [ref=e462]
+                  - generic [ref=e465]: 2 bathrooms
+                - generic [ref=e466]:
+                  - generic [ref=e467]:
+                    - img [ref=e468]
+                    - generic [ref=e470]: "5"
+                  - generic [ref=e471]: 14 reviews
+            - generic [ref=e472]:
+              - generic [ref=e473]:
+                - heading "Featured" [level=4] [ref=e475]
+                - button "toggle favorite" [ref=e476] [cursor=pointer]:
+                  - img [ref=e478]
+                - link "next" [ref=e479] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/spanish-steps-rome-unique-views-artist-s-loft/329605
+                  - generic [ref=e481]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e501]:
+                - generic [ref=e502]:
+                  - img [ref=e503]
+                  - link "Rome" [ref=e506] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Rome--Lazio--Italy
+                  - generic [ref=e507]: •
+                  - link "Lazio" [ref=e508] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Lazio--Italy
+                - heading "Spanish Steps Rome unique panoramic artist's loft" [level=3] [ref=e509]:
+                  - link "Spanish Steps Rome unique panoramic artist's loft" [ref=e510] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/spanish-steps-rome-unique-views-artist-s-loft/329605
+                - generic [ref=e511]:
+                  - img [ref=e512]
+                  - generic [ref=e517]: 1 bedroom
+                  - img [ref=e518]
+                  - generic [ref=e521]: 1 bathroom
+                - generic [ref=e522]:
+                  - generic [ref=e523]:
+                    - img [ref=e524]
+                    - generic [ref=e526]: "4.84"
+                  - generic [ref=e527]: 100 reviews
+            - generic [ref=e528]:
+              - generic [ref=e529]:
+                - heading "Featured" [level=4] [ref=e531]
+                - button "toggle favorite" [ref=e532] [cursor=pointer]:
+                  - img [ref=e534]
+                - link "next" [ref=e535] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/private-island-cottage-free-boat-launch/272110
+                  - generic [ref=e537]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e555]:
+                - generic [ref=e556]:
+                  - img [ref=e557]
+                  - link "Wayne County" [ref=e560] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Wayne-County--Michigan--United-States
+                  - generic [ref=e561]: •
+                  - link "Michigan" [ref=e562] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Michigan--United-States
+                - heading "Private Island Cottage Free boat launch" [level=3] [ref=e563]:
+                  - link "Private Island Cottage Free boat launch" [ref=e564] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/private-island-cottage-free-boat-launch/272110
+                - generic [ref=e565]:
+                  - img [ref=e566]
+                  - generic [ref=e571]: 3 bedrooms
+                  - img [ref=e572]
+                  - generic [ref=e575]: 2 bathrooms
+            - generic [ref=e576]:
+              - generic [ref=e577]:
+                - heading "Featured" [level=4] [ref=e579]
+                - button "toggle favorite" [ref=e580] [cursor=pointer]:
+                  - img [ref=e582]
+                - link "next" [ref=e583] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/monumental-waves/124928
+                  - generic [ref=e585]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e605]:
+                - generic [ref=e606]:
+                  - img [ref=e607]
+                  - link "Kill Devil Hills" [ref=e610] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Kill-Devil-Hills--North-Carolina--United-States
+                  - generic [ref=e611]: •
+                  - link "North Carolina" [ref=e612] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/North-Carolina--United-States
+                - heading "Heated Pool, Ocean View, Hot Tub, Game Area" [level=3] [ref=e613]:
+                  - link "Heated Pool, Ocean View, Hot Tub, Game Area" [ref=e614] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/monumental-waves/124928
+                - generic [ref=e615]:
+                  - img [ref=e616]
+                  - generic [ref=e621]: 4 bedrooms
+                  - img [ref=e622]
+                  - generic [ref=e625]: 3½ bathrooms
+                - generic [ref=e626]:
+                  - generic [ref=e627]:
+                    - img [ref=e628]
+                    - generic [ref=e630]: "5"
+                  - generic [ref=e631]: 22 reviews
+            - generic [ref=e632]:
+              - generic [ref=e633]:
+                - heading "Featured" [level=4] [ref=e635]
+                - button "toggle favorite" [ref=e636] [cursor=pointer]:
+                  - img [ref=e638]
+                - link "next" [ref=e639] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/a-frame-w-fire-pit-hot-tub-sauna-sports-court/329527
+                  - generic [ref=e641]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e659]:
+                - generic [ref=e660]:
+                  - img [ref=e661]
+                  - link "Blue Ridge" [ref=e664] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Blue-Ridge--Georgia--United-States
+                  - generic [ref=e665]: •
+                  - link "Georgia" [ref=e666] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Georgia--United-States
+                - heading "A-Frame w/Fire Pit, Hot Tub, Sauna, Sports Court" [level=3] [ref=e667]:
+                  - link "A-Frame w/Fire Pit, Hot Tub, Sauna, Sports Court" [ref=e668] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/a-frame-w-fire-pit-hot-tub-sauna-sports-court/329527
+                - generic [ref=e669]:
+                  - img [ref=e670]
+                  - generic [ref=e675]: 2 bedrooms
+                  - img [ref=e676]
+                  - generic [ref=e679]: 1 bathroom
+                - generic [ref=e680]:
+                  - generic [ref=e681]:
+                    - img [ref=e682]
+                    - generic [ref=e684]: "5"
+                  - generic [ref=e685]: 24 reviews
+          - link "Show more" [ref=e687] [cursor=pointer]:
+            - /url: https://www.houfy.com/deals?type=featured
+        - generic [ref=e689]:
+          - generic [ref=e690]:
+            - heading "Special offers" [level=2] [ref=e691]
+            - paragraph [ref=e692]: Enjoy exclusive deals and discounts on top-rated vacation rentals worldwide
+          - generic [ref=e693]:
+            - generic [ref=e694]:
+              - generic [ref=e695]:
+                - heading "Special offer" [level=4] [ref=e697]
+                - button "toggle favorite" [ref=e698] [cursor=pointer]:
+                  - img [ref=e700]
+                - link "next" [ref=e701] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/villamare-3328-5-stars-ocean-views/106025
+                  - generic [ref=e703]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e721]:
+                - generic [ref=e722]:
+                  - img [ref=e723]
+                  - link "Hilton Head Island" [ref=e726] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Hilton-Head-Island--South-Carolina--United-States
+                  - generic [ref=e727]: •
+                  - link "South Carolina" [ref=e728] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/South-Carolina--United-States
+                - heading "Villamare 3328, 5 stars, Ocean views" [level=3] [ref=e729]:
+                  - link "Villamare 3328, 5 stars, Ocean views" [ref=e730] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/villamare-3328-5-stars-ocean-views/106025
+                - generic [ref=e731]:
+                  - img [ref=e732]
+                  - generic [ref=e737]: 2 bedrooms
+                  - img [ref=e738]
+                  - generic [ref=e741]: 2 bathrooms
+                - generic [ref=e742]:
+                  - generic [ref=e743]:
+                    - img [ref=e744]
+                    - generic [ref=e746]: "5"
+                  - generic [ref=e747]: 3 reviews
+                - generic [ref=e749]:
+                  - generic [ref=e751]: 10% OFF
+                  - generic [ref=e752]: "Between: Apr 11, 2026 – May 30, 2026"
+            - generic [ref=e753]:
+              - generic [ref=e754]:
+                - heading "Special offer" [level=4] [ref=e756]
+                - button "toggle favorite" [ref=e757] [cursor=pointer]:
+                  - img [ref=e759]
+                - link "next" [ref=e760] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/fully-serviced-three-bed-apartment-with-balcony/125108
+                  - generic [ref=e762]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e780]:
+                - generic [ref=e781]:
+                  - img [ref=e782]
+                  - link "London" [ref=e785] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/London--England--United-Kingdom
+                  - generic [ref=e786]: •
+                  - link "England" [ref=e787] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/England--United-Kingdom
+                - heading "Fully Serviced Three Bed Apartment with Balcony" [level=3] [ref=e788]:
+                  - link "Fully Serviced Three Bed Apartment with Balcony" [ref=e789] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/fully-serviced-three-bed-apartment-with-balcony/125108
+                - generic [ref=e790]:
+                  - img [ref=e791]
+                  - generic [ref=e796]: 3 bedrooms
+                  - img [ref=e797]
+                  - generic [ref=e800]: 3½ bathrooms
+                - generic [ref=e802]:
+                  - generic [ref=e804]: 25% OFF
+                  - generic [ref=e805]: "Between: Feb 27, 2026 – Mar 31, 2026"
+            - generic [ref=e806]:
+              - generic [ref=e807]:
+                - heading "Special offer" [level=4] [ref=e809]
+                - button "toggle favorite" [ref=e810] [cursor=pointer]:
+                  - img [ref=e812]
+                - link "next" [ref=e813] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/hale-iki/327747
+                  - generic [ref=e815]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e833]:
+                - generic [ref=e834]:
+                  - img [ref=e835]
+                  - link "Kailua-Kona" [ref=e838] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Kailua~Kona--Hawaii--United-States
+                  - generic [ref=e839]: •
+                  - link "Hawaii" [ref=e840] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Hawaii--United-States
+                - heading "Hale Iki" [level=3] [ref=e841]:
+                  - link "Hale Iki" [ref=e842] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/hale-iki/327747
+                - generic [ref=e843]:
+                  - img [ref=e844]
+                  - generic [ref=e849]: 1 bedroom
+                  - img [ref=e850]
+                  - generic [ref=e853]: 1 bathroom
+                - generic [ref=e855]:
+                  - generic [ref=e857]: 10% OFF
+                  - generic [ref=e858]: "Between: Feb 10, 2026 – Mar 12, 2026"
+            - generic [ref=e859]:
+              - generic [ref=e860]:
+                - heading "Special offer" [level=4] [ref=e862]
+                - button "toggle favorite" [ref=e863] [cursor=pointer]:
+                  - img [ref=e865]
+                - link "next" [ref=e866] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/best-location-on-the-island-just-steps-to-the-sand/100935
+                  - generic [ref=e868]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e888]:
+                - generic [ref=e889]:
+                  - img [ref=e890]
+                  - link "Hilton Head Island" [ref=e893] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Hilton-Head-Island--South-Carolina--United-States
+                  - generic [ref=e894]: •
+                  - link "South Carolina" [ref=e895] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/South-Carolina--United-States
+                - heading "BEST Location on the island just steps to the sand" [level=3] [ref=e896]:
+                  - link "BEST Location on the island just steps to the sand" [ref=e897] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/best-location-on-the-island-just-steps-to-the-sand/100935
+                - generic [ref=e898]:
+                  - img [ref=e899]
+                  - generic [ref=e904]: 2 bedrooms
+                  - img [ref=e905]
+                  - generic [ref=e908]: 3 bathrooms
+                - generic [ref=e909]:
+                  - generic [ref=e910]:
+                    - img [ref=e911]
+                    - generic [ref=e913]: "5"
+                  - generic [ref=e914]: 5 reviews
+                - generic [ref=e916]:
+                  - generic [ref=e918]: 10% OFF
+                  - generic [ref=e919]: "Between: Apr 4, 2026 – Aug 29, 2026"
+            - generic [ref=e920]:
+              - generic [ref=e921]:
+                - heading "Special offer" [level=4] [ref=e923]
+                - button "toggle favorite" [ref=e924] [cursor=pointer]:
+                  - img [ref=e926]
+                - link "next" [ref=e927] [cursor=pointer]:
+                  - /url: https://www.houfy.com/lodging/disney-family-villa-south-facing-pool/325656
+                  - generic [ref=e929]:
+                    - text: prev
+                    - generic: next
+              - generic [ref=e947]:
+                - generic [ref=e948]:
+                  - img [ref=e949]
+                  - link "Polk County" [ref=e952] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Polk-County--Florida--United-States
+                  - generic [ref=e953]: •
+                  - link "Florida" [ref=e954] [cursor=pointer]:
+                    - /url: https://www.houfy.com/vacation-rentals/Florida--United-States
+                - heading "Disney Magic Meets Golf Course Relaxation! ️ 20% OFF selected dates!" [level=3] [ref=e955]:
+                  - link "Disney Magic Meets Golf Course Relaxation! ️ 20% OFF selected dates!" [ref=e956] [cursor=pointer]:
+                    - /url: https://www.houfy.com/lodging/disney-family-villa-south-facing-pool/325656
+                - generic [ref=e957]:
+                  - img [ref=e958]
+                  - generic [ref=e963]: 4 bedrooms
+                  - img [ref=e964]
+                  - generic [ref=e967]: 4 bathrooms
+                - generic [ref=e969]:
+                  - generic [ref=e971]: 17% OFF
+                  - generic [ref=e972]: "Between: Apr 30, 2026 – Jun 8, 2026"
+          - link "Show more" [ref=e974] [cursor=pointer]:
+            - /url: https://www.houfy.com/deals?type=last_minute
+        - generic [ref=e978]:
+          - generic [ref=e979]:
+            - img [ref=e981]
+            - heading "No Service Fees" [level=3] [ref=e983]
+            - paragraph [ref=e984]: Save money by booking directly with property owners
+          - generic [ref=e985]:
+            - img [ref=e987]
+            - heading "Direct Communication" [level=3] [ref=e989]
+            - paragraph [ref=e990]: Connect directly with hosts for personalized service
+          - generic [ref=e991]:
+            - img [ref=e993]
+            - heading "87,000+ Properties" [level=3] [ref=e996]
+            - paragraph [ref=e997]: Choose from thousands of unique vacation rentals worldwide
+        - generic [ref=e1000]:
+          - generic [ref=e1001]:
+            - heading "Find out what Houfy is all about" [level=2] [ref=e1002]
+            - paragraph [ref=e1003]: Houfy is the largest vacation rental direct booking advertising platform for rental property types such as homes, condos, cabins, apartments and rooms all over the world. The Houfy community offers more than 87,000 vacation rentals with no service fees.
+            - paragraph [ref=e1004]: Guests and hosts save money by booking vacation homes directly on Houfy. Easily search for a Houfy property and book your next condo, cabin, or house directly with a Houfy host anywhere in the world.
+            - generic [ref=e1005]:
+              - generic [ref=e1006]:
+                - img [ref=e1008]
+                - generic [ref=e1011]: 87K+
+                - generic [ref=e1012]: Properties
+              - generic [ref=e1013]:
+                - img [ref=e1015]
+                - generic [ref=e1020]: 100K+
+                - generic [ref=e1021]: Happy Guests
+              - generic [ref=e1022]:
+                - img [ref=e1024]
+                - generic [ref=e1027]: 0%
+                - generic [ref=e1028]: Service Fees
+          - generic [ref=e1029]:
+            - heading "Your Guests. Your Terms. Your Profits" [level=3] [ref=e1030]
+            - paragraph [ref=e1031]: Join thousands of hosts who have discovered the freedom of direct bookings
+            - list [ref=e1032]:
+              - listitem [ref=e1033]:
+                - generic [ref=e1035]: Keep 100% of your profits
+              - listitem [ref=e1036]:
+                - generic [ref=e1038]: Direct communication with guests
+              - listitem [ref=e1039]:
+                - generic [ref=e1041]: Set your own terms and policies
+              - listitem [ref=e1042]:
+                - generic [ref=e1044]: No booking or service fees
+            - link "Get started" [ref=e1045] [cursor=pointer]:
+              - /url: https://www.houfy.com/new/listing
+              - text: Get started
+              - img [ref=e1046]
+        - generic [ref=e1049]:
+          - generic [ref=e1050]:
+            - heading "What members say about us" [level=2] [ref=e1051]
+            - paragraph [ref=e1052]: Hear from our community of hosts and guests who love the Houfy experience
+          - generic [ref=e1053]:
+            - generic [ref=e1054]:
+              - generic [ref=e1055]:
+                - generic [ref=e1056]: ★
+                - generic [ref=e1057]: ★
+                - generic [ref=e1058]: ★
+                - generic [ref=e1059]: ★
+                - generic [ref=e1060]: ★
+              - paragraph [ref=e1061]: Easy and seamless process
+              - paragraph [ref=e1062]: "\"It was an easy and seamless process booking an apartment for my holiday on Houfy. The best aspect was that there were no extra costs. I saw the same place for more on other websites and saved money booking through Houfy. It really makes a difference and you can spend the additional saved money on experiences and/or tours.\""
+              - generic [ref=e1064]:
+                - generic [ref=e1065]: AP
+                - generic [ref=e1066]:
+                  - generic [ref=e1067]: Anna P
+                  - generic [ref=e1068]: Guest, Australia
+            - generic [ref=e1069]:
+              - generic [ref=e1070]:
+                - generic [ref=e1071]: ★
+                - generic [ref=e1072]: ★
+                - generic [ref=e1073]: ★
+                - generic [ref=e1074]: ★
+                - generic [ref=e1075]: ★
+              - paragraph [ref=e1076]: Houfy platform worked well.
+              - paragraph [ref=e1077]: "\"Houfy provided me with links to all communications with our host, allowed me to review the rental anytime and pay for our vacation without having to go back through and reenter info. The contracting practice was all online so I didn’t have to do any paperwork after the fact. Happy with the outcome!\""
+              - generic [ref=e1079]:
+                - generic [ref=e1080]: AN
+                - generic [ref=e1081]:
+                  - generic [ref=e1082]: Angela
+                  - generic [ref=e1083]: Guest, United States
+            - generic [ref=e1084]:
+              - generic [ref=e1085]:
+                - generic [ref=e1086]: ★
+                - generic [ref=e1087]: ★
+                - generic [ref=e1088]: ★
+                - generic [ref=e1089]: ★
+                - generic [ref=e1090]: ★
+              - paragraph [ref=e1091]: A genuine vacation rental website that travelers can trust
+              - paragraph [ref=e1092]: "\"We are thrilled to have a website for true vacation rentals by owner! This is the perfect place for travelers to book their vacation rental without paying thousands in service fees. Instead, they can use those savings to purchase travel insurance, giving them added peace of mind.\""
+              - paragraph [ref=e1093]: "\"Houfy verifies every owner before listing their properties, making the site safe and trustworthy for travelers — all while paying less for the same vacation rental home. I highly recommend Houfy to every vacation rental owner!\""
+              - generic [ref=e1095]:
+                - generic [ref=e1096]: "NO"
+                - generic [ref=e1097]:
+                  - generic [ref=e1098]: Ning O
+                  - generic [ref=e1099]: Host, United States
+          - iframe [ref=e1102]:
+            - generic [ref=f9e2]:
+              - link "Trustpilot reviews" [ref=f9e3] [cursor=pointer]:
+                - /url: https://www.trustpilot.com/review/www.houfy.com?utm_medium=trustbox&utm_source=MicroCombo
+                - generic [ref=f9e4]: Excellent
+                - img "4.8 out of 5 star rating on Trustpilot" [ref=f9e9]
+                - generic [ref=f9e29]:
+                  - generic [ref=f9e30]:
+                    - strong [ref=f9e31]: "557"
+                    - text: reviews on
+                  - img "Trustpilot" [ref=f9e35]
+              - generic [ref=f9e39]: Rated Excellent. 4.8 out of 5. 557 reviews on Trustpilot
+              - generic [ref=f9e40]: Click to view the company's Trustpilot profile
+        - generic [ref=e1104]:
+          - heading "Discover our Destinations" [level=3] [ref=e1105]
+          - tablist [ref=e1108]:
+            - tab "Countries" [selected] [ref=e1109] [cursor=pointer]
+            - tab "US States" [ref=e1110] [cursor=pointer]
+            - tab "Cities" [ref=e1111] [cursor=pointer]
+          - generic [ref=e1112]:
+            - link "Croatia Vacation rentals" [ref=e1114] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/croatia
+              - generic [ref=e1115]: Croatia
+              - generic [ref=e1116]: Vacation rentals
+            - link "United States Vacation rentals" [ref=e1118] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/united-states
+              - generic [ref=e1119]: United States
+              - generic [ref=e1120]: Vacation rentals
+            - link "Italy Vacation rentals" [ref=e1122] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/italy
+              - generic [ref=e1123]: Italy
+              - generic [ref=e1124]: Vacation rentals
+            - link "France Vacation rentals" [ref=e1126] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/france
+              - generic [ref=e1127]: France
+              - generic [ref=e1128]: Vacation rentals
+            - link "Denmark Vacation rentals" [ref=e1130] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/denmark
+              - generic [ref=e1131]: Denmark
+              - generic [ref=e1132]: Vacation rentals
+            - link "Spain Vacation rentals" [ref=e1134] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/spain
+              - generic [ref=e1135]: Spain
+              - generic [ref=e1136]: Vacation rentals
+            - link "Germany Vacation rentals" [ref=e1138] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/germany
+              - generic [ref=e1139]: Germany
+              - generic [ref=e1140]: Vacation rentals
+            - link "Switzerland Vacation rentals" [ref=e1142] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/switzerland
+              - generic [ref=e1143]: Switzerland
+              - generic [ref=e1144]: Vacation rentals
+            - link "Finland Vacation rentals" [ref=e1146] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/finland
+              - generic [ref=e1147]: Finland
+              - generic [ref=e1148]: Vacation rentals
+            - link "Austria Vacation rentals" [ref=e1150] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/austria
+              - generic [ref=e1151]: Austria
+              - generic [ref=e1152]: Vacation rentals
+            - link "United Kingdom Vacation rentals" [ref=e1154] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/united-kingdom
+              - generic [ref=e1155]: United Kingdom
+              - generic [ref=e1156]: Vacation rentals
+            - link "Greece Vacation rentals" [ref=e1158] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/greece
+              - generic [ref=e1159]: Greece
+              - generic [ref=e1160]: Vacation rentals
+            - link "Portugal Vacation rentals" [ref=e1162] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/portugal
+              - generic [ref=e1163]: Portugal
+              - generic [ref=e1164]: Vacation rentals
+            - link "Czechia Vacation rentals" [ref=e1166] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/czechia
+              - generic [ref=e1167]: Czechia
+              - generic [ref=e1168]: Vacation rentals
+            - link "Poland Vacation rentals" [ref=e1170] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/poland
+              - generic [ref=e1171]: Poland
+              - generic [ref=e1172]: Vacation rentals
+            - link "Canada Vacation rentals" [ref=e1174] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/canada
+              - generic [ref=e1175]: Canada
+              - generic [ref=e1176]: Vacation rentals
+            - link "Netherlands Vacation rentals" [ref=e1178] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/netherlands
+              - generic [ref=e1179]: Netherlands
+              - generic [ref=e1180]: Vacation rentals
+            - link "Mexico Vacation rentals" [ref=e1182] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/mexico
+              - generic [ref=e1183]: Mexico
+              - generic [ref=e1184]: Vacation rentals
+            - link "Colombia Vacation rentals" [ref=e1186] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/colombia
+              - generic [ref=e1187]: Colombia
+              - generic [ref=e1188]: Vacation rentals
+            - link "Sweden Vacation rentals" [ref=e1190] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/sweden
+              - generic [ref=e1191]: Sweden
+              - generic [ref=e1192]: Vacation rentals
+            - link "Hungary Vacation rentals" [ref=e1194] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/hungary
+              - generic [ref=e1195]: Hungary
+              - generic [ref=e1196]: Vacation rentals
+            - link "Belgium Vacation rentals" [ref=e1198] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/belgium
+              - generic [ref=e1199]: Belgium
+              - generic [ref=e1200]: Vacation rentals
+            - link "Thailand Vacation rentals" [ref=e1202] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/thailand
+              - generic [ref=e1203]: Thailand
+              - generic [ref=e1204]: Vacation rentals
+            - link "Norway Vacation rentals" [ref=e1206] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/norway
+              - generic [ref=e1207]: Norway
+              - generic [ref=e1208]: Vacation rentals
+            - link "Cyprus Vacation rentals" [ref=e1210] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/cyprus
+              - generic [ref=e1211]: Cyprus
+              - generic [ref=e1212]: Vacation rentals
+            - link "Barbados Vacation rentals" [ref=e1214] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/barbados
+              - generic [ref=e1215]: Barbados
+              - generic [ref=e1216]: Vacation rentals
+            - link "Türkiye Vacation rentals" [ref=e1218] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/trkiye
+              - generic [ref=e1219]: Türkiye
+              - generic [ref=e1220]: Vacation rentals
+            - link "Sint Maarten Vacation rentals" [ref=e1222] [cursor=pointer]:
+              - /url: https://www.houfy.com/d/sint-maarten
+              - generic [ref=e1223]: Sint Maarten
+              - generic [ref=e1224]: Vacation rentals
+          - button "Show more" [ref=e1226] [cursor=pointer]
+    - generic [ref=e1228]:
+      - generic [ref=e1230]:
+        - generic [ref=e1231]:
+          - heading "Company" [level=3] [ref=e1232]
+          - list [ref=e1233]:
+            - listitem [ref=e1234]:
+              - link "About" [ref=e1235] [cursor=pointer]:
+                - /url: https://www.houfy.com/about
+            - listitem [ref=e1236]:
+              - link "Pricing" [ref=e1237] [cursor=pointer]:
+                - /url: https://www.houfy.com/pricing
+            - listitem [ref=e1238]:
+              - link "Contact" [ref=e1239] [cursor=pointer]:
+                - /url: https://www.houfy.com/contactus
+            - listitem [ref=e1240]:
+              - link "Help" [ref=e1241] [cursor=pointer]:
+                - /url: https://www.houfy.com/help
+        - generic [ref=e1242]:
+          - heading "Hosting" [level=3] [ref=e1243]
+          - list [ref=e1244]:
+            - listitem [ref=e1245]:
+              - link "Add listing" [ref=e1246] [cursor=pointer]:
+                - /url: https://www.houfy.com/new/listing
+            - listitem [ref=e1247]:
+              - link "Community Standards" [ref=e1248] [cursor=pointer]:
+                - /url: https://www.houfy.com/houfy-community-standards
+            - listitem [ref=e1249]:
+              - link "Listing Guidelines" [ref=e1250] [cursor=pointer]:
+                - /url: https://www.houfy.com/houfy-listing-platform-guidelines
+            - listitem [ref=e1251]:
+              - link "Publishing Platform" [ref=e1252] [cursor=pointer]:
+                - /url: https://www.houfy.com/houfy-publishing-platform-guidelines
+        - generic [ref=e1253]:
+          - heading "Resources" [level=3] [ref=e1254]
+          - list [ref=e1255]:
+            - listitem [ref=e1256]:
+              - link "Houfy Blog" [ref=e1257] [cursor=pointer]:
+                - /url: https://www.houfy.com/blog
+            - listitem [ref=e1258]:
+              - link "Software Partners" [ref=e1259] [cursor=pointer]:
+                - /url: https://www.houfy.com/software-partners
+            - listitem [ref=e1260]:
+              - link "houfyProtect" [ref=e1261] [cursor=pointer]:
+                - /url: https://www.houfy.com/houfy-protect
+            - listitem [ref=e1262]:
+              - link "Branding Assets" [ref=e1263] [cursor=pointer]:
+                - /url: https://www.houfy.com/branding
+        - generic [ref=e1264]:
+          - heading "Settings" [level=3] [ref=e1265]
+          - generic [ref=e1266]:
+            - generic [ref=e1267]:
+              - generic [ref=e1268]: Select Currency
+              - combobox "Select Currency" [ref=e1269]:
+                - option "USD ($)" [selected]
+                - option "EUR (€)"
+                - option "GBP (£)"
+                - option "AED (د.إ)"
+                - option "ANG (ƒ)"
+                - option "ARS ($)"
+                - option "AUD (A$)"
+                - option "BAM (KM)"
+                - option "BRL (R$)"
+                - option "BSD (B$)"
+                - option "CAD ($)"
+                - option "CHF (CHF)"
+                - option "CLP ($)"
+                - option "CNY (¥)"
+                - option "COP ($)"
+                - option "CRC (₡)"
+                - option "CZK (Kč)"
+                - option "DKK (kr)"
+                - option "FJD (FJ$)"
+                - option "GHS (GH₵)"
+                - option "GTQ (Q)"
+                - option "HKD ($)"
+                - option "HNL (L)"
+                - option "HRK (kn)"
+                - option "HUF (Ft)"
+                - option "IDR (Rp)"
+                - option "ILS (₪)"
+                - option "INR (₹)"
+                - option "ISK (kr)"
+                - option "JMD (J$)"
+                - option "JPY (¥)"
+                - option "KRW (₩)"
+                - option "LKR (₨)"
+                - option "MAD (د.م.)"
+                - option "MMK (K)"
+                - option "MXN ($)"
+                - option "MYR (RM)"
+                - option "NOK (kr)"
+                - option "NZD ($)"
+                - option "PEN (S/.)"
+                - option "PHP (₱)"
+                - option "PKR (₨)"
+                - option "PLN (zł)"
+                - option "RON (lei)"
+                - option "RSD (дин)"
+                - option "RUB (₽)"
+                - option "SEK (kr)"
+                - option "SGD (S$)"
+                - option "THB (฿)"
+                - option "TND (د.ت)"
+                - option "TRY (₺)"
+                - option "TTD (TT$)"
+                - option "TWD (NT$)"
+                - option "VEF (Bs)"
+                - option "VND (₫)"
+                - option "XAF (FCFA)"
+                - option "XCD ($)"
+                - option "XPF (F)"
+                - option "ZAR (R)"
+              - generic:
+                - img
+            - generic [ref=e1270]:
+              - combobox [ref=e1271]:
+                - option "English" [selected]
+                - option "Español"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "Français"
+                - option "Italiano"
+                - option "Nederlands"
+                - option "Português (Brasil)"
+              - generic:
+                - img
+      - generic [ref=e1273]:
+        - generic [ref=e1274]:
+          - generic [ref=e1275]: © 2026 Houfy, Inc
+          - generic [ref=e1276]:
+            - link "Terms" [ref=e1277] [cursor=pointer]:
+              - /url: https://www.houfy.com/help/terms-of-service-11153
+            - generic [ref=e1278]: ·
+            - link "Privacy" [ref=e1279] [cursor=pointer]:
+              - /url: https://www.houfy.com/help/houfy-privacy-policy-12139
+            - generic [ref=e1280]: ·
+            - link "Cookies" [ref=e1281] [cursor=pointer]:
+              - /url: https://www.houfy.com/houfy-cookies-policy
+            - generic [ref=e1282]: ·
+            - link "Sitemap" [ref=e1283] [cursor=pointer]:
+              - /url: https://www.houfy.com/sitemaps/vacation-rentals
+        - generic [ref=e1284]:
+          - link "Facebook" [ref=e1285] [cursor=pointer]:
+            - /url: https://www.facebook.com/houfy
+            - img [ref=e1286]
+          - link "Twitter/X" [ref=e1288] [cursor=pointer]:
+            - /url: https://twitter.com/houfy_inc
+            - img [ref=e1289]
+          - link "Instagram" [ref=e1291] [cursor=pointer]:
+            - /url: https://www.instagram.com/houfy_inc/
+            - img [ref=e1292]
+          - link "YouTube" [ref=e1294] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCB8x7Xe_5iEHgLcVveBvJeQ
+            - img [ref=e1295]
+    - button "Toggle chat" [ref=e1298] [cursor=pointer]:
+      - generic [ref=e1299]:
+        - img
+    - generic:
+      - button "Close notification":
+        - img
+  - alert [ref=e1300]

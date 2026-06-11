@@ -1,0 +1,380 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - generic [ref=e24]:
+          - generic:
+            - list
+          - list [ref=e26]:
+            - listitem [ref=e27] [cursor=pointer]:
+              - button "pw" [ref=e28]:
+                - img [ref=e30]
+                - generic [ref=e33]: pw
+    - generic [ref=e34]:
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - link "Dashboard (current)" [ref=e41] [cursor=pointer]:
+            - /url: /members/pm-dashboard
+            - img [ref=e42]
+            - text: Dashboard
+            - generic [ref=e45]: (current)
+        - listitem [ref=e46]:
+          - link "My Profile Your phone or email is not verified. Please go to profile to complete verification." [ref=e47] [cursor=pointer]:
+            - /url: /members/profile
+            - img [ref=e48]
+            - text: My Profile
+            - generic "Your phone or email is not verified. Please go to profile to complete verification." [ref=e51]
+        - listitem [ref=e53]:
+          - link "My Saved Searches" [ref=e54] [cursor=pointer]:
+            - /url: /members/my-saved-search
+            - img [ref=e55]
+            - text: My Saved Searches
+        - listitem [ref=e59]:
+          - link "Tenant Leads" [ref=e60] [cursor=pointer]:
+            - /url: /members/tenant-lead
+            - img [ref=e61]
+            - text: Tenant Leads
+        - listitem [ref=e65]:
+          - link "Messages" [ref=e66] [cursor=pointer]:
+            - /url: /members/Tenant-Message
+            - img [ref=e67]
+            - text: Messages
+        - listitem [ref=e71]:
+          - generic [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Edit Listing
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Contact Info" [ref=e78] [cursor=pointer]:
+                - /url: /members/edit-property?p=TEMP2739073
+                - text: Contact Info
+            - listitem [ref=e80]:
+              - link "Location" [ref=e81] [cursor=pointer]:
+                - /url: /members/PM/Edit-location?p=TEMP2739073
+                - text: Location
+            - listitem [ref=e83]:
+              - link "Details" [ref=e84] [cursor=pointer]:
+                - /url: /members/PM/Edit-details?p=TEMP2739073_1
+                - text: Details
+            - listitem [ref=e86]:
+              - link "Amenities" [ref=e87] [cursor=pointer]:
+                - /url: /members/PM/Edit-amenities-and-nearby?p=TEMP2739073_1
+                - text: Amenities
+            - listitem [ref=e89]:
+              - link "Photos" [ref=e90] [cursor=pointer]:
+                - /url: /members/PM/Edit-Photos?p=TEMP2739073_1
+                - text: Photos
+            - listitem [ref=e92]:
+              - link "Calendar" [ref=e93] [cursor=pointer]:
+                - /url: /members/PM/Availability?p=TEMP2739073_1
+                - text: Calendar
+            - listitem [ref=e95]:
+              - link "Notification Settings" [ref=e96] [cursor=pointer]:
+                - /url: /members/notification-settings?p=TEMP2739073
+                - text: Notification Settings
+            - listitem [ref=e98]:
+              - link "Verification" [ref=e99] [cursor=pointer]:
+                - /url: /members/pm/verification?p=TEMP2739073
+                - text: Verification
+            - listitem [ref=e101]:
+              - link "Listing Status" [ref=e102] [cursor=pointer]:
+                - /url: /members/PM/Listing-Status?p=TEMP2739073_1
+                - text: Listing Status
+            - listitem [ref=e104]:
+              - link "House Rules" [ref=e105] [cursor=pointer]:
+                - /url: /members/houserules?p=TEMP2739073_1
+                - text: House Rules
+        - listitem [ref=e107]:
+          - generic [ref=e108] [cursor=pointer]:
+            - img [ref=e109]
+            - text: Landlord Tools
+        - listitem [ref=e111]:
+          - generic [ref=e112] [cursor=pointer]:
+            - img [ref=e113]
+            - text: My Properties
+        - listitem [ref=e116]:
+          - generic [ref=e117] [cursor=pointer]:
+            - img [ref=e118]
+            - text: Account
+        - listitem [ref=e120]:
+          - generic [ref=e121] [cursor=pointer]:
+            - img [ref=e122]
+            - text: Favorite Properties
+        - listitem [ref=e125]:
+          - link "Contact Us" [ref=e126] [cursor=pointer]:
+            - /url: https://support.furnishedfinder.com/hc/en-us
+            - img [ref=e127]
+            - text: Contact Us
+      - generic [ref=e132]:
+        - generic [ref=e135]:
+          - img [ref=e137]
+          - generic [ref=e139]: Edit Listing - Amenities & Nearby - Step 4 of 10
+        - generic [ref=e143]:
+          - generic [ref=e145]:
+            - generic [ref=e147]: Updating Amenities for
+            - combobox [ref=e149]:
+              - option "<No Property Headline>" [selected]
+          - generic [ref=e150]:
+            - generic [ref=e152]:
+              - heading "Property TEMP2739073_1" [level=3] [ref=e153]
+              - text: 
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - heading "Amenities" [level=5] [ref=e157]
+                - generic [ref=e158]:
+                  - generic [ref=e159]:
+                    - generic [ref=e161]: General
+                    - generic [ref=e163] [cursor=pointer]:
+                      - checkbox "Essentials (Kitchenware, Bathware, Linens)" [ref=e164]
+                      - generic [ref=e165]: Essentials (Kitchenware, Bathware, Linens)
+                    - generic [ref=e167] [cursor=pointer]:
+                      - checkbox "Air Conditioning" [ref=e168]
+                      - generic [ref=e169]: Air Conditioning
+                    - generic [ref=e171] [cursor=pointer]:
+                      - checkbox "Heating" [ref=e172]
+                      - generic [ref=e173]: Heating
+                    - generic [ref=e175] [cursor=pointer]:
+                      - checkbox "Elevator" [ref=e176]
+                      - generic [ref=e177]: Elevator
+                    - generic [ref=e179] [cursor=pointer]:
+                      - checkbox "Quiet Environment" [ref=e180]
+                      - generic [ref=e181]: Quiet Environment
+                    - generic [ref=e183] [cursor=pointer]:
+                      - checkbox "Full-size ironing board" [ref=e184]
+                      - generic [ref=e185]: Full-size ironing board
+                    - generic [ref=e187] [cursor=pointer]:
+                      - checkbox "Storage" [ref=e188]
+                      - generic [ref=e189]: Storage
+                    - generic [ref=e191] [cursor=pointer]:
+                      - checkbox "Housekeeping" [ref=e192]
+                      - generic [ref=e193]: Housekeeping
+                    - generic [ref=e195] [cursor=pointer]:
+                      - checkbox "Hair dryer" [ref=e196]
+                      - generic [ref=e197]: Hair dryer
+                    - generic [ref=e199] [cursor=pointer]:
+                      - checkbox "Non-Smoking" [ref=e200]
+                      - generic [ref=e201]: Non-Smoking
+                    - generic [ref=e203] [cursor=pointer]:
+                      - checkbox "Pets live on this property" [ref=e204]
+                      - generic [ref=e205]: Pets live on this property
+                    - generic [ref=e207] [cursor=pointer]:
+                      - checkbox "Starter toiletries (toilet paper, soap, shampoo, etc.)" [ref=e208]
+                      - generic [ref=e209]: Starter toiletries (toilet paper, soap, shampoo, etc.)
+                    - generic [ref=e211] [cursor=pointer]:
+                      - checkbox "Breakfast Included" [ref=e212]
+                      - generic [ref=e213]: Breakfast Included
+                    - generic [ref=e215] [cursor=pointer]:
+                      - checkbox "Dedicated workspace for laptops" [ref=e216]
+                      - generic [ref=e217]: Dedicated workspace for laptops
+                    - generic [ref=e219] [cursor=pointer]:
+                      - checkbox "Pack 'n Play/travel crib" [ref=e220]
+                      - generic [ref=e221]: Pack 'n Play/travel crib
+                    - generic [ref=e223] [cursor=pointer]:
+                      - checkbox "Room-darkening shades" [ref=e224]
+                      - generic [ref=e225]: Room-darkening shades
+                    - generic [ref=e227] [cursor=pointer]:
+                      - checkbox "Indoor fireplace" [ref=e228]
+                      - generic [ref=e229]: Indoor fireplace
+                    - generic [ref=e231] [cursor=pointer]:
+                      - checkbox "Portable fans" [ref=e232]
+                      - generic [ref=e233]: Portable fans
+                    - generic [ref=e235] [cursor=pointer]:
+                      - checkbox "Exercise equipment" [ref=e236]
+                      - generic [ref=e237]: Exercise equipment
+                    - generic [ref=e239] [cursor=pointer]:
+                      - checkbox "Game console" [ref=e240]
+                      - generic [ref=e241]: Game console
+                  - generic [ref=e242]:
+                    - generic [ref=e244]: Electronics
+                    - generic [ref=e246] [cursor=pointer]:
+                      - checkbox "TV" [ref=e247]
+                      - generic [ref=e248]: TV
+                    - generic [ref=e250] [cursor=pointer]:
+                      - checkbox "Cable TV" [ref=e251]
+                      - generic [ref=e252]: Cable TV
+                    - generic [ref=e254] [cursor=pointer]:
+                      - checkbox "DVR" [ref=e255]
+                      - generic [ref=e256]: DVR
+                    - generic [ref=e258] [cursor=pointer]:
+                      - checkbox "Smart TV" [ref=e259]
+                      - generic [ref=e260]: Smart TV
+                    - generic [ref=e262] [cursor=pointer]:
+                      - checkbox "Internet" [ref=e263]
+                      - generic [ref=e264]: Internet
+                    - generic [ref=e266] [cursor=pointer]:
+                      - checkbox "WiFi" [ref=e267]
+                      - generic [ref=e268]: WiFi
+                  - generic [ref=e269]:
+                    - generic [ref=e271]: Kitchen
+                    - generic [ref=e273] [cursor=pointer]:
+                      - checkbox "Full Kitchen" [ref=e274]
+                      - generic [ref=e275]: Full Kitchen
+                    - generic [ref=e277] [cursor=pointer]:
+                      - checkbox "Kitchenette" [ref=e278]
+                      - generic [ref=e279]: Kitchenette
+                    - generic [ref=e281] [cursor=pointer]:
+                      - checkbox "Stovetop" [ref=e282]
+                      - generic [ref=e283]: Stovetop
+                    - generic [ref=e285] [cursor=pointer]:
+                      - checkbox "Dishwasher" [ref=e286]
+                      - generic [ref=e287]: Dishwasher
+                    - generic [ref=e289] [cursor=pointer]:
+                      - checkbox "Full-size fridge" [ref=e290]
+                      - generic [ref=e291]: Full-size fridge
+                    - generic [ref=e293] [cursor=pointer]:
+                      - checkbox "Microwave" [ref=e294]
+                      - generic [ref=e295]: Microwave
+                    - generic [ref=e297] [cursor=pointer]:
+                      - checkbox "Kitchen Essentials (plates, utensils, pots/pans, etc.)" [ref=e298]
+                      - generic [ref=e299]: Kitchen Essentials (plates, utensils, pots/pans, etc.)
+                    - generic [ref=e301] [cursor=pointer]:
+                      - checkbox "Starter Kitchen Essentials (dish soap, paper towels, sponge, etc)" [ref=e302]
+                      - generic [ref=e303]: Starter Kitchen Essentials (dish soap, paper towels, sponge, etc)
+                    - generic [ref=e305] [cursor=pointer]:
+                      - checkbox "Cleaning products" [ref=e306]
+                      - generic [ref=e307]: Cleaning products
+                  - generic [ref=e308]:
+                    - generic [ref=e310]: Bathroom
+                    - generic [ref=e312] [cursor=pointer]:
+                      - checkbox "Cleaning products for Bathroom" [ref=e313]
+                      - generic [ref=e314]: Cleaning products for Bathroom
+                    - generic [ref=e316] [cursor=pointer]:
+                      - checkbox "Rain shower" [ref=e317]
+                      - generic [ref=e318]: Rain shower
+                  - generic [ref=e319]:
+                    - generic [ref=e321]: Fitness
+                    - generic [ref=e323] [cursor=pointer]:
+                      - checkbox "Pool" [ref=e324]
+                      - generic [ref=e325]: Pool
+                    - generic [ref=e327] [cursor=pointer]:
+                      - checkbox "Hot Tub" [ref=e328]
+                      - generic [ref=e329]: Hot Tub
+                    - generic [ref=e331] [cursor=pointer]:
+                      - checkbox "Gym" [ref=e332]
+                      - generic [ref=e333]: Gym
+                  - generic [ref=e334]:
+                    - generic [ref=e336]: Safety
+                    - generic [ref=e338] [cursor=pointer]:
+                      - checkbox "Security" [ref=e339]
+                      - generic [ref=e340]: Security
+                    - generic [ref=e342] [cursor=pointer]:
+                      - checkbox "Alarm" [ref=e343]
+                      - generic [ref=e344]: Alarm
+                    - generic [ref=e346] [cursor=pointer]:
+                      - checkbox "Smoke Detector" [ref=e347]
+                      - generic [ref=e348]: Smoke Detector
+                    - generic [ref=e350] [cursor=pointer]:
+                      - checkbox "Carbon Monoxide Detector" [ref=e351]
+                      - generic [ref=e352]: Carbon Monoxide Detector
+                    - generic [ref=e354] [cursor=pointer]:
+                      - checkbox "First Aid Kit" [ref=e355]
+                      - generic [ref=e356]: First Aid Kit
+                    - generic [ref=e358] [cursor=pointer]:
+                      - checkbox "Fire Extinguisher" [ref=e359]
+                      - generic [ref=e360]: Fire Extinguisher
+                    - generic [ref=e362] [cursor=pointer]:
+                      - checkbox "Gated" [ref=e363]
+                      - generic [ref=e364]: Gated
+                  - generic [ref=e365]:
+                    - generic [ref=e367]: Parking
+                    - generic [ref=e369] [cursor=pointer]:
+                      - checkbox "Free Parking on Premises" [ref=e370]
+                      - generic [ref=e371]: Free Parking on Premises
+                    - generic [ref=e373] [cursor=pointer]:
+                      - checkbox "Close to public transportation" [ref=e374]
+                      - generic [ref=e375]: Close to public transportation
+                    - generic [ref=e377] [cursor=pointer]:
+                      - checkbox "EV Charger" [ref=e378]
+                      - generic [ref=e379]: EV Charger
+                  - generic [ref=e380]:
+                    - generic [ref=e382]: Accessibility
+                    - generic [ref=e384] [cursor=pointer]:
+                      - checkbox "Wheelchair Accessible" [ref=e385]
+                      - generic [ref=e386]: Wheelchair Accessible
+                    - generic [ref=e388] [cursor=pointer]:
+                      - checkbox "Wide Hallways" [ref=e389]
+                      - generic [ref=e390]: Wide Hallways
+                    - generic [ref=e392] [cursor=pointer]:
+                      - checkbox "Stairs at Entrance and/or Inside the Property" [ref=e393]
+                      - generic [ref=e394]: Stairs at Entrance and/or Inside the Property
+                    - generic [ref=e396] [cursor=pointer]:
+                      - checkbox "Disabled Parking Available" [ref=e397]
+                      - generic [ref=e398]: Disabled Parking Available
+                - generic [ref=e399]:
+                  - generic [ref=e401]:
+                    - generic [ref=e403]: Describe Parking type
+                    - textbox [ref=e405]:
+                      - /placeholder: Ex. garage, carport, underground, assigned space, public spaces available, street parking, off-site parking
+                  - generic [ref=e407]:
+                    - generic [ref=e409]:
+                      - text: Property Description
+                      - text: "*"
+                    - textbox "Please describe best parts of this property. No personal contact details are allowed in this box." [ref=e411]
+              - generic [ref=e412]:
+                - button "Save" [ref=e413] [cursor=pointer]
+                - paragraph [ref=e414]:
+                  - text: Need help?
+                  - link "Contact Us." [ref=e415] [cursor=pointer]:
+                    - /url: https://support.furnishedfinder.com/hc/en-us
+                - button "Next" [ref=e417] [cursor=pointer]: Next
+  - contentinfo [ref=e418]:
+    - list [ref=e424]:
+      - listitem [ref=e425]:
+        - link "About Us" [ref=e426] [cursor=pointer]:
+          - /url: /about-us
+      - listitem [ref=e427]:
+        - link "Contact Us" [ref=e428] [cursor=pointer]:
+          - /url: https://furnishedfinder.zendesk.com/hc/en-us
+      - listitem [ref=e429]:
+        - link "Careers" [ref=e430] [cursor=pointer]:
+          - /url: https://furnishedfinder.applytojob.com/apply
+      - listitem [ref=e431]:
+        - link "FAQs" [ref=e432] [cursor=pointer]:
+          - /url: /faq
+      - listitem [ref=e433]:
+        - link "Blog" [ref=e434] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e435]:
+        - link "Landlord Diaries" [ref=e436] [cursor=pointer]:
+          - /url: /Resources/podcast
+      - listitem [ref=e437]:
+        - link "KeyCheck" [ref=e438] [cursor=pointer]:
+          - /url: https://www.keycheck.com/
+      - listitem [ref=e439]:
+        - link "Our Reviews" [ref=e440] [cursor=pointer]:
+          - /url: /reviews
+      - listitem [ref=e441]:
+        - link "Our App" [ref=e442] [cursor=pointer]:
+          - /url: /app
+    - generic [ref=e445]:
+      - generic [ref=e446]:
+        - generic [ref=e447]:
+          - generic [ref=e448]: © 2026 Furnished Finder
+          - generic [ref=e449]: PO Box 30374, Austin, Texas 78755
+        - list [ref=e450]:
+          - listitem [ref=e451]:
+            - link "Terms Of Use" [ref=e452] [cursor=pointer]:
+              - /url: /terms-of-use
+          - listitem [ref=e453]:
+            - link "Privacy Policy" [ref=e454] [cursor=pointer]:
+              - /url: /privacy
+      - list [ref=e456]:
+        - listitem [ref=e457]:
+          - link "Navigate to Furnished Finder Facebook page" [ref=e458] [cursor=pointer]:
+            - /url: https://www.facebook.com/FURNISHEDFINDER
+            - img "Facebook logo" [ref=e459]
+        - listitem [ref=e461]:
+          - link "Navigate to Furnished Finder Instagram account" [ref=e462] [cursor=pointer]:
+            - /url: https://www.instagram.com/furnishedfinder/
+            - img "Instagram logo" [ref=e463]
+        - listitem [ref=e465]:
+          - link "Navigate to Furnished Finder LinkedIn" [ref=e466] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/furnished-finder/
+            - img "LinkedIn logo" [ref=e467]
+  - generic [ref=e469]:
+    - iframe [ref=e471]:
+      
+    - img "Video Tutorial" [ref=e473] [cursor=pointer]
