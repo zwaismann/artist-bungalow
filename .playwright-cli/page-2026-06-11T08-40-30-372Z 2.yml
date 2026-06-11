@@ -1,0 +1,242 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "THE ARTIST BUNGALOW" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - link "Identity" [ref=e6] [cursor=pointer]:
+          - /url: "#identity"
+        - link "Logos" [ref=e7] [cursor=pointer]:
+          - /url: "#logos"
+        - link "Colors" [ref=e8] [cursor=pointer]:
+          - /url: "#colors"
+        - link "Typography" [ref=e9] [cursor=pointer]:
+          - /url: "#typography"
+  - banner [ref=e10]:
+    - img "Artist Bungalow Exterior" [ref=e12]
+    - generic [ref=e14]:
+      - generic [ref=e15]: The Artist Bungalow
+      - heading "Brand Guidelines" [level=1] [ref=e16]
+      - paragraph [ref=e17]: Version 2.0 — Definitive digital style book and identity system.
+  - generic [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]: 01 // The Identity
+      - heading "Brand Essence" [level=2] [ref=e22]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Classic Hollywood glamour meets mid-century modernism meets California warmth.
+        - generic [ref=e26]:
+          - paragraph [ref=e27]: An intimate, art-filled retreat perched in the Hollywood Hills, steps from the legendary Hollywood Bowl. Sophisticated but fun, bold but sun-drenched, editorial but personal.
+          - paragraph [ref=e28]:
+            - strong [ref=e29]: "Design Direction:"
+            - text: Stahl House clean lines + Chateau Marmont storied warmth + Eames playful geometry + Palm Springs golden hour. Never sterile, never corporate. The visual language of a well-traveled creative who knows good design but doesn't take themselves too seriously.
+      - img "Living Room with piano" [ref=e31]
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]: 02 // The Marks
+      - heading "Logos & Wordmarks" [level=2] [ref=e36]
+      - paragraph [ref=e37]: The brand utilizes purely typographical marks. The primary identity is bold and cinematic, rooted directly in the aesthetic of mid-century Hollywood theater signage. The secondary mark is an intimate, editorial signature.
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]: Primary Wordmark / Onyx Container
+        - generic [ref=e41]: THE ARTIST BUNGALOW
+      - generic [ref=e42]:
+        - generic [ref=e43]: Primary Wordmark / Cream Container
+        - generic [ref=e44]: THE ARTIST BUNGALOW
+      - generic [ref=e45]:
+        - generic [ref=e46]: Secondary Signature / Editorial Use Only
+        - generic [ref=e47]: The Artist Bungalow
+      - generic [ref=e48]:
+        - generic [ref=e49]: Brand Accent / Minimal Monogram
+        - generic [ref=e50]: A
+        - generic [ref=e51]: B
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - generic [ref=e55]: 03 // The Palette
+      - heading "Color Tokens" [level=2] [ref=e56]
+      - paragraph [ref=e57]: Nine tones rooted directly in the physical property. Brass fixtures, onyx silhouettes, sun-washed ivory walls, and terracotta hillside views.
+    - generic [ref=e58]:
+      - heading "Primary Core" [level=3] [ref=e59]
+      - generic [ref=e60]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: Onyx
+            - generic [ref=e66]: Deep near-black for text, dark sections, grounding contrast.
+          - generic [ref=e67]: "#1A1A1A"
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Brass
+            - generic [ref=e73]: The signature accent. Warm gold with patina, not shiny.
+          - generic [ref=e74]: "#C49A3C"
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: Ivory
+            - generic [ref=e80]: Warm off-white background. Sun-washed, not clinical.
+          - generic [ref=e81]: "#FAF6F0"
+    - generic [ref=e82]:
+      - heading "Secondary Accents" [level=3] [ref=e83]
+      - generic [ref=e84]:
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]: Terracotta
+            - generic [ref=e90]: Spanish tile, warm earth. Accent for warmth and energy.
+          - generic [ref=e91]: "#C2614B"
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: Olive
+            - generic [ref=e97]: Hillside greenery, tropical garden. Natural and grounding.
+          - generic [ref=e98]: "#5A6B4A"
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - generic [ref=e103]: Ocean
+            - generic [ref=e104]: City-to-ocean views, bedroom linens. Cool counterpoint.
+          - generic [ref=e105]: "#3B6B8A"
+    - generic [ref=e106]:
+      - heading "Neutral Tones" [level=3] [ref=e107]
+      - generic [ref=e108]:
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Sand
+            - generic [ref=e114]: Rugs, wood tones, natural texture. Warm mid-tone.
+          - generic [ref=e115]: "#D4C5A9"
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: Blush
+            - generic [ref=e121]: Soft warmth, terracotta's lighter sibling.
+          - generic [ref=e122]: "#E8CFC0"
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: Cream
+            - generic [ref=e128]: Section backgrounds, subtle contrast against Ivory.
+          - generic [ref=e129]: "#F0E8D8"
+    - generic [ref=e131]:
+      - heading "Usage Rules" [level=4] [ref=e132]
+      - list [ref=e133]:
+        - listitem [ref=e134]:
+          - strong [ref=e135]: Brass
+          - text: is the hero accent, use for all CTAs, section labels, and star ratings.
+        - listitem [ref=e136]:
+          - strong [ref=e137]: Onyx + Ivory
+          - text: is the primary contrast pair. Avoid pure white (#FFF) or pure black (#000).
+        - listitem [ref=e138]: Terracotta, Olive, and Ocean are supporting accents, not competing leads.
+        - listitem [ref=e139]: Dark sections should use the Onyx background with Ivory and Brass typography.
+  - generic [ref=e141]:
+    - generic [ref=e142]:
+      - generic [ref=e143]: 04 // The Typography
+      - heading "Font Families" [level=2] [ref=e144]
+      - paragraph [ref=e145]: A carefully balanced trio. Geometric modernism creates a clean UI foundation, while vintage Hollywood proportions and editorial serifs inject character and elegance.
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]: Bebas Neue
+        - generic [ref=e149]: Brand Moments / Wordmarks
+      - generic [ref=e150]: THE HOLLYWOOD HILLS
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - generic [ref=e153]: Weights
+          - generic [ref=e154]: Regular (400)
+        - generic [ref=e155]:
+          - generic [ref=e156]: Tracking
+          - generic [ref=e157]: Loose (+0.04em to +0.15em)
+        - generic [ref=e158]:
+          - generic [ref=e159]: Case
+          - generic [ref=e160]: ALL-CAPS Exclusive
+        - generic [ref=e161]:
+          - generic [ref=e162]: Application
+          - generic [ref=e163]: Cinematic Headers, Nav Logo
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - generic [ref=e166]: Instrument Serif
+        - generic [ref=e167]: Display / Editorial Headlines
+      - generic [ref=e168]: A Sun-Drenched Retreat
+      - generic [ref=e169]: Curated for creatives.
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - generic [ref=e172]: Weights
+          - generic [ref=e173]: Regular, Italic (400)
+        - generic [ref=e174]:
+          - generic [ref=e175]: Tracking
+          - generic [ref=e176]: Tight (0em)
+        - generic [ref=e177]:
+          - generic [ref=e178]: Leading
+          - generic [ref=e179]: Snug (1.0 to 1.1)
+        - generic [ref=e180]:
+          - generic [ref=e181]: Application
+          - generic [ref=e182]: Story Titles, Quotations
+    - generic [ref=e183]:
+      - generic [ref=e184]:
+        - generic [ref=e185]: Space Grotesk
+        - generic [ref=e186]: Body Copy / Interface / Navigation
+      - generic [ref=e187]: Geometric sans-serif with modernist DNA.
+      - generic [ref=e188]: Clean but characterful.
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - generic [ref=e191]: Weights
+          - generic [ref=e192]: Light (300), Regular (400), Semi (600)
+        - generic [ref=e193]:
+          - generic [ref=e194]: Tracking
+          - generic [ref=e195]: Body (0), UI Labels (+0.2em)
+        - generic [ref=e196]:
+          - generic [ref=e197]: Leading
+          - generic [ref=e198]: Relaxed (1.6 for body text)
+        - generic [ref=e199]:
+          - generic [ref=e200]: Application
+          - generic [ref=e201]: Paragraphs, Buttons, Captions
+  - generic [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]: 05 // The Vibe
+      - heading "Voice & Photography" [level=2] [ref=e206]
+    - generic [ref=e207]:
+      - generic [ref=e208]:
+        - heading "Tone of Voice" [level=3] [ref=e209]
+        - list [ref=e210]:
+          - listitem [ref=e211]:
+            - strong [ref=e212]: "Warm & Personal:"
+            - text: Never sound corporate. Speak with local expertise and casual authority.
+          - listitem [ref=e213]:
+            - strong [ref=e214]: "Dual Perspective:"
+            - text: Use the property as the protagonist ("A retreat perched in the hills...") but switch to second-person for experiential moments ("Your mornings start with canyon light...").
+          - listitem [ref=e215]:
+            - strong [ref=e216]: "Sensory Language:"
+            - text: Focus on light, breeze, views, and warmth.
+          - listitem [ref=e217]:
+            - strong [ref=e218]: "Confidentiality:"
+            - text: Keep hosts private. No host names or personal identities.
+          - listitem [ref=e219]:
+            - strong [ref=e220]: "Formatting:"
+            - text: Short sentences. Confident pacing. Never use em-dashes (—).
+      - generic [ref=e221]:
+        - heading "Visual Layout" [level=3] [ref=e222]
+        - list [ref=e223]:
+          - listitem [ref=e224]:
+            - strong [ref=e225]: "Asymmetric Grids:"
+            - text: Avoid perfectly uniform boxes to keep the layout feeling organic and editorial.
+          - listitem [ref=e226]:
+            - strong [ref=e227]: "Whitespace:"
+            - text: Use generous negative space. Let the content breathe.
+          - listitem [ref=e228]:
+            - strong [ref=e229]: "Sharp Edges:"
+            - text: No rounded corners on photographs. Keeps the design architectural and crisp.
+          - listitem [ref=e230]:
+            - strong [ref=e231]: "Minimal Decor:"
+            - text: Use thin horizontal rules as dividers. Avoid heavy drop shadows or bordered cards.
+          - listitem [ref=e232]:
+            - strong [ref=e233]: "Micro-Interactions:"
+            - text: Subtle fade-up scroll reveals (0.7s) and parallax hero images. Hover gallery zooms limited to a gentle 1.05 scale.
+    - generic [ref=e234]:
+      - generic [ref=e235]:
+        - img "Photography Example 1" [ref=e236]
+        - generic [ref=e237]: Photography-forward, full-bleed images. Warm, natural light aesthetic (golden hour energy). No filters, no heavy color grading.
+      - generic [ref=e238]:
+        - img "Photography Example 2" [ref=e239]
+        - generic [ref=e240]: Highlight details with sharp, unrounded crops.
+  - contentinfo [ref=e241]:
+    - img [ref=e243]
+    - link "The Artist Bungalow" [ref=e245] [cursor=pointer]:
+      - /url: "#"
+    - paragraph [ref=e246]: Where the hills meet the music.
+    - generic [ref=e247]:
+      - link "Main Website" [ref=e248] [cursor=pointer]:
+        - /url: /
+      - link "Guest Guidebook" [ref=e249] [cursor=pointer]:
+        - /url: ./artist-bungalow-guidebook.html
+    - paragraph [ref=e250]: © 2026 The Artist Bungalow. Designed in Los Angeles.

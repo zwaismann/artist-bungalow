@@ -1,0 +1,661 @@
+- generic [active] [ref=e1]:
+  - navigation:
+    - link "The Artist Bungalow":
+      - /url: "#"
+    - generic:
+      - link "About":
+        - /url: "#intro"
+      - link "Gallery":
+        - /url: "#gallery"
+      - link "Neighborhood":
+        - /url: "#neighborhood"
+      - link "Dining":
+        - /url: "#dining"
+      - link "Reviews":
+        - /url: "#reviews"
+      - link "Reserve":
+        - /url: https://www.airbnb.com/rooms/736417448669019623
+  - generic [ref=e6]:
+    - img "Hollywood Hills" [ref=e7]
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Hollywood Hills, Los Angeles
+        - heading "The Artist Bungalow" [level=1] [ref=e12]:
+          - text: The Artist
+          - text: Bungalow
+        - paragraph [ref=e13]: Where the hills meet the music.
+        - generic [ref=e14]:
+          - link "Book Your Stay" [ref=e15] [cursor=pointer]:
+            - /url: https://www.airbnb.com/rooms/736417448669019623
+            - text: Book Your Stay
+            - img [ref=e16]
+          - link "Explore ↓" [ref=e18] [cursor=pointer]:
+            - /url: "#intro"
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: "2"
+          - generic [ref=e22]: Bedrooms
+        - generic [ref=e23]:
+          - generic [ref=e24]: "2"
+          - generic [ref=e25]: Bathrooms
+        - generic [ref=e26]:
+          - generic [ref=e27]: "4.97"
+          - generic [ref=e28]: Rating
+        - generic [ref=e29]:
+          - generic [ref=e30]: ★
+          - generic [ref=e31]: Superhost
+        - generic [ref=e32]:
+          - generic [ref=e33]: ♥
+          - generic [ref=e34]: Guest Favorite
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]: Guest Favorite 2024
+      - generic [ref=e39]: Superhost
+    - paragraph [ref=e40]:
+      - text: An intimate, art-filled retreat perched in the Hollywood Hills, steps from the legendary Hollywood Bowl.
+      - emphasis [ref=e41]: Sun-drenched rooms, sweeping views, a piano waiting to be played
+      - text: ", and the kind of quiet that makes you forget the city is right below."
+    - generic:
+      - img "Property Survey Sketch"
+  - generic [ref=e43]:
+    - generic [ref=e44]:
+      - img "Artist Bungalow Exterior" [ref=e45]
+      - generic [ref=e46]:
+        - generic [ref=e47]: "4.97"
+        - generic [ref=e48]: Superhost / Guest Favorite
+    - generic [ref=e49]:
+      - generic [ref=e50]: About the Space
+      - heading "Spanish Charm, Mid-Century Soul" [level=2] [ref=e51]:
+        - text: Spanish Charm,
+        - text: Mid-Century Soul
+      - paragraph [ref=e52]: Perched on a quiet cul-de-sac in the Hollywood Hills, the Artist Bungalow is a light-filled retreat where original art, an upright piano, and city-to-ocean views come together. Spanish-style architecture meets curated mid-century interiors, a tropical garden, and a private deck with sweeping LA panoramas.
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: Panoramic Views
+          - generic [ref=e56]: Sweeping city vistas
+        - generic [ref=e57]:
+          - generic [ref=e58]: Steam Shower
+          - generic [ref=e59]: Relaxing oasis
+        - generic [ref=e60]:
+          - generic [ref=e61]: Full Kitchen
+          - generic [ref=e62]: Chef's setup
+        - generic [ref=e63]:
+          - generic [ref=e64]: Coffee Bar
+          - generic [ref=e65]: 5 ways to brew
+        - generic [ref=e66]:
+          - generic [ref=e67]: Private Deck
+          - generic [ref=e68]: Al fresco dining
+        - generic [ref=e69]:
+          - generic [ref=e70]: Smart Home
+          - generic [ref=e71]: Climate & sound
+      - generic [ref=e72]:
+        - img "Superhost"
+        - img "Guest Favorite"
+  - img "Living Room Detail Break" [ref=e74]
+  - generic [ref=e75]:
+    - generic [ref=e76]:
+      - generic [ref=e77]: Gallery
+      - heading "The Space" [level=2] [ref=e78]
+    - generic [ref=e80]:
+      - img "Bathroom Glass Tile Shower" [ref=e81]
+      - img "Bathroom Vanity And Shower" [ref=e82]
+      - img "Deck Dining Daytime" [ref=e83]
+      - img "Deck Lounge Evening" [ref=e84]
+      - img "Dining Area Vintage Decor" [ref=e85]
+      - img "Entryway Piano And Art" [ref=e86]
+      - img "Exterior Front View" [ref=e87]
+      - img "Garden Tropical Seating" [ref=e88]
+      - img "Garden Walkway Entrance" [ref=e89]
+      - img "Guest Bathroom Vanity" [ref=e90]
+      - img "Guest Bedroom Blue Bedding" [ref=e91]
+      - img "Guest Bedroom Reading Nook" [ref=e92]
+      - img "Guest Bedroom Writing Desk" [ref=e93]
+      - img "Kitchen Coffee Bar" [ref=e94]
+      - img "Kitchen Sink And Counters" [ref=e95]
+      - img "Living Room Fireplace And Tv" [ref=e96]
+      - img "Living Room Wide View" [ref=e97]
+      - img "Master Bedroom Bedside" [ref=e98]
+      - img "Master Bedroom Dresser Golden Hour" [ref=e99]
+      - img "Master Bedroom Stained Glass" [ref=e100]
+      - img "Neighborhood City View" [ref=e101]
+      - img "Patio Bistro Dining" [ref=e102]
+      - img "Bathroom Glass Tile Shower" [ref=e103]
+      - img "Bathroom Vanity And Shower" [ref=e104]
+      - img "Deck Dining Daytime" [ref=e105]
+      - img "Deck Lounge Evening" [ref=e106]
+      - img "Dining Area Vintage Decor" [ref=e107]
+      - img "Entryway Piano And Art" [ref=e108]
+      - img "Exterior Front View" [ref=e109]
+      - img "Garden Tropical Seating" [ref=e110]
+      - img "Garden Walkway Entrance" [ref=e111]
+      - img "Guest Bathroom Vanity" [ref=e112]
+      - img "Guest Bedroom Blue Bedding" [ref=e113]
+      - img "Guest Bedroom Reading Nook" [ref=e114]
+      - img "Guest Bedroom Writing Desk" [ref=e115]
+      - img "Kitchen Coffee Bar" [ref=e116]
+      - img "Kitchen Sink And Counters" [ref=e117]
+      - img "Living Room Fireplace And Tv" [ref=e118]
+      - img "Living Room Wide View" [ref=e119]
+      - img "Master Bedroom Bedside" [ref=e120]
+      - img "Master Bedroom Dresser Golden Hour" [ref=e121]
+      - img "Master Bedroom Stained Glass" [ref=e122]
+      - img "Neighborhood City View" [ref=e123]
+      - img "Patio Bistro Dining" [ref=e124]
+  - generic:
+    - button "Close image": ×
+    - img "Expanded View"
+  - img "Master Bedroom Stained Glass" [ref=e126]
+  - generic [ref=e127]:
+    - generic:
+      - img "Map illustration of the Hollywood Bowl amphitheater"
+      - img "Map illustration of the Runyon Canyon hiking trails"
+      - img "Map illustration of the Griffith Observatory dome"
+      - img "Map illustration of the Hollywood Walk of Fame stars"
+      - img "Map illustration of the Universal Studios Theme Park"
+      - img "Map illustration of the Warner Bros Studio lot"
+      - img "Map illustration of the Hollywood Reservoir"
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic [ref=e130]: The Neighborhood
+        - heading "Above It All, Close to Everything" [level=2] [ref=e131]
+        - paragraph [ref=e132]: Tucked into the Hills but minutes from LA's best. Walk to the Hollywood Bowl, hike Runyon Canyon, or drive to the Observatory for sunset. The city is at your doorstep.
+      - generic [ref=e134]:
+        - button "Hollywood Bowl 5 Min Walk" [ref=e135] [cursor=pointer]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: Hollywood Bowl
+            - generic [ref=e138]: 5 Min Walk
+          - img [ref=e139]
+        - button "Runyon Canyon 8 Min Drive" [ref=e141] [cursor=pointer]:
+          - generic [ref=e142]:
+            - generic [ref=e143]: Runyon Canyon
+            - generic [ref=e144]: 8 Min Drive
+          - img [ref=e145]
+        - button "Griffith Observatory 12 Min Drive" [ref=e147] [cursor=pointer]:
+          - generic [ref=e148]:
+            - generic [ref=e149]: Griffith Observatory
+            - generic [ref=e150]: 12 Min Drive
+          - img [ref=e151]
+        - button "Walk of Fame 10 Min Drive" [ref=e153] [cursor=pointer]:
+          - generic [ref=e154]:
+            - generic [ref=e155]: Walk of Fame
+            - generic [ref=e156]: 10 Min Drive
+          - img [ref=e157]
+        - button "Universal Studios 12 Min Drive" [ref=e159] [cursor=pointer]:
+          - generic [ref=e160]:
+            - generic [ref=e161]: Universal Studios
+            - generic [ref=e162]: 12 Min Drive
+          - img [ref=e163]
+        - button "Warner Bros. Studio 15 Min Drive" [ref=e165] [cursor=pointer]:
+          - generic [ref=e166]:
+            - generic [ref=e167]: Warner Bros. Studio
+            - generic [ref=e168]: 15 Min Drive
+          - img [ref=e169]
+        - button "Hollywood Reservoir 10 Min Drive" [ref=e171] [cursor=pointer]:
+          - generic [ref=e172]:
+            - generic [ref=e173]: Hollywood Reservoir
+            - generic [ref=e174]: 10 Min Drive
+          - img [ref=e175]
+  - generic [ref=e177]:
+    - button "Close panel" [ref=e178] [cursor=pointer]: ×
+    - generic [ref=e179]:
+      - heading "Location" [level=3] [ref=e181]
+      - generic [ref=e182]:
+        - img [ref=e183]
+        - generic [ref=e186]: 5 MIN
+      - paragraph [ref=e187]: Description goes here.
+  - generic [ref=e191]:
+    - generic [ref=e192]:
+      - generic [ref=e193]: Eat & Drink
+      - heading "The Local Table" [level=2] [ref=e194]
+      - paragraph [ref=e195]: The best spots nearby, from morning coffee to late-night dinners
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - heading "Coffee & Cafes" [level=3] [ref=e198]
+        - generic [ref=e199]:
+          - link "Groundwork Coffee $ Specialty Roaster Organic, fair-trade roasts right in Hollywood. Perfect for grabbing an iced latte before a hike. 3 Min Drive" [ref=e200] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Groundwork+Coffee,+1501+N+Cahuenga+Blvd,+Los+Angeles,+CA+90028
+            - generic [ref=e201]:
+              - generic [ref=e202]: Groundwork Coffee
+              - generic [ref=e203]: $
+            - generic [ref=e204]: Specialty Roaster
+            - paragraph [ref=e205]: Organic, fair-trade roasts right in Hollywood. Perfect for grabbing an iced latte before a hike.
+            - generic [ref=e206]:
+              - generic [ref=e207]: 3 Min Drive
+              - img [ref=e209]
+          - link "Alcove Cafe & Bakery $$ All-Day Cafe & Bakery Charming outdoor patio seating. Famous for their massive slices of cake and hearty breakfasts. 5 Min Drive" [ref=e212] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Alcove+Cafe+%26+Bakery,+Los+Angeles
+            - generic [ref=e213]:
+              - generic [ref=e214]: Alcove Cafe & Bakery
+              - generic [ref=e215]: $$
+            - generic [ref=e216]: All-Day Cafe & Bakery
+            - paragraph [ref=e217]: Charming outdoor patio seating. Famous for their massive slices of cake and hearty breakfasts.
+            - generic [ref=e218]:
+              - generic [ref=e219]: 5 Min Drive
+              - img [ref=e221]
+          - link "Bru Coffeebar $ Single-Origin Coffee Artisanal brews from rotating roasters, served in an industrial-chic hangout space. 5 Min Drive" [ref=e224] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Bru+Coffeebar,+Los+Angeles
+            - generic [ref=e225]:
+              - generic [ref=e226]: Bru Coffeebar
+              - generic [ref=e227]: $
+            - generic [ref=e228]: Single-Origin Coffee
+            - paragraph [ref=e229]: Artisanal brews from rotating roasters, served in an industrial-chic hangout space.
+            - generic [ref=e230]:
+              - generic [ref=e231]: 5 Min Drive
+              - img [ref=e233]
+          - link "Maru Coffee $ Minimalist Pour-Over Exceptional beans and precise brewing techniques. Try their signature Cream Top iced coffee. 7 Min Drive" [ref=e236] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Maru+Coffee,+1936+Hillhurst+Ave,+Los+Angeles,+CA+90027
+            - generic [ref=e237]:
+              - generic [ref=e238]: Maru Coffee
+              - generic [ref=e239]: $
+            - generic [ref=e240]: Minimalist Pour-Over
+            - paragraph [ref=e241]: Exceptional beans and precise brewing techniques. Try their signature Cream Top iced coffee.
+            - generic [ref=e242]:
+              - generic [ref=e243]: 7 Min Drive
+              - img [ref=e245]
+      - generic [ref=e248]:
+        - heading "Restaurants" [level=3] [ref=e249]
+        - generic [ref=e250]:
+          - link "Kismet $$ Cal-Med, Vegetable-Forward Bright, casual spot serving inventive Middle Eastern leaning plates that are highly shareable. 4 Min Drive" [ref=e251] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Kismet,+Los+Angeles
+            - generic [ref=e252]:
+              - generic [ref=e253]: Kismet
+              - generic [ref=e254]: $$
+            - generic [ref=e255]: Cal-Med, Vegetable-Forward
+            - paragraph [ref=e256]: Bright, casual spot serving inventive Middle Eastern leaning plates that are highly shareable.
+            - generic [ref=e257]:
+              - generic [ref=e258]: 4 Min Drive
+              - img [ref=e260]
+          - link "Musso & Frank Grill $$$ Classic American Hollywood's oldest restaurant. Legendary martinis, red leather booths, and old-school waiter service. 5 Min Drive" [ref=e263] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Musso+%26+Frank+Grill,+Los+Angeles
+            - generic [ref=e264]:
+              - generic [ref=e265]: Musso & Frank Grill
+              - generic [ref=e266]: $$$
+            - generic [ref=e267]: Classic American
+            - paragraph [ref=e268]: Hollywood's oldest restaurant. Legendary martinis, red leather booths, and old-school waiter service.
+            - generic [ref=e269]:
+              - generic [ref=e270]: 5 Min Drive
+              - img [ref=e272]
+          - link "Figaro Bistrot $$ French Bistro Transport yourself to Paris with escargot, wine, and sidewalk seating perfect for people-watching. 5 Min Drive" [ref=e275] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Figaro+Bistrot,+Los+Angeles
+            - generic [ref=e276]:
+              - generic [ref=e277]: Figaro Bistrot
+              - generic [ref=e278]: $$
+            - generic [ref=e279]: French Bistro
+            - paragraph [ref=e280]: Transport yourself to Paris with escargot, wine, and sidewalk seating perfect for people-watching.
+            - generic [ref=e281]:
+              - generic [ref=e282]: 5 Min Drive
+              - img [ref=e284]
+          - link "Osteria Mozza $$$ Italian, Upscale Nancy Silverton's Michelin-starred Italian masterpiece featuring a dedicated mozzarella bar. 7 Min Drive" [ref=e287] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Osteria+Mozza,+Los+Angeles
+            - generic [ref=e288]:
+              - generic [ref=e289]: Osteria Mozza
+              - generic [ref=e290]: $$$
+            - generic [ref=e291]: Italian, Upscale
+            - paragraph [ref=e292]: Nancy Silverton's Michelin-starred Italian masterpiece featuring a dedicated mozzarella bar.
+            - generic [ref=e293]:
+              - generic [ref=e294]: 7 Min Drive
+              - img [ref=e296]
+          - link "Cafe Stella $$$ French, Date Night Romantic, dimly-lit French institution nestled in Sunset Junction with an excellent cocktail bar. 8 Min Drive" [ref=e299] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Cafe+Stella,+Los+Angeles
+            - generic [ref=e300]:
+              - generic [ref=e301]: Cafe Stella
+              - generic [ref=e302]: $$$
+            - generic [ref=e303]: French, Date Night
+            - paragraph [ref=e304]: Romantic, dimly-lit French institution nestled in Sunset Junction with an excellent cocktail bar.
+            - generic [ref=e305]:
+              - generic [ref=e306]: 8 Min Drive
+              - img [ref=e308]
+          - link "Edendale $$ Modern American Housed in a historic 1920s firehouse. Incredible massive back patio for drinks and dinner. 8 Min Drive" [ref=e311] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/6910+Paseo+Del+Serra,+LA+90068/Edendale,+Los+Angeles
+            - generic [ref=e312]:
+              - generic [ref=e313]: Edendale
+              - generic [ref=e314]: $$
+            - generic [ref=e315]: Modern American
+            - paragraph [ref=e316]: Housed in a historic 1920s firehouse. Incredible massive back patio for drinks and dinner.
+            - generic [ref=e317]:
+              - generic [ref=e318]: 8 Min Drive
+              - img [ref=e320]
+  - generic [ref=e323]:
+    - generic [ref=e324]:
+      - generic [ref=e325]: Guest Reviews
+      - heading "The Reviews Are In" [level=2] [ref=e326]
+      - paragraph [ref=e327]: 4.97 out of 5 from 59+ reviews
+    - generic [ref=e328]:
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - generic [ref=e331]: ★★★★★
+          - paragraph [ref=e332]: The panoramic views from the deck are stunning. Spent hours just watching the city lights come alive.
+          - generic [ref=e333]:
+            - img "Sara" [ref=e334]
+            - generic [ref=e335]:
+              - generic [ref=e336]: Sara
+              - generic [ref=e337]: Jan 2026
+        - generic [ref=e338]:
+          - generic [ref=e339]: ★★★★★
+          - paragraph [ref=e340]: The upright piano was such a special touch. The acoustics in that living room are genuinely wonderful.
+          - generic [ref=e341]:
+            - img "Carley" [ref=e342]
+            - generic [ref=e343]:
+              - generic [ref=e344]: Carley
+              - generic [ref=e345]: Dec 2025
+        - generic [ref=e346]:
+          - generic [ref=e347]: ★★★★★
+          - paragraph [ref=e348]: Unbelievably quiet considering how close you are to the Bowl. The steam shower was a daily luxury.
+          - generic [ref=e349]:
+            - img "Rachel" [ref=e350]
+            - generic [ref=e351]:
+              - generic [ref=e352]: Rachel
+              - generic [ref=e353]: Oct 2025
+        - generic [ref=e354]:
+          - generic [ref=e355]: ★★★★★
+          - paragraph [ref=e356]: Impeccably curated art throughout the house. It really lives up to the 'Artist Bungalow' name.
+          - generic [ref=e357]:
+            - img "David" [ref=e358]
+            - generic [ref=e359]:
+              - generic [ref=e360]: David
+              - generic [ref=e361]: Aug 2025
+        - generic [ref=e362]:
+          - generic [ref=e363]: ★★★★★
+          - paragraph [ref=e364]: The tropical garden completely hides you from the world. A truly private sanctuary in the hills.
+          - generic [ref=e365]:
+            - img "Maria" [ref=e366]
+            - generic [ref=e367]:
+              - generic [ref=e368]: Maria
+              - generic [ref=e369]: Jul 2025
+        - generic [ref=e370]:
+          - generic [ref=e371]: ★★★★★
+          - paragraph [ref=e372]: Waking up to canyon light pouring through those massive windows was the highlight of our trip.
+          - generic [ref=e373]:
+            - img "Jakob" [ref=e374]
+            - generic [ref=e375]:
+              - generic [ref=e376]: Jakob
+              - generic [ref=e377]: Jan 2026
+        - generic [ref=e378]:
+          - generic [ref=e379]: ★★★★★
+          - paragraph [ref=e380]: The panoramic views from the deck are stunning. Spent hours just watching the city lights come alive.
+          - generic [ref=e381]:
+            - img "Sara" [ref=e382]
+            - generic [ref=e383]:
+              - generic [ref=e384]: Sara
+              - generic [ref=e385]: Jan 2026
+        - generic [ref=e386]:
+          - generic [ref=e387]: ★★★★★
+          - paragraph [ref=e388]: The upright piano was such a special touch. The acoustics in that living room are genuinely wonderful.
+          - generic [ref=e389]:
+            - img "Carley" [ref=e390]
+            - generic [ref=e391]:
+              - generic [ref=e392]: Carley
+              - generic [ref=e393]: Dec 2025
+        - generic [ref=e394]:
+          - generic [ref=e395]: ★★★★★
+          - paragraph [ref=e396]: Unbelievably quiet considering how close you are to the Bowl. The steam shower was a daily luxury.
+          - generic [ref=e397]:
+            - img "Rachel" [ref=e398]
+            - generic [ref=e399]:
+              - generic [ref=e400]: Rachel
+              - generic [ref=e401]: Oct 2025
+        - generic [ref=e402]:
+          - generic [ref=e403]: ★★★★★
+          - paragraph [ref=e404]: Impeccably curated art throughout the house. It really lives up to the 'Artist Bungalow' name.
+          - generic [ref=e405]:
+            - img "David" [ref=e406]
+            - generic [ref=e407]:
+              - generic [ref=e408]: David
+              - generic [ref=e409]: Aug 2025
+        - generic [ref=e410]:
+          - generic [ref=e411]: ★★★★★
+          - paragraph [ref=e412]: The tropical garden completely hides you from the world. A truly private sanctuary in the hills.
+          - generic [ref=e413]:
+            - img "Maria" [ref=e414]
+            - generic [ref=e415]:
+              - generic [ref=e416]: Maria
+              - generic [ref=e417]: Jul 2025
+        - generic [ref=e418]:
+          - generic [ref=e419]: ★★★★★
+          - paragraph [ref=e420]: Waking up to canyon light pouring through those massive windows was the highlight of our trip.
+          - generic [ref=e421]:
+            - img "Jakob" [ref=e422]
+            - generic [ref=e423]:
+              - generic [ref=e424]: Jakob
+              - generic [ref=e425]: Jan 2026
+      - generic [ref=e426]:
+        - generic [ref=e427]:
+          - generic [ref=e428]: ★★★★★
+          - paragraph [ref=e429]: You can walk down to the Bowl in minutes. The location is an absolute dream for concert-goers.
+          - generic [ref=e430]:
+            - img "Thomas" [ref=e431]
+            - generic [ref=e432]:
+              - generic [ref=e433]: Thomas
+              - generic [ref=e434]: Jan 2026
+        - generic [ref=e435]:
+          - generic [ref=e436]: ★★★★★
+          - paragraph [ref=e437]: Everything feels solid, Spanish, and historic, but the amenities are completely modern and luxe.
+          - generic [ref=e438]:
+            - img "Synthia" [ref=e439]
+            - generic [ref=e440]:
+              - generic [ref=e441]: Synthia
+              - generic [ref=e442]: Nov 2025
+        - generic [ref=e443]:
+          - generic [ref=e444]: ★★★★★
+          - paragraph [ref=e445]: The kitchen has everything you need to cook a real dinner, which we happily did while looking over LA.
+          - generic [ref=e446]:
+            - img "Nate" [ref=e447]
+            - generic [ref=e448]:
+              - generic [ref=e449]: Nate
+              - generic [ref=e450]: Sep 2025
+        - generic [ref=e451]:
+          - generic [ref=e452]: ★★★★★
+          - paragraph [ref=e453]: The crisp white stucco and dark wood beams are textbook California cool. Flawless aesthetic.
+          - generic [ref=e454]:
+            - img "Anika" [ref=e455]
+            - generic [ref=e456]:
+              - generic [ref=e457]: Anika
+              - generic [ref=e458]: Jun 2025
+        - generic [ref=e459]:
+          - generic [ref=e460]: ★★★★★
+          - paragraph [ref=e461]: The outdoor dining patio under the stars is magnificent. We cancelled our reservations to stay in.
+          - generic [ref=e462]:
+            - img "Ellen" [ref=e463]
+            - generic [ref=e464]:
+              - generic [ref=e465]: Ellen
+              - generic [ref=e466]: Feb 2026
+        - generic [ref=e467]:
+          - generic [ref=e468]: ★★★★★
+          - paragraph [ref=e469]: Incredibly fast wifi for working, but between the views and the piano, you probably won't want to.
+          - generic [ref=e470]:
+            - img "Kevin" [ref=e471]
+            - generic [ref=e472]:
+              - generic [ref=e473]: Kevin
+              - generic [ref=e474]: May 2025
+        - generic [ref=e475]:
+          - generic [ref=e476]: ★★★★★
+          - paragraph [ref=e477]: You can walk down to the Bowl in minutes. The location is an absolute dream for concert-goers.
+          - generic [ref=e478]:
+            - img "Thomas" [ref=e479]
+            - generic [ref=e480]:
+              - generic [ref=e481]: Thomas
+              - generic [ref=e482]: Jan 2026
+        - generic [ref=e483]:
+          - generic [ref=e484]: ★★★★★
+          - paragraph [ref=e485]: Everything feels solid, Spanish, and historic, but the amenities are completely modern and luxe.
+          - generic [ref=e486]:
+            - img "Synthia" [ref=e487]
+            - generic [ref=e488]:
+              - generic [ref=e489]: Synthia
+              - generic [ref=e490]: Nov 2025
+        - generic [ref=e491]:
+          - generic [ref=e492]: ★★★★★
+          - paragraph [ref=e493]: The kitchen has everything you need to cook a real dinner, which we happily did while looking over LA.
+          - generic [ref=e494]:
+            - img "Nate" [ref=e495]
+            - generic [ref=e496]:
+              - generic [ref=e497]: Nate
+              - generic [ref=e498]: Sep 2025
+        - generic [ref=e499]:
+          - generic [ref=e500]: ★★★★★
+          - paragraph [ref=e501]: The crisp white stucco and dark wood beams are textbook California cool. Flawless aesthetic.
+          - generic [ref=e502]:
+            - img "Anika" [ref=e503]
+            - generic [ref=e504]:
+              - generic [ref=e505]: Anika
+              - generic [ref=e506]: Jun 2025
+        - generic [ref=e507]:
+          - generic [ref=e508]: ★★★★★
+          - paragraph [ref=e509]: The outdoor dining patio under the stars is magnificent. We cancelled our reservations to stay in.
+          - generic [ref=e510]:
+            - img "Ellen" [ref=e511]
+            - generic [ref=e512]:
+              - generic [ref=e513]: Ellen
+              - generic [ref=e514]: Feb 2026
+        - generic [ref=e515]:
+          - generic [ref=e516]: ★★★★★
+          - paragraph [ref=e517]: Incredibly fast wifi for working, but between the views and the piano, you probably won't want to.
+          - generic [ref=e518]:
+            - img "Kevin" [ref=e519]
+            - generic [ref=e520]:
+              - generic [ref=e521]: Kevin
+              - generic [ref=e522]: May 2025
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - generic [ref=e525]: ★★★★★
+          - paragraph [ref=e526]: Five-star hospitality. The house runs beautifully and everything was spotlessly clean upon arrival.
+          - generic [ref=e527]:
+            - img "Liz" [ref=e528]
+            - generic [ref=e529]:
+              - generic [ref=e530]: Liz
+              - generic [ref=e531]: Sep 2025
+        - generic [ref=e532]:
+          - generic [ref=e533]: ★★★★★
+          - paragraph [ref=e534]: Those deep soaking tubs and the steam shower... I have never felt more relaxed at an Airbnb.
+          - generic [ref=e535]:
+            - img "Brett" [ref=e536]
+            - generic [ref=e537]:
+              - generic [ref=e538]: Brett
+              - generic [ref=e539]: Aug 2025
+        - generic [ref=e540]:
+          - generic [ref=e541]: ★★★★★
+          - paragraph [ref=e542]: Felt like living in a mid-century architectural digest spread. The attention to detail is remarkable.
+          - generic [ref=e543]:
+            - img "Jessica" [ref=e544]
+            - generic [ref=e545]:
+              - generic [ref=e546]: Jessica
+              - generic [ref=e547]: Apr 2025
+        - generic [ref=e548]:
+          - generic [ref=e549]: ★★★★★
+          - paragraph [ref=e550]: Perfect weekend retreat. You overlook the noise of Hollywood but you can't hear a single thing.
+          - generic [ref=e551]:
+            - img "Reena" [ref=e552]
+            - generic [ref=e553]:
+              - generic [ref=e554]: Reena
+              - generic [ref=e555]: Feb 2026
+        - generic [ref=e556]:
+          - generic [ref=e557]: ★★★★★
+          - paragraph [ref=e558]: Loved having my morning coffee on the deck while the hawks circled the canyon. Pure magic.
+          - generic [ref=e559]:
+            - img "Linda" [ref=e560]
+            - generic [ref=e561]:
+              - generic [ref=e562]: Linda
+              - generic [ref=e563]: Feb 2026
+        - generic [ref=e564]:
+          - generic [ref=e565]: ★★★★★
+          - paragraph [ref=e566]: Every square inch of this bungalow is photogenic. The light in the afternoon is absolutely golden.
+          - generic [ref=e567]:
+            - img "Priya" [ref=e568]
+            - generic [ref=e569]:
+              - generic [ref=e570]: Priya
+              - generic [ref=e571]: Mar 2025
+        - generic [ref=e572]:
+          - generic [ref=e573]: ★★★★★
+          - paragraph [ref=e574]: Five-star hospitality. The house runs beautifully and everything was spotlessly clean upon arrival.
+          - generic [ref=e575]:
+            - img "Liz" [ref=e576]
+            - generic [ref=e577]:
+              - generic [ref=e578]: Liz
+              - generic [ref=e579]: Sep 2025
+        - generic [ref=e580]:
+          - generic [ref=e581]: ★★★★★
+          - paragraph [ref=e582]: Those deep soaking tubs and the steam shower... I have never felt more relaxed at an Airbnb.
+          - generic [ref=e583]:
+            - img "Brett" [ref=e584]
+            - generic [ref=e585]:
+              - generic [ref=e586]: Brett
+              - generic [ref=e587]: Aug 2025
+        - generic [ref=e588]:
+          - generic [ref=e589]: ★★★★★
+          - paragraph [ref=e590]: Felt like living in a mid-century architectural digest spread. The attention to detail is remarkable.
+          - generic [ref=e591]:
+            - img "Jessica" [ref=e592]
+            - generic [ref=e593]:
+              - generic [ref=e594]: Jessica
+              - generic [ref=e595]: Apr 2025
+        - generic [ref=e596]:
+          - generic [ref=e597]: ★★★★★
+          - paragraph [ref=e598]: Perfect weekend retreat. You overlook the noise of Hollywood but you can't hear a single thing.
+          - generic [ref=e599]:
+            - img "Reena" [ref=e600]
+            - generic [ref=e601]:
+              - generic [ref=e602]: Reena
+              - generic [ref=e603]: Feb 2026
+        - generic [ref=e604]:
+          - generic [ref=e605]: ★★★★★
+          - paragraph [ref=e606]: Loved having my morning coffee on the deck while the hawks circled the canyon. Pure magic.
+          - generic [ref=e607]:
+            - img "Linda" [ref=e608]
+            - generic [ref=e609]:
+              - generic [ref=e610]: Linda
+              - generic [ref=e611]: Feb 2026
+        - generic [ref=e612]:
+          - generic [ref=e613]: ★★★★★
+          - paragraph [ref=e614]: Every square inch of this bungalow is photogenic. The light in the afternoon is absolutely golden.
+          - generic [ref=e615]:
+            - img "Priya" [ref=e616]
+            - generic [ref=e617]:
+              - generic [ref=e618]: Priya
+              - generic [ref=e619]: Mar 2025
+  - generic [ref=e620]:
+    - img "Hollywood Hills Escape" [ref=e621]
+    - generic [ref=e623]:
+      - generic [ref=e624]: Book
+      - heading "Your Hollywood Hills Escape Awaits" [level=2] [ref=e625]:
+        - text: Your Hollywood Hills
+        - text: Escape Awaits
+      - paragraph [ref=e626]: Come for the views. Stay for the vibe.
+      - link "Check Availability" [ref=e627] [cursor=pointer]:
+        - /url: https://www.airbnb.com/rooms/736417448669019623
+        - text: Check Availability
+        - img [ref=e628]
+  - contentinfo [ref=e630]:
+    - link "The Artist Bungalow" [ref=e631] [cursor=pointer]:
+      - /url: "#"
+    - paragraph [ref=e632]: Where the hills meet the music.
+    - generic [ref=e633]:
+      - link "About" [ref=e634] [cursor=pointer]:
+        - /url: "#intro"
+      - link "Gallery" [ref=e635] [cursor=pointer]:
+        - /url: "#gallery"
+      - link "Neighborhood" [ref=e636] [cursor=pointer]:
+        - /url: "#neighborhood"
+      - link "Dining" [ref=e637] [cursor=pointer]:
+        - /url: "#dining"
+      - link "Reviews" [ref=e638] [cursor=pointer]:
+        - /url: "#reviews"
+      - link "Reserve" [ref=e639] [cursor=pointer]:
+        - /url: https://www.airbnb.com/rooms/736417448669019623
+    - generic [ref=e641]:
+      - link "Instagram" [ref=e642] [cursor=pointer]:
+        - /url: https://www.instagram.com/theartistbungalow/
+        - img [ref=e643]
+        - text: Instagram
+      - link "Pinterest" [ref=e645] [cursor=pointer]:
+        - /url: https://www.pinterest.com/theartistbungalow/
+        - img [ref=e646]
+        - text: Pinterest
+      - link "Airbnb" [ref=e648] [cursor=pointer]:
+        - /url: https://www.airbnb.com/rooms/736417448669019623
+        - img [ref=e649]
+        - text: Airbnb
+      - link "All Links" [ref=e651] [cursor=pointer]:
+        - /url: https://linktr.ee/theartistbungalow
+        - img [ref=e652]
+        - text: All Links
+    - generic [ref=e654]: Hollywood Hills, Los Angeles

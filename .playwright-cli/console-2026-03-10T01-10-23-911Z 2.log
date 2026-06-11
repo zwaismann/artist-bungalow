@@ -1,0 +1,24 @@
+[   16000ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTEwMjY2ZTExOQ.js:0
+[  604036ms] Error: Minified React error #310; visit https://react.dev/errors/310 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at lL (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:40610)
+    at Object.ai [as useMemo] (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:47753)
+    at t.useMemo (https://my.blotato.com/_next/static/chunks/8315-0e5ad640a6733842.js:1:81779)
+    at N (https://my.blotato.com/_next/static/chunks/8315-0e5ad640a6733842.js:1:157009)
+    at lS (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:39324)
+    at ot (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:64579)
+    at ov (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:75652)
+    at ic (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:112354)
+    at https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:112199
+    at is (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:112207)
+    at u9 (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:109418)
+    at iH (https://my.blotato.com/_next/static/chunks/87c73c54-247aed792ad72fd3.js:1:130640)
+    at MessagePort.w (https://my.blotato.com/_next/static/chunks/8315-0e5ad640a6733842.js:1:106110)
+[  604039ms] [WARNING] WebSocket connection to 'wss://backend.blotato.com/events' failed: WebSocket is closed before the connection is established. @ https://my.blotato.com/_next/static/chunks/1349-00a68c60b1ff5edb.js:0
+[ 1265999ms] [ERROR] ErrorUtils caught an error:
+
+Unsupported inline style: NONE for InlineStyleRenderr in IGDS Sahara
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 17870, clientTime: 1773106289, extra: Object, guardList: Array(1), hash: lt25jn} @ https://static.cdninstagram.com/rsrc.php/v4/yw/r/h0R5SaW-d1w.js:76
+[ 1274514ms] [ERROR] The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy. @ https://l.instagram.com/?u=https%3A%2F%2Fbackend.blotato.com%2Fv2%2Fintegrations%2Foauth2%2Finstagram%2Fcallback%3Fcode%3DAQBFbevZ5whHR77ekDnaq67PTmPYFRMu4dIx3ZC6poW0Twkjy65ilvgBNM_LT8Aj50VwDhDWQK8Xhpx7UiXNlcxhUrlMvN4cb8jcGOZOgkXD00W2Cd5pwELgC2dEEbRJ_3IfW9pIORkk-1CFDbZ2ERTU6iWSCeEnP51cFJ-8jcdE6PTu1FyfvDXShtLIiKt6q-FjmmQRtjO_W6l6F7glwIASWDB_SsvFHOlFszym2ZXIHA%26state%3Dac6e1d5367617c1a7c5ad3a044df1136e0de0d5be9439829a531d7b9e9ad8e5b%23_&e=AT5i4nHnOAgjhgv0SoEgCLtC_t2z0_SqOyKn44HroWuUI__Qt9DU-M-1tLug4FB5gCP4xXwRCeJRGtDS8c68JEQ_FoEyNFftr9IkSUBGwbcd3Nz2Es0ByjpBVGt1QhUX68HeaQHn3hwF:0

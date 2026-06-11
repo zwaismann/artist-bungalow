@@ -1,0 +1,4 @@
+[     374ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/Listing-Status?p=TEMP2739073_1:0
+[   34599ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ https://www.furnishedfinder.com/members/PM/verification?p=TEMP2739073_1:178
+[   34733ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.furnishedfinder.com/members/PM/verification?p=TEMP2739073_1:0
+[   36178ms] [ERROR] {message: error starting jumio workflow, startWorkflowUrl: https://zdglr2fgtyfcwtz2orpiz7phja0lfgcj.lambda-url.us-east-2.on.aws/property:TEMP2739073_1/, jumioWorkflow: Object, ivsResponse: Response} @ https://www.furnishedfinder.com/static/js/verification-with-jumio.js:108

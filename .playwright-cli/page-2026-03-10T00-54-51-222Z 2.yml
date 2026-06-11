@@ -1,0 +1,182 @@
+- generic [ref=e4]:
+  - generic [ref=e9]:
+    - generic [ref=e12]:
+      - link "Instagram" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=e22]
+      - generic [ref=e25]:
+        - link "Home" [ref=e30] [cursor=pointer]:
+          - /url: /
+          - img "Home" [ref=e35]
+        - link "Reels" [ref=e40] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=e45]
+        - link "Messages" [ref=e52] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Messages" [ref=e57]
+        - link "Search" [ref=e63] [cursor=pointer]:
+          - /url: "#"
+          - img "Search" [ref=e68]
+        - link "Explore" [ref=e74] [cursor=pointer]:
+          - /url: /explore/
+          - img "Explore" [ref=e79]
+        - link "Notifications" [ref=e87] [cursor=pointer]:
+          - /url: "#"
+          - img "Notifications" [ref=e92]
+        - link "New post" [ref=e98] [cursor=pointer]:
+          - /url: "#"
+          - img "New post" [ref=e103]
+        - link "theartistbungalow's profile picture" [ref=e109] [cursor=pointer]:
+          - /url: /theartistbungalow/
+          - link "theartistbungalow's profile picture" [ref=e114]:
+            - img "theartistbungalow's profile picture" [ref=e115]
+      - generic [ref=e116]:
+        - link "Settings" [ref=e119] [cursor=pointer]:
+          - /url: "#"
+          - img "Settings" [ref=e124]
+        - link "Also from Meta" [ref=e127] [cursor=pointer]:
+          - /url: "#"
+          - img "Also from Meta" [ref=e132]
+    - generic [ref=e135]:
+      - main [ref=e136]:
+        - generic [ref=e139]:
+          - generic [ref=e258]:
+            - generic [ref=e260]:
+              - img "Business icon" [ref=e264]
+              - heading "Business" [level=1] [ref=e269]
+              - generic [ref=e270]: Best for retailers, local businesses, brands, organizations and service providers.
+            - separator [ref=e272]
+            - generic [ref=e273]:
+              - generic [ref=e275]:
+                - img "Insights icon" [ref=e277]
+                - generic [ref=e281]:
+                  - generic [ref=e283]: Learn about your followers
+                  - generic [ref=e284]: Get insights about your followers and see how your posts are performing.
+              - generic [ref=e286]:
+                - img "Ads icon" [ref=e288]
+                - generic [ref=e294]:
+                  - generic [ref=e296]: Reach your customers
+                  - generic [ref=e297]: Create promotions on Instagram to reach more customers and build your business.
+              - generic [ref=e299]:
+                - img "Mail icon" [ref=e301]
+                - generic [ref=e304]:
+                  - generic [ref=e306]: Get new contact options
+                  - generic [ref=e307]: Add a contact button to your profile to make it easier for people to get in touch with you.
+          - generic [ref=e308]:
+            - separator [ref=e309]
+            - generic [ref=e310]:
+              - button "Back" [ref=e312] [cursor=pointer]
+              - button "Next" [ref=e314] [cursor=pointer]
+      - contentinfo [ref=e185]:
+        - generic [ref=e186]:
+          - generic [ref=e188]:
+            - link "Meta" [ref=e190] [cursor=pointer]:
+              - /url: https://about.meta.com/
+              - generic [ref=e191]: Meta
+            - link "About" [ref=e193] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+              - generic [ref=e194]: About
+            - link "Blog" [ref=e196] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+              - generic [ref=e197]: Blog
+            - link "Jobs" [ref=e199] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+              - generic [ref=e200]: Jobs
+            - link "Help" [ref=e202] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+              - generic [ref=e203]: Help
+            - link "API" [ref=e205] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+              - generic [ref=e206]: API
+            - link "Privacy" [ref=e208] [cursor=pointer]:
+              - /url: /legal/privacy/
+              - generic [ref=e209]: Privacy
+            - link "Consumer Health Privacy" [ref=e211] [cursor=pointer]:
+              - /url: /legal/privacy/health_privacy_policy/
+              - generic [ref=e212]: Consumer Health Privacy
+            - link "Terms" [ref=e214] [cursor=pointer]:
+              - /url: /legal/terms/
+              - generic [ref=e215]: Terms
+            - link "Locations" [ref=e217] [cursor=pointer]:
+              - /url: /explore/locations/
+              - generic [ref=e218]: Locations
+            - link "Instagram Lite" [ref=e220] [cursor=pointer]:
+              - /url: /web/lite/
+              - generic [ref=e221]: Instagram Lite
+            - link "Meta AI" [ref=e223] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+              - generic [ref=e224]: Meta AI
+            - link "Threads" [ref=e226] [cursor=pointer]:
+              - /url: https://www.threads.com/
+              - generic [ref=e227]: Threads
+            - link "Contact Uploading & Non-Users" [ref=e229] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+              - generic [ref=e230]: Contact Uploading & Non-Users
+            - link "Meta Verified" [ref=e232] [cursor=pointer]:
+              - /url: /accounts/meta_verified/?entrypoint=web_footer
+              - generic [ref=e233]: Meta Verified
+          - generic [ref=e234]:
+            - generic [ref=e235] [cursor=pointer]:
+              - generic [ref=e236]:
+                - generic [ref=e237]: English
+                - img "Down chevron icon" [ref=e240]
+              - combobox "Switch Display Language" [ref=e242]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English" [selected]
+                - option "English (UK)"
+                - option "Español (España)"
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=e244]: © 2026 Instagram from Meta
+  - button "Messages" [ref=e247] [cursor=pointer]:
+    - generic "Messages" [ref=e248]:
+      - generic [ref=e249]:
+        - img "Messages" [ref=e252]
+        - generic [ref=e255]: Messages

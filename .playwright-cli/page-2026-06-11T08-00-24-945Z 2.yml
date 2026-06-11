@@ -1,0 +1,253 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "THE ARTIST BUNGALOW" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: ./artist-bungalow-website-v3.html
+        - link "Book" [ref=e7] [cursor=pointer]:
+          - /url: https://www.airbnb.com/rooms/736417448669019623
+  - banner [ref=e8]:
+    - img "The Artist Bungalow living room" [ref=e10]
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: Guest Guide
+      - heading "WELCOME TO THE BUNGALOW" [level=1] [ref=e14]:
+        - text: WELCOME TO
+        - text: THE BUNGALOW
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - paragraph [ref=e17]: Welcome
+      - heading "MAKE YOURSELF AT HOME" [level=2] [ref=e18]
+      - paragraph [ref=e19]: We're so glad you're here. The Artist Bungalow is our personal retreat and we've put a lot of love into making it a place that feels like home from the moment you walk in. This guide has everything you need to settle in, explore the neighborhood, and get the most out of your stay.
+      - paragraph [ref=e20]: If you need anything at all, don't hesitate to reach out. We're always just a message away.
+      - paragraph [ref=e21]:
+        - strong [ref=e22]: — Patrick & Jimena
+      - generic [ref=e23]:
+        - link "House Rules" [ref=e24] [cursor=pointer]:
+          - /url: "#rules"
+        - link "Arrival & Departure" [ref=e25] [cursor=pointer]:
+          - /url: "#arrival"
+        - link "Parking" [ref=e26] [cursor=pointer]:
+          - /url: "#parking"
+        - link "Essentials & WiFi" [ref=e27] [cursor=pointer]:
+          - /url: "#essentials"
+        - link "The Kitchen" [ref=e28] [cursor=pointer]:
+          - /url: "#kitchen"
+        - link "Howard the Piano" [ref=e29] [cursor=pointer]:
+          - /url: "#piano"
+        - link "Local Favorites" [ref=e30] [cursor=pointer]:
+          - /url: "#neighborhood"
+        - link "Emergency Info" [ref=e31] [cursor=pointer]:
+          - /url: "#emergency"
+    - generic [ref=e32]:
+      - paragraph [ref=e33]: Arrival & Departure
+      - heading "CHECK-IN & CHECK-OUT" [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: Check-In Time
+          - paragraph [ref=e38]: 4:00 PM
+        - generic [ref=e39]:
+          - paragraph [ref=e40]: Check-Out Time
+          - paragraph [ref=e41]: 10:00 AM
+      - generic [ref=e43]:
+        - paragraph [ref=e44]:
+          - img [ref=e45]
+          - text: KEYS & ENTRY
+        - paragraph [ref=e47]: "There are two ways to enter the property:"
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - strong [ref=e50]: "Lockbox:"
+            - text: A set of keys is in the lockbox to the right of the brown wood gate.
+          - listitem [ref=e51]:
+            - strong [ref=e52]: "Keypad:"
+            - text: Used on the door around the corner from the main entrance. When you enter the property you will see the main door which you can use keys to open. If you turn the corner, you will see another door with the keypad.
+        - paragraph [ref=e54]:
+          - text: "Both the keypad and lockbox share the same code:"
+          - strong [ref=e55]: "1948"
+      - generic [ref=e56]:
+        - heading "CHECK-OUT INSTRUCTIONS" [level=3] [ref=e57]
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - strong [ref=e61]: "Trash:"
+            - text: Please take out any trash bags from the kitchen only to the outdoor trash bins.
+          - listitem [ref=e62]:
+            - strong [ref=e63]: "Linens:"
+            - text: Please leave the sheets on the bed upon check out and place all dirty towels in the shower.
+          - listitem [ref=e64]:
+            - strong [ref=e65]: "Power:"
+            - text: Please turn out the lights when you leave and turn off the air conditioning/heater, along with any appliances.
+          - listitem [ref=e66]:
+            - strong [ref=e67]: "Security:"
+            - text: Lock all doors behind you along with all windows and please return the keys to the lockbox.
+        - generic [ref=e68]:
+          - paragraph [ref=e69]:
+            - strong [ref=e70]: "Damages:"
+            - text: Please report any damages or issues during your stay so that we can address them promptly.
+          - paragraph [ref=e71]:
+            - strong [ref=e72]: "Feedback:"
+            - text: We would appreciate it if you could take a few minutes to leave a review of your stay. Your feedback helps us improve our service for future guests.
+          - paragraph [ref=e73]:
+            - strong [ref=e74]: "Future Reservations:"
+            - text: If you enjoyed your stay and would like to make a future reservation, please feel free to contact us. We hope that you had a comfortable and enjoyable stay and that you will consider staying with us again in the future! If you have any questions or concerns, please don't hesitate to reach out.
+      - generic [ref=e75]:
+        - paragraph [ref=e76]: Vehicles
+        - heading "PARKING" [level=2] [ref=e77]
+        - paragraph [ref=e79]:
+          - text: The driveway fits
+          - strong [ref=e80]: one car comfortably
+          - text: . There are also
+          - strong [ref=e81]: three street spots on the cul-de-sac
+          - text: directly in front of the house. The street is quiet and parking is never an issue. If you're arriving without a car, rideshares work great from this location.
+      - generic [ref=e82]:
+        - paragraph [ref=e83]: Important
+        - heading "A FEW THINGS TO KNOW" [level=2] [ref=e84]
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - paragraph [ref=e87]: NO SMOKING
+            - paragraph [ref=e88]: No smoking inside the home. The deck and outdoor areas are fine.
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: NO PARTIES
+            - paragraph [ref=e91]: No parties or events. We love a good time, but the neighbors do too.
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: QUIET HOURS
+            - paragraph [ref=e94]: Quiet hours after 10 PM. The cul-de-sac is peaceful, let's keep it that way.
+          - generic [ref=e95]:
+            - paragraph [ref=e96]: PET POLICY
+            - paragraph [ref=e97]: Pets are welcome. Just let us know in advance and keep them off the furniture.
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: ART & DECOR
+            - paragraph [ref=e100]: Please don't move the art or instruments. They're in their happy places.
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: LOCK UP
+            - paragraph [ref=e103]: Lock up when you leave. The neighborhood is safe, but it's still LA.
+      - generic [ref=e104]:
+        - paragraph [ref=e105]: Essentials
+        - heading "WIFI & THE BASICS" [level=2] [ref=e106]
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: WiFi Network
+            - paragraph [ref=e110]: 6910 Paseo Del Serra
+            - paragraph [ref=e111]: Fast fiber connection for remote work and streaming.
+          - generic [ref=e112]:
+            - paragraph [ref=e113]: WiFi Password
+            - paragraph [ref=e114]: Trilemma
+            - paragraph [ref=e115]: Case-sensitive.
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic [ref=e118]: Towels & linens
+            - generic [ref=e119]: Provided
+          - generic [ref=e120]:
+            - generic [ref=e121]: Washer & dryer
+            - generic [ref=e122]: In unit
+          - generic [ref=e123]:
+            - generic [ref=e124]: Hair dryer
+            - generic [ref=e125]: Bathroom
+          - generic [ref=e126]:
+            - generic [ref=e127]: Extra blankets & pillows
+            - generic [ref=e128]: Bedroom closets
+    - img "Kitchen" [ref=e130]
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - paragraph [ref=e133]: The Kitchen
+        - heading "FIVE WAYS TO MAKE COFFEE" [level=2] [ref=e134]
+        - paragraph [ref=e135]: We take coffee seriously. You'll find everything you need to make a great cup your way. There's also a full kitchen with all the basics for cooking in.
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: Drip coffee maker
+            - generic [ref=e139]: Counter
+          - generic [ref=e140]:
+            - generic [ref=e141]: French press
+            - generic [ref=e142]: Counter
+          - generic [ref=e143]:
+            - generic [ref=e144]: Pour-over
+            - generic [ref=e145]: Counter
+          - generic [ref=e146]:
+            - generic [ref=e147]: Nespresso Virtuo machine
+            - generic [ref=e148]: Counter
+          - generic [ref=e149]:
+            - generic [ref=e150]: Electric kettle
+            - generic [ref=e151]: Counter
+        - generic [ref=e152]:
+          - paragraph [ref=e153]: Stocked for you
+          - paragraph [ref=e154]:
+            - text: Coffee beans, tea, sugar, cream, olive oil, salt, pepper, and basic spices are provided. The closest grocery store is
+            - link "Ralphs (7257 W Sunset Blvd)" [ref=e155] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/3q2h2R
+            - text: ", about a 5-minute drive."
+      - generic [ref=e156]:
+        - paragraph [ref=e157]: The Vibe
+        - heading "HOWARD THE VINTAGE PIANO" [level=2] [ref=e158]
+        - paragraph [ref=e159]: Meet Howard, our vintage upright piano. He isn't just decoration—you are more than welcome to play him. We only ask that you play him gently and lovingly, as he is an older, delicate instrument. Put on a record, flip through the books, and make yourself at home.
+    - img "Deck with striped umbrella and views" [ref=e161]
+    - generic [ref=e162]:
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - paragraph [ref=e166]: The Neighborhood
+          - heading "LOCAL FAVORITES" [level=2] [ref=e167]
+          - generic [ref=e168]:
+            - button "All Spots" [ref=e169] [cursor=pointer]
+            - button "Coffee" [ref=e170] [cursor=pointer]
+            - button "Food" [ref=e171] [cursor=pointer]
+            - button "Parks & Views" [ref=e172] [cursor=pointer]
+        - generic [ref=e174]:
+          - region "Map" [ref=e175]
+          - generic:
+            - generic [ref=e176]:
+              - button "Zoom in" [ref=e177] [cursor=pointer]
+              - button "Zoom out" [ref=e179] [cursor=pointer]
+              - button "Reset bearing to north" [ref=e181]
+            - group [ref=e183]:
+              - generic "Toggle attribution" [ref=e184] [cursor=pointer]
+              - link "MapLibre" [ref=e186] [cursor=pointer]:
+                - /url: https://maplibre.org/
+      - generic [ref=e187]:
+        - paragraph [ref=e188]: In Case of Emergency
+        - heading "IMPORTANT NUMBERS" [level=2] [ref=e189]
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - paragraph [ref=e192]: Emergency
+            - paragraph [ref=e193]: "911"
+            - paragraph [ref=e194]: Police, fire, and medical emergencies.
+          - generic [ref=e195]:
+            - paragraph [ref=e196]: Your Host
+            - paragraph [ref=e197]:
+              - link "323.540.1127" [ref=e198] [cursor=pointer]:
+                - /url: tel:3235401127
+            - paragraph [ref=e199]: Call or text Patrick anytime. We'll get back to you right away.
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - generic [ref=e202]: Nearest hospital
+            - link "SoCal Hospital at Hollywood" [ref=e203] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/hG55jJvXQGgG7Bv39
+          - generic [ref=e204]:
+            - generic [ref=e205]: Police Non-Emergency
+            - link "213.972.2971" [ref=e206] [cursor=pointer]:
+              - /url: tel:2139722971
+    - generic [ref=e207]:
+      - paragraph [ref=e208]: ENJOY YOUR STAY
+      - paragraph [ref=e209]: Come for the views. Stay for the vibe.
+      - paragraph [ref=e210]:
+        - link "Leave Us a Review" [ref=e211] [cursor=pointer]:
+          - /url: https://www.airbnb.com/rooms/736417448669019623
+    - contentinfo [ref=e212]:
+      - link "THE ARTIST BUNGALOW" [ref=e213] [cursor=pointer]:
+        - /url: ./artist-bungalow-website-v4.html
+      - paragraph [ref=e214]: Hollywood Hills · Los Angeles
+      - generic [ref=e216]:
+        - link "Instagram" [ref=e217] [cursor=pointer]:
+          - /url: https://www.instagram.com/theartistbungalow/
+          - img [ref=e218]
+          - text: Instagram
+        - link "Pinterest" [ref=e220] [cursor=pointer]:
+          - /url: https://www.pinterest.com/theartistbungalow/
+          - img [ref=e221]
+          - text: Pinterest
+        - link "Airbnb" [ref=e223] [cursor=pointer]:
+          - /url: https://www.airbnb.com/rooms/736417448669019623
+          - img [ref=e224]
+          - text: Airbnb
+        - link "All Links" [ref=e226] [cursor=pointer]:
+          - /url: https://linktr.ee/theartistbungalow
+          - img [ref=e227]
+          - text: All Links

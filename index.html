@@ -2688,10 +2688,15 @@
                     `;
                 document.body.appendChild(overlay);
                 overlay.querySelectorAll('a, .menu-close').forEach(el => {
-                    el.addEventListener('click', () => overlay.style.display = 'none');
+                    el.addEventListener('click', () => {
+                        overlay.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
                 });
+                document.body.style.overflow = 'hidden';
             } else {
                 overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
         });
 
@@ -2826,6 +2831,7 @@
                 closeDetailPanel();
             } else if (menuOverlay && menuOverlay.style.display !== 'none') {
                 menuOverlay.style.display = 'none';
+                document.body.style.overflow = '';
             }
         });
 
@@ -2841,7 +2847,7 @@
 
         const locData = {
             'bowl': {
-                title: 'Hollywood Bowl', time: '5 MIN WALK', desc: `The world's most famous outdoor amphitheater.Catching a summer concert under the stars here is practically mandatory.`, coords:
+                title: 'Hollywood Bowl', time: '5 MIN WALK', desc: `The world's most famous outdoor amphitheater. Catching a summer concert under the stars here is practically mandatory.`, coords:
                     [-118.3379, 34.1122], photos:
                     ['hollywood_bowl_aerial_amphitheater.webp', 'hollywood_bowl_shell_daytime.jpg',
                         'hollywood_bowl_evening_lights.png', 'hollywood_bowl_orchestra_performance.webp',
@@ -2856,7 +2862,7 @@
                         'runyon_canyon_golden_sunset_hills_silhouette.webp']
             },
             'griffith': {
-                title: 'Griffith Observatory', time: '12 MIN DRIVE', desc: `Iconic art deco landmark.Drive up for sunset to watch the city lights turn on across the basin.`, coords:
+                title: 'Griffith Observatory', time: '12 MIN DRIVE', desc: `Iconic art deco landmark. Drive up for sunset to watch the city lights turn on across the basin.`, coords:
                     [-118.3004, 34.1184], photos:
                     ['griffith_observatory_archway_telescope_hollywood_sign_view.webp',
                         'griffith_observatory_front_facade_crowded_sunset.webp',

@@ -1,0 +1,306 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=e6]:
+          - generic [ref=e9]:
+            - link [ref=e14] [cursor=pointer]:
+              - /url: /
+              - img [ref=e19]
+            - generic [ref=e22]:
+              - link [ref=e27] [cursor=pointer]:
+                - /url: /
+                - img [ref=e32]
+              - link [ref=e37] [cursor=pointer]:
+                - /url: /reels/
+                - img [ref=e42]
+              - link [ref=e49] [cursor=pointer]:
+                - /url: /direct/inbox/
+                - img [ref=e54]
+              - link [ref=e60] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e65]
+              - link [ref=e71] [cursor=pointer]:
+                - /url: /explore/
+                - img [ref=e76]
+              - link [ref=e84] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e89]
+              - link [ref=e95] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e100]
+              - link [ref=e106] [cursor=pointer]:
+                - /url: /theartistbungalow/
+                - link [ref=e111]:
+                  - img [ref=e112]
+            - generic [ref=e113]:
+              - link [ref=e116] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e121]
+              - link [ref=e124] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e129]
+          - generic [ref=e132]:
+            - main [ref=e133]:
+              - generic [ref=e138]:
+                - generic [ref=e140]:
+                  - article [ref=e141]:
+                    - generic [ref=e142]:
+                      - generic [ref=e144]:
+                        - button [ref=e149] [cursor=pointer]:
+                          - link [ref=e151]:
+                            - img [ref=e152]
+                        - generic [ref=e155]:
+                          - generic [ref=e157]:
+                            - generic [ref=e159]:
+                              - link [ref=e165] [cursor=pointer]:
+                                - /url: /cristiano/
+                                - generic [ref=e168]: cristiano
+                              - img [ref=e170]
+                            - generic [ref=e172]:
+                              - generic [ref=e174]: •
+                              - link [ref=e176] [cursor=pointer]:
+                                - /url: /p/DVld0u9iN3K/
+                                - time [ref=e178]: 2d
+                          - button [ref=e180] [cursor=pointer]: Follow
+                        - button [ref=e183] [cursor=pointer]:
+                          - img [ref=e186]
+                      - button [ref=e193]:
+                        - generic [ref=e197] [cursor=pointer]:
+                          - button [ref=e198]:
+                            - img [ref=e200]
+                          - button [ref=e203]:
+                            - img [ref=e205]
+                      - generic [ref=e209]:
+                        - generic [ref=e210]:
+                          - generic [ref=e211]:
+                            - button [ref=e214] [cursor=pointer]:
+                              - img [ref=e217]
+                            - button [ref=e219] [cursor=pointer]: 2.6M
+                            - button [ref=e221] [cursor=pointer]:
+                              - img [ref=e223]
+                            - button [ref=e225] [cursor=pointer]: 36.7K
+                            - button [ref=e226] [cursor=pointer]:
+                              - img [ref=e227]
+                          - button [ref=e232] [cursor=pointer]:
+                            - button [ref=e233]:
+                              - img [ref=e235]
+                        - generic [ref=e237]:
+                          - link [ref=e242] [cursor=pointer]:
+                            - /url: /cristiano/
+                            - generic [ref=e244]:
+                              - generic [ref=e245]: cristiano
+                              - img [ref=e247]
+                          - generic [ref=e250]: Recovering and ready to watch the game today. Let’s go, Al Nassr! 🟡🔵
+                  - article [ref=e251]:
+                    - generic [ref=e252]:
+                      - generic [ref=e254]:
+                        - button [disabled] [ref=e259]:
+                          - link [disabled] [ref=e261] [cursor=pointer]:
+                            - img [ref=e262]
+                        - generic [ref=e265]:
+                          - generic [ref=e266]:
+                            - generic [ref=e267]:
+                              - generic [ref=e269]:
+                                - link [ref=e275] [cursor=pointer]:
+                                  - /url: /jetjoc51/
+                                  - generic [ref=e278]: jetjoc51
+                                - img [ref=e280]
+                              - generic [ref=e282]:
+                                - generic [ref=e284]: •
+                                - link [ref=e286] [cursor=pointer]:
+                                  - /url: /p/DVMHoIsgafq/
+                                  - time [ref=e288]: 1w
+                            - link [ref=e292] [cursor=pointer]:
+                              - /url: /explore/locations/137242643/santa-monica-california/
+                              - text: Santa Monica, California
+                          - button [ref=e294] [cursor=pointer]: Follow
+                        - button [ref=e297] [cursor=pointer]:
+                          - img [ref=e300]
+                      - button [ref=e307]:
+                        - img [ref=e313]
+                      - generic [ref=e318]:
+                        - generic [ref=e319]:
+                          - button [ref=e322] [cursor=pointer]:
+                            - img [ref=e325]
+                          - button [ref=e327] [cursor=pointer]: 5.8K
+                          - button [ref=e329] [cursor=pointer]:
+                            - img [ref=e331]
+                          - button [ref=e333] [cursor=pointer]:
+                            - img [ref=e334]
+                        - button [ref=e339] [cursor=pointer]:
+                          - button [ref=e340]:
+                            - img [ref=e342]
+                  - article [ref=e344]:
+                    - generic [ref=e345]:
+                      - generic [ref=e347]:
+                        - button [disabled] [ref=e352]:
+                          - link [disabled] [ref=e354] [cursor=pointer]:
+                            - img [ref=e355]
+                        - generic [ref=e358]:
+                          - generic [ref=e360]:
+                            - generic [ref=e362]:
+                              - link [ref=e368] [cursor=pointer]:
+                                - /url: /michaeljackson/
+                                - generic [ref=e371]: michaeljackson
+                              - img [ref=e373]
+                            - generic [ref=e375]:
+                              - generic [ref=e377]: •
+                              - link [ref=e379] [cursor=pointer]:
+                                - /url: /p/DVq2wRsDU-p/
+                                - time [ref=e381]: 8h
+                          - button [ref=e383] [cursor=pointer]: Follow
+                        - button [ref=e386] [cursor=pointer]:
+                          - img [ref=e389]
+                      - button [ref=e396]:
+                        - img [ref=e402]
+                      - generic [ref=e406]:
+                        - generic [ref=e407]:
+                          - generic [ref=e408]:
+                            - button [ref=e411] [cursor=pointer]:
+                              - img [ref=e414]
+                            - button [ref=e416] [cursor=pointer]: 153.9K
+                            - button [ref=e418] [cursor=pointer]:
+                              - img [ref=e420]
+                            - button [ref=e422] [cursor=pointer]: "594"
+                            - button [ref=e423] [cursor=pointer]:
+                              - img [ref=e424]
+                          - button [ref=e429] [cursor=pointer]:
+                            - button [ref=e430]:
+                              - img [ref=e432]
+                        - generic [ref=e434]:
+                          - link [ref=e439] [cursor=pointer]:
+                            - /url: /michaeljackson/
+                            - generic [ref=e441]:
+                              - generic [ref=e442]: michaeljackson
+                              - img [ref=e444]
+                          - generic [ref=e446]:
+                            - generic [ref=e447]: On this date in 1993, Michael Jackson won three Soul Train awards including the Humanitarian Award presented by Eddie
+                            - generic [ref=e448]:
+                              - text: ...
+                              - button [ref=e449] [cursor=pointer]:
+                                - generic [ref=e450]: more
+                  - article [ref=e451]:
+                    - generic [ref=e452]:
+                      - generic [ref=e454]:
+                        - button [ref=e459] [cursor=pointer]:
+                          - link [ref=e461]:
+                            - img [ref=e462]
+                        - generic [ref=e465]:
+                          - generic [ref=e467]:
+                            - generic [ref=e469]:
+                              - link [ref=e475] [cursor=pointer]:
+                                - /url: /indiancricketteam/
+                                - generic [ref=e478]: indiancricketteam
+                              - img [ref=e480]
+                            - generic [ref=e482]:
+                              - generic [ref=e484]: •
+                              - link [ref=e486] [cursor=pointer]:
+                                - /url: /p/DVpTJZ9F4Yp/
+                                - time [ref=e488]: 23h
+                          - button [ref=e490] [cursor=pointer]: Follow
+                        - button [ref=e493] [cursor=pointer]:
+                          - img [ref=e496]
+                      - button [ref=e503]:
+                        - img [ref=e509]
+                      - generic [ref=e513]:
+                        - generic [ref=e514]:
+                          - generic [ref=e515]:
+                            - button [ref=e518] [cursor=pointer]:
+                              - img [ref=e521]
+                            - button [ref=e523] [cursor=pointer]: 404.8K
+                            - button [ref=e525] [cursor=pointer]:
+                              - img [ref=e527]
+                            - button [ref=e529] [cursor=pointer]: "555"
+                            - button [ref=e530] [cursor=pointer]:
+                              - img [ref=e531]
+                          - button [ref=e536] [cursor=pointer]:
+                            - button [ref=e537]:
+                              - img [ref=e539]
+                        - generic [ref=e541]:
+                          - link [ref=e546] [cursor=pointer]:
+                            - /url: /indiancricketteam/
+                            - generic [ref=e548]:
+                              - generic [ref=e549]: indiancricketteam
+                              - img [ref=e551]
+                          - generic [ref=e553]:
+                            - generic [ref=e555]:
+                              - text: Waking up as 𝗪𝗼𝗿𝗹𝗱 𝗖𝗵𝗮𝗺𝗽𝗶𝗼𝗻𝘀 😎✌️
+                              - link [ref=e556] [cursor=pointer]:
+                                - /url: /explore/tags/teamindia/
+                                - text: "#TeamIndia"
+                              - text: "|"
+                            - generic [ref=e557]:
+                              - text: ...
+                              - button [ref=e558] [cursor=pointer]:
+                                - generic [ref=e559]: more
+                - progressbar [ref=e561]:
+                  - img [ref=e562]
+            - contentinfo [ref=e575]:
+              - generic [ref=e576]:
+                - generic [ref=e578]:
+                  - link [ref=e580] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=e581]: Meta
+                  - link [ref=e583] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=e584]: About
+                  - link [ref=e586] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=e587]: Blog
+                  - link [ref=e589] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=e590]: Jobs
+                  - link [ref=e592] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=e593]: Help
+                  - link [ref=e595] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=e596]: API
+                  - link [ref=e598] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=e599]: Privacy
+                  - link [ref=e601] [cursor=pointer]:
+                    - /url: /legal/privacy/health_privacy_policy/
+                    - generic [ref=e602]: Consumer Health Privacy
+                  - link [ref=e604] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=e605]: Terms
+                  - link [ref=e607] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=e608]: Locations
+                  - link [ref=e610] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=e611]: Instagram Lite
+                  - link [ref=e613] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=e614]: Meta AI
+                  - link [ref=e616] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=e617]: Threads
+                  - link [ref=e619] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=e620]: Contact Uploading & Non-Users
+                  - link [ref=e622] [cursor=pointer]:
+                    - /url: /accounts/meta_verified/?entrypoint=web_footer
+                    - generic [ref=e623]: Meta Verified
+                - generic [ref=e624]:
+                  - generic [ref=e625] [cursor=pointer]:
+                    - generic [ref=e626]:
+                      - generic [ref=e627]: English
+                      - img [ref=e630]
+                    - combobox [ref=e632]
+                  - generic [ref=e634]: © 2026 Instagram from Meta
+        - button "Messages" [ref=e637] [cursor=pointer]:
+          - generic "Messages" [ref=e638]:
+            - generic [ref=e639]:
+              - img "Messages" [ref=e642]
+              - generic [ref=e645]: Messages
+  - dialog [ref=e652]:
+    - generic [ref=e656]:
+      - generic [ref=e660]:
+        - heading "Turn on Notifications" [active] [level=2] [ref=e661]
+        - generic [ref=e662]: Know right away when people follow you or like and comment on your photos.
+      - generic [ref=e663]:
+        - button "Turn On" [ref=e664] [cursor=pointer]
+        - button "Not Now" [ref=e665] [cursor=pointer]
