@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Guest guidebook for The Artist Bungalow - check-in, house guide, WiFi, parking, and our favorite local spots in the Hollywood Hills.">
+  <meta name="description" content="Guest guidebook for The Artist Bungalow - arrival notes, house guide, parking, and favorite local spots in the Hollywood Hills.">
   <title>Guest Guide — The Artist Bungalow</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -617,17 +617,14 @@
       <p class="section-label">Welcome</p>
       <h2 class="section-heading">MAKE YOURSELF AT HOME</h2>
       <p class="section-body">
-        We're so glad you're here. The Artist Bungalow is our personal retreat and
-        we've put a lot of love into making it a place that feels like home from the
-        moment you walk in. This guide has everything you need to settle in, explore
-        the neighborhood, and get the most out of your stay.
+        The Artist Bungalow is ready for your stay: light through the living room,
+        canyon quiet, art on the walls, and the Hollywood Bowl just down the hill.
+        This guide has everything you need to settle in, explore the neighborhood,
+        and get the most out of your time in the hills.
       </p>
       <p class="section-body" style="margin-top: 16px;">
-        If you need anything at all, don't hesitate to reach out. We're always just
-        a message away.
-      </p>
-      <p class="section-body" style="margin-top: 16px;">
-        <strong>— Patrick &amp; Jimena</strong>
+        For stay-specific details and support, use the Airbnb message thread so
+        everything stays in one secure place.
       </p>
 
       <!-- TABLE OF CONTENTS -->
@@ -678,8 +675,8 @@
           </ul>
           <div class="callout"
             style="margin-top: 20px; background: rgba(196, 154, 60, 0.1); border-left: 2px solid var(--brass);">
-            <p class="section-body" style="color: var(--onyx); font-weight: 500;">Both the keypad and lockbox share the
-              same code: <strong style="color: var(--brass); font-size: 16px;">1948</strong></p>
+            <p class="section-body" style="color: var(--onyx); font-weight: 500;">Entry codes are sent through Airbnb
+              before check-in. Use the Airbnb message thread if anything looks different at the gate.</p>
           </div>
         </div>
       </div>
@@ -703,18 +700,16 @@
 
         <div class="callout" style="margin-top: 24px;">
           <p class="section-body" style="margin-bottom: 16px;">
-            <strong>Damages:</strong> Please report any damages or issues during your stay so that we can address them
+            <strong>Damages:</strong> Please report any damages or issues during your stay through Airbnb so they can be addressed
             promptly.
           </p>
           <p class="section-body" style="margin-bottom: 16px;">
-            <strong>Feedback:</strong> We would appreciate it if you could take a few minutes to leave a review of your
-            stay. Your feedback helps us improve our service for future guests.
+            <strong>Feedback:</strong> A quick review after checkout helps future guests know what to expect from the
+            bungalow.
           </p>
           <p class="section-body">
             <strong>Future Reservations:</strong> If you enjoyed your stay and would like to make a future reservation,
-            please feel free to contact us. We hope that you had a comfortable and enjoyable stay and that you will
-            consider staying with us again in the future! If you have any questions or concerns, please don't hesitate
-            to reach out.
+            the Airbnb listing is the best place to check availability and book another visit.
           </p>
         </div>
       </div>
@@ -771,13 +766,13 @@
         <div class="info-grid">
           <div class="info-card">
             <p class="info-card-label">WiFi Network</p>
-            <p class="info-card-value">6910 Paseo Del Serra</p>
-            <p class="info-card-note">Fast fiber connection for remote work and streaming.</p>
+            <p class="info-card-value">Shared privately</p>
+            <p class="info-card-note">Network details are included in Airbnb trip details and check-in messages.</p>
           </div>
           <div class="info-card">
             <p class="info-card-label">WiFi Password</p>
-            <p class="info-card-value">Trilemma</p>
-            <p class="info-card-note">Case-sensitive.</p>
+            <p class="info-card-value">Shared privately</p>
+            <p class="info-card-note">Use Airbnb messages if you need the details resent.</p>
           </div>
         </div>
         <div style="margin-top: 32px;">
@@ -1070,9 +1065,9 @@
             <p class="info-card-note">Police, fire, and medical emergencies.</p>
           </div>
           <div class="info-card">
-            <p class="info-card-label">Your Host</p>
-            <p class="info-card-value"><a href="tel:3235401127" style="text-decoration: underline;">323.540.1127</a></p>
-            <p class="info-card-note">Call or text Patrick anytime. We'll get back to you right away.</p>
+            <p class="info-card-label">Stay Support</p>
+            <p class="info-card-value">Airbnb Messages</p>
+            <p class="info-card-note">For non-emergency stay questions, use the Airbnb message thread.</p>
           </div>
         </div>
         <div style="margin-top: 24px;">
@@ -1227,7 +1222,6 @@
 
         let map = null;
         let destMarker = null;
-        const coordsHome = [-118.338, 34.108];
 
         const sidebar = document.getElementById('v3LocList');
 
@@ -1264,17 +1258,8 @@
 
               if (destMarker) destMarker.setLngLat(loc.coords);
 
-              if (map && map.getSource('route')) {
-                map.getSource('route').setData({
-                  type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coordsHome, loc.coords] }
-                });
-              }
-
-              const bounds = new maplibregl.LngLatBounds();
-              bounds.extend(coordsHome);
-              bounds.extend(loc.coords);
               if (map) {
-                map.fitBounds(bounds, { padding: 80, duration: 1500 });
+                map.easeTo({ center: loc.coords, zoom: 12.5, duration: 1200 });
               }
             });
 
@@ -1291,7 +1276,7 @@
           map = new maplibregl.Map({
             container: 'v3map',
             style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-            center: coordsHome,
+            center: locations[0].coords,
             zoom: 12.5,
             scrollZoom: false,
             interactive: true
@@ -1299,17 +1284,7 @@
           map.addControl(new maplibregl.NavigationControl());
 
           map.on('load', () => {
-            // Home Marker
-            const hEl = document.createElement('div');
-            hEl.style.width = '18px';
-            hEl.style.height = '18px';
-            hEl.style.background = 'var(--terracotta)';
-            hEl.style.border = '2px solid white';
-            hEl.style.borderRadius = '50%';
-            hEl.style.boxShadow = '0 0 10px rgba(194,97,75,0.5)';
-            new maplibregl.Marker({ element: hEl }).setLngLat(coordsHome).addTo(map);
-
-            // Dest Marker
+            // Destination only, no property-origin marker on the public guidebook.
             const dEl = document.createElement('div');
             dEl.style.width = '16px';
             dEl.style.height = '16px';
@@ -1318,19 +1293,6 @@
             dEl.style.borderRadius = '50%';
             dEl.style.boxShadow = '0 0 10px rgba(26,26,26,0.3)';
             destMarker = new maplibregl.Marker({ element: dEl }).setLngLat(locations[0].coords).addTo(map);
-
-            map.addSource('route', {
-              type: 'geojson',
-              data: { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [coordsHome, locations[0].coords] } }
-            });
-
-            map.addLayer({
-              id: 'route',
-              type: 'line',
-              source: 'route',
-              layout: { 'line-join': 'round', 'line-cap': 'round' },
-              paint: { 'line-color': '#1a1a1a', 'line-width': 2, 'line-dasharray': [2, 4], 'line-opacity': 0.4 }
-            });
 
             renderLocations('All');
           });

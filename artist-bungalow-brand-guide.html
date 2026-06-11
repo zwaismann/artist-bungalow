@@ -623,8 +623,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            height: 45%;
-            background: linear-gradient(to top, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0));
+            height: 62%;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.86), rgba(26, 26, 26, 0));
             pointer-events: none;
         }
 
@@ -636,7 +636,17 @@
             z-index: 1;
             color: var(--ivory);
             font-size: 12px;
+            line-height: 1.45;
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .photo-caption {
+                bottom: 14px;
+                left: 14px;
+                right: 14px;
+                font-size: 11px;
+            }
         }
 
         /* ── FOOTER ─────────────────────────────── */
