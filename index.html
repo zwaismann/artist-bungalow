@@ -506,7 +506,7 @@
 
         .hero-label {
             font-family: var(--font-body);
-            font-size: 11px;
+            font-size: clamp(9px, 2.9vw, 11px);
             font-weight: 500;
             letter-spacing: 0.35em;
             text-transform: uppercase;
@@ -1849,7 +1849,7 @@
 
         <!-- 3B: HERO SECTION -->
         <section class="hero-sticky" id="heroSticky">
-            <img src="hollywood_sign_hero.webp" alt="Hollywood Hills" class="hero-bg" id="heroBg" fetchpriority="high">
+            <img src="hollywood_sign_hero.webp" srcset="hollywood_sign_hero.webp 1920w, hollywood_sign_hero-2560.webp 2560w" sizes="100vw" alt="Hollywood Hills" class="hero-bg" id="heroBg" fetchpriority="high">
             <div class="hero-gradient"></div>
 
             <div class="hero-content">
@@ -2057,8 +2057,8 @@
             <div class="neighborhood-grid">
                 <div class="location-list">
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('bowl')"
-                        onfocus="activateLocation(\'bowl\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'bowl\')}"
+                        onfocus="activateLocation('bowl')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('bowl')}"
                         onclick="openDetailPanel('bowl')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Hollywood Bowl</span>
@@ -2070,8 +2070,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('runyon')"
-                        onfocus="activateLocation(\'runyon\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'runyon\')}"
+                        onfocus="activateLocation('runyon')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('runyon')}"
                         onclick="openDetailPanel('runyon')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Runyon Canyon</span>
@@ -2083,8 +2083,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('griffith')"
-                        onfocus="activateLocation(\'griffith\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'griffith\')}"
+                        onfocus="activateLocation('griffith')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('griffith')}"
                         onclick="openDetailPanel('griffith')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Griffith Observatory</span>
@@ -2096,8 +2096,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('walk')"
-                        onfocus="activateLocation(\'walk\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'walk\')}"
+                        onfocus="activateLocation('walk')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('walk')}"
                         onclick="openDetailPanel('walk')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Walk of Fame</span>
@@ -2109,8 +2109,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('universal')"
-                        onfocus="activateLocation(\'universal\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'universal\')}"
+                        onfocus="activateLocation('universal')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('universal')}"
                         onclick="openDetailPanel('universal')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Universal Studios</span>
@@ -2122,8 +2122,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('warner')"
-                        onfocus="activateLocation(\'warner\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'warner\')}"
+                        onfocus="activateLocation('warner')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('warner')}"
                         onclick="openDetailPanel('warner')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Warner Bros. Studio</span>
@@ -2135,8 +2135,8 @@
                         </svg>
                     </div>
                     <div class="location-item" role="button" tabindex="0" onmouseenter="activateLocation('reservoir')"
-                        onfocus="activateLocation(\'reservoir\')"
-                        onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetailPanel(\'reservoir\')}"
+                        onfocus="activateLocation('reservoir')"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPanel('reservoir')}"
                         onclick="openDetailPanel('reservoir')">
                         <div class="location-item-info">
                             <span class="location-name font-impact">Hollywood Reservoir</span>
@@ -2487,6 +2487,7 @@
                 displayedStr = typeScript.replace(/\n/g, '<br>');
                 typewriterText.innerHTML = displayedStr + '<span class="typewriter-cursor"></span>';
                 if (splashIndicator) splashIndicator.style.opacity = '1';
+                heroSplash.style.pointerEvents = 'none';
             }
 
             window.skipTypewriter = function () {
@@ -2495,6 +2496,9 @@
 
             // Anywhere-click skips the typewriter; show the scroll cue early so
             // visitors aren't stuck staring at a black screen with no affordance.
+            // The splash is pointer-events:none by default (so scroll passes through),
+            // so clicks only reach it while typing is in progress.
+            heroSplash.style.pointerEvents = 'auto';
             heroSplash.addEventListener('click', finishTypewriter);
             setTimeout(() => { if (splashIndicator) splashIndicator.style.opacity = '1'; }, 1500);
 
@@ -2600,7 +2604,7 @@
             const scrollDist = -rect.top;
 
             // Increased the scroll height to slow down the cinematic transition speed
-            const scrollHeight = window.innerWidth > 900 ? 2500 : 900;
+            const scrollHeight = window.innerWidth >= 900 ? 2500 : 900;
 
             targetProgress = Math.max(0, Math.min(1, scrollDist / scrollHeight));
 
