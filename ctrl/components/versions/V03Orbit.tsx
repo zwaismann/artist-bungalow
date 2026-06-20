@@ -110,7 +110,7 @@ export default function V03Orbit() {
           <circle cx="50" cy="50" r="41" fill="none" stroke="var(--grid)" strokeWidth="0.3" />
         </svg>
 
-        <HexGlyph hoverIndex={hover} activeIndex={active} className="absolute inset-0 h-full w-full" />
+        <HexGlyph hoverIndex={hover} activeIndex={active} breatheHub className="absolute inset-0 h-full w-full" />
 
         <div ref={ring} className="absolute inset-0">
           {SECTIONS.map((s, i) => {

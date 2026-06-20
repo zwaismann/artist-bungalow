@@ -109,6 +109,7 @@ export default function V06Ritual() {
           <GlyphBox>
             <HexGlyph
               gsapDriven={phase === "booting"}
+              breatheHub={phase === "active"}
               hoverIndex={hover}
               onHover={phase === "active" ? setHover : undefined}
               onSelect={phase === "active" ? () => {} : undefined}

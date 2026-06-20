@@ -6,6 +6,7 @@ import HexGlyph from "@/components/HexGlyph";
 import RadialLabels from "@/components/RadialLabels";
 import { Chrome } from "@/components/Chrome";
 import { SectionPanel } from "@/components/SectionPanel";
+import { SelectorReadout } from "@/components/SelectorReadout";
 import { GlyphBox, useEscape } from "@/components/Stage";
 import { BRAND, SECTIONS } from "@/lib/sections";
 import { rotationToTop, hexOutline } from "@/lib/hex";
@@ -76,9 +77,9 @@ export default function V08Hybrid() {
       const tl = gsap.timeline({ onComplete: () => setPhase("active") });
       segs.forEach((seg, i) => {
         // condensed docking: approach → decel/snap → settle
-        tl.to(seg, { opacity: 1, x: 0, y: 0, rotation: 0, duration: 0.85, ease: "power4.out" }, i * 0.1)
-          .to(seg, { scale: 1.018, duration: 0.06 }, i * 0.1 + 0.85)
-          .to(seg, { scale: 1, duration: 0.14 }, i * 0.1 + 0.91);
+        tl.to(seg, { opacity: 1, x: 0, y: 0, rotation: 0, duration: 0.7, ease: "power4.out" }, i * 0.08)
+          .to(seg, { scale: 1.018, duration: 0.06 }, i * 0.08 + 0.7)
+          .to(seg, { scale: 1, duration: 0.14 }, i * 0.08 + 0.76);
       });
       tl.to(".hex-outline", { opacity: 1, duration: 0.5 }, ">-0.2")
         .to(".hex-label", { opacity: 1, y: 0, duration: 0.5, stagger: 0.07 }, ">-0.1");
@@ -170,6 +171,7 @@ export default function V08Hybrid() {
 
               <HexGlyph
                 gsapDriven={phase === "booting"}
+                breatheHub={phase === "active" && open == null}
                 rotation={rotation}
                 hoverIndex={phase === "active" ? focus : null}
                 activeIndex={open}
@@ -187,17 +189,18 @@ export default function V08Hybrid() {
             </GlyphBox>
           </div>
 
+          {phase === "active" && open == null && (
+            <SelectorReadout
+              section={SECTIONS[focus]}
+              hint="[ hover or ◄ ► to aim · enter to engage · esc to return ]"
+            />
+          )}
+
           <SectionPanel section={open != null ? SECTIONS[open] : null} onClose={() => setOpen(null)} reduced={reduced} />
 
           {phase === "active" && open != null && (
             <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-mono text-[10px] uppercase tracking-widest2 text-orange sm:right-8">
               ALIGNMENT {pct.toString().padStart(3, "0")}%
-            </div>
-          )}
-
-          {phase === "active" && open == null && (
-            <div className="pointer-events-none absolute bottom-16 left-1/2 hidden -translate-x-1/2 font-mono text-[10px] uppercase tracking-widest2 text-paper/40 sm:block">
-              [ hover or ◄ ► to aim · enter to engage · esc to return ]
             </div>
           )}
         </>

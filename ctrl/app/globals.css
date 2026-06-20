@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Space Grotesk";
-  --font-mono: "Space Mono";
+  /* --font-display / --font-mono are injected by next/font (see layout.tsx). */
 
   /* Design tokens mirrored as CSS variables for raw SVG / canvas use. */
   --black: #0d0d0b;
@@ -148,6 +147,66 @@ body {
   .fx-drift,
   .pulse-dot,
   .cursor-blink {
+    animation: none !important;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   KEYBOARD FOCUS
+   A single, on-brand focus ring for keyboard users only (:focus-visible).
+   Mouse interaction never shows it. SVG wedges get an inset outline so the
+   ring hugs the milled plate; controls/labels get an offset ring.
+---------------------------------------------------------------------------- */
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 1.5px solid var(--orange);
+  outline-offset: 2px;
+}
+.hex-seg:focus-visible {
+  outline: 1.5px solid var(--ivory);
+  outline-offset: -3px;
+}
+
+/* ----------------------------------------------------------------------------
+   ANALOG CUT — brief scanline/flash wipe played when switching versions, so
+   the lab feels like one machine changing modes rather than pages swapping.
+---------------------------------------------------------------------------- */
+.analog-cut {
+  animation: analog-cut 460ms ease-out forwards;
+}
+@keyframes analog-cut {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Slow "breathing" of the core hub so resting states feel alive, not inert. */
+.hub-breathe {
+  animation: hub-breathe 4.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes hub-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analog-cut,
+  .hub-breathe {
     animation: none !important;
   }
 }

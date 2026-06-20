@@ -6,6 +6,7 @@ import HexGlyph from "@/components/HexGlyph";
 import RadialLabels from "@/components/RadialLabels";
 import { Chrome } from "@/components/Chrome";
 import { SectionPanel } from "@/components/SectionPanel";
+import { SelectorReadout } from "@/components/SelectorReadout";
 import { GlyphBox, useEscape } from "@/components/Stage";
 import { SECTIONS } from "@/lib/sections";
 import { rotationToTop } from "@/lib/hex";
@@ -94,6 +95,7 @@ export default function V05Nav() {
         <GlyphBox>
           <HexGlyph
             rotation={rotation}
+            breatheHub={open == null}
             hoverIndex={focus}
             activeIndex={open}
             onHover={(i) => i != null && open == null && setFocus(i)}
@@ -102,7 +104,8 @@ export default function V05Nav() {
           />
           {/* Labels are fixed positional markers around the dial; the glyph
               rotates the chosen wedge to the top and the matching label lights
-              in place (per brief). */}
+              in place (per brief). The channel readout below names the active
+              section so the top wedge is never ambiguous. */}
           <RadialLabels
             hoverIndex={focus}
             activeIndex={open}
@@ -110,22 +113,17 @@ export default function V05Nav() {
             onSelect={(i) => setOpen(i)}
             radius={104}
           />
-
-          {/* local telemetry strip that reflects the focused section */}
-          <div className="pointer-events-none absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] uppercase tracking-widest2 text-paper/70">
-            VEC {SECTIONS[activeForTelemetry].telemetry.vector} · LD{" "}
-            {SECTIONS[activeForTelemetry].telemetry.load} · {SECTIONS[activeForTelemetry].telemetry.status}
-          </div>
         </GlyphBox>
       </div>
 
-      <SectionPanel section={open != null ? SECTIONS[open] : null} onClose={() => setOpen(null)} reduced={reduced} />
-
       {open == null && (
-        <div className="pointer-events-none absolute bottom-16 left-1/2 hidden -translate-x-1/2 font-mono text-[10px] uppercase tracking-widest2 text-paper/40 sm:block">
-          [ hover or ◄ ► to aim · enter to engage ]
-        </div>
+        <SelectorReadout
+          section={SECTIONS[activeForTelemetry]}
+          hint="[ hover or ◄ ► to aim · enter to engage ]"
+        />
       )}
+
+      <SectionPanel section={open != null ? SECTIONS[open] : null} onClose={() => setOpen(null)} reduced={reduced} />
     </div>
   );
 }

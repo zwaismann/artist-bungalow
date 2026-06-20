@@ -69,7 +69,13 @@ export default function V07Aerospace() {
   const tip = focus != null ? segmentCentroid(focus, 30) : { x: 50, y: 8 };
 
   return (
-    <div ref={root} className="absolute inset-0 bg-grid">
+    <div
+      ref={root}
+      className="absolute inset-0 bg-grid"
+      // calmer resting state: a fainter coordinate grid so the apparatus reads
+      // as a quiet backdrop until the overlay flourish brings it forward
+      style={{ ["--grid" as string]: "rgba(232,221,199,0.06)" }}
+    >
       <Chrome active={focus != null ? SECTIONS[focus] : null} versionLabel="V07 · AEROSPACE" />
 
       <GlyphBox>
@@ -95,7 +101,7 @@ export default function V07Aerospace() {
           </defs>
         </svg>
 
-        <HexGlyph hoverIndex={focus} onHover={setFocus} onSelect={() => {}} className="absolute inset-0 h-full w-full" />
+        <HexGlyph hoverIndex={focus} onHover={setFocus} onSelect={() => {}} breatheHub className="absolute inset-0 h-full w-full" />
         <RadialLabels hoverIndex={focus} onHover={setFocus} radius={104} />
       </GlyphBox>
 

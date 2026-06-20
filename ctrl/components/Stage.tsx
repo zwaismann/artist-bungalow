@@ -14,7 +14,7 @@ export function GlyphBox({
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <div
-        className={`relative aspect-square w-[min(60vw,34vh,640px)] -translate-y-[12vh] sm:w-[min(78vw,78vh,640px)] sm:translate-y-0 ${className}`}
+        className={`relative aspect-square w-[min(60vw,34vh,640px)] -translate-y-[12vh] sm:w-[min(68vw,60vh,520px)] sm:translate-y-0 ${className}`}
       >
         {children}
       </div>

@@ -105,6 +105,7 @@ export default function V02Docking() {
       <GlyphBox>
         <HexGlyph
           gsapDriven
+          breatheHub
           hoverIndex={hover}
           onHover={setHover}
           className="absolute inset-0 h-full w-full"

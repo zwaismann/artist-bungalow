@@ -35,6 +35,8 @@ export type HexGlyphProps = {
   className?: string;
   /** disable transitions (parent drives motion via GSAP instead of CSS) */
   gsapDriven?: boolean;
+  /** slow "breathing" of the core hub for resting states */
+  breatheHub?: boolean;
   ariaLabel?: string;
 };
 
@@ -49,6 +51,7 @@ const HexGlyph = forwardRef<SVGSVGElement, HexGlyphProps>(function HexGlyph(
     numerals = false,
     className = "",
     gsapDriven = false,
+    breatheHub = false,
     ariaLabel = "CTRL navigation glyph",
   },
   ref
@@ -105,7 +108,6 @@ const HexGlyph = forwardRef<SVGSVGElement, HexGlyphProps>(function HexGlyph(
                   ? "none"
                   : "fill 320ms ease, stroke 320ms ease, filter 320ms ease",
                 filter: lit ? "drop-shadow(0 0 2.2px rgba(216,90,26,0.7))" : "none",
-                outline: "none",
               }}
               onMouseEnter={() => onHover?.(s.index)}
               onMouseLeave={() => onHover?.(null)}
@@ -139,9 +141,10 @@ const HexGlyph = forwardRef<SVGSVGElement, HexGlyphProps>(function HexGlyph(
             );
           })}
 
-        {/* Centre hub — the "core". */}
+        {/* Centre hub — the "core". Optionally breathes so resting states
+            feel alive rather than inert. */}
         <circle
-          className="hex-hub"
+          className={`hex-hub ${breatheHub ? "hub-breathe" : ""}`}
           cx={HEX_CENTER.x}
           cy={HEX_CENTER.y}
           r={2.4}

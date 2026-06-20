@@ -35,7 +35,7 @@ const RadialLabels = forwardRef<HTMLUListElement, RadialLabelsProps>(function Ra
   useEffect(() => setMounted(true), []);
 
   const mobileSelector = (
-    <ul className="pointer-events-none fixed inset-x-0 bottom-9 z-40 flex flex-col items-center gap-2.5 sm:hidden">
+    <ul className="pointer-events-none fixed inset-x-0 bottom-14 z-40 flex flex-col items-center gap-2 sm:hidden">
       {SECTIONS.map((s) => {
         const lit = activeIndex === s.index || hoverIndex === s.index;
         return (

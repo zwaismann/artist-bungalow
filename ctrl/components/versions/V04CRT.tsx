@@ -76,6 +76,7 @@ export default function V04CRT() {
             onHover={setHover}
             onSelect={() => {}}
             numerals
+            breatheHub
             className="absolute inset-0 h-full w-full"
           />
           <RadialLabels hoverIndex={hover} onHover={setHover} radius={104} />

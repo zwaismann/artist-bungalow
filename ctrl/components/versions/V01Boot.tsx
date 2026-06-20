@@ -84,22 +84,22 @@ export default function V01Boot() {
 
       // 2. boot lines type in (width reveal = monospace "teletype")
       BOOT_LINES.forEach((_, i) => {
-        tl.to(`.boot-line-${i} span`, { width: "100%", duration: 0.5, ease: "steps(18)" }, 0.5 + i * 0.45);
+        tl.to(`.boot-line-${i} span`, { width: "100%", duration: 0.4, ease: "steps(18)" }, 0.4 + i * 0.32);
       });
 
       // 3. wedges dock in, staggered, with a decelerate + tiny settle
-      tl.addLabel("assemble", "+=0.15");
+      tl.addLabel("assemble", "+=0.1");
       gsap.utils.toArray<SVGPathElement>(".hex-seg").forEach((seg, i) => {
         tl.to(
           seg,
-          { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.9, ease: "power4.out" },
-          `assemble+=${i * 0.12}`
+          { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.72, ease: "power4.out" },
+          `assemble+=${i * 0.1}`
         )
           // lock-in snap: a single-frame overshoot then settle
-          .to(seg, { scale: 1.015, duration: 0.06 }, `assemble+=${i * 0.12 + 0.9}`)
-          .to(seg, { scale: 1, duration: 0.12 }, `assemble+=${i * 0.12 + 0.96}`);
+          .to(seg, { scale: 1.015, duration: 0.06 }, `assemble+=${i * 0.1 + 0.72}`)
+          .to(seg, { scale: 1, duration: 0.12 }, `assemble+=${i * 0.1 + 0.78}`);
       });
-      tl.to(".hex-outline", { opacity: 1, duration: 0.6 }, "assemble+=0.4");
+      tl.to(".hex-outline", { opacity: 1, duration: 0.5 }, "assemble+=0.3");
 
       // 4. labels settle in
       tl.to(".hex-label", { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 }, ">-0.1");
@@ -130,6 +130,7 @@ export default function V01Boot() {
       <GlyphBox>
         <HexGlyph
           gsapDriven
+          breatheHub={done}
           hoverIndex={hover}
           onHover={setHover}
           className="absolute inset-0 h-full w-full"

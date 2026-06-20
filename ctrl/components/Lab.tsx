@@ -45,6 +45,25 @@ export default function Lab() {
         <CompareGrid onPick={(id) => setVersion(id)} />
       )}
 
+      {/*
+        ANALOG CUT — keyed to the current stage, so switching version (or the
+        compare toggle) remounts it and replays the scanline/flash wipe. Makes
+        the lab feel like one machine changing modes, not pages swapping out.
+      */}
+      <div
+        key={`cut-${view}-${versionId}`}
+        className="analog-cut pointer-events-none absolute inset-0 z-[45]"
+        style={{
+          background:
+            "repeating-linear-gradient(to bottom, rgba(216,90,26,0.05) 0px, rgba(13,13,11,0.85) 2px, rgba(13,13,11,0.85) 3px, rgba(216,90,26,0.05) 4px)",
+        }}
+      />
+      <div
+        key={`flash-${view}-${versionId}`}
+        className="analog-cut pointer-events-none absolute inset-0 z-[46]"
+        style={{ background: "radial-gradient(circle at center, rgba(216,90,26,0.10), rgba(13,13,11,0) 60%)" }}
+      />
+
       {/* ---- PERSISTENT LAB CONTROL BAR (top-center) ---- */}
       <div className="pointer-events-none absolute left-1/2 top-3 z-50 flex -translate-x-1/2 flex-col items-center gap-2">
         <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-paper/15 bg-charcoal/80 px-1.5 py-1 backdrop-blur-sm">
