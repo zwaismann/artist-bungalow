@@ -1,0 +1,68 @@
+name: Deploy CTRL prototype (GitHub Pages)
+
+# Builds the static export of the CTRL comparison lab (in ctrl/) and publishes
+# it to GitHub Pages so it can be previewed in a browser without running it
+# locally. Runs on the prototype branch and on demand.
+on:
+  push:
+    branches: [claude/ctrl-landing-prototype-6ox02m]
+    paths:
+      - "ctrl/**"
+      - ".github/workflows/ctrl-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: ctrl/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: ctrl
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Build static export
+        working-directory: ctrl
+        env:
+          NEXT_EXPORT: "1"
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: pnpm build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ctrl/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
