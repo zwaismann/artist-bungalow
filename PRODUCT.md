@@ -16,7 +16,7 @@ before arrival and during the stay.
 
 The site is a cinematic single-page marketing surface for a 2-bedroom,
 2-bathroom Hollywood Hills Airbnb, plus a guest guidebook and an unlisted brand
-guide. Success means visitors understand the property quickly, trust the 4.97
+guide. Success means visitors understand the property quickly, trust the 4.98
 rating and Superhost/Guest Favorite signals, feel the art-filled Hollywood Hills
 atmosphere, and click through to reserve on Airbnb.
 

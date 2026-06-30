@@ -6,7 +6,7 @@
 
 ## THE PROPERTY
 
-**The Artist Bungalow** is a 2-bedroom, 2-bathroom Airbnb Superhost property (4.97 stars, Guest Favorite) in the Hollywood Hills, Los Angeles. It's a Spanish-style bungalow with mid-century interiors, original art, a piano, a guitar, a steam shower, a private deck with sweeping city-to-ocean views, and a tropical garden. It sits on a quiet cul-de-sac, a 5-minute walk from the Hollywood Bowl.
+**The Artist Bungalow** is a 2-bedroom, 2-bathroom Airbnb Superhost property (4.98 stars, Guest Favorite) in the Hollywood Hills, Los Angeles. It's a Spanish-style bungalow with mid-century interiors, original art, a piano, a guitar, a steam shower, a private deck with sweeping city-to-ocean views, and a tropical garden. It sits on a quiet cul-de-sac, a 5-minute walk from the Hollywood Bowl.
 
 - **Airbnb listing:** `https://www.airbnb.com/rooms/736417448669019623`
 - **Tagline:** "Where the hills meet the music."
@@ -212,7 +212,7 @@ This creates the experience of: typewriter plays -> user scrolls -> text fades, 
   - Subtitle: "Where the hills meet the music." - Instrument Serif italic, 1.25rem/1.875rem, muted ivory (opacity 0.6)
   - CTAs: "Book Your Stay" brass button with arrow SVG + "Explore" text link (muted, hover to brass)
 - Bottom-right (desktop only, hidden <900px): stats bar with frosted glass background
-  - 5 stats: 2 Bedrooms | 2 Bathrooms | 4.97 Rating | Star Superhost | Heart Guest Favorite
+  - 5 stats: 2 Bedrooms | 2 Bathrooms | 4.98 Rating | Star Superhost | Heart Guest Favorite
   - Bebas Neue values, tiny Space Grotesk labels
 
 ### 3. INTRO SECTION
@@ -227,7 +227,7 @@ This creates the experience of: typewriter plays -> user scrolls -> text fades, 
 - Cream (#F0E8D8) background, id="about"
 - Two-column grid (stacks on mobile): image left, content right
 - **Left column**: Property exterior photo (Airbnb photo #8, Spanish-style front), aspect-ratio 4:5
-  - Overlay badge at bottom-left: frosted ivory glass, "4.97" in large Bebas Neue + "SUPERHOST / GUEST FAVORITE" in tiny label text
+  - Overlay badge at bottom-left: frosted ivory glass, "4.98" in large Bebas Neue + "SUPERHOST / GUEST FAVORITE" in tiny label text
 - **Right column**:
   - Label: "About the Space" (brass)
   - Heading: "Spanish Charm, Mid-Century Soul" (Bebas Neue)
@@ -324,7 +324,7 @@ This creates the experience of: typewriter plays -> user scrolls -> text fades, 
 - Onyx background, id="reviews"
 - Label: "Guest Reviews" (brass, light variant)
 - Heading: "What They're Saying" (Bebas Neue, ivory)
-- Subtitle: "4.97 out of 5 from 59+ reviews" (Instrument Serif italic, muted)
+- Subtitle: "4.98 out of 5 from 59+ reviews" (Instrument Serif italic, muted)
 - **Three-column auto-scrolling vertical marquee:**
   - Columns scroll at different speeds (0.26, -0.195, 0.2275 px/frame - middle column scrolls in reverse)
   - Cards are duplicated for seamless looping

@@ -346,7 +346,7 @@ export default function App() {
             </div>
             <div className="flex items-center gap-2 font-body text-xs tracking-wider">
               <span className="text-brass">&#9733;</span>
-              <span>4.97</span>
+              <span>4.98</span>
               <span className="text-ivory/40 ml-1">Superhost</span>
             </div>
           </div>
@@ -459,7 +459,7 @@ export default function App() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-brass px-6 py-4 hidden md:block">
                   <p className="font-impact text-ivory text-2xl tracking-[0.1em]">SUPERHOST</p>
-                  <p className="font-body text-ivory/80 text-xs tracking-wider">4.97 Stars</p>
+                  <p className="font-body text-ivory/80 text-xs tracking-wider">4.98 Stars</p>
                 </div>
               </div>
 
@@ -610,7 +610,7 @@ export default function App() {
             </p>
             <div className="flex items-center justify-center gap-6 mt-8">
               <div className="text-center">
-                <p className="font-impact text-3xl text-brass tracking-wider">4.97</p>
+                <p className="font-impact text-3xl text-brass tracking-wider">4.98</p>
                 <p className="font-body text-xs text-ivory/40 tracking-wider uppercase mt-1">Rating</p>
               </div>
               <div className="w-px h-10 bg-ivory/15" />
