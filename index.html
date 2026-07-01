@@ -750,12 +750,26 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
+        .about-badge-top {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.25rem;
+        }
+
         .about-badge-val {
             font-family: var(--font-impact);
             font-size: 3rem;
             color: var(--onyx);
             line-height: 1;
-            margin-bottom: 0.25rem;
+        }
+
+        .about-badge-stars {
+            color: var(--brass);
+            font-size: 1.05rem;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            white-space: nowrap;
         }
 
         .about-badge-label {
@@ -2024,7 +2038,10 @@
                 <img src="property_webp/exterior-front-view.webp" alt="Artist Bungalow Exterior"
                     class="about-img lightbox-trigger" loading="lazy" decoding="async">
                 <div class="about-badge">
-                    <div class="about-badge-val">4.98</div>
+                    <div class="about-badge-top">
+                        <span class="about-badge-val">4.98</span>
+                        <span class="about-badge-stars" role="img" aria-label="4.98 out of 5 stars">★★★★★</span>
+                    </div>
                     <div class="about-badge-label">Superhost / Guest Favorite</div>
                 </div>
             </div>
