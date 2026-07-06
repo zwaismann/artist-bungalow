@@ -3,6 +3,7 @@
 # and the 396MB property_edited/ folder must never reach production.
 /*
 !/property_webp
+!/property_webp/**
 !/apple-touch-icon.png
 !/artist-bungalow-brand-guide.html
 !/artist-bungalow-guidebook.html
@@ -31,10 +32,6 @@
 !/hollywood_sign_with_tower_blue_clouds.webp
 !/index.html
 !/og-image.jpg
-!/property_optimized/deck-dining-daytime.webp
-!/property_optimized/exterior-front-view.webp
-!/property_optimized/kitchen-coffee-bar.webp
-!/property_optimized/living-room-wide-view.webp
 !/robots.txt
 !/runyon_canyon_golden_sunset_hills_silhouette.webp
 !/runyon_canyon_hikers_winding_trail_golden_hour.webp
