@@ -1,9 +1,0 @@
-[  143505ms] SyntaxError: Failed to execute 'focus' on 'HTMLElement': Invalid or unexpected token
-    at eval (eval at evaluate (:301:30), <anonymous>:1:48)
-    at UtilityScript.evaluate (<anonymous>:303:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-[  143810ms] Invalid or unexpected token
-[  170265ms] Invalid or unexpected token
-[  171289ms] Invalid or unexpected token
-[  205369ms] Invalid or unexpected token
-[  278664ms] Invalid or unexpected token
