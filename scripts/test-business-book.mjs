@@ -1,9 +1,12 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import middleware, { isProtectedPath, isPublicAuthPath } from '../middleware.js';
 import { makeSessionToken, SESSION_COOKIE, signPayload, verifyPayload } from '../business/session.js';
 import { dispatch } from '../business/auth-server.js';
 import { buildBusinessBookPdf } from '../business/build-pdf.js';
 import { BOOK } from '../business/content.js';
+import { parseStaticAllowlist, stagePublic } from './stage-public.mjs';
 
 let failed = 0;
 
@@ -199,6 +202,23 @@ assert(html.includes('historical only'), 'HTML marks prior HSR as historical');
 assert(BOOK.entities.hsrPrior === 'HSR22-003411', 'content keeps prior HSR historical');
 
 assert(BOOK.entities.ein.includes('Do not invent'), 'content marks EIN unknown');
+
+const ignoreText = readFileSync(new URL('../.vercelignore', import.meta.url), 'utf8');
+const allow = parseStaticAllowlist(ignoreText);
+assert(allow.includes('index.html'), 'static allowlist includes the guest homepage');
+assert(allow.includes('business'), 'static allowlist includes /business HTML');
+assert(!allow.includes('api'), 'static allowlist does not treat /api as CDN files');
+assert(!allow.includes('middleware.js'), 'static allowlist leaves middleware at the project root');
+
+const repoRoot = fileURLToPath(new URL('..', import.meta.url));
+const { dest, copied } = await stagePublic({ root: repoRoot });
+assert(copied > 0, 'stage-public copies static paths');
+assert(existsSync(join(dest, 'index.html')), 'build output includes public/index.html');
+assert(existsSync(join(dest, 'business/index.html')), 'build output includes the business book HTML');
+assert(existsSync(join(dest, 'business/login/index.html')), 'build output includes the passkey login page');
+assert(!existsSync(join(dest, 'business/session.js')), 'server auth modules stay out of the static output');
+assert(!existsSync(join(dest, 'middleware.js')), 'middleware is not copied into public/');
+assert(!existsSync(join(dest, 'api')), 'API functions stay at the project root, not public/');
 
 if (failed) {
   console.error(`\n${failed} check(s) failed`);
