@@ -288,11 +288,15 @@ async function login(request) {
 
 async function passwordLogin(request) {
   const password = process.env.BUSINESS_BOOK_PASSWORD;
-  if (!password) {
+  const token = process.env.BUSINESS_BOOK_SETUP_TOKEN;
+  if (!password && !token) {
     return json({ error: 'No backup password is configured.' }, 400);
   }
   const body = await readBody(request);
-  if (!body.password || !timingSafeEqual(String(body.password), password)) {
+  const offered = String(body.password || body.setupToken || '').trim();
+  const passwordOk = Boolean(password && offered && timingSafeEqual(offered, password));
+  const tokenOk = Boolean(token && offered && timingSafeEqual(offered, token));
+  if (!passwordOk && !tokenOk) {
     return json({ error: 'That backup password did not match.' }, 401);
   }
   const session = await makeSessionToken('password');
