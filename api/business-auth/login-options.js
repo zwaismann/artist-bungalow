@@ -1,5 +1,5 @@
-import { dispatch } from '../../business/auth-server.js';
+import { nodeHandler } from '../../business/auth-server.js';
 
-export default function handler(request) {
-  return dispatch(request, 'login-options');
+export default function handler(req, res) {
+  return nodeHandler(req, res, 'login-options');
 }
