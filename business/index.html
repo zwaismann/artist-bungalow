@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="description" content="Confidential Spatial Escapes business book for the Artist Bungalow. Not for public distribution." />
+  <title>Business Book - Spatial Escapes · Artist Bungalow</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FAF6F0;
+      --onyx: #1A1A1A;
+      --brass: #C49A3C;
+      --terracotta: #C2614B;
+      --olive: #5A6B4A;
+      --ocean: #3B6B8A;
+      --sand: #D4C5A9;
+      --blush: #E8CFC0;
+      --cream: #F0E8D8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: var(--brass);
+      color: var(--ivory);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--ivory);
+      color: var(--onyx);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    section,
+    button,
+    a {
+      border-radius: 0;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -40px;
+      background: var(--brass);
+      color: var(--onyx);
+      padding: 8px 12px;
+      z-index: 100;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .skip:focus {
+      top: 12px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196, 154, 60, 0.2);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      color: rgba(250, 246, 240, 0.8);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 240, 0.4);
+      transition: color 0.3s;
+      padding: 13px 8px;
+      margin: -13px -8px;
+    }
+
+    .nav-link:hover {
+      color: var(--brass);
+    }
+
+    button.nav-link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    @media (max-width: 720px) {
+      .nav-desktop {
+        display: none;
+      }
+    }
+
+    .nav-confidential {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .cover {
+      background: var(--onyx);
+      color: var(--ivory);
+      min-height: 88vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 72px 24px 80px;
+    }
+
+    .cover-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .cover-kicker {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 20px;
+    }
+
+    .cover-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(56px, 12vw, 120px);
+      line-height: 0.85;
+      letter-spacing: 0.04em;
+      color: var(--ivory);
+    }
+
+    .cover-title span {
+      color: var(--brass);
+    }
+
+    .cover-sub {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: clamp(22px, 3vw, 32px);
+      color: rgba(250, 246, 240, 0.78);
+      margin-top: 20px;
+    }
+
+    .cover-meta {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(196, 154, 60, 0.28);
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(250, 246, 240, 0.55);
+      max-width: 560px;
+    }
+
+    .cover-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .btn-brass,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 24px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .btn-brass {
+      background: var(--brass);
+      color: var(--onyx);
+    }
+
+    .btn-brass:hover {
+      background: #a07e2f;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(250, 246, 240, 0.28);
+      color: var(--ivory);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brass);
+      color: var(--brass);
+    }
+
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 0.04em;
+      line-height: 0.88;
+      color: var(--onyx);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.78);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .section-body strong {
+      color: var(--onyx);
+      font-weight: 500;
+    }
+
+    .guide-index {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--cream);
+      border: 1px solid rgba(26, 26, 26, 0.05);
+    }
+
+    .guide-index a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--onyx);
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      transition: all 0.3s;
+    }
+
+    .guide-index a:hover {
+      background: var(--onyx);
+      color: var(--ivory);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3px;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 640px) {
+      .info-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .info-card {
+      padding: 24px;
+      border: 1px solid var(--onyx);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    .info-card-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.5);
+    }
+
+    .info-card-value {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--onyx);
+      margin-top: 12px;
+    }
+
+    .info-card-note {
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.6);
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .unknown {
+      background: var(--cream);
+      border-color: var(--sand);
+    }
+
+    .unknown .info-card-label {
+      color: var(--terracotta);
+    }
+
+    .callout {
+      border: 1px solid rgba(26, 26, 26, 0.08);
+      padding: 32px;
+      margin-top: 32px;
+      background: var(--cream);
+    }
+
+    .callout-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 10px;
+    }
+
+    .vault-grid {
+      display: grid;
+      gap: 3px;
+      margin-top: 32px;
+    }
+
+    .vault-card {
+      border: 1px solid var(--onyx);
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .vault-card {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+
+    .vault-status {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.45);
+      margin-top: 8px;
+    }
+
+    .vault-status.is-ready {
+      color: var(--olive);
+    }
+
+    .vault-status.is-pending {
+      color: var(--terracotta);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border: 1px solid var(--onyx);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--onyx);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--onyx);
+      color: var(--ivory);
+    }
+
+    .btn-outline.is-disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .list-item {
+      display: grid;
+      gap: 8px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-meta {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .list-name {
+      font-size: 15px;
+      color: var(--onyx);
+      line-height: 1.5;
+    }
+
+    .mono {
+      font-variant-ligatures: none;
+      letter-spacing: 0.02em;
+    }
+
+    .footer {
+      background: var(--onyx);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      color: rgba(250, 246, 240, 0.6);
+    }
+
+    .footer-sub {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 240, 0.2);
+      margin-top: 8px;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(250, 246, 240, 0.08);
+      margin: 20px auto;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: rgba(250, 246, 240, 0.35);
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 100px 0;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.6in;
+      }
+
+      .skip,
+      .nav,
+      .cover-actions,
+      .screen-only,
+      .btn-brass,
+      .btn-ghost,
+      .btn-outline,
+      .guide-index {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+        color: var(--onyx);
+      }
+
+      .cover {
+        min-height: 0;
+        padding: 0 0 32px;
+        background: var(--onyx);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-after: always;
+      }
+
+      .cover-inner {
+        padding: 32px 24px;
+      }
+
+      .content {
+        padding: 0;
+        max-width: none;
+      }
+
+      .section {
+        padding: 28px 0;
+        page-break-inside: avoid;
+      }
+
+      .info-card,
+      .vault-card,
+      .callout,
+      .unknown {
+        break-inside: avoid;
+      }
+
+      a {
+        color: var(--onyx);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#contents">Skip to contents</a>
+
+  <nav class="nav" aria-label="Business book">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">THE ARTIST BUNGALOW</a>
+      <div class="nav-links">
+        <span class="nav-confidential">Confidential</span>
+        <a href="/business/book.pdf" class="nav-link nav-desktop">Download PDF</a>
+        <button type="button" class="nav-link nav-desktop" id="printBtn">Print</button>
+        <a href="/" class="nav-link">Public site</a>
+        <a href="/business/login" class="nav-link" id="signOut">Sign out</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="cover">
+    <div class="cover-inner">
+      <p class="cover-kicker">Spatial Escapes · Artist Bungalow</p>
+      <h1 class="cover-title">BUSINESS<br /><span>BOOK</span></h1>
+      <p class="cover-sub">Confidential accompanying record for the Light Filled Artist Bungalow.</p>
+      <div class="cover-meta">
+        <div>6910 Paseo Del Serra, Los Angeles, CA 90068</div>
+        <div>Last updated 8 Sep 2026 · Authority to Operate issued</div>
+        <div>Not for public distribution</div>
+      </div>
+      <div class="cover-actions screen-only">
+        <a class="btn-brass" href="/business/book.pdf">Download PDF</a>
+        <button type="button" class="btn-ghost" id="printBtn2">Print / Save as PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content" id="contents">
+    <section class="section">
+      <p class="section-label">01 · Cover</p>
+      <h2 class="section-heading">SPATIAL ESCAPES</h2>
+      <p class="section-body">
+        This is the private operations companion to <strong>theartistbungalow.com</strong>.
+        It is password-gated and unlisted. Public marketing pages stay open.
+      </p>
+      <div class="callout">
+        <p class="callout-label">Scope</p>
+        <p class="section-body" style="max-width:none;">
+          This book does not include lockbox codes, door codes, Wi-Fi passwords, or guest PII.
+          Unknowns are marked rather than invented.
+        </p>
+      </div>
+      <nav class="guide-index screen-only" aria-label="Sections">
+        <a href="#property">Property</a>
+        <a href="#people">People</a>
+        <a href="#ids">Business / tax IDs</a>
+        <a href="#str">STR / LAPD</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#vault">Document vault</a>
+        <a href="#changelog">Change log</a>
+      </nav>
+    </section>
+
+    <section class="section" id="property">
+      <p class="section-label">02 · Property</p>
+      <h2 class="section-heading">LIGHT FILLED ARTIST BUNGALOW</h2>
+      <p class="section-body">Hollywood Hills short-term rental operated with a guest-facing we-voice on the public site.</p>
+      <div class="info-grid">
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">Address</p>
+          <p class="info-card-value">6910 Paseo Del Serra, Los Angeles, CA 90068</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">AIN</p>
+          <p class="info-card-value mono">5549021007</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Listing name</p>
+          <p class="info-card-value">Light Filled Artist Bungalow</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Layout</p>
+          <p class="info-card-value">2BR / 2BA</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Airbnb listing ID</p>
+          <p class="info-card-value mono">736417448669019623</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Status</p>
+          <p class="info-card-value">Superhost / Guest Favorite</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Public site</p>
+          <p class="info-card-value">theartistbungalow.com</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Instagram</p>
+          <p class="info-card-value">@theartistbungalow</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="people">
+      <p class="section-label">03 · People</p>
+      <h2 class="section-heading">HOST TEAM</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <p class="info-card-label">Host / applicant</p>
+          <p class="info-card-value">Patrick Waismann</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Co-host</p>
+          <p class="info-card-value">Jimena Agra</p>
+        </div>
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">Guest-facing voice</p>
+          <p class="info-card-value">We-voice</p>
+          <p class="info-card-note">Public guest pages do not name hosts. Keep that split.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ids">
+      <p class="section-label">04 · Business / tax IDs</p>
+      <h2 class="section-heading">ENTITIES ON FILE</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <p class="info-card-label">LAPD applicant business</p>
+          <p class="info-card-value">Sasquatch and Co.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">BTRC No.</p>
+          <p class="info-card-value mono">0002900916-00001-1</p>
+          <p class="info-card-note mono">Portal Request ID 12015509</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Current HSR</p>
+          <p class="info-card-value mono">25-000613</p>
+          <p class="info-card-note mono">HostCompliance style HSR25-000613</p>
+        </div>
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">Prior HSR · historical only</p>
+          <p class="info-card-value mono">HSR22-003411</p>
+          <p class="info-card-note">Expired / denial-appeal history. Not the current registration.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Holdings entity</p>
+          <p class="info-card-value">Spatial Escapes LLC</p>
+        </div>
+        <div class="info-card unknown info-card-wide">
+          <p class="info-card-label">EIN · not on file</p>
+          <p class="info-card-value">Not recorded in this book</p>
+          <p class="info-card-note">Do not invent an EIN. Add it here when confirmed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="str">
+      <p class="section-label">05 · STR / LAPD</p>
+      <h2 class="section-heading">SHORT-TERM RENTAL</h2>
+      <div class="info-grid">
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">Updated Authority to Operate</p>
+          <p class="info-card-value">2026-09-08 · XSTR-25-0107</p>
+          <p class="info-card-note">One-time / no renewal. No valid date. Current letter.</p>
+        </div>
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">First Authority to Operate</p>
+          <p class="info-card-value">2025-12-22</p>
+          <p class="info-card-note">Application No. referenced with HSR 25-000613. Had a valid-until date of 1 Oct 2026. Superseded by the 2026-09-08 letter.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">RHO</p>
+          <p class="info-card-value">One-time registration</p>
+          <p class="info-card-note">No renewal currently.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">RHO $15 payment</p>
+          <p class="info-card-value">2025-12-11</p>
+          <p class="info-card-note">Receipt from do-not-reply@lapd.lacity.org</p>
+        </div>
+        <div class="info-card info-card-wide">
+          <p class="info-card-label">Compliance confirmation</p>
+          <p class="info-card-value">Michelle Mesina</p>
+          <p class="info-card-note">Rentals@lapd.online confirmed compliant. Updated letter has no valid date. No further action.</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">LAPD info line</p>
+          <p class="info-card-value">(213) 996-1245</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="platforms">
+      <p class="section-label">06 · Platforms</p>
+      <h2 class="section-heading">WHERE IT LIVES</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <p class="info-card-label">Airbnb</p>
+          <p class="info-card-value">Hosting</p>
+          <p class="info-card-note mono">Listing 736417448669019623</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Hospitable property ID</p>
+          <p class="info-card-value mono" style="font-size:15px;">d3e4b63b-65ea-4ec6-8d3a-5124d2a4f543</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Public site</p>
+          <p class="info-card-value">theartistbungalow.com</p>
+        </div>
+        <div class="info-card">
+          <p class="info-card-label">Instagram</p>
+          <p class="info-card-value">@theartistbungalow</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vault">
+      <p class="section-label">07 · Document vault</p>
+      <h2 class="section-heading">REGISTRATION BACKUPS</h2>
+      <p class="section-body">
+        Place for registration and email PDF backups. Add the real files to
+        <strong>business-book/</strong> using the names below, then redeploy.
+        Empty binaries are not stored in git.
+      </p>
+      <div class="vault-grid">
+        <article class="vault-card" data-vault-item data-href="/business-book/authority-to-operate.pdf">
+          <div>
+            <p class="info-card-label">2026-09-08 Authority to Operate (XSTR-25-0107)</p>
+            <p class="info-card-value">authority-to-operate.pdf</p>
+            <p class="info-card-note">Updated letter. One-time / no valid date.</p>
+            <p class="vault-status">Checking vault…</p>
+          </div>
+          <a class="btn-outline" href="/business-book/authority-to-operate.pdf">Download</a>
+        </article>
+        <article class="vault-card" data-vault-item data-href="/business-book/rho-compliance-registration-application.pdf">
+          <div>
+            <p class="info-card-label">RHO Compliance Registration Application (Sep 2026)</p>
+            <p class="info-card-value">rho-compliance-registration-application.pdf</p>
+            <p class="info-card-note">Filled RHO Compliance Registration Application.</p>
+            <p class="vault-status">Checking vault…</p>
+          </div>
+          <a class="btn-outline" href="/business-book/rho-compliance-registration-application.pdf">Download</a>
+        </article>
+        <article class="vault-card" data-vault-item data-href="/business-book/2026-09-03-outbound-application-email.pdf">
+          <div>
+            <p class="info-card-label">Sep 3 outbound application email print</p>
+            <p class="info-card-value">2026-09-03-outbound-application-email.pdf</p>
+            <p class="info-card-note">3 Sep 2026 outbound application email print.</p>
+            <p class="vault-status">Checking vault…</p>
+          </div>
+          <a class="btn-outline" href="/business-book/2026-09-03-outbound-application-email.pdf">Download</a>
+        </article>
+        <article class="vault-card" data-vault-item data-href="/business-book/2025-12-payment-receipt-and-first-ato.pdf">
+          <div>
+            <p class="info-card-label">Dec 2025 payment receipt / first ATO</p>
+            <p class="info-card-value">2025-12-payment-receipt-and-first-ato.pdf</p>
+            <p class="info-card-note">Email extracts: 2025-12-11 $15 RHO receipt and 2025-12-22 first Authority to Operate.</p>
+            <p class="vault-status">Checking vault…</p>
+          </div>
+          <a class="btn-outline" href="/business-book/2025-12-payment-receipt-and-first-ato.pdf">Download</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="changelog">
+      <p class="section-label">08 · Change log</p>
+      <h2 class="section-heading">RECORDED UPDATES</h2>
+      <div class="list-item">
+        <p class="list-meta">2026-09-08</p>
+        <p class="list-name">Updated Authority to Operate issued (XSTR-25-0107). One-time / no renewal. No valid date. Michelle Mesina confirmed compliant; no further action.</p>
+      </div>
+      <div class="list-item">
+        <p class="list-meta">2025-12-22</p>
+        <p class="list-name">First Authority to Operate issued. Application No. referenced with HSR 25-000613. Valid-until date of 1 Oct 2026 (superseded by the 2026-09-08 letter).</p>
+      </div>
+      <div class="list-item">
+        <p class="list-meta">2025-12-11</p>
+        <p class="list-name">RHO $15 payment receipt from do-not-reply@lapd.lacity.org.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">SPATIAL ESCAPES · ARTIST BUNGALOW</p>
+    <p class="footer-sub">Confidential business book</p>
+    <div class="footer-divider"></div>
+    <p class="footer-note">Internal accompanying URL. Public guest pages remain open at theartistbungalow.com.</p>
+  </footer>
+
+  <script>
+    function printBook() {
+      window.print();
+    }
+    document.getElementById('printBtn')?.addEventListener('click', printBook);
+    document.getElementById('printBtn2')?.addEventListener('click', printBook);
+    document.getElementById('signOut')?.addEventListener('click', async (event) => {
+      event.preventDefault();
+      await fetch('/api/business-auth/logout', { method: 'POST', credentials: 'same-origin' });
+      location.href = '/business/login';
+    });
+
+    async function checkVault() {
+      const cards = document.querySelectorAll('[data-vault-item]');
+      for (const card of cards) {
+        const href = card.getAttribute('data-href');
+        const status = card.querySelector('.vault-status');
+        const link = card.querySelector('.btn-outline');
+        try {
+          const res = await fetch(href, { method: 'HEAD', credentials: 'same-origin' });
+          if (res.ok) {
+            status.textContent = 'Ready to download';
+            status.classList.add('is-ready');
+          } else {
+            status.textContent = 'Awaiting upload · add this filename to business-book/ and redeploy';
+            status.classList.add('is-pending');
+            link.classList.add('is-disabled');
+            link.setAttribute('aria-disabled', 'true');
+          }
+        } catch {
+          status.textContent = 'Awaiting upload · add this filename to business-book/ and redeploy';
+          status.classList.add('is-pending');
+        }
+      }
+    }
+    checkVault();
+  </script>
+</body>
+
+</html>

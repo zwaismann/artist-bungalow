@@ -1,7 +1,20 @@
-# Deploy allowlist: ignore everything, then re-include the three public pages
+# Deploy allowlist: ignore everything, then re-include the public pages
 # and only the assets they reference. Working drafts, internal docs, originals,
 # and the 396MB property_edited/ folder must never reach production.
+# Business book paths are passkey-gated in middleware.js; still must be uploaded.
 /*
+!/middleware.js
+!/package.json
+!/package-lock.json
+!/vercel.json
+!/scripts
+!/scripts/**
+!/api
+!/api/**
+!/business
+!/business/**
+!/business-book
+!/business-book/**
 !/property_webp
 !/property_webp/**
 !/apple-touch-icon.png

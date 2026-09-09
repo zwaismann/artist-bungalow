@@ -1,0 +1,13 @@
+{
+  "name": "artist-bungalow",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/stage-public.mjs",
+    "test": "node scripts/test-business-book.mjs"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^13.3.3",
+    "@vercel/functions": "^3.9.6"
+  }
+}

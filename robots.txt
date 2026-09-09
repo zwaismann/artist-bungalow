@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /business
+Disallow: /business-book
+Disallow: /api/business-book-pdf
 
 Sitemap: https://theartistbungalow.com/sitemap.xml
