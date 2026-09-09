@@ -49,10 +49,15 @@ function safeNext(pathname) {
 function loginRedirect(request) {
   const url = new URL(request.url);
   const nextPath = safeNext(url.pathname + url.search);
+  const path = `/business/login?next=${encodeURIComponent(nextPath)}`;
+  const forwardedHost = request.headers.get('x-forwarded-host');
+  const forwardedProto = request.headers.get('x-forwarded-proto');
+  const location =
+    forwardedHost && forwardedProto ? `${forwardedProto}://${forwardedHost}${path}` : path;
   return new Response(null, {
     status: 302,
     headers: {
-      Location: `/business/login?next=${encodeURIComponent(nextPath)}`,
+      Location: location,
       'Cache-Control': 'private, no-store',
       'X-Robots-Tag': 'noindex, nofollow, noarchive',
     },

@@ -40,7 +40,12 @@ export function b64urlToBytes(value) {
 }
 
 export function getCookie(request, name) {
-  const header = request.headers.get('cookie') || '';
+  const headers = request.headers;
+  const header =
+    (headers && typeof headers.get === 'function' ? headers.get('cookie') : null) ||
+    headers?.cookie ||
+    headers?.Cookie ||
+    '';
   for (const part of header.split(';')) {
     const trimmed = part.trim();
     const eq = trimmed.indexOf('=');

@@ -39,6 +39,47 @@ function json(body, status = 200, extraHeaders = []) {
   return new Response(JSON.stringify(body), { status, headers });
 }
 
+/** vercel dev Node handlers get IncomingMessage; production/tests pass Fetch Request. */
+async function asFetchRequest(raw) {
+  if (raw instanceof Request) return raw;
+  if (raw && typeof raw.headers?.get === 'function' && typeof raw.json === 'function') {
+    return raw;
+  }
+
+  const headers = new Headers();
+  const src = raw?.headers || {};
+  for (const [key, value] of Object.entries(src)) {
+    if (value == null) continue;
+    const lower = key.toLowerCase();
+    if (lower === 'connection' || lower === 'transfer-encoding' || lower === 'keep-alive') continue;
+    headers.set(key, Array.isArray(value) ? value.join(', ') : String(value));
+  }
+
+  const host = headers.get('host') || '127.0.0.1';
+  const proto = headers.get('x-forwarded-proto') || 'http';
+  const path = typeof raw?.url === 'string' && raw.url.startsWith('http') ? raw.url : `${proto}://${host}${raw?.url || '/'}`;
+  const method = raw?.method || 'GET';
+  const init = { method, headers };
+  if (method !== 'GET' && method !== 'HEAD') {
+    if (typeof raw.body === 'string' || Buffer.isBuffer(raw.body)) {
+      init.body = raw.body;
+      init.duplex = 'half';
+    } else if (raw.body && typeof raw.body === 'object' && !ArrayBuffer.isView(raw.body)) {
+      init.body = JSON.stringify(raw.body);
+      init.duplex = 'half';
+      if (!headers.has('content-type')) headers.set('content-type', 'application/json');
+    } else if (typeof raw.on === 'function' && raw.readableEnded !== true) {
+      const chunks = [];
+      for await (const chunk of raw) {
+        chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+      }
+      init.body = Buffer.concat(chunks);
+      init.duplex = 'half';
+    }
+  }
+  return new Request(path, init);
+}
+
 function rpFromRequest(request) {
   const url = new URL(request.url);
   const origin = process.env.BUSINESS_BOOK_ORIGIN || url.origin;
@@ -61,8 +102,10 @@ async function readBody(request) {
 function canEnroll(body, env = process.env) {
   const token = env.BUSINESS_BOOK_SETUP_TOKEN;
   const password = env.BUSINESS_BOOK_PASSWORD;
-  if (token && body.setupToken && timingSafeEqual(String(body.setupToken), token)) return true;
-  if (password && body.password && timingSafeEqual(String(body.password), password)) return true;
+  const setupToken = String(body.setupToken || '').trim();
+  const bodyPassword = String(body.password || '').trim();
+  if (token && setupToken && timingSafeEqual(setupToken, token)) return true;
+  if (password && bodyPassword && timingSafeEqual(bodyPassword, password)) return true;
   return false;
 }
 
@@ -281,7 +324,8 @@ const routes = {
   logout,
 };
 
-export async function dispatch(request, action) {
+export async function dispatch(raw, action) {
+  const request = await asFetchRequest(raw);
   const handler = routes[action];
   if (!handler) return json({ error: 'Not found' }, 404);
   if (action === 'status' && request.method !== 'GET' && request.method !== 'HEAD') {
@@ -291,4 +335,26 @@ export async function dispatch(request, action) {
     return json({ error: 'Method not allowed' }, 405);
   }
   return handler(request);
+}
+
+/** vercel dev Node adapters wait on res.end(); returning a Fetch Response hangs. */
+export async function nodeHandler(req, res, action) {
+  try {
+    const response = await dispatch(req, action);
+    res.statusCode = response.status;
+    const cookies = [];
+    response.headers.forEach((value, key) => {
+      if (key.toLowerCase() === 'set-cookie') cookies.push(value);
+      else res.setHeader(key, value);
+    });
+    if (cookies.length) res.setHeader('set-cookie', cookies);
+    res.end(Buffer.from(await response.arrayBuffer()));
+  } catch (error) {
+    console.error(error);
+    if (!res.headersSent) {
+      res.statusCode = 500;
+      res.setHeader('content-type', 'application/json; charset=utf-8');
+    }
+    res.end(JSON.stringify({ error: error?.message || 'Function error' }));
+  }
 }
