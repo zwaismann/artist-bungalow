@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <title>Create a passkey - Spatial Escapes Business Book</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%231A1A1A%22/><text x=%2216%22 y=%2222%22 font-family=%22serif%22 font-size=%2216%22 fill=%22%23C49A3C%22 text-anchor=%22middle%22>AB</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ivory:#FAF6F0; --onyx:#1A1A1A; --brass:#C49A3C; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--onyx);
+      color: var(--ivory);
+      font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+    main { width: 100%; max-width: 28rem; }
+    .kicker { font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 10vw, 64px); line-height: 0.85; letter-spacing: 0.04em; }
+    .lede { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.15rem; color: rgba(250,246,240,0.72); margin: 18px 0 24px; }
+    label { display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,246,240,0.4); margin: 16px 0 8px; }
+    input {
+      width: 100%; min-height: 48px; padding: 12px 14px;
+      background: transparent; border: 1px solid rgba(250,246,240,0.2);
+      color: var(--ivory); font-family: inherit; font-size: 15px;
+    }
+    .btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; min-height: 52px; margin-top: 24px; padding: 14px 20px;
+      font-family: inherit; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 0; cursor: pointer; appearance: none;
+      background: var(--brass); color: var(--onyx);
+    }
+    .btn:hover { background: #a07e2f; }
+    .btn:disabled { opacity: 0.55; cursor: wait; }
+    .msg { margin-top: 18px; font-size: 14px; line-height: 1.5; color: #E8CFC0; }
+    .ok { color: rgba(250,246,240,0.75); }
+    .home { display: inline-block; margin-top: 28px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,246,240,0.28); }
+    .home:hover { color: var(--brass); }
+    .hint { font-size: 13px; color: rgba(250,246,240,0.45); line-height: 1.55; margin-top: 8px; }
+    details { margin-top: 20px; }
+    summary { cursor: pointer; color: var(--brass); font-size: 13px; }
+    pre {
+      margin-top: 12px; padding: 12px; overflow: auto; max-height: 160px;
+      background: rgba(250,246,240,0.04); color: rgba(250,246,240,0.7);
+      font-size: 11px; white-space: pre-wrap; word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">First-time setup</p>
+    <h1>CREATE A<br>PASSKEY</h1>
+    <p class="lede">This registers Touch ID / Face ID for the business book. Use the setup token, or the backup password if that is how you were asked to enroll.</p>
+    <p class="hint">On a Mac: Chrome or Safari, this site over HTTPS. After you click the button, approve the system passkey prompt.</p>
+    <form id="enrollForm">
+      <label for="setupToken">Setup token</label>
+      <input id="setupToken" name="setupToken" type="password" autocomplete="off" />
+      <label for="password">Backup password (only if you were not given a setup token)</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" />
+      <button class="btn" type="submit" id="enrollBtn">Create passkey</button>
+    </form>
+    <p class="msg" id="msg" role="status"></p>
+    <details id="backup" hidden>
+      <summary>Optional credential backup for other browsers</summary>
+      <p class="hint">Public keys only. Paste into Vercel as BUSINESS_BOOK_WEBAUTHN_CREDENTIALS if you want this passkey to verify on another browser without enrolling again.</p>
+      <pre id="credsJson"></pre>
+    </details>
+    <a class="home" href="/business/login">Back to sign in</a>
+  </main>
+  <script type="module">
+    import { startRegistration } from 'https://esm.sh/@simplewebauthn/browser@13.3.3';
+
+    const msg = document.getElementById('msg');
+    const enrollBtn = document.getElementById('enrollBtn');
+    function setMsg(text, ok) {
+      msg.textContent = text || '';
+      msg.className = 'msg' + (ok ? ' ok' : '');
+    }
+    async function parseJson(res) {
+      try { return await res.json(); } catch { return {}; }
+    }
+
+    document.getElementById('enrollForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const setupToken = document.getElementById('setupToken').value;
+      const password = document.getElementById('password').value;
+      if (!setupToken && !password) {
+        setMsg('Enter the setup token or the backup password first.');
+        return;
+      }
+      enrollBtn.disabled = true;
+      setMsg('Touch ID or your device passkey should appear next.');
+      const auth = { setupToken, password };
+      try {
+        const optRes = await fetch('/api/business-auth/register-options', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(auth),
+        });
+        const options = await parseJson(optRes);
+        if (!optRes.ok) throw new Error(options.error || 'Could not start passkey setup.');
+        const credential = await startRegistration({ optionsJSON: options });
+        const regRes = await fetch('/api/business-auth/register', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...auth, credential }),
+        });
+        const result = await parseJson(regRes);
+        if (!regRes.ok) throw new Error(result.error || 'Could not save that passkey.');
+        setMsg('Passkey saved. Redirecting to the business book.', true);
+        if (result.credentialsJson) {
+          document.getElementById('backup').hidden = false;
+          document.getElementById('credsJson').textContent = result.credentialsJson;
+        }
+        setTimeout(() => location.assign('/business'), 900);
+      } catch (err) {
+        const cancelled = err?.name === 'NotAllowedError';
+        setMsg(cancelled ? 'Passkey prompt was cancelled.' : (err.message || 'Could not create a passkey.'));
+        enrollBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

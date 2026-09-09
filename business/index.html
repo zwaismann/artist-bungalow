@@ -594,6 +594,7 @@
         <a href="/business/book.pdf" class="nav-link nav-desktop">Download PDF</a>
         <button type="button" class="nav-link nav-desktop" id="printBtn">Print</button>
         <a href="/" class="nav-link">Public site</a>
+        <a href="/business/login" class="nav-link" id="signOut">Sign out</a>
       </div>
     </div>
   </nav>
@@ -875,6 +876,11 @@
     }
     document.getElementById('printBtn')?.addEventListener('click', printBook);
     document.getElementById('printBtn2')?.addEventListener('click', printBook);
+    document.getElementById('signOut')?.addEventListener('click', async (event) => {
+      event.preventDefault();
+      await fetch('/api/business-auth/logout', { method: 'POST', credentials: 'same-origin' });
+      location.href = '/business/login';
+    });
 
     async function checkVault() {
       const cards = document.querySelectorAll('[data-vault-item]');

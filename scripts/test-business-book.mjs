@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
-import { credentialsMatch, isProtectedPath, parseBasicAuth } from '../middleware.js';
-import middleware from '../middleware.js';
+import middleware, { isProtectedPath, isPublicAuthPath } from '../middleware.js';
+import { makeSessionToken, SESSION_COOKIE, signPayload, verifyPayload } from '../business/session.js';
+import { dispatch } from '../business/auth-server.js';
 import { buildBusinessBookPdf } from '../business/build-pdf.js';
 import { BOOK } from '../business/content.js';
 
@@ -15,11 +16,10 @@ function assert(cond, msg) {
   }
 }
 
-function authHeader(user, password) {
-  return `Basic ${Buffer.from(`${user}:${password}`).toString('base64')}`;
-}
-
 const html = readFileSync(new URL('../business/index.html', import.meta.url), 'utf8');
+const loginHtml = readFileSync(new URL('../business/login/index.html', import.meta.url), 'utf8');
+const enrollHtml = readFileSync(new URL('../business/enroll/index.html', import.meta.url), 'utf8');
+const docs = readFileSync(new URL('../BUSINESS_BOOK.md', import.meta.url), 'utf8');
 const publicHtml = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const vaultReadme = readFileSync(new URL('../business-book/README.md', import.meta.url), 'utf8');
 
@@ -32,69 +32,95 @@ assert(isProtectedPath('/api/business-book-pdf'), 'gates PDF API');
 assert(!isProtectedPath('/'), 'does not gate /');
 assert(!isProtectedPath('/artist-bungalow-guidebook.html'), 'does not gate guidebook');
 assert(!isProtectedPath('/favicon.ico'), 'does not gate favicon');
+assert(isPublicAuthPath('/business/login'), 'login page is public under /business');
+assert(isPublicAuthPath('/business/enroll'), 'enroll page is public under /business');
+assert(isPublicAuthPath('/api/business-auth/login'), 'passkey APIs are reachable without a session');
 
-const savedPass = process.env.BUSINESS_BOOK_PASSWORD;
-const savedUser = process.env.BUSINESS_BOOK_USERNAME;
+const saved = {
+  password: process.env.BUSINESS_BOOK_PASSWORD,
+  user: process.env.BUSINESS_BOOK_USERNAME,
+  secret: process.env.BUSINESS_BOOK_SESSION_SECRET,
+  token: process.env.BUSINESS_BOOK_SETUP_TOKEN,
+};
 delete process.env.BUSINESS_BOOK_PASSWORD;
 delete process.env.BUSINESS_BOOK_USERNAME;
+delete process.env.BUSINESS_BOOK_SESSION_SECRET;
+delete process.env.BUSINESS_BOOK_SETUP_TOKEN;
 
-let res = await middleware(new Request('https://theartistbungalow.com/business'));
-assert(res.status === 503, 'unconfigured password returns 503');
+let res = await middleware(
+  new Request('https://theartistbungalow.com/business', { headers: { accept: 'text/html' } }),
+);
+assert(res.status === 302, 'unsigned /business redirects to login');
+assert(res.headers.get('location')?.startsWith('/business/login'), 'redirects to /business/login');
+assert(!res.headers.get('www-authenticate'), 'does not use HTTP Basic');
 
-process.env.BUSINESS_BOOK_PASSWORD = 'test-only-local-password';
-res = await middleware(new Request('https://theartistbungalow.com/business'));
-assert(res.status === 401, 'missing basic auth returns 401');
-assert(res.headers.get('www-authenticate')?.includes('Basic'), 'sends WWW-Authenticate');
+res = await middleware(new Request('https://theartistbungalow.com/api/business-book-pdf'));
+assert(res.status === 401, 'unsigned PDF API returns 401');
 
+res = await middleware(new Request('https://theartistbungalow.com/business/login'));
+assert(res.headers.get('x-middleware-next') === '1', 'login page is not session-gated');
+
+res = await middleware(new Request('https://theartistbungalow.com/'));
+assert(res.headers.get('x-middleware-next') === '1', 'public homepage stays open');
+
+process.env.BUSINESS_BOOK_SESSION_SECRET = 'test-only-session-secret';
+const session = await makeSessionToken('webauthn');
 res = await middleware(
   new Request('https://theartistbungalow.com/business', {
-    headers: { authorization: authHeader('spatial', 'wrong') },
+    headers: { cookie: `${SESSION_COOKIE}=${session}`, accept: 'text/html' },
   }),
 );
-assert(res.status === 401, 'wrong password returns 401');
+assert(res.headers.get('x-middleware-next') === '1', 'valid passkey session continues');
 
-res = await middleware(
-  new Request('https://theartistbungalow.com/business', {
-    headers: { authorization: authHeader('anyone', 'test-only-local-password') },
+const roundTrip = await verifyPayload('test-only-session-secret', await signPayload('test-only-session-secret', { v: 1, exp: Math.floor(Date.now() / 1000) + 60 }));
+assert(roundTrip?.v === 1, 'signed payloads verify');
+
+process.env.BUSINESS_BOOK_PASSWORD = 'backup-only';
+const badPw = await dispatch(
+  new Request('https://theartistbungalow.com/api/business-auth/password', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ password: 'wrong' }),
   }),
+  'password',
 );
-assert(res.status === 200 || res.status === 204 || res.body === null, 'valid password continues');
-assert(res.headers.get('x-middleware-next') === '1', 'valid password sets x-middleware-next');
+assert(badPw.status === 401, 'wrong backup password is rejected');
 
-process.env.BUSINESS_BOOK_USERNAME = 'spatial';
-res = await middleware(
-  new Request('https://theartistbungalow.com/business', {
-    headers: { authorization: authHeader('wrong-user', 'test-only-local-password') },
+const goodPw = await dispatch(
+  new Request('https://theartistbungalow.com/api/business-auth/password', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ password: 'backup-only' }),
   }),
+  'password',
 );
-assert(res.status === 401, 'wrong username rejected when username is set');
+assert(goodPw.status === 200, 'backup password can sign in');
+assert((goodPw.headers.get('set-cookie') || '').includes(SESSION_COOKIE), 'password fallback sets a session cookie');
 
-res = await middleware(
-  new Request('https://theartistbungalow.com/', {
-    headers: { authorization: authHeader('spatial', 'nope') },
+const enrollDenied = await dispatch(
+  new Request('https://theartistbungalow.com/api/business-auth/register-options', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({}),
   }),
+  'register-options',
 );
-assert(res.headers.get('x-middleware-next') === '1', 'public path continues even without matching password');
+assert(enrollDenied.status === 401, 'passkey enroll requires setup token or backup password');
 
-res = await middleware(
-  new Request('https://theartistbungalow.com/business', {
-    headers: { authorization: authHeader('spatial', 'test-only-local-password') },
-  }),
-);
-assert(res.headers.get('x-middleware-next') === '1', 'matching username and password continue');
+assert(loginHtml.includes('Sign in with passkey'), 'login UX leads with passkey');
+assert(loginHtml.includes('Touch ID'), 'login mentions Touch ID');
+assert(enrollHtml.includes('Create passkey'), 'enroll flow exists');
+assert(docs.includes('BUSINESS_BOOK_SETUP_TOKEN'), 'docs describe setup token');
+assert(docs.includes('Safari'), 'docs cover Safari enroll');
 
-assert(
-  credentialsMatch(parseBasicAuth(authHeader('spatial', 'test-only-local-password')), {
-    BUSINESS_BOOK_PASSWORD: 'test-only-local-password',
-    BUSINESS_BOOK_USERNAME: 'spatial',
-  }).ok,
-  'credentialsMatch accepts matching pair',
-);
-
-if (savedPass === undefined) delete process.env.BUSINESS_BOOK_PASSWORD;
-else process.env.BUSINESS_BOOK_PASSWORD = savedPass;
-if (savedUser === undefined) delete process.env.BUSINESS_BOOK_USERNAME;
-else process.env.BUSINESS_BOOK_USERNAME = savedUser;
+if (saved.password === undefined) delete process.env.BUSINESS_BOOK_PASSWORD;
+else process.env.BUSINESS_BOOK_PASSWORD = saved.password;
+if (saved.user === undefined) delete process.env.BUSINESS_BOOK_USERNAME;
+else process.env.BUSINESS_BOOK_USERNAME = saved.user;
+if (saved.secret === undefined) delete process.env.BUSINESS_BOOK_SESSION_SECRET;
+else process.env.BUSINESS_BOOK_SESSION_SECRET = saved.secret;
+if (saved.token === undefined) delete process.env.BUSINESS_BOOK_SETUP_TOKEN;
+else process.env.BUSINESS_BOOK_SETUP_TOKEN = saved.token;
 
 const pdf = buildBusinessBookPdf();
 const pdfText = pdf.toString('latin1');

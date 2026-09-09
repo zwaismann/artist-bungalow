@@ -1,7 +1,7 @@
 # Deploy allowlist: ignore everything, then re-include the public pages
 # and only the assets they reference. Working drafts, internal docs, originals,
 # and the 396MB property_edited/ folder must never reach production.
-# Business book paths are password-gated in middleware.js; still must be uploaded.
+# Business book paths are passkey-gated in middleware.js; still must be uploaded.
 /*
 !/middleware.js
 !/package.json
