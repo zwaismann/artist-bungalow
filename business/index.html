@@ -108,6 +108,7 @@
       font-size: 15px;
       letter-spacing: 0.12em;
       color: rgba(250, 246, 240, 0.8);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -137,6 +138,12 @@
       border: none;
       cursor: pointer;
       font-family: inherit;
+    }
+
+    @media (max-width: 720px) {
+      .nav-desktop {
+        display: none;
+      }
     }
 
     .nav-confidential {
@@ -232,8 +239,11 @@
     }
 
     .btn-ghost {
+      background: transparent;
       border: 1px solid rgba(250, 246, 240, 0.28);
       color: var(--ivory);
+      appearance: none;
+      -webkit-appearance: none;
     }
 
     .btn-ghost:hover {
@@ -581,8 +591,8 @@
       <a href="/" class="nav-logo">THE ARTIST BUNGALOW</a>
       <div class="nav-links">
         <span class="nav-confidential">Confidential</span>
-        <a href="/business/book.pdf" class="nav-link">Download PDF</a>
-        <button type="button" class="nav-link" id="printBtn">Print</button>
+        <a href="/business/book.pdf" class="nav-link nav-desktop">Download PDF</a>
+        <button type="button" class="nav-link nav-desktop" id="printBtn">Print</button>
         <a href="/" class="nav-link">Public site</a>
       </div>
     </div>
