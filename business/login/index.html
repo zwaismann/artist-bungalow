@@ -64,16 +64,44 @@
     <button class="btn btn-brass" type="button" id="passkeyBtn">Sign in with passkey</button>
     <p class="ghost">First time? <a href="/business/enroll">Create a passkey</a></p>
     <p class="msg" id="msg" role="status"></p>
-    <details id="fallback">
-      <summary>Passkey unavailable? Use backup password</summary>
+    <details id="fallback" open>
+      <summary>Passkey unavailable? Use backup password or setup token</summary>
       <form id="passwordForm">
-        <label for="password">Backup password</label>
-        <input id="password" name="password" type="password" autocomplete="current-password" />
+        <label for="password">Backup password or setup token</label>
+        <input id="password" name="password" type="text" autocomplete="off" spellcheck="false" />
         <button class="btn btn-ghost" type="submit">Sign in with password</button>
       </form>
     </details>
     <a class="home" href="/">Return to the public site</a>
   </main>
+  <script>
+    (function () {
+      var form = document.getElementById('passwordForm');
+      var msg = document.getElementById('msg');
+      var params = new URLSearchParams(location.search);
+      var next = params.get('next') || '/business';
+      var safeNext = next.startsWith('/business') || next.startsWith('/business-book') ? next : '/business';
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        msg.textContent = '';
+        var password = document.getElementById('password').value.trim();
+        var res = await fetch('/api/business-auth/password', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: password }),
+        });
+        var result = {};
+        try { result = await res.json(); } catch (err) {}
+        if (!res.ok) {
+          msg.textContent = result.error || 'Password sign-in failed.';
+          return;
+        }
+        location.assign(safeNext);
+      });
+    })();
+  </script>
   <script type="module">
     import { startAuthentication } from 'https://esm.sh/@simplewebauthn/browser@13.3.3';
 

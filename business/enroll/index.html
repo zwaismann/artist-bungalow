@@ -64,9 +64,9 @@
     <p class="hint">On a Mac: Chrome or Safari, this site over HTTPS. After you click the button, approve the system passkey prompt.</p>
     <form id="enrollForm">
       <label for="setupToken">Setup token</label>
-      <input id="setupToken" name="setupToken" type="password" autocomplete="off" />
+      <input id="setupToken" name="setupToken" type="text" autocomplete="off" spellcheck="false" />
       <label for="password">Backup password (only if you were not given a setup token)</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" />
+      <input id="password" name="password" type="password" autocomplete="off" />
       <button class="btn" type="submit" id="enrollBtn">Create passkey</button>
     </form>
     <p class="msg" id="msg" role="status"></p>
@@ -77,56 +77,95 @@
     </details>
     <a class="home" href="/business/login">Back to sign in</a>
   </main>
-  <script type="module">
-    import { startRegistration } from 'https://esm.sh/@simplewebauthn/browser@13.3.3';
-
-    const msg = document.getElementById('msg');
-    const enrollBtn = document.getElementById('enrollBtn');
+  <script>
+    function b64urlToBuf(value) {
+      var pad = '='.repeat((4 - (value.length % 4)) % 4);
+      var b64 = value.replace(/-/g, '+').replace(/_/g, '/') + pad;
+      var bin = atob(b64);
+      var out = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out.buffer;
+    }
+    function bufToB64url(buf) {
+      var arr = new Uint8Array(buf);
+      var bin = '';
+      for (var i = 0; i < arr.length; i++) bin += String.fromCharCode(arr[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+    }
+    async function parseJson(res) {
+      try { return await res.json(); } catch (err) { return {}; }
+    }
+    var msg = document.getElementById('msg');
+    var enrollBtn = document.getElementById('enrollBtn');
     function setMsg(text, ok) {
       msg.textContent = text || '';
       msg.className = 'msg' + (ok ? ' ok' : '');
     }
-    async function parseJson(res) {
-      try { return await res.json(); } catch { return {}; }
-    }
-
-    document.getElementById('enrollForm').addEventListener('submit', async (e) => {
+    document.getElementById('enrollForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const setupToken = document.getElementById('setupToken').value;
-      const password = document.getElementById('password').value;
+      var setupToken = document.getElementById('setupToken').value.trim();
+      var password = document.getElementById('password').value.trim();
       if (!setupToken && !password) {
         setMsg('Enter the setup token or the backup password first.');
         return;
       }
       enrollBtn.disabled = true;
       setMsg('Touch ID or your device passkey should appear next.');
-      const auth = { setupToken, password };
+      var auth = { setupToken: setupToken, password: password };
       try {
-        const optRes = await fetch('/api/business-auth/register-options', {
+        var optRes = await fetch('/api/business-auth/register-options', {
           method: 'POST',
           credentials: 'same-origin',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(auth),
         });
-        const options = await parseJson(optRes);
+        var options = await parseJson(optRes);
         if (!optRes.ok) throw new Error(options.error || 'Could not start passkey setup.');
-        const credential = await startRegistration({ optionsJSON: options });
-        const regRes = await fetch('/api/business-auth/register', {
+        var publicKey = {
+          challenge: b64urlToBuf(options.challenge),
+          rp: options.rp,
+          user: {
+            id: b64urlToBuf(options.user.id),
+            name: options.user.name,
+            displayName: options.user.displayName,
+          },
+          pubKeyCredParams: options.pubKeyCredParams,
+          timeout: options.timeout,
+          attestation: options.attestation,
+          authenticatorSelection: options.authenticatorSelection,
+          excludeCredentials: (options.excludeCredentials || []).map(function (cred) {
+            return { type: 'public-key', id: b64urlToBuf(cred.id), transports: cred.transports };
+          }),
+        };
+        var cred = await navigator.credentials.create({ publicKey: publicKey });
+        var att = cred.response;
+        var credential = {
+          id: cred.id,
+          rawId: bufToB64url(cred.rawId),
+          type: cred.type,
+          response: {
+            clientDataJSON: bufToB64url(att.clientDataJSON),
+            attestationObject: bufToB64url(att.attestationObject),
+            transports: att.getTransports ? att.getTransports() : [],
+          },
+          clientExtensionResults: cred.getClientExtensionResults ? cred.getClientExtensionResults() : {},
+        };
+        var regRes = await fetch('/api/business-auth/register', {
           method: 'POST',
           credentials: 'same-origin',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...auth, credential }),
+          body: JSON.stringify({ setupToken: setupToken, password: password, credential: credential }),
         });
-        const result = await parseJson(regRes);
+        var result = await parseJson(regRes);
         if (!regRes.ok) throw new Error(result.error || 'Could not save that passkey.');
         setMsg('Passkey saved. Redirecting to the business book.', true);
         if (result.credentialsJson) {
           document.getElementById('backup').hidden = false;
           document.getElementById('credsJson').textContent = result.credentialsJson;
         }
-        setTimeout(() => location.assign('/business'), 900);
+        setTimeout(function () { location.assign('/business'); }, 900);
       } catch (err) {
-        const cancelled = err?.name === 'NotAllowedError';
+        var cancelled = err && err.name === 'NotAllowedError';
         setMsg(cancelled ? 'Passkey prompt was cancelled.' : (err.message || 'Could not create a passkey.'));
         enrollBtn.disabled = false;
       }

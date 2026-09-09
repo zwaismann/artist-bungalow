@@ -100,6 +100,17 @@ const goodPw = await dispatch(
 assert(goodPw.status === 200, 'backup password can sign in');
 assert((goodPw.headers.get('set-cookie') || '').includes(SESSION_COOKIE), 'password fallback sets a session cookie');
 
+process.env.BUSINESS_BOOK_SETUP_TOKEN = 'setup-only-token';
+const tokenAsPassword = await dispatch(
+  new Request('https://theartistbungalow.com/api/business-auth/password', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ password: 'setup-only-token' }),
+  }),
+  'password',
+);
+assert(tokenAsPassword.status === 200, 'setup token can sign in on the password form');
+
 const enrollDenied = await dispatch(
   new Request('https://theartistbungalow.com/api/business-auth/register-options', {
     method: 'POST',
