@@ -1,0 +1,12 @@
+{
+  "name": "artist-bungalow",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node -e \"console.log('static site; no compile step')\"",
+    "test": "node scripts/test-business-book.mjs"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.9.6"
+  }
+}
