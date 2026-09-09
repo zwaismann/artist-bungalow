@@ -101,6 +101,12 @@ const pdfText = pdf.toString('latin1');
 assert(pdfText.startsWith('%PDF-1.4'), 'PDF header');
 assert(pdfText.includes('%%EOF'), 'PDF EOF');
 assert(pdfText.includes('XSTR-25-0107'), 'PDF includes STR number');
+assert(pdfText.includes('5549021007'), 'PDF includes AIN');
+assert(pdfText.includes('HSR22-003411'), 'PDF includes prior HSR as historical');
+assert(pdfText.includes('HSR25-000613'), 'PDF includes HostCompliance HSR style');
+assert(pdfText.includes('12015509'), 'PDF includes BTRC request ID');
+assert(pdfText.includes('2025-12-22'), 'PDF includes first ATO date');
+assert(pdfText.includes('do-not-reply@lapd.lacity.org'), 'PDF includes RHO receipt sender');
 assert(pdfText.includes('6910 Paseo Del Serra'), 'PDF includes address');
 assert(pdfText.includes('Not recorded in this book'), 'PDF marks EIN unknown');
 assert(
@@ -125,11 +131,18 @@ const required = [
   'Sasquatch and Co.',
   '0002900916-00001-1',
   '25-000613',
+  'HSR25-000613',
+  'HSR22-003411',
+  '12015509',
+  '5549021007',
   'Spatial Escapes LLC',
   'Not recorded in this book',
   'XSTR-25-0107',
   '2026-09-08',
+  '2025-12-22',
+  '2025-12-11',
   'One-time registration',
+  'do-not-reply@lapd.lacity.org',
   'Michelle Mesina',
   'Rentals@lapd.online',
   '(213) 996-1245',
@@ -137,6 +150,7 @@ const required = [
   'authority-to-operate.pdf',
   'rho-compliance-registration-application.pdf',
   '2026-09-03-outbound-application-email.pdf',
+  '2025-12-payment-receipt-and-first-ato.pdf',
   'Authority to Operate issued',
 ];
 for (const snippet of required) {
@@ -154,6 +168,9 @@ assert(!publicHtml.includes('6910 Paseo Del Serra'), 'public homepage does not p
 assert(vaultReadme.includes('authority-to-operate.pdf'), 'vault readme names authority PDF');
 assert(vaultReadme.includes('rho-compliance-registration-application.pdf'), 'vault readme names RHO PDF');
 assert(vaultReadme.includes('2026-09-03-outbound-application-email.pdf'), 'vault readme names email print');
+assert(vaultReadme.includes('2025-12-payment-receipt-and-first-ato.pdf'), 'vault readme names Dec 2025 extracts');
+assert(html.includes('historical only'), 'HTML marks prior HSR as historical');
+assert(BOOK.entities.hsrPrior === 'HSR22-003411', 'content keeps prior HSR historical');
 
 assert(BOOK.entities.ein.includes('Do not invent'), 'content marks EIN unknown');
 

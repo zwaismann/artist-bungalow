@@ -41,6 +41,7 @@ export function buildBusinessBookPdf(book = BOOK) {
 
       ...heading('02  Property', book.listingName),
       ...kv('Address', book.address),
+      ...kv('AIN', book.ain),
       ...kv('Layout', book.bedrooms),
       ...kv('Airbnb listing ID', book.airbnbListingId),
       ...kv('Status', book.badges),
@@ -55,14 +56,17 @@ export function buildBusinessBookPdf(book = BOOK) {
       ...heading('04  Business / tax IDs', 'Entities on file'),
       ...kv('LAPD applicant business', book.entities.lapdApplicant),
       ...kv('BTRC No.', book.entities.btrc),
-      ...kv('HSR No.', book.entities.hsr),
+      ...kv('BTRC portal Request ID', book.entities.btrcRequestId),
+      ...kv('Current HSR', `${book.entities.hsr} (HostCompliance style ${book.entities.hsrHostCompliance})`),
+      ...kv('Prior HSR (historical only)', `${book.entities.hsrPrior}. ${book.entities.hsrPriorNote}`),
       ...kv('Holdings', book.entities.holdings),
       ...kv('EIN', book.entities.ein),
 
       ...heading('05  STR / LAPD', 'Short-term rental registration'),
-      ...kv('Registration / Application No.', book.str.applicationNo),
-      ...kv('Authority to Operate issued', book.str.authorityIssued),
+      ...kv('Updated Authority to Operate', `${book.str.authorityIssued}. ${book.str.authorityNote}`),
+      ...kv('First Authority to Operate', `${book.str.firstAuthorityIssued}. ${book.str.firstAuthorityNote}`),
       ...kv('RHO', book.str.rho),
+      ...kv('RHO payment', `${book.str.rhoPayment}. ${book.str.rhoPaymentNote}`),
       ...kv('Compliance', book.str.mesina),
       ...kv('LAPD info line', book.str.lapdInfoLine),
 
